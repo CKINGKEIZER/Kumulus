@@ -717,7 +717,7 @@
     "--fs-body"
    ],
    "recipe": "Cumulative curve for customer/revenue concentration; area fill; a highlight window (e.g. 'top 20% = [x]%'). The customer-concentration chart.",
-   "component": "TBD - GAP (candidate ParetoCurve)",
+   "component": "components/charts/ParetoCurve.jsx",
    "fromBlocks": [
     "BLK-PARETO-CURVE"
    ],
@@ -1852,7 +1852,7 @@
     "--ls-caps"
    ],
    "recipe": "The house imagery slot — product photos, site photos, screenshots. Floating images get the house shadow. Real transparent-PNG assets go here; the biggest 'AI tell' is a generic/empty image, so always request real assets.",
-   "component": "TBD - GAP (candidate PhotoPanel)",
+   "component": "components/media/PhotoPanel.jsx",
    "fromBlocks": [
     "BLK-REAL-SITE-PHOTOPANEL-INVENTORY",
     "BLK-HERO-ARC-PHOTO"

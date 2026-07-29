@@ -813,7 +813,18 @@
    "dependsOn": "G2-05",
    "scope": "implement components/structures/* (JSX + .d.ts + .prompt.md); VERIFY each side-by-side vs its exemplar render before marking done",
    "produces": "components/structures/*",
-   "status": "pending"
+   "status": "done",
+   "built": [
+    "ParetoCurve",
+    "PhotoPanel",
+    "ProfileCard",
+    "CustomerDeepDive",
+    "CustomerConcentration",
+    "ManagementProfiles",
+    "OrgStructure",
+    "CompanyTimeline"
+   ],
+   "verified": "CustomerConcentration/ManagementProfiles/CompanyTimeline screenshot; 2 SSR smoke"
   },
   {
    "id": "G3-06",
