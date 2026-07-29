@@ -1,0 +1,338 @@
+{
+ "note": "PRIMITIVE CATALOG (rebuild-plan Phase B, layer 1). Atomic, fixed-size, corner-anchored bricks distilled from block-library.json + building-blocks.json. Each: fixed px @1280x720, anchor, exit-width (leftover docking slot), internal grid at 9.5pt, token refs, copy-recipe, the code component that renders it (or a TBD gap), and provenance. Structures (structures.json) arrange these into SlideStructure skeletons. Built in batches per component-queue.json.",
+ "conventions": {
+  "bodyText": "9.5pt = 12.7px, Source Sans Pro, --fs-body. The ONLY non-title size (title 14pt=18.7px --fs-title; footnote 7pt=9.3px --fs-footnote; hero KPI --fs-kpi the single large exception).",
+  "labelCaps": "small-caps device = 9.5pt bold, letter-spacing .08em (--ls-caps), uppercase, navy. NOT a smaller size.",
+  "contentRegion": "x 20->1260 (1240px) . y 84->672 (588px). Primitives are placed by CORNER anchor inside this region and never stretched to fill.",
+  "grid": "12 cols x 1240px, 16px gutter, 16px row gap (--space-4).",
+  "fills": "filled colour (navy/deal-primary) ONLY on KPI tiles, category/section bars, chart series, section dividers. Panels = grey small-caps header band + white body (PanelHeader), never a filled card. Placeholders = dashed grey; target logo = SOLID yellow + 1px RED border + 'COMPANY LOGO' 9.5pt navy caps.",
+  "shadow": "house shadow (floating imagery only) = --shadow-house (0 0 9px rgba(0,0,0,.40), i.e. 60% transparency, 5pt blur, 0 offset)."
+ },
+ "tokenRefs": {
+  "--fs-title": "18.7px (14pt) serif slide title",
+  "--fs-body": "12.7px (9.5pt) everything non-title",
+  "--fs-footnote": "9.3px (7pt) notes/sources",
+  "--fs-kpi": "24px / --fs-kpi-lg 32px hero KPI figure",
+  "--fs-page-title": "34px section-divider/cover title",
+  "--slide-margin-x": "20px L/R",
+  "--slide-margin-top": "24px above title",
+  "--slide-footer-h": "42px footer band",
+  "--rule-title": "black ~1px (0.5pt) under title",
+  "--rule-separator": "grey 0.25pt hairline",
+  "--tab-width": "22px vertical tab (NB: real renders show 44px — calibrate)",
+  "--deal-primary": "per-deal accent (Torino navy/gold, Bones purple/teal)"
+ },
+ "primitives": [
+  {
+   "id": "PRIM-FRAME-CONTENT",
+   "name": "Content slide frame (title zone + body region + footer chrome)",
+   "role": "chrome",
+   "size_px": {
+    "w": 1280,
+    "h": 720
+   },
+   "anchor": "full-bleed",
+   "exit_width": "exposes the 1240x588 content region (x20->1260, y84->672) as the slot that skeletons fill",
+   "grid": "title zone y24-46 (title 18.7px serif, optional italic body subtitle) + black 0.5pt rule y~70; content region y84-672; footer band y678-720 (42px)",
+   "tokens": [
+    "--slide-margin-x",
+    "--slide-margin-top",
+    "--slide-footer-h",
+    "--rule-title",
+    "--fs-title",
+    "--fs-body",
+    "--fs-footnote"
+   ],
+   "recipe": "SlideFrame variant='content': serif 14pt title (sentence case) + optional italic body subtitle + optional key-message band; black 0.5pt title rule; body = content region where a Phase-B skeleton renders; footer = grey 0.25pt rule then 42px band: left KumulusMark + 'Project X | Month Year' + confidential line; centre 7pt grey footnote; right FooterNav tabs + target logo + page number.",
+   "component": "components/layout/SlideFrame.jsx (variant='content')",
+   "fromBlocks": [],
+   "seenOn": [
+    "TOR-64",
+    "BON-14",
+    "LTP-005"
+   ]
+  },
+  {
+   "id": "PRIM-FRAME-COVER",
+   "name": "Cover frame (full-bleed image + centred serif title + date)",
+   "role": "chrome",
+   "size_px": {
+    "w": 1280,
+    "h": 720
+   },
+   "anchor": "full-bleed",
+   "exit_width": "none (cover occupies whole sheet)",
+   "grid": "full-bleed cover image or deal-themed gradient; centred serif cover title (--fs-page-title 34px) + date line",
+   "tokens": [
+    "--fs-page-title",
+    "--deal-primary",
+    "--shadow-house"
+   ],
+   "recipe": "SlideFrame variant='cover': coverImageSrc (falls back to deal gradient), centred serif coverTitle e.g. 'Project X - Information Memorandum', coverDate.",
+   "component": "components/layout/SlideFrame.jsx (variant='cover')",
+   "fromBlocks": [],
+   "seenOn": [
+    "LTP-001"
+   ]
+  },
+  {
+   "id": "PRIM-FRAME-DIVIDER",
+   "name": "Section-divider frame (big number/letter + frosted ToC agenda)",
+   "role": "chrome",
+   "size_px": {
+    "w": 1280,
+    "h": 720
+   },
+   "anchor": "full-bleed",
+   "exit_width": "none (divider occupies whole sheet)",
+   "grid": "full-bleed background (photo or white ghost) + large section number/letter + frosted ToC panel listing sections, active one highlighted solid yellow",
+   "tokens": [
+    "--fs-page-title",
+    "--deal-primary",
+    "--slide-margin-x"
+   ],
+   "recipe": "SlideFrame variant='divider': backgroundSrc, sectionNumber, sections[] ToC with activeSection highlighted yellow.",
+   "variants": [
+    {
+     "label": "ghost-numeral",
+     "note": "white page, large outline-only numeral (e.g. '7', '7.1') at right + faint echo (BLK-SECTION-DIVIDER-GHOST)"
+    },
+    {
+     "label": "photo-agenda",
+     "note": "full-bleed product photo + translucent left agenda panel, current section on yellow bar (BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY)"
+    }
+   ],
+   "component": "components/layout/SlideFrame.jsx (variant='divider')",
+   "fromBlocks": [
+    "BLK-SECTION-DIVIDER-GHOST",
+    "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY"
+   ],
+   "seenOn": [
+    "LTP-050",
+    "TOR-62",
+    "TOR-74"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-FOOTER-NAV",
+   "name": "Footer section page-tab navigator",
+   "role": "chrome",
+   "size_px": {
+    "w": 420,
+    "h": 42
+   },
+   "anchor": "bottom-right (in footer band)",
+   "exit_width": "sits in the 42px footer band; left of it = project/confidential lines, centre = footnote",
+   "grid": "ordered tabs (n + label); active tab expands into a deal-primary navy banner with the section name; page number at far right",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--slide-footer-h",
+    "--ls-caps"
+   ],
+   "recipe": "FooterNav: tabs=[{n,label}], active=n, activeLabel shown in navy banner, 9.5pt caps. Managed by SlideFrame footer.",
+   "component": "components/layout/FooterNav.jsx",
+   "fromBlocks": [
+    "BLK-PAGE-TAB-NAV"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "TOR-14"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-SECTION-BAR",
+   "name": "Filled section/category bar (navy small-caps banner)",
+   "role": "chrome",
+   "size_px": {
+    "w": 1240,
+    "h": 30
+   },
+   "variants": [
+    {
+     "label": "bar",
+     "note": "cobalt bar with white end-knobs"
+    },
+    {
+     "label": "chevron",
+     "note": "arrow end"
+    }
+   ],
+   "anchor": "docked (spans its column/region width)",
+   "exit_width": "full width of its host column; content docks beneath",
+   "grid": "filled deal-primary bar, white small-caps 9.5pt label, optional leading icon + trailing chip/logo slot; height ~30px",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "SectionBar: label (uppercase small-caps), variant bar|chevron, height~30, optional icon + trailing. Filled colour — distinct from the grey PanelHeader band.",
+   "component": "components/layout/SectionBar.jsx",
+   "fromBlocks": [
+    "BLK-CATEGORY-HEADER-BAR"
+   ],
+   "seenOn": [
+    "BON-25",
+    "LTP-061"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-PANEL-HEADER-BAND",
+   "name": "Grey small-caps panel header band (non-filled)",
+   "role": "chrome",
+   "size_px": {
+    "w": 1240,
+    "h": 28
+   },
+   "anchor": "docked (tops a panel)",
+   "exit_width": "tops a white panel body beneath it",
+   "grid": "pale-grey band (~28px), centred or left small-caps 9.5pt bold navy label; hairline panel border",
+   "tokens": [
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "PanelHeader: the house panel device = GREY band header + white body (never a filled card). The single most-used chrome element across panels/matrices.",
+   "component": "components/content/PanelHeader.jsx",
+   "fromBlocks": [],
+   "seenOn": [
+    "TOR-63",
+    "TOR-75",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-VERTICAL-TAB",
+   "name": "Navy vertical spine tab (rotated small-caps label)",
+   "role": "chrome",
+   "size_px": {
+    "w": 44,
+    "h": 500
+   },
+   "anchor": "far-left of a block/column, full height",
+   "exit_width": "reserves the left 44px; blocks dock to its right",
+   "grid": "solid navy bar, rotated 9.5pt caps label centred",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--tab-width"
+   ],
+   "recipe": "VerticalTab: rotated uppercase small-caps label. NB: token --tab-width=22px but real renders measure ~44px thickness — calibrate the token.",
+   "component": "components/layout/VerticalTab.jsx",
+   "fromBlocks": [
+    "BLK-VERTICAL-TAB"
+   ],
+   "seenOn": [
+    "LTP-011"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-BRANDNAV-HEADER",
+   "name": "Torino brand-nav header (ISMA/STUVEX/IExT tabs + geographies)",
+   "role": "chrome",
+   "size_px": {
+    "w": 690,
+    "h": 100
+   },
+   "anchor": "top-right (in title zone, flush right)",
+   "exit_width": "sits in the title zone; any content construction docks below",
+   "grid": "row of 3 brand chips (ISMA/STUVEX/IExT, each with mark); active chip SOLID yellow black text, others pale-grey. Beneath, full-width pale-grey 'MAIN GEOGRAPHIES' strip with small-caps label + country-flag chips",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Render the active brand chip solid yellow, others grey; geographies strip with flag chips. Torino appendix/segment chrome.",
+   "component": "TBD - GAP (Torino-specific, not yet a component)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "seenOn": [
+    "TOR-22",
+    "TOR-25",
+    "TOR-75",
+    "TOR-76",
+    "TOR-77",
+    "TOR-78",
+    "TOR-79"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-FULLBLEED-PHOTO-CLAIMBAR",
+   "name": "Full-bleed photo opener with diamond-badge claim bar",
+   "role": "chrome",
+   "size_px": {
+    "w": 1280,
+    "h": 720
+   },
+   "anchor": "full-bleed",
+   "exit_width": "none (occupies whole sheet)",
+   "grid": "edge-to-edge photograph; a translucent pale-grey full-width bar carries a SOLID yellow rotated-square (diamond) badge with a bold black number + a serif claim line",
+   "tokens": [
+    "--deal-primary",
+    "--fs-title",
+    "--shadow-house"
+   ],
+   "recipe": "Torino per-highlight photo opener (one per numbered investment highlight). Divider-family; distinct from the ToC divider.",
+   "component": "TBD - GAP (Torino highlight opener)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FULLBLEED-PHOTO-CLAIMBAR"
+   ],
+   "seenOn": [
+    "TOR-13"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-TARGET-LOGO",
+   "name": "Target-company logo placeholder (mandatory yellow)",
+   "role": "logo",
+   "size_px": {
+    "w": 96,
+    "h": 40
+   },
+   "anchor": "footer-right; also on-slide (milestones, cards)",
+   "exit_width": "small fixed chip; never collapses",
+   "grid": "SOLID yellow fill, 1px RED solid border, 'COMPANY LOGO' navy 9.5pt caps",
+   "tokens": [
+    "--fs-body"
+   ],
+   "recipe": "TargetCompanyLogoPlaceholder / TargetLogo: the swappable per-deal target asset; mandatory yellow placeholder when no real logo. Border is SOLID red (not dashed).",
+   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx",
+   "fromBlocks": [
+    "BLK-COMPANY-LOGO-YELLOW"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "LTP-011",
+    "LTP-012"
+   ]
+  },
+  {
+   "id": "PRIM-CHR-THIRDPARTY-LOGO",
+   "name": "Third-party logo placeholder (grey)",
+   "role": "logo",
+   "size_px": {
+    "w": 96,
+    "h": 40
+   },
+   "anchor": "docked (in logo rows/walls/grids)",
+   "exit_width": "small fixed chip; tiles into logo grids",
+   "grid": "grey framed box for supplier/customer/tech logos (deal content, NOT a brand asset)",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body"
+   ],
+   "recipe": "ThirdPartyLogoPlaceholder: grey placeholder for client/supplier/partner logos (e.g. adix, HOERBIGER, Fagus GreCon on Torino; KAA Gent, PostNL on Bones). Never yellow.",
+   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx (ThirdPartyLogoPlaceholder export)",
+   "fromBlocks": [
+    "BLK-CUSTOMER-LOGO-GRID"
+   ],
+   "seenOn": [
+    "LTP-114",
+    "TOR-76",
+    "TOR-79"
+   ]
+  }
+ ]
+}
