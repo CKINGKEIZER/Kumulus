@@ -333,6 +333,1559 @@
     "TOR-76",
     "TOR-79"
    ]
+  },
+  {
+   "id": "PRIM-KPI-TILE-GRID",
+   "name": "Solid deal-primary KPI tile band (3xN)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 102
+   },
+   "variants": [
+    {
+     "label": "3x2 (6 tiles)",
+     "w": 420,
+     "h": 102
+    },
+    {
+     "label": "3x1 (3 tiles)",
+     "w": 420,
+     "h": 48
+    },
+    {
+     "label": "in-panel",
+     "note": "same grid nested in a pale-grey at-a-glance panel (BON-05)"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "leaves ~468px left column beneath (docks a narrative/bullets block) and the whole chart region to its right",
+   "grid": "3 cols x 2 rows, each tile 136x48px, ~6-8px gap; per tile a bold value line over a small-caps 9.5pt label",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--fs-kpi"
+   ],
+   "recipe": "Grid of solid --deal-primary tiles, white text: bold value (e.g. €[x]m / [x]% / c.[x] / >[x]) over a 9.5pt small-caps label (REVENUE, RECURRING REV., EBITDA MARGIN, FTEs, CUSTOMERS, YEARS OF EXPERIENCE). Re-themed per deal (navy on LTP, purple on Bones). NB: tile value measured ~15px is the hero-KPI exception — calibrate to --fs-kpi rather than introduce a new size. Box never grows: text fits the tile.",
+   "component": "TBD - GAP (candidate KpiTileGrid)",
+   "fromBlocks": [
+    "BLK-KPI-6TILE",
+    "BLK-KPI-TILE-GRID",
+    "BLK-REAL-ATAGLANCE-KPI-FINANCIAL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-PILL-STACK",
+   "name": "Vertical KPI pill stack (navy rounded pills)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 300
+   },
+   "anchor": "left column, lower half",
+   "exit_width": "left column; stacks under a bullet/narrative block",
+   "grid": "3 stacked rows, each = a navy rounded pill holding a bold white metric, with a 9.5pt label to its right; ~hairline above interrupted by a grey down-triangle",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Navy --deal-primary rounded pills (radius-pill), bold white metric (e.g. '> 60,000', '99.84%', '85%'); label sits to the right in 9.5pt. 2-4 rows.",
+   "component": "TBD - GAP (candidate KpiPillStack)",
+   "fromBlocks": [
+    "BLK-KPI-PILL-STACK"
+   ],
+   "seenOn": [
+    "LTP-081"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-INLINE-TRIPLET",
+   "name": "Inline KPI triplet (3 cells, hairline dividers)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 48
+   },
+   "anchor": "docked (inline row)",
+   "exit_width": "spans its host width; sits above/below a related block",
+   "grid": "flex row of 3 cells, 0.25pt grey border-left between cells, centred text, 9.5pt (metric + caption per cell)",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body"
+   ],
+   "recipe": "3 equal cells separated by grey hairlines; each a centred metric over a 9.5pt caption. The lightweight inline alternative to the filled tile grid.",
+   "component": "TBD - GAP (candidate KpiInlineTriplet)",
+   "fromBlocks": [
+    "BLK-KPI-INLINE-TRIPLET"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-BUBBLE",
+   "name": "Circular KPI bubble (pale-blue coin)",
+   "role": "kpi",
+   "size_px": {
+    "w": 92,
+    "h": 92
+   },
+   "anchor": "docked (tiles in pairs, flanking media)",
+   "exit_width": "small fixed coin; pairs left/right of a photo or panel foot",
+   "grid": "pale-blue filled circle, bold metric inside (e.g. '+[x]%', '+[x]k') + a 9.5pt caption alongside",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--fs-kpi"
+   ],
+   "recipe": "Pale-blue tint circle with a bold delta metric; caption to the side. Used as accent stat coins beneath checklists / beside imagery.",
+   "component": "TBD - GAP (candidate KpiBubble)",
+   "fromBlocks": [
+    "BLK-CHECKLIST-KPI-BUBBLES"
+   ],
+   "seenOn": [
+    "LTP-073"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-CHECKPILL-HEADER",
+   "name": "Check-pill header (grey pill with tick labels)",
+   "role": "kpi",
+   "size_px": {
+    "w": 600,
+    "h": 60
+   },
+   "anchor": "top of a half-column (under the block head)",
+   "exit_width": "repeats per half-column; tops the block beneath it",
+   "grid": "pale-grey rounded pill spanning the column; two navy circled-check glyphs each followed by a 9.5pt label, evenly spaced",
+   "tokens": [
+    "--rule-separator",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Grey rounded pill; 2 navy circled-check (✓) glyphs + labels evenly spaced. A feature/qualifier header strip.",
+   "component": "TBD - GAP (candidate CheckPillHeader)",
+   "fromBlocks": [
+    "BLK-CHECKPILL-HEADER"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-HERO-FIGURE",
+   "name": "Single hero KPI figure (the one large-number exception)",
+   "role": "kpi",
+   "size_px": {
+    "w": 180,
+    "h": 72
+   },
+   "anchor": "docked (standalone stat or chart/donut centre)",
+   "exit_width": "sits where a single big number is called for",
+   "grid": "one large metric (--fs-kpi 24px / --fs-kpi-lg 32px) over a 9.5pt small-caps caption",
+   "tokens": [
+    "--fs-kpi",
+    "--fs-kpi-lg",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The canonical home for --fs-kpi — the ONLY text larger than the title. A single big metric + small-caps caption (e.g. donut centre '€[x]m REVENUE', standalone hero stat). Nothing else on a slide may use this size.",
+   "component": "TBD - GAP (candidate HeroKpi)",
+   "fromBlocks": [],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-HERO-TRIANGLE",
+   "name": "Decorative hero triangle (deal-primary wedge)",
+   "role": "kpi",
+   "size_px": {
+    "w": 160,
+    "h": 120
+   },
+   "anchor": "docked (header decoration)",
+   "exit_width": "decorative; sits behind/beside a heading",
+   "grid": "clip-path polygon triangle in --deal-primary with an absolutely-positioned white ellipse centre",
+   "tokens": [
+    "--deal-primary"
+   ],
+   "recipe": "Decorative deal-primary triangle wedge (clip-path) with a white ellipse; a header accent, not a data element.",
+   "component": "TBD - GAP (decorative)",
+   "fromBlocks": [
+    "BLK-HERO-TRIANGLE"
+   ],
+   "seenOn": [
+    "LTP-005"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-COLUMN-CAGR",
+   "name": "Column chart with CAGR bracket (hatched final = forecast)",
+   "role": "chart",
+   "size_px": {
+    "w": 360,
+    "h": 290
+   },
+   "variants": [
+    {
+     "label": "standard",
+     "w": 360,
+     "h": 290
+    },
+    {
+     "label": "mini",
+     "w": 360,
+     "h": 240
+    },
+    {
+     "label": "tall",
+     "w": 420,
+     "h": 400
+    }
+   ],
+   "anchor": "docked (chart region, right of a KPI/narrative block)",
+   "exit_width": "~360px wide plot; tiles beside sibling charts or a KPI band",
+   "grid": "caps title; ~230px plot; solid --deal-primary columns with 9.5pt value labels above each; grey '[x]% CAGR' bracket line spanning first->last",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Solid deal-primary bars, 9.5pt value label above each; a grey CAGR bracket over the span. (house device: the FINAL bar/segment is hatched = forecast/budget). The canonical Kumulus single-series column chart.",
+   "component": "TBD - GAP (candidate ColumnChartCagr)",
+   "fromBlocks": [
+    "BLK-CHART-COLUMN-CAGR",
+    "BLK-CAGR-COLUMN-MINI",
+    "BLK-CAGR-TWOBAR-PANEL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "TOR-75"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-STACKED-COLUMN",
+   "name": "Stacked multi-series column (with growth brackets)",
+   "role": "chart",
+   "size_px": {
+    "w": 420,
+    "h": 400
+   },
+   "variants": [
+    {
+     "label": "value (€m)",
+     "w": 420,
+     "h": 400
+    },
+    {
+     "label": "100%-share",
+     "note": "segments normalised to 100%"
+    },
+    {
+     "label": "period-grid",
+     "note": "3 columns 2020/2025/2030F"
+    }
+   ],
+   "anchor": "docked (chart region / at-a-glance panel)",
+   "exit_width": "~420px; pairs with a margin line or a narrative column",
+   "grid": "stacked segments per column (deal ramp series), in-segment 9.5pt values; optional '+[x]%' growth brackets between columns + right-side CAGR",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Multi-series stacked columns using the deal colour ramp; value labels inside segments; growth brackets between periods. Used for revenue-by-type and market-evolution. (house device: the FINAL bar/segment is hatched = forecast/budget).",
+   "component": "TBD - GAP (candidate StackedColumnChart)",
+   "fromBlocks": [
+    "BLK-STACKED-COLUMN-CAGR2",
+    "BLK-MARKET-EVOLUTION-CAGRGRID",
+    "BLK-STACKED-PCT-BRACKET-CHART",
+    "BLK-MIXSHIFT-VOLUME-CHARTS"
+   ],
+   "seenOn": [
+    "BON-05",
+    "LTP-005"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-COMBO-BARLINE",
+   "name": "Combo bar + overlaid line (value + %)",
+   "role": "chart",
+   "size_px": {
+    "w": 360,
+    "h": 290
+   },
+   "variants": [
+    {
+     "label": "margin-line",
+     "note": "% margin line over €m bars"
+    },
+    {
+     "label": "average-line",
+     "note": "dashed average line + pill readout"
+    }
+   ],
+   "anchor": "docked (chart region)",
+   "exit_width": "~360px; pairs with a sibling column chart",
+   "grid": "deal-primary bars (€m, last hatched) + an overlaid line with 9.5pt %-labels above; legend row (fill = series, line = ratio)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Bars for the €m series, a line for the ratio (EBITDA-margin %, churn average). 9.5pt point labels; legend. (house device: the FINAL bar/segment is hatched = forecast/budget).",
+   "component": "TBD - GAP (candidate ComboBarLineChart)",
+   "fromBlocks": [
+    "BLK-CHART-COMBO-BARLINE",
+    "BLK-CHURN-BARS-AVGLINE"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DELTA-2BAR",
+   "name": "Delta two-bar (start vs end + change pill)",
+   "role": "chart",
+   "size_px": {
+    "w": 300,
+    "h": 190
+   },
+   "anchor": "docked (compact stat)",
+   "exit_width": "small; sits inline in a panel or beside bullets",
+   "grid": "two --deal-primary columns (start, end) with value labels above; a grey rounded '+[x]pp' pill with an arrow between them",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Two columns showing a before/after (e.g. 5.6% -> 8.1%) with a '+[x]pp' delta pill and arrow. The compact improvement chart.",
+   "component": "TBD - GAP (candidate DeltaTwoBar)",
+   "fromBlocks": [
+    "BLK-DELTA-2BAR"
+   ],
+   "seenOn": [
+    "LTP-030"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DUAL-LINE",
+   "name": "Dual line with boxed data points",
+   "role": "chart",
+   "size_px": {
+    "w": 400,
+    "h": 240
+   },
+   "anchor": "docked (chart region)",
+   "exit_width": "~400px; sits above/below a related table or bullets",
+   "grid": "two lines (navy + grey) across the period axis; each data point a filled box holding its % value; two 9.5pt series labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "Two comparative lines (e.g. gross vs EBITDA margin) with boxed % points at each period. A dense two-metric trend.",
+   "component": "TBD - GAP (candidate DualLineBoxed)",
+   "fromBlocks": [
+    "BLK-DUAL-LINE-BOXED"
+   ],
+   "seenOn": [
+    "LTP-064"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-PARETO-CURVE",
+   "name": "Pareto / concentration curve (cumulative, area-filled)",
+   "role": "chart",
+   "size_px": {
+    "w": 400,
+    "h": 400
+   },
+   "anchor": "docked (chart region)",
+   "exit_width": "~400px; pairs with a concentration commentary",
+   "grid": "cumulative revenue curve rising left->right, area-filled pale-blue; x-axis 0..100 (customer %), a highlighted window band + callout",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "Cumulative curve for customer/revenue concentration; area fill; a highlight window (e.g. 'top 20% = [x]%'). The customer-concentration chart.",
+   "component": "TBD - GAP (candidate ParetoCurve)",
+   "fromBlocks": [
+    "BLK-PARETO-CURVE"
+   ],
+   "seenOn": [
+    "LTP-114"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-SEGMENT-BAR",
+   "name": "Horizontal segment share bar (100% split)",
+   "role": "chart",
+   "size_px": {
+    "w": 250,
+    "h": 30
+   },
+   "variants": [
+    {
+     "label": "3-part",
+     "w": 250,
+     "h": 30
+    },
+    {
+     "label": "2-part split",
+     "note": "66/34 style split bar"
+    }
+   ],
+   "anchor": "docked (inline share indicator)",
+   "exit_width": "spans its host width; stacks above square-bullet rows",
+   "grid": "single horizontal bar split into 2-3 deal-ramp segments with white 9.5pt % labels (e.g. 70% / 27% / 3%)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "A 100% horizontal share bar in deal-ramp tints with in-bar % labels. The lightweight alternative to a donut for a single share.",
+   "component": "TBD - GAP (candidate SegmentShareBar)",
+   "fromBlocks": [
+    "BLK-SEGMENT-BAR-3PART",
+    "BLK-PALEBLUE-HEADER-3COL"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DONUT",
+   "name": "Donut chart (labelled, deal-ramp)",
+   "role": "chart",
+   "size_px": {
+    "w": 240,
+    "h": 150
+   },
+   "variants": [
+    {
+     "label": "labelled-legend",
+     "w": 240,
+     "h": 150,
+     "note": "centre name + €[x]m, in-ring %, side legend"
+    },
+    {
+     "label": "4-callout",
+     "w": 320,
+     "h": 240,
+     "note": "4 corner leader callouts"
+    },
+    {
+     "label": "centre-figure",
+     "note": "hero KPI figure in the hole (€[x]m REVENUE)"
+    }
+   ],
+   "anchor": "docked (chart region / in a panel)",
+   "exit_width": "~240-320px; tiles in donut rows or a 2x2 panel grid",
+   "grid": "deal-chart colour ramp segments; white in-ring 9.5pt % labels; centre label (name + value); side legend or corner callouts",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--fs-kpi",
+    "--ls-caps"
+   ],
+   "recipe": "The house donut: deal-ramp segments, white in-ring % at 9.5pt, a centre label (often a --fs-kpi hero figure), and either a side legend or four corner leader callouts. Preferred over a pie; used for revenue/product/geography splits.",
+   "component": "components/charts (verify Donut) or TBD",
+   "fromBlocks": [
+    "BLK-DONUT-LABELLED",
+    "BLK-DONUT-4CALLOUT",
+    "BLK-DONUT-SEGMENT-PANEL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-WATERFALL",
+   "name": "Waterfall / bridge (anchors + float groups)",
+   "role": "chart",
+   "size_px": {
+    "w": 1000,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "revenue-bridge",
+     "note": "tall anchor columns + float groups between"
+    },
+    {
+     "label": "ebitda-bridge",
+     "note": "reported -> adjustments -> adjusted"
+    },
+    {
+     "label": "group-tint",
+     "note": "pale tint band grouping related drivers (Torino)"
+    }
+   ],
+   "anchor": "docked (chart band, usually full content width)",
+   "exit_width": "wide plot; a commentary panel docks beneath (-> WaterfallWithCommentary skeleton)",
+   "grid": "tall --deal-primary anchor columns (start/end periods, bold value + period label) separated by float groups; each float = a bar with value above + driver name beneath; grey rounded CAGR pills with arrow glyphs; optional pale tint band captioned to group drivers",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--radius-pill"
+   ],
+   "recipe": "Anchor columns at each end with floating driver bars between (revenue/EBITDA bridge). CAGR pills over the span; a tint band can group related drivers. The atomic chart behind the WaterfallWithCommentary skeleton.",
+   "component": "TBD - GAP (candidate WaterfallChart)",
+   "fromBlocks": [
+    "BLK-EBITDA-BRIDGE-WATERFALL",
+    "BLK-REAL-TOR-REVENUE-BRIDGE-GROUPTINT",
+    "BLK-REAL-EBITDA-BRIDGE-BOXED-DRIVERS"
+   ],
+   "seenOn": [
+    "TOR-57"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-GAUGE",
+   "name": "Semicircle gauge (NPS / ratio) with pill readout",
+   "role": "chart",
+   "size_px": {
+    "w": 300,
+    "h": 220
+   },
+   "variants": [
+    {
+     "label": "single",
+     "w": 300,
+     "h": 220
+    },
+    {
+     "label": "dual",
+     "note": "two gauges + split bar"
+    }
+   ],
+   "anchor": "docked (in a panel)",
+   "exit_width": "~300px; sits in an NPS/satisfaction panel",
+   "grid": "semicircular gauge, deal-ramp arc + needle/fill to the value; a rounded pill readout of the figure (e.g. 'NPS: 31'); caption beneath",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body",
+    "--fs-kpi"
+   ],
+   "recipe": "Semicircle gauge for a bounded score (NPS, satisfaction, utilisation); arc fill to value + pill readout. The single big number may use --fs-kpi.",
+   "component": "TBD - GAP (candidate Gauge)",
+   "fromBlocks": [
+    "BLK-NPS-GAUGE-PANEL",
+    "BLK-DUAL-GAUGE-SPLITBAR"
+   ],
+   "seenOn": [
+    "BON-08"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-FIN-YEAR",
+   "name": "Financial year/period table (deal-header, subtotals)",
+   "role": "table",
+   "size_px": {
+    "w": 700,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "actuals",
+     "note": "FY19A/FY20A/FY21A + CAGR"
+    },
+    {
+     "label": "business-plan",
+     "note": "grey actual col + yellow FY22B–FY26E + tan CAGR"
+    },
+    {
+     "label": "single-period",
+     "note": "one DEC'21 value column (bridge)"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "~700px; leaves a ~500px right column for PRIM-TABLE-NUMBERED-COMMENTARY",
+   "grid": "italic '€k/€m' corner cell; year columns in solid deal-header cells (yellow on Torino); left row labels 9.5pt with indented italic sub-rows; subtotal/total rows bold above a 0.5pt rule; right-aligned values, negatives in (parentheses); optional numbered footnote chips on rows; optional 'KPIs as % of revenue' block beneath",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-title",
+    "--rule-separator"
+   ],
+   "recipe": "The house financial statement table (P&L, balance sheet, cash flow, NFD bridge). Deal-coloured header cells, bold subtotals over 0.5pt rules, parenthesised negatives. Pairs with the numbered-commentary column.",
+   "component": "TBD - GAP (candidate FinYearTable)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+    "BLK-PNL-BUSINESSPLAN-TABLE",
+    "BLK-NETDEBT-TABLE",
+    "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL"
+   ],
+   "seenOn": [
+    "TOR-64",
+    "TOR-69",
+    "BON-30"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-NUMBERED-COMMENTARY",
+   "name": "Numbered commentary column (chips + paragraphs)",
+   "role": "table",
+   "size_px": {
+    "w": 500,
+    "h": 588
+   },
+   "anchor": "top-right",
+   "exit_width": "~500px; docks to the right of PRIM-TABLE-FIN-YEAR",
+   "grid": "a column of notes, each led by a small deal-coloured number chip matching a table row + a 9.5pt paragraph; optional nested gold ▷ sub-bullets; often inside a hairline-bordered box",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator"
+   ],
+   "recipe": "The commentary sidebar that pairs with a financial table: numbered chips key to table rows, each with an explanatory 9.5pt paragraph. Reusable beside any fin-year table or matrix.",
+   "component": "TBD - GAP (candidate NumberedCommentary)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+    "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL"
+   ],
+   "seenOn": [
+    "TOR-64",
+    "TOR-66"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-COLUMN-DESC",
+   "name": "Small-caps multi-column descriptive table",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "3-col",
+     "note": "e.g. FEATURE / DESCRIPTION / BENEFIT; MARKET TREND / DESCRIPTION / IMPACT"
+    },
+    {
+     "label": "4-6-col",
+     "note": "REVENUE/TYPE/DESCRIPTION/#CLIENTS/PRICING/DRIVERS; PILLAR/DIFFERENTIATOR/IMPACT/KEY FIGURES"
+    },
+    {
+     "label": "rating-col",
+     "note": "trailing IMPORTANCE/IMPACT column as harvey-balls or ratings"
+    },
+    {
+     "label": "pill-header",
+     "note": "header row of pale-grey rounded pills + numeric cells (client selection)"
+    }
+   ],
+   "anchor": "top-left (fills region)",
+   "exit_width": "full width; grouped rows tile the region beneath the header",
+   "grid": "row of underlined small-caps column heads over a black rule; grouped rows of 9.5pt text cells; optional leading pic/icon column and trailing rating/harvey-ball column",
+   "tokens": [
+    "--fs-body",
+    "--ls-caps",
+    "--rule-title",
+    "--rule-separator"
+   ],
+   "recipe": "The workhorse reference table: N small-caps column heads + text rows. Covers feature/benefit, market-trend/impact, use-case/effort, initiative/importance, revenue-stream/driver, description/importance. Add a rating column for impact/importance.",
+   "component": "TBD - GAP (candidate ColumnDescTable)",
+   "fromBlocks": [
+    "BLK-FEATURE-BENEFIT-TABLE",
+    "BLK-TREND-IMPACT-ROWTABLE",
+    "BLK-USECASE-EFFORT-TABLE",
+    "BLK-REVENUE-STREAM-DRIVER-TABLE",
+    "BLK-DESCRIPTION-IMPORTANCE-ROWS",
+    "BLK-PILLAR-DIFFERENTIATOR-TABLE",
+    "BLK-CLIENT-SELECTION-TABLE",
+    "BLK-REAL-TOR-TREND-IMPACT-RELEVANCE-TABLE"
+   ],
+   "seenOn": [
+    "TOR-16",
+    "BON-40"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-COMPARISON",
+   "name": "Comparison / coverage matrix (logo rows x criteria, ticks)",
+   "role": "table",
+   "size_px": {
+    "w": 1000,
+    "h": 600
+   },
+   "variants": [
+    {
+     "label": "tick",
+     "note": "green ✓ / red ✗ cells"
+    },
+    {
+     "label": "harvey-ball",
+     "note": "partial-fill rating cells"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "full width; a legend/footnote docks beneath",
+   "grid": "grey small-caps header row of criteria; rows labelled by a framed logo/flag placeholder + name; body cells = green ✓ / red ✗ or harvey-ball ratings",
+   "tokens": [
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "Competitor/solution coverage matrix: entities down the left (logo or flag), criteria across the top, cells a ✓/✗ or a harvey-ball. The 'who does what' comparison.",
+   "component": "TBD - GAP (candidate ComparisonMatrix)",
+   "fromBlocks": [
+    "BLK-COMPETITOR-FLAGROW-TABLE",
+    "BLK-REAL-TOR-COMPONENT-SOLUTION-TABLE"
+   ],
+   "seenOn": [
+    "TOR-22",
+    "BON-20"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-GLOSSARY",
+   "name": "Glossary term to definition grid",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "2-col yellow-chip",
+     "note": "Torino: solid-yellow term chip + grey definition bar"
+    },
+    {
+     "label": "3-col",
+     "note": "three side-by-side term/definition columns"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "full width; 2-3 columns of term/definition rows",
+   "grid": "each entry = a term chip (solid deal-colour or bold caps) docked to a light-grey definition bar (9.5pt, wraps); 2-3 columns, even rhythm",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator"
+   ],
+   "recipe": "Abbreviations/definitions grid; term chip + grey definition bar. Appendix reference pages, plain serif title with (1/2)/(2/2).",
+   "component": "TBD - GAP (candidate GlossaryGrid)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID",
+    "BLK-REAL-GLOSSARY-3COL-TERM-TABLE"
+   ],
+   "seenOn": [
+    "TOR-81",
+    "TOR-82"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-ACQTARGET-SCAN",
+   "name": "Acquisition-target scan table",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 588
+   },
+   "anchor": "top-left",
+   "exit_width": "full region; footnote beneath",
+   "grid": "grey small-caps header band; columns HQ (flag) · Company (numbered badge, yellow=priority) · Revenue · EBITDA · FTE · Description · Rationale (▷ bullets) · then coverage columns (each ✓/✗); ~5 target rows, 0.25pt rules",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "M&A buy-side target scan: flag + numbered badge + financials + description + rationale bullets + fit/coverage ✓/✗ columns. Paired (1/2)+(2/2).",
+   "component": "TBD - GAP (candidate AcqTargetScan)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE"
+   ],
+   "seenOn": [
+    "TOR-60",
+    "TOR-61"
+   ]
+  },
+  {
+   "id": "PRIM-PANEL-GREY-HEADER",
+   "name": "White panel with grey small-caps header + body",
+   "role": "panel",
+   "size_px": {
+    "w": 468,
+    "h": 470
+   },
+   "variants": [
+    {
+     "label": "bullet-body",
+     "note": "header band + square-bullet lines (BLK-DESCRIPTION-PANEL)"
+    },
+    {
+     "label": "mini-caption",
+     "w": 300,
+     "h": 137,
+     "note": "small labelled panel holding a mini-viz/short list"
+    },
+    {
+     "label": "content-holder",
+     "note": "header band + any primitive nested inside (chart/table/diagram)"
+    }
+   ],
+   "anchor": "docked (fills its column/region cell)",
+   "exit_width": "panel width; tiles with sibling panels at a 16px gap",
+   "grid": "1px grey border; grey small-caps header band ~28px (PRIM-CHR-PANEL-HEADER-BAND) over a white body holding bullets or a nested primitive",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps",
+    "--space-4"
+   ],
+   "recipe": "The house container: grey caps header band + white body (never a filled card). Wraps bullets or any nested primitive (chart, table, diagram). The building block behind every '3 grey-header columns' / 'labelled panel' layout.",
+   "component": "components/content/PanelHeader.jsx (header) + body TBD",
+   "fromBlocks": [
+    "BLK-DESCRIPTION-PANEL",
+    "BLK-REAL-CHECKLIST-STATUS-PANEL",
+    "BLK-REAL-DUAL-MARGIN-LINE-PANEL",
+    "BLK-REAL-LETTERED-STRATEGY-LIST"
+   ],
+   "seenOn": [
+    "TOR-63",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-NARRATIVE-BULLETS",
+   "name": "Bullet list (square / triangle / tick)",
+   "role": "narrative",
+   "size_px": {
+    "w": 560,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "square",
+     "note": "navy/cobalt square bullets"
+    },
+    {
+     "label": "triangle",
+     "note": "gold ▷ triangle bullets"
+    },
+    {
+     "label": "tick",
+     "note": "navy circled-check ✓ (checklist of qualities)"
+    },
+    {
+     "label": "nested",
+     "note": "second-level indent 49px"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its column; the fundamental text block that fills panel bodies",
+   "grid": "9.5pt lines, ~1-2 each; bullet indent 24px (L1) / 49px (L2); 10px inter-bullet gap; leading square/▷/✓ marker in navy",
+   "tokens": [
+    "--fs-body",
+    "--bullet-gap",
+    "--bullet-indent-1",
+    "--bullet-indent-2",
+    "--deal-primary"
+   ],
+   "recipe": "Terse bullet copy, square navy bullets by default (▷ triangle for softer lists, ✓ circled-tick for quality checklists). Sentences often drop the article for brevity. The single most common content block.",
+   "component": "TBD - GAP (candidate BulletList)",
+   "fromBlocks": [
+    "BLK-ICONROW-STACKLIST",
+    "BLK-VERTICAL-TAB-BULLETROW"
+   ],
+   "seenOn": [
+    "TOR-63",
+    "BON-05",
+    "LTP-073"
+   ]
+  },
+  {
+   "id": "PRIM-NARRATIVE-BADGE-ROWS",
+   "name": "Leading-marker rows (numbered coin / %-badge / colour-card + text)",
+   "role": "narrative",
+   "size_px": {
+    "w": 880,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "numbered-coin",
+     "note": "navy numbered coin 1..N (highlights / process)"
+    },
+    {
+     "label": "pct-badge",
+     "note": "navy '[x]%' badge per row (drivers)"
+    },
+    {
+     "label": "circle-badge",
+     "note": "pale-blue circular badge + value"
+    },
+    {
+     "label": "colour-card",
+     "note": "tall rounded colour card as the row marker"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its column; 4-7 rows stack top->bottom",
+   "grid": "N rows, each = a leading marker (numbered coin / %-badge / circle badge / colour card) + a 9.5pt claim or label, on a pale-grey pill or plain row; even vertical rhythm",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--radius-pill"
+   ],
+   "recipe": "The atomic unit of numbered investment highlights, market-driver rows, and ranked lists. A leading marker keys the row; the marker style carries the meaning (sequence = numbered coin, magnitude = %-badge). Row count 4-7. Feeds the NumberedHighlights / HeroArc skeletons.",
+   "component": "TBD - GAP (candidate BadgeRows)",
+   "fromBlocks": [
+    "BLK-NUMBERED-PILL-ROWS",
+    "BLK-CIRCLEBADGE-BULLET-RAIL",
+    "BLK-PCT-BADGE-PANEL-STACK",
+    "BLK-DRIVER-COLORCARD-ROWS",
+    "BLK-NUMBERED-ARROW-STACK-PANEL"
+   ],
+   "seenOn": [
+    "LTP-012",
+    "BON-14"
+   ]
+  },
+  {
+   "id": "PRIM-CALLOUT-BOX",
+   "name": "Inset callout / emphasis box",
+   "role": "narrative",
+   "size_px": {
+    "w": 560,
+    "h": 220
+   },
+   "variants": [
+    {
+     "label": "warning",
+     "note": "'! DANGER…' yellow-flagged emphasis"
+    },
+    {
+     "label": "illustrative",
+     "note": "italic 'Illustrative' tag"
+    },
+    {
+     "label": "disclaimer",
+     "note": "transaction-background / contact card"
+    }
+   ],
+   "anchor": "docked (inset within a panel or column)",
+   "exit_width": "inset block; sits between bullet groups",
+   "grid": "bordered/tinted inset box; bold italic small-caps caption (optional ! flag) + a short italic 9.5pt body",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator",
+    "--radius-sm"
+   ],
+   "recipe": "An inset emphasis box for a warning, an 'Illustrative' note, or a transaction/disclaimer card. Sets short qualifying copy apart from the main bullets.",
+   "component": "TBD - GAP (candidate CalloutBox)",
+   "fromBlocks": [
+    "BLK-CONTACT-DISCLAIMER-CARD",
+    "BLK-UPLIFT-PAIR-PANEL"
+   ],
+   "seenOn": [
+    "TOR-75",
+    "LTP-039"
+   ]
+  },
+  {
+   "id": "PRIM-PROCESS-CHEVRON",
+   "name": "Interlocking chevron process (N steps)",
+   "role": "process",
+   "size_px": {
+    "w": 940,
+    "h": 120
+   },
+   "variants": [
+    {
+     "label": "3-6 step",
+     "note": "interlocking navy chevrons with caps labels"
+    },
+    {
+     "label": "icon",
+     "note": "icon per chevron"
+    },
+    {
+     "label": "progressbar",
+     "note": "chevron progress with detail grid beneath"
+    },
+    {
+     "label": "expanding-band",
+     "note": "land / lock-in / expand widening tinted stages"
+    },
+    {
+     "label": "value-chain",
+     "note": "stages carry product photos / supplier logos"
+    }
+   ],
+   "anchor": "docked (band across a column/region)",
+   "exit_width": "spans its width; a detail row/grid docks beneath each step",
+   "grid": "3-6 interlocking navy chevrons, each a caps step label; optional icon; optional detail card beneath each; deal-primary fills, white labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The house step sequence: interlocking chevrons for a process/phase flow. Order carries meaning. Variants add icons, a progress detail grid, an expanding land/expand band, or a value-chain (photo/logo stages).",
+   "component": "TBD - GAP (candidate ChevronProcess)",
+   "fromBlocks": [
+    "BLK-CHEVRON-PROCESS-6STEP",
+    "BLK-CHEVRON-GROWTH-DEVICE-MOCKS",
+    "BLK-3ICON-CHEVRON-BAND",
+    "BLK-4CHEVRON-PROGRESSBAR-GRID",
+    "BLK-LAND-LOCKIN-EXPAND"
+   ],
+   "seenOn": [
+    "TOR-33",
+    "LTP-039"
+   ]
+  },
+  {
+   "id": "PRIM-TIMELINE-AXIS",
+   "name": "Dated timeline with nodes + label cards",
+   "role": "timeline",
+   "size_px": {
+    "w": 900,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "horizontal-arrow",
+     "note": "date band + arrow + milestone cards"
+    },
+    {
+     "label": "icon-nodes",
+     "note": "nodes with icons along the axis"
+    },
+    {
+     "label": "milestone-checklist",
+     "note": "axis + status checklist"
+    },
+    {
+     "label": "swimlane",
+     "note": "multiple lanes across the timeline"
+    },
+    {
+     "label": "vertical",
+     "note": "vertical date rail + cards"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "spans its width; status/detail column may dock to the side",
+   "grid": "a dated axis (e.g. Dec-21 … Dec'24) with nodes; label cards (navy) each carrying 1-2 square bullets; optional numbered status column",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Acquisition / integration / roadmap timeline: a dated axis with nodes and label cards. Horizontal arrow, icon-node, milestone-checklist, swimlane, or vertical variants.",
+   "component": "TBD - GAP (candidate TimelineAxis)",
+   "fromBlocks": [
+    "BLK-INTEGRATION-TIMELINE-STATUS",
+    "BLK-ACQUISITION-TIMELINE-CARDS",
+    "BLK-STAGE-TIMELINE-ICONNODES",
+    "BLK-CHECKLIST-MILESTONE-AXIS",
+    "BLK-ROADMAP-SWIMLANE-CHEVRON"
+   ],
+   "seenOn": [
+    "LTP-125",
+    "BON-33"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-FUNNEL",
+   "name": "Tapered funnel with stage callouts",
+   "role": "diagram",
+   "size_px": {
+    "w": 900,
+    "h": 620
+   },
+   "anchor": "docked (left/centre region)",
+   "exit_width": "pairs with a right callout/table column",
+   "grid": "a 3-D tapered funnel (elliptical mouth, narrowing stages) with in-stage labels/values and leader callouts to the side",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Conversion/qualification funnel: tapering stages with values + side callouts. Market-sizing (TAM/SAM/SOM) or pipeline narrowing.",
+   "component": "TBD - GAP (candidate Funnel)",
+   "fromBlocks": [
+    "BLK-3D-FUNNEL-STAGE-CALLOUTS"
+   ],
+   "seenOn": [
+    "LTP-090"
+   ]
+  },
+  {
+   "id": "PRIM-FLOW-ADDITIVE-STACK",
+   "name": "Additive stack (cards joined by + badges)",
+   "role": "process",
+   "size_px": {
+    "w": 560,
+    "h": 560
+   },
+   "anchor": "docked (left/column)",
+   "exit_width": "fills its column; detail columns dock to the right of each card",
+   "grid": "tall navy label cards stacked vertically, each pair joined by a white circled-plus (+) badge; each card + a row of square-bullet detail",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The '+ + =' additive device: stacked navy cards joined by ⊕ badges to show components summing to a whole (offering build-up, value stack). Distinct from a sequence — order is not temporal.",
+   "component": "TBD - GAP (candidate AdditiveStack)",
+   "fromBlocks": [
+    "BLK-ADDITIVE-DRIVER-ROWS",
+    "BLK-PLUSSTACK-TABS-ROWS"
+   ],
+   "seenOn": [
+    "LTP-037",
+    "LTP-039"
+   ]
+  },
+  {
+   "id": "PRIM-MATRIX-2X2",
+   "name": "2x2 positioning matrix (axes + quadrants)",
+   "role": "matrix",
+   "size_px": {
+    "w": 620,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "axis-logo-plot"
+    },
+    {
+     "label": "card-grid-highlight"
+    },
+    {
+     "label": "multiply (A×B)"
+    }
+   ],
+   "anchor": "docked (left/centre region)",
+   "exit_width": "pairs with a right profile/legend column",
+   "grid": "two labelled axes (bottom + left, small-caps end labels); four quadrants; entities plotted as logo chips or cards; optional highlight quadrant",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Competitive-landscape / prioritisation 2x2: labelled axes, plotted logos or cards, a highlighted target quadrant. Also the '×' value-driver 2x2 (Volume × Price).",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-2X2-CARDGRID-HIGHLIGHT",
+    "BLK-REAL-2AXIS-LOGO-QUADRANT-MAP",
+    "BLK-VALUE-DRIVER-MULTIPLY",
+    "BLK-BU-MATRIX-4ROW"
+   ],
+   "seenOn": [
+    "BON-20",
+    "LTP-036"
+   ]
+  },
+  {
+   "id": "PRIM-CARD-GRID",
+   "name": "Uniform icon / picture card grid (NxM)",
+   "role": "matrix",
+   "size_px": {
+    "w": 900,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "2x4"
+    },
+    {
+     "label": "8-up"
+    },
+    {
+     "label": "icon"
+    },
+    {
+     "label": "picture"
+    }
+   ],
+   "anchor": "docked (fills region)",
+   "exit_width": "full region; grid of equal cells",
+   "grid": "an N×M grid of equal cards, each = a framed pic/icon chip + a caps label + a short 9.5pt line; hairline borders, even gaps",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The uniform capability / product / icon-card grid (2×4, 8-up). Equal cells, no axes. Distinct from the 2x2 (which encodes position).",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-ICON-CARD-GRID-8",
+    "BLK-2X2-CARDGRID-HIGHLIGHT",
+    "BLK-PICCARD-GRID-2X4"
+   ],
+   "seenOn": [
+    "LTP-061",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-TREE",
+   "name": "Hierarchy tree (org / ownership / service)",
+   "role": "diagram",
+   "size_px": {
+    "w": 740,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "ownership"
+    },
+    {
+     "label": "org-tiers"
+    },
+    {
+     "label": "service-tree"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its region; a callout/legend column may dock beside",
+   "grid": "parent box(es) over child boxes joined by hairline elbow connectors; navy parent, grey-blue children; caps labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "Org chart, ownership/shareholder tree, or service-offering tree: boxes joined by elbow connectors. Levels carry hierarchy.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-OWNERSHIP-TREE-SCOPE",
+    "BLK-SERVICE-TREE-3NODE",
+    "BLK-ORGCHART-LEADERSHIP-TIERS",
+    "BLK-TSHAPE-HIERARCHY-CARDS"
+   ],
+   "seenOn": [
+    "LTP-125",
+    "BON-46"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-RING",
+   "name": "Ring / cycle / radial wheel",
+   "role": "diagram",
+   "size_px": {
+    "w": 620,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "segmented-callout"
+    },
+    {
+     "label": "cycle-arrows"
+    },
+    {
+     "label": "quadrant-wheel"
+    }
+   ],
+   "anchor": "docked (left/centre)",
+   "exit_width": "pairs with side callouts or a logo wall",
+   "grid": "a segmented navy ring (white radial gaps) around a centre pic/label; leader lines to callouts; or a cycle of arrows; or a quadrant wheel",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Segmented ring with radial callouts, a cyclical arrow loop, or a quadrant wheel. Centre often a framed picture or hero figure.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-RING-RADIAL-LABELS-4BARS",
+    "BLK-RING-RADIAL-CALLOUTS-LOGOWALL",
+    "BLK-ARROW-CYCLE-6LABEL",
+    "BLK-REAL-4QUADRANT-WHEEL-PANELS"
+   ],
+   "seenOn": [
+    "LTP-112",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-PYRAMID",
+   "name": "Tiered pyramid / perspective tiers",
+   "role": "diagram",
+   "size_px": {
+    "w": 620,
+    "h": 520
+   },
+   "anchor": "docked",
+   "exit_width": "pairs with a right detail column",
+   "grid": "a pyramid split into horizontal tiers (widening downward), each tier a caps label + value; perspective or flat",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Layered pyramid for tiers/segments (market layers, capability levels). Order = top-down importance/size.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-PERSPECTIVE-PYRAMID-TIERS",
+    "BLK-SEGMENT-PYRAMID-SECTOR-CONC"
+   ],
+   "seenOn": [
+    "LTP-090"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-VENN",
+   "name": "Overlapping circles (Venn)",
+   "role": "diagram",
+   "size_px": {
+    "w": 600,
+    "h": 560
+   },
+   "anchor": "docked (in a panel)",
+   "exit_width": "sits in a panel; overlap region is the point",
+   "grid": "2-3 translucent overlapping circles, each a caps label; the intersection captioned (cross-sell / combined capability)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Overlapping circles to show intersection/cross-sell/combined capability. The overlap carries the message.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-VENN-3CIRCLE-PANEL",
+    "BLK-VENN-CROSSSELL-PROFILES"
+   ],
+   "seenOn": [
+    "LTP-100"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-HUB-SPOKE",
+   "name": "Central hub with spokes (diamond hub)",
+   "role": "diagram",
+   "size_px": {
+    "w": 740,
+    "h": 620
+   },
+   "variants": [
+    {
+     "label": "diamond-hub (Torino)"
+    },
+    {
+     "label": "converging"
+    },
+    {
+     "label": "3-pillar"
+    }
+   ],
+   "anchor": "docked (fills region)",
+   "exit_width": "full region; the canonical highlight hub",
+   "grid": "a central node (diamond / circle / card) with spokes to surrounding cards or badges; Torino uses a solid-yellow diamond hub",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Central hub radiating to surrounding points: investment-highlight hub (Torino diamond), converging-drivers hub, 3-pillar summary. Centre = the thesis.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-REAL-TOR-DIAMOND-HIGHLIGHT-HUB",
+    "BLK-CONVERGING-HUB-DIAGRAM",
+    "BLK-HUB-3PILLAR-SUMMARY",
+    "BLK-TRIANGLE-PLAY-DIAGRAM"
+   ],
+   "seenOn": [
+    "TOR-08"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-RISING-ARROW",
+   "name": "Growth ladder / rising trajectory",
+   "role": "diagram",
+   "size_px": {
+    "w": 560,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "rising-arrow"
+    },
+    {
+     "label": "staircase-ladder"
+    },
+    {
+     "label": "swoosh-journey"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "spans its width; step labels along the rise",
+   "grid": "a tilted rising arrow (or staircase) left->right with italic small-caps stage labels; may carry value chips at each step",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Upward trajectory device: rising arrow / staircase / growth ladder with stage labels. Shows a today->future build-up.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-RISING-ARROW-STEPS",
+    "BLK-TODAY-FUTURE-GROWTH-LADDER",
+    "BLK-SWOOSH-NUMBERED-JOURNEY"
+   ],
+   "seenOn": [
+    "LTP-043"
+   ]
+  },
+  {
+   "id": "PRIM-DASHBOARD-MULTIGRAPH",
+   "name": "Grey dashboard panel hosting N chart cells",
+   "role": "diagram",
+   "size_px": {
+    "w": 756,
+    "h": 265
+   },
+   "variants": [
+    {
+     "label": "3-graph"
+    },
+    {
+     "label": "N-cell"
+    }
+   ],
+   "anchor": "bottom-right (or docked band)",
+   "exit_width": "leaves a ~454px docking slot to its left when bottom-right anchored",
+   "grid": "a grey (#f2f2f2) rounded panel split into N (usually 3) sub-cells by 0.25pt vertical rules; each cell a small-caps header + a mini chart (donut | bars | line)",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The 3-graph dashboard container: a grey panel hosting several PRIM-CHART-* cells side by side under small-caps heads. The house 'financial profile / KPI dashboard' block.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-DASHBOARD-3GRAPH",
+    "BLK-REAL-TOR-SERVICE-3PANEL-DASHBOARD",
+    "BLK-HR-3PANEL-DASHBOARD"
+   ],
+   "seenOn": [
+    "BON-05",
+    "TOR-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-GEO-MAP",
+   "name": "Geo choropleth / priority flag map",
+   "role": "diagram",
+   "size_px": {
+    "w": 820,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "choropleth"
+    },
+    {
+     "label": "priority-flaglist"
+    }
+   ],
+   "anchor": "docked (left/half)",
+   "exit_width": "pairs with a country table or icon-stat column",
+   "grid": "a country/region choropleth (density ramp) with a legend; or a priority-ranked list of country rows (flag + value + expand icon)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Geographic footprint: choropleth map with density legend, or a priority flag-list of countries with values. Coverage / geographic-presence slides.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-GEO-PRIORITY-FLAGLIST",
+    "BLK-GEO-HUB-TABLE-PICGRID",
+    "BLK-COVERAGE-MAP-ICONSTATS"
+   ],
+   "seenOn": [
+    "LTP-020"
+   ]
+  },
+  {
+   "id": "PRIM-MEDIA-PHOTO-PANEL",
+   "name": "Framed photo / image slot (house shadow)",
+   "role": "media",
+   "size_px": {
+    "w": 420,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "framed",
+     "note": "bordered image with house shadow"
+    },
+    {
+     "label": "full-bleed",
+     "note": "edge-to-edge (dividers/covers)"
+    },
+    {
+     "label": "arc-masked",
+     "note": "convex arc mask on one edge (hero-arc photo)"
+    },
+    {
+     "label": "caption",
+     "note": "caps caption strip beneath"
+    }
+   ],
+   "anchor": "docked (fills its cell/half)",
+   "exit_width": "image slot; the rest of the region takes text/charts",
+   "grid": "a framed image placeholder; floating variant carries --shadow-house (60% transparency, 5pt blur, 0 offset); optional caps caption",
+   "tokens": [
+    "--shadow-house",
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The house imagery slot — product photos, site photos, screenshots. Floating images get the house shadow. Real transparent-PNG assets go here; the biggest 'AI tell' is a generic/empty image, so always request real assets.",
+   "component": "TBD - GAP (candidate PhotoPanel)",
+   "fromBlocks": [
+    "BLK-REAL-SITE-PHOTOPANEL-INVENTORY",
+    "BLK-HERO-ARC-PHOTO"
+   ],
+   "seenOn": [
+    "TOR-75",
+    "LTP-013"
+   ]
+  },
+  {
+   "id": "PRIM-MEDIA-FLOORPLAN",
+   "name": "Colour-coded architectural floorplan panel",
+   "role": "media",
+   "size_px": {
+    "w": 600,
+    "h": 400
+   },
+   "anchor": "docked (centre column of a facility gallery)",
+   "exit_width": "pairs with text panels left/right",
+   "grid": "an architectural floor plan with rooms tinted by function (yellow=offices, green=warehouse/shipping, blue=production/assembly) and labelled; grey small-caps panel header ('GROUND FLOOR')",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Facility floor plan with function-coloured rooms + labels, under a PanelHeader. Used on HQ / facility-tour slides paired with photo and text panels.",
+   "component": "TBD - GAP (candidate FloorplanPanel)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY"
+   ],
+   "seenOn": [
+    "TOR-80"
+   ]
   }
  ]
 }

@@ -1,0 +1,142 @@
+{
+ "note": "STRUCTURE SKELETONS (rebuild-plan Phase B, layer 2). Each = a SlideStructure: a grid + ordered NAMED SLOTS that each take a primitive (primitives.json), plus a density contract (a skeleton with an empty required slot is invalid). Clustered from the ~146 whole-slide composites in block-library.json. Rendered inside SlideFrame (content region 1240x588). Built in batches per component-queue.json; each verified side-by-side vs its exemplar render (G3).",
+ "structures": [
+  {
+   "id": "STR-FIN-STATEMENT-COMMENTARY",
+   "name": "Financial statement + numbered commentary",
+   "archetype": "financial-statements",
+   "grid": "2-col: table left ~700px | commentary right ~500px, 16px gutter, full 588 height",
+   "slots": [
+    {
+     "slot": "table",
+     "primitive": "PRIM-TABLE-FIN-YEAR",
+     "anchor": "top-left",
+     "w": 700,
+     "required": true
+    },
+    {
+     "slot": "commentary",
+     "primitive": "PRIM-TABLE-NUMBERED-COMMENTARY",
+     "anchor": "top-right",
+     "w": 500,
+     "required": true
+    }
+   ],
+   "density": "2 slots, both required; commentary chips key to table rows",
+   "fromComposites": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+    "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL",
+    "BLK-PNL-BUSINESSPLAN-TABLE"
+   ],
+   "exemplars": [
+    "TOR-64",
+    "TOR-66",
+    "TOR-69",
+    "TOR-72"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-FIN-CASHFLOW-DASHBOARD",
+   "name": "Cash flow: 3 mini-tables + chart + notes",
+   "archetype": "financial-statements",
+   "grid": "2-col: left ~430px stack of 3 mini-tables | right ~780px split chart-over-notes",
+   "slots": [
+    {
+     "slot": "tables",
+     "primitive": "PRIM-TABLE-FIN-YEAR",
+     "anchor": "top-left",
+     "w": 430,
+     "required": true,
+     "repeat": 3
+    },
+    {
+     "slot": "chart",
+     "primitive": "PRIM-CHART-STACKED-COLUMN",
+     "anchor": "top-right",
+     "w": 780,
+     "required": true
+    },
+    {
+     "slot": "notes",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "bottom-right",
+     "w": 780,
+     "required": true
+    }
+   ],
+   "density": "3 stacked mini-tables + 1 quarterly stacked-bar chart + 1 labelled notes panel; all required",
+   "fromComposites": [
+    "BLK-REAL-TOR-CASHFLOW-3TABLE-CHART-NOTES"
+   ],
+   "exemplars": [
+    "TOR-67"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-FIN-FCF-TABLES-NOTES",
+   "name": "Business-plan FCF: 3 multi-year tables + notes",
+   "archetype": "financial-statements",
+   "grid": "2-col: left ~720px stack of 3 multi-year tables | right ~490px labelled notes panel",
+   "slots": [
+    {
+     "slot": "tables",
+     "primitive": "PRIM-TABLE-FIN-YEAR",
+     "anchor": "top-left",
+     "w": 720,
+     "required": true,
+     "repeat": 3
+    },
+    {
+     "slot": "notes",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "top-right",
+     "w": 490,
+     "required": true
+    }
+   ],
+   "density": "3 stacked multi-year tables + labelled notes; no chart (vs cashflow-dashboard)",
+   "fromComposites": [
+    "BLK-REAL-TOR-BP-FCF-3TABLE-NOTES"
+   ],
+   "exemplars": [
+    "TOR-73"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-FIN-BRIDGE-COMMENTARY",
+   "name": "Bridge / waterfall + drivers commentary",
+   "archetype": "financial-statements",
+   "grid": "chart band ~330px top (full width) | commentary/driver panel ~230px bottom (full width)",
+   "slots": [
+    {
+     "slot": "bridge",
+     "primitive": "PRIM-CHART-WATERFALL",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    },
+    {
+     "slot": "drivers",
+     "primitive": "PRIM-TABLE-NUMBERED-COMMENTARY",
+     "anchor": "bottom-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "1 waterfall/bridge + a driver/commentary panel; both required",
+   "fromComposites": [
+    "BLK-REAL-TOR-FCF-3DRIVER-NFDBRIDGE",
+    "BLK-REAL-EBITDA-BRIDGE-BOXED-DRIVERS",
+    "BLK-REAL-TOR-REVENUE-BRIDGE-GROUPTINT"
+   ],
+   "exemplars": [
+    "TOR-53",
+    "TOR-57"
+   ],
+   "component": "TBD - G3"
+  }
+ ]
+}
