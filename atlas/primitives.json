@@ -950,7 +950,7 @@
     "--rule-separator"
    ],
    "recipe": "The commentary sidebar that pairs with a financial table: numbered chips key to table rows, each with an explanatory 9.5pt paragraph. Reusable beside any fin-year table or matrix.",
-   "component": "TBD - GAP (candidate NumberedCommentary)",
+   "component": "components/data/NumberedCommentary.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
     "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL"

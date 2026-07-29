@@ -34,7 +34,8 @@
     "TOR-69",
     "TOR-72"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/FinancialStatement.jsx",
+   "verified": "vs TOR-64 — structure PASS (see recreation-log.md); theme finding logged"
   },
   {
    "id": "STR-FIN-CASHFLOW-DASHBOARD",
