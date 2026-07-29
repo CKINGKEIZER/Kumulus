@@ -1,0 +1,87 @@
+{
+  "note": "Controlled vocabulary for the Kumulus slide atlas (Plan §6 + §5.1). Families/subfamilies are the semantic axis; layoutGeometry / evidenceType / dataShape / density are orthogonal descriptors. Every real-IM slide is classified into exactly one family+subfamily; chrome and appendix are their own families.",
+  "families": {
+    "document-chrome": {
+      "label": "Document chrome",
+      "subfamilies": ["cover", "disclaimer", "contents", "section-divider", "subsection-divider", "sources", "end-page"]
+    },
+    "company-at-a-glance": {
+      "label": "Company at a glance",
+      "subfamilies": ["kpi-overview", "business-mix", "geographic-mix", "revenue-profile", "short-description"]
+    },
+    "company-history": {
+      "label": "Company history",
+      "subfamilies": ["linear-timeline", "multi-lane-timeline", "acquisition-timeline", "product-launch-timeline"]
+    },
+    "investment-highlights": {
+      "label": "Investment highlights",
+      "subfamilies": ["numbered-highlights", "two-page-highlights", "highlights-with-charts", "highlights-with-proof"]
+    },
+    "transaction-overview": {
+      "label": "Transaction overview",
+      "subfamilies": ["scope", "ownership-tree", "transaction-financials", "adviser-contact", "perimeter"]
+    },
+    "market-sizing": {
+      "label": "Market sizing",
+      "subfamilies": ["market-size", "segment-growth", "regional-comparison", "volumes", "penetration", "end-market-exposure"]
+    },
+    "market-structure": {
+      "label": "Market structure",
+      "subfamilies": ["value-chain", "distributor-role", "stakeholder-map", "ecosystem", "channel-structure"]
+    },
+    "market-drivers": {
+      "label": "Market drivers",
+      "subfamilies": ["trends", "regulation", "demographics", "consolidation", "technology", "spending"]
+    },
+    "competitive-positioning": {
+      "label": "Competitive positioning",
+      "subfamilies": ["matrix-2x2", "competitor-spectrum", "barriers-to-entry", "differentiation-table"]
+    },
+    "product-offering": {
+      "label": "Product & service offering",
+      "subfamilies": ["product-categories", "service-lines", "technical-product", "offering-overview", "product-cards", "segmentation"]
+    },
+    "business-model": {
+      "label": "Business model",
+      "subfamilies": ["revenue-model", "recurring-model", "commercial-model", "installed-base", "unit-economics", "positioning", "supplier-value-proposition", "value-chain", "service-model"]
+    },
+    "operations": {
+      "label": "Value chain & operations",
+      "subfamilies": ["procurement", "warehouse-logistics", "service-delivery", "process-flow", "it-systems", "geographic-presence"]
+    },
+    "customers": {
+      "label": "Customers",
+      "subfamilies": ["concentration", "retention-churn", "segmentation", "cohorts", "customer-journey", "logos", "route-to-market", "pipeline"]
+    },
+    "organization": {
+      "label": "Organization",
+      "subfamilies": ["management", "org-chart", "department-split", "fte-tenure", "culture"]
+    },
+    "strategy": {
+      "label": "Strategy",
+      "subfamilies": ["strategic-pillars", "initiatives", "roadmap", "business-plan-drivers", "implementation-status"]
+    },
+    "m-and-a": {
+      "label": "M&A",
+      "subfamilies": ["acquisition-strategy", "target-criteria", "target-universe", "target-profiles", "integration-roadmap"]
+    },
+    "financial-overview": {
+      "label": "Financial overview",
+      "subfamilies": ["revenue", "ebitda", "margins", "recurring-revenue", "cash-generation", "nwc", "capex"]
+    },
+    "financial-statements": {
+      "label": "Financial statements",
+      "subfamilies": ["pnl", "balance-sheet", "cash-flow", "nfd", "ebitda-adjustments", "business-plan", "nwc"]
+    },
+    "appendix": {
+      "label": "Appendix",
+      "subfamilies": ["sources", "glossary", "assumptions", "detailed-products", "abbreviations"]
+    }
+  },
+  "layoutGeometry": ["one-column", "two-column", "three-column", "four-column", "two-panel", "grid", "chart-plus-commentary", "bridge-plus-commentary", "table", "full-bleed", "hub-diagram", "timeline", "matrix"],
+  "evidenceType": ["quantitative", "qualitative", "logos", "chart", "table", "photo", "diagram", "quote", "mixed"],
+  "dataShape": ["single-value", "series", "comparison", "distribution", "hierarchy", "flow", "geographic", "none"],
+  "density": ["low", "medium", "high"],
+  "canonicalStatus": ["canonical", "supporting", "rejected", "placeholder"],
+  "canonicalPreference": ["Project Bones", "Long template", "Project Torino", "Project Spark"]
+}

@@ -1,0 +1,48 @@
+<!-- @dsCard group="Brand" viewport="700x210" name="House formatting rules" subtitle="Intern-manual specs: house shadow, rule weights, bullet metrics" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body{margin:0;font-family:var(--font-sans);color:var(--text-body);background:var(--white);padding:18px 22px}
+  .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start}
+  .lab{font-weight:var(--fw-bold);font-size:var(--fs-label);letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--text-label);margin-bottom:10px}
+  .spec{font-size:9px;color:var(--text-muted);margin-top:8px;line-height:1.4}
+  .shadowbox{width:120px;height:64px;background:var(--white);border-radius:var(--radius-md);box-shadow:var(--shadow-house)}
+  .rule1{border-top:var(--rule-title);margin:14px 0 4px}
+  .rule2{border-top:var(--rule-separator);margin:14px 0 4px}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--bullet-gap);font-size:var(--fs-body-sm)}
+  li{display:flex;gap:8px;align-items:baseline}
+  .sq{width:5px;height:5px;background:var(--bullet);flex:0 0 auto;transform:translateY(-2px)}
+  .tri{color:var(--bullet);font-size:.75em}
+</style>
+</head>
+<body>
+<div class="row">
+  <div>
+    <div class="lab">House shadow</div>
+    <div class="shadowbox"></div>
+    <div class="spec">transparency 60% · size 100%<br/>blur 5pt · angle 0° · distance 0<br/><code>--shadow-house</code></div>
+  </div>
+  <div>
+    <div class="lab">Rules</div>
+    <div style="font-size:11px">Title underline</div>
+    <div class="rule1"></div>
+    <div class="spec">black 0.5pt · <code>--rule-title</code></div>
+    <div style="font-size:11px;margin-top:10px">Any other separator</div>
+    <div class="rule2"></div>
+    <div class="spec">grey 0.25pt · <code>--rule-separator</code></div>
+  </div>
+  <div>
+    <div class="lab">Bullets</div>
+    <ul>
+      <li><span class="sq"></span><span>Square marker — IM body copy</span></li>
+      <li><span class="tri">▷</span><span>Triangle marker — formatting bible</span></li>
+      <li style="margin-left:25px"><span class="sq"></span><span>Nested: indent 0.48cm → 1cm</span></li>
+    </ul>
+    <div class="spec">3pt before/after · <code>--bullet-gap / --bullet-indent-1/2</code></div>
+  </div>
+</div>
+</body>
+</html>

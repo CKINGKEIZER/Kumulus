@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "kumulus/evidence.schema.json",
+  "title": "Evidence & fact model",
+  "description": "Traceability model for sell-side claims (Plan §10.2, §17). Every factual claim and superlative on a slide should trace to a source fact. Three layers are kept distinct: source fact -> permitted interpretation -> slide language, so the system neither copies raw source text nor makes unsupported claims.",
+  "definitions": {
+    "fact": {
+      "type": "object",
+      "required": ["fact", "sourceDocument", "page", "factType", "confidence", "directOrDerived"],
+      "properties": {
+        "fact": {"type": "string", "description": "The atomic fact, e.g. 'The company has 42 employees and average tenure is nine years.'"},
+        "sourceDocument": {"type": "string"},
+        "page": {"type": "integer"},
+        "sourceText": {"type": "string", "description": "Verbatim supporting snippet."},
+        "factType": {"enum": ["financial", "operational", "commercial", "market", "organizational", "strategic", "management-statement"]},
+        "period": {"type": ["string", "null"], "description": "e.g. FY24A, LTM Jun-25."},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "directOrDerived": {"enum": ["direct", "derived"]}
+      }
+    },
+    "claimTrace": {
+      "type": "object",
+      "description": "Links a generated slide element to the facts that support it (Plan §10.7).",
+      "required": ["elementId", "generatedText", "supportedBy"],
+      "properties": {
+        "elementId": {"type": "string"},
+        "generatedText": {"type": "string"},
+        "layer1_sourceFact": {"type": "string"},
+        "layer2_interpretation": {"type": "string", "description": "Permitted reading of the fact (e.g. 'The workforce is experienced and stable.')"},
+        "layer3_slideLanguage": {"type": "string", "description": "Final sell-side sentence."},
+        "supportedBy": {"type": "array", "items": {"type": "object", "properties": {"document": {"type": "string"}, "page": {"type": "integer"}}}},
+        "adjectiveClassUsed": {"enum": ["A", "B", "C", "none"]},
+        "evidenceForAdjective": {"type": "string", "description": "Required when a Class-B/C adjective is used (see adjective-lexicon.json claimEvidence)."}
+      }
+    }
+  },
+  "bulletHierarchy": {
+    "note": "Plan §12 — do not write every element as a full paragraph.",
+    "level1_takeaway": "Complete, assertive sentence (slide takeaway or key-message band).",
+    "level2_heading": "Short, argumentative section heading (small-caps).",
+    "level3_mainBullet": "One complete sentence, one argument.",
+    "level4_supportingBullet": "Adds evidence, explanation or qualification."
+  }
+}

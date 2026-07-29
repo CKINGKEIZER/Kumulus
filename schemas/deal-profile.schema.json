@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "kumulus/deal-profile.schema.json",
+  "title": "DealProfile",
+  "description": "Industry-neutral transaction model (Plan §9). A new DealProfile is created per assignment. No field defaults to Dynamate / Project Spark / IT-services assumptions; industry and terminology are inferred from uploaded source material.",
+  "type": "object",
+  "required": ["projectName", "companyName"],
+  "properties": {
+    "projectName": { "type": "string", "default": "Project [x]", "description": "Deal codename, e.g. 'Project Boreas'." },
+    "companyName": { "type": "string", "default": "[Target company]" },
+    "advisorLogo": { "type": "string", "description": "Advisor (Kumulus) mark — permanent; do not swap per deal.", "default": "assets/logos/kumulus-logo.png" },
+    "targetCompanyLogo": { "type": ["string", "null"], "default": null, "description": "Target logo; null renders the mandatory yellow placeholder." },
+    "thirdPartyLogos": { "type": "array", "items": { "type": "string" }, "description": "Supplier / customer logos (neutral grey placeholder when absent)." },
+    "industry": { "type": ["string", "null"], "default": null },
+    "subsector": { "type": ["string", "null"], "default": null },
+    "businessDescription": { "type": ["string", "null"], "default": null },
+    "headquarters": { "type": ["string", "null"], "default": null },
+    "geographies": { "type": "array", "items": { "type": "string" } },
+    "businessUnits": { "type": "array", "items": { "type": "object" } },
+    "productsAndServices": { "type": "array", "items": { "type": "object" } },
+    "customerTypes": { "type": "array", "items": { "type": "string" } },
+    "revenueModels": { "type": "array", "items": { "type": "string" } },
+    "operatingAssets": { "type": "array", "items": { "type": "object" } },
+    "keyMetrics": { "type": "object" },
+    "historicalFinancials": { "type": "object" },
+    "businessPlan": { "type": "object" },
+    "investmentHighlights": { "type": "array", "items": { "type": "object" } },
+    "risksAndQualifications": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "array", "items": { "type": "object", "properties": { "document": { "type": "string" }, "page": { "type": "integer" } } } }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,55 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Layout — bars, tabs, footer nav" subtitle="SectionBar, VerticalTab, FooterNav" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--white); color: var(--text-body); }
+  .wrap { padding: 26px 28px; display: flex; flex-direction: column; gap: 18px; }
+  .row { display: flex; gap: 16px; align-items: stretch; }
+  .cap { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div>
+      <div class="cap">SectionBar — bar &amp; chevron</div>
+      <div style="display:flex; gap:16px;">
+        <div id="bar1" style="width:260px;"></div>
+        <div id="bar2" style="width:260px;"></div>
+      </div>
+    </div>
+    <div class="row" style="height:120px;">
+      <div style="display:flex; gap:10px; height:120px;">
+        <div id="vt1"></div>
+        <div id="vt2"></div>
+      </div>
+      <div style="flex:1;">
+        <div class="cap">FooterNav</div>
+        <div id="fn"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const { SectionBar, VerticalTab, FooterNav } = window.KumulusPartnersDesignSystem_533273;
+    const tabs = [
+      {n:1,label:"Company"},{n:2,label:"Market"},{n:3,label:"Financials"},
+      {n:4,label:"Customers & go-to-market"},{n:5,label:"Operations"},
+      {n:6,label:"People"},{n:7,label:"Outlook"},{n:"A",label:"Appendix"}
+    ];
+    ReactDOM.createRoot(document.getElementById('bar1')).render(<SectionBar label="Impressive client portfolio" />);
+    ReactDOM.createRoot(document.getElementById('bar2')).render(<SectionBar label="Results" variant="chevron" />);
+    ReactDOM.createRoot(document.getElementById('vt1')).render(<VerticalTab label="USPs" />);
+    ReactDOM.createRoot(document.getElementById('vt2')).render(<VerticalTab label="Lock-in mechanisms" />);
+    ReactDOM.createRoot(document.getElementById('fn')).render(
+      <FooterNav tabs={tabs} active={4} activeLabel="Customers & go-to-market" />
+    );
+  </script>
+</body>
+</html>
