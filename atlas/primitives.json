@@ -887,6 +887,415 @@
    "seenOn": [
     "BON-08"
    ]
+  },
+  {
+   "id": "PRIM-TABLE-FIN-YEAR",
+   "name": "Financial year/period table (deal-header, subtotals)",
+   "role": "table",
+   "size_px": {
+    "w": 700,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "actuals",
+     "note": "FY19A/FY20A/FY21A + CAGR"
+    },
+    {
+     "label": "business-plan",
+     "note": "grey actual col + yellow FY22B–FY26E + tan CAGR"
+    },
+    {
+     "label": "single-period",
+     "note": "one DEC'21 value column (bridge)"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "~700px; leaves a ~500px right column for PRIM-TABLE-NUMBERED-COMMENTARY",
+   "grid": "italic '€k/€m' corner cell; year columns in solid deal-header cells (yellow on Torino); left row labels 9.5pt with indented italic sub-rows; subtotal/total rows bold above a 0.5pt rule; right-aligned values, negatives in (parentheses); optional numbered footnote chips on rows; optional 'KPIs as % of revenue' block beneath",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-title",
+    "--rule-separator"
+   ],
+   "recipe": "The house financial statement table (P&L, balance sheet, cash flow, NFD bridge). Deal-coloured header cells, bold subtotals over 0.5pt rules, parenthesised negatives. Pairs with the numbered-commentary column.",
+   "component": "TBD - GAP (candidate FinYearTable)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+    "BLK-PNL-BUSINESSPLAN-TABLE",
+    "BLK-NETDEBT-TABLE",
+    "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL"
+   ],
+   "seenOn": [
+    "TOR-64",
+    "TOR-69",
+    "BON-30"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-NUMBERED-COMMENTARY",
+   "name": "Numbered commentary column (chips + paragraphs)",
+   "role": "table",
+   "size_px": {
+    "w": 500,
+    "h": 588
+   },
+   "anchor": "top-right",
+   "exit_width": "~500px; docks to the right of PRIM-TABLE-FIN-YEAR",
+   "grid": "a column of notes, each led by a small deal-coloured number chip matching a table row + a 9.5pt paragraph; optional nested gold ▷ sub-bullets; often inside a hairline-bordered box",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator"
+   ],
+   "recipe": "The commentary sidebar that pairs with a financial table: numbered chips key to table rows, each with an explanatory 9.5pt paragraph. Reusable beside any fin-year table or matrix.",
+   "component": "TBD - GAP (candidate NumberedCommentary)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+    "BLK-REAL-QOE-STATEMENT-NUMBERED-RAIL"
+   ],
+   "seenOn": [
+    "TOR-64",
+    "TOR-66"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-COLUMN-DESC",
+   "name": "Small-caps multi-column descriptive table",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "3-col",
+     "note": "e.g. FEATURE / DESCRIPTION / BENEFIT; MARKET TREND / DESCRIPTION / IMPACT"
+    },
+    {
+     "label": "4-6-col",
+     "note": "REVENUE/TYPE/DESCRIPTION/#CLIENTS/PRICING/DRIVERS; PILLAR/DIFFERENTIATOR/IMPACT/KEY FIGURES"
+    },
+    {
+     "label": "rating-col",
+     "note": "trailing IMPORTANCE/IMPACT column as harvey-balls or ratings"
+    },
+    {
+     "label": "pill-header",
+     "note": "header row of pale-grey rounded pills + numeric cells (client selection)"
+    }
+   ],
+   "anchor": "top-left (fills region)",
+   "exit_width": "full width; grouped rows tile the region beneath the header",
+   "grid": "row of underlined small-caps column heads over a black rule; grouped rows of 9.5pt text cells; optional leading pic/icon column and trailing rating/harvey-ball column",
+   "tokens": [
+    "--fs-body",
+    "--ls-caps",
+    "--rule-title",
+    "--rule-separator"
+   ],
+   "recipe": "The workhorse reference table: N small-caps column heads + text rows. Covers feature/benefit, market-trend/impact, use-case/effort, initiative/importance, revenue-stream/driver, description/importance. Add a rating column for impact/importance.",
+   "component": "TBD - GAP (candidate ColumnDescTable)",
+   "fromBlocks": [
+    "BLK-FEATURE-BENEFIT-TABLE",
+    "BLK-TREND-IMPACT-ROWTABLE",
+    "BLK-USECASE-EFFORT-TABLE",
+    "BLK-REVENUE-STREAM-DRIVER-TABLE",
+    "BLK-DESCRIPTION-IMPORTANCE-ROWS",
+    "BLK-PILLAR-DIFFERENTIATOR-TABLE",
+    "BLK-CLIENT-SELECTION-TABLE",
+    "BLK-REAL-TOR-TREND-IMPACT-RELEVANCE-TABLE"
+   ],
+   "seenOn": [
+    "TOR-16",
+    "BON-40"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-COMPARISON",
+   "name": "Comparison / coverage matrix (logo rows x criteria, ticks)",
+   "role": "table",
+   "size_px": {
+    "w": 1000,
+    "h": 600
+   },
+   "variants": [
+    {
+     "label": "tick",
+     "note": "green ✓ / red ✗ cells"
+    },
+    {
+     "label": "harvey-ball",
+     "note": "partial-fill rating cells"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "full width; a legend/footnote docks beneath",
+   "grid": "grey small-caps header row of criteria; rows labelled by a framed logo/flag placeholder + name; body cells = green ✓ / red ✗ or harvey-ball ratings",
+   "tokens": [
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "Competitor/solution coverage matrix: entities down the left (logo or flag), criteria across the top, cells a ✓/✗ or a harvey-ball. The 'who does what' comparison.",
+   "component": "TBD - GAP (candidate ComparisonMatrix)",
+   "fromBlocks": [
+    "BLK-COMPETITOR-FLAGROW-TABLE",
+    "BLK-REAL-TOR-COMPONENT-SOLUTION-TABLE"
+   ],
+   "seenOn": [
+    "TOR-22",
+    "BON-20"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-GLOSSARY",
+   "name": "Glossary term to definition grid",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "2-col yellow-chip",
+     "note": "Torino: solid-yellow term chip + grey definition bar"
+    },
+    {
+     "label": "3-col",
+     "note": "three side-by-side term/definition columns"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "full width; 2-3 columns of term/definition rows",
+   "grid": "each entry = a term chip (solid deal-colour or bold caps) docked to a light-grey definition bar (9.5pt, wraps); 2-3 columns, even rhythm",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator"
+   ],
+   "recipe": "Abbreviations/definitions grid; term chip + grey definition bar. Appendix reference pages, plain serif title with (1/2)/(2/2).",
+   "component": "TBD - GAP (candidate GlossaryGrid)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID",
+    "BLK-REAL-GLOSSARY-3COL-TERM-TABLE"
+   ],
+   "seenOn": [
+    "TOR-81",
+    "TOR-82"
+   ]
+  },
+  {
+   "id": "PRIM-TABLE-ACQTARGET-SCAN",
+   "name": "Acquisition-target scan table",
+   "role": "table",
+   "size_px": {
+    "w": 1240,
+    "h": 588
+   },
+   "anchor": "top-left",
+   "exit_width": "full region; footnote beneath",
+   "grid": "grey small-caps header band; columns HQ (flag) · Company (numbered badge, yellow=priority) · Revenue · EBITDA · FTE · Description · Rationale (▷ bullets) · then coverage columns (each ✓/✗); ~5 target rows, 0.25pt rules",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "M&A buy-side target scan: flag + numbered badge + financials + description + rationale bullets + fit/coverage ✓/✗ columns. Paired (1/2)+(2/2).",
+   "component": "TBD - GAP (candidate AcqTargetScan)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE"
+   ],
+   "seenOn": [
+    "TOR-60",
+    "TOR-61"
+   ]
+  },
+  {
+   "id": "PRIM-PANEL-GREY-HEADER",
+   "name": "White panel with grey small-caps header + body",
+   "role": "panel",
+   "size_px": {
+    "w": 468,
+    "h": 470
+   },
+   "variants": [
+    {
+     "label": "bullet-body",
+     "note": "header band + square-bullet lines (BLK-DESCRIPTION-PANEL)"
+    },
+    {
+     "label": "mini-caption",
+     "w": 300,
+     "h": 137,
+     "note": "small labelled panel holding a mini-viz/short list"
+    },
+    {
+     "label": "content-holder",
+     "note": "header band + any primitive nested inside (chart/table/diagram)"
+    }
+   ],
+   "anchor": "docked (fills its column/region cell)",
+   "exit_width": "panel width; tiles with sibling panels at a 16px gap",
+   "grid": "1px grey border; grey small-caps header band ~28px (PRIM-CHR-PANEL-HEADER-BAND) over a white body holding bullets or a nested primitive",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps",
+    "--space-4"
+   ],
+   "recipe": "The house container: grey caps header band + white body (never a filled card). Wraps bullets or any nested primitive (chart, table, diagram). The building block behind every '3 grey-header columns' / 'labelled panel' layout.",
+   "component": "components/content/PanelHeader.jsx (header) + body TBD",
+   "fromBlocks": [
+    "BLK-DESCRIPTION-PANEL",
+    "BLK-REAL-CHECKLIST-STATUS-PANEL",
+    "BLK-REAL-DUAL-MARGIN-LINE-PANEL",
+    "BLK-REAL-LETTERED-STRATEGY-LIST"
+   ],
+   "seenOn": [
+    "TOR-63",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-NARRATIVE-BULLETS",
+   "name": "Bullet list (square / triangle / tick)",
+   "role": "narrative",
+   "size_px": {
+    "w": 560,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "square",
+     "note": "navy/cobalt square bullets"
+    },
+    {
+     "label": "triangle",
+     "note": "gold ▷ triangle bullets"
+    },
+    {
+     "label": "tick",
+     "note": "navy circled-check ✓ (checklist of qualities)"
+    },
+    {
+     "label": "nested",
+     "note": "second-level indent 49px"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its column; the fundamental text block that fills panel bodies",
+   "grid": "9.5pt lines, ~1-2 each; bullet indent 24px (L1) / 49px (L2); 10px inter-bullet gap; leading square/▷/✓ marker in navy",
+   "tokens": [
+    "--fs-body",
+    "--bullet-gap",
+    "--bullet-indent-1",
+    "--bullet-indent-2",
+    "--deal-primary"
+   ],
+   "recipe": "Terse bullet copy, square navy bullets by default (▷ triangle for softer lists, ✓ circled-tick for quality checklists). Sentences often drop the article for brevity. The single most common content block.",
+   "component": "TBD - GAP (candidate BulletList)",
+   "fromBlocks": [
+    "BLK-ICONROW-STACKLIST",
+    "BLK-VERTICAL-TAB-BULLETROW"
+   ],
+   "seenOn": [
+    "TOR-63",
+    "BON-05",
+    "LTP-073"
+   ]
+  },
+  {
+   "id": "PRIM-NARRATIVE-BADGE-ROWS",
+   "name": "Leading-marker rows (numbered coin / %-badge / colour-card + text)",
+   "role": "narrative",
+   "size_px": {
+    "w": 880,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "numbered-coin",
+     "note": "navy numbered coin 1..N (highlights / process)"
+    },
+    {
+     "label": "pct-badge",
+     "note": "navy '[x]%' badge per row (drivers)"
+    },
+    {
+     "label": "circle-badge",
+     "note": "pale-blue circular badge + value"
+    },
+    {
+     "label": "colour-card",
+     "note": "tall rounded colour card as the row marker"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its column; 4-7 rows stack top->bottom",
+   "grid": "N rows, each = a leading marker (numbered coin / %-badge / circle badge / colour card) + a 9.5pt claim or label, on a pale-grey pill or plain row; even vertical rhythm",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--radius-pill"
+   ],
+   "recipe": "The atomic unit of numbered investment highlights, market-driver rows, and ranked lists. A leading marker keys the row; the marker style carries the meaning (sequence = numbered coin, magnitude = %-badge). Row count 4-7. Feeds the NumberedHighlights / HeroArc skeletons.",
+   "component": "TBD - GAP (candidate BadgeRows)",
+   "fromBlocks": [
+    "BLK-NUMBERED-PILL-ROWS",
+    "BLK-CIRCLEBADGE-BULLET-RAIL",
+    "BLK-PCT-BADGE-PANEL-STACK",
+    "BLK-DRIVER-COLORCARD-ROWS",
+    "BLK-NUMBERED-ARROW-STACK-PANEL"
+   ],
+   "seenOn": [
+    "LTP-012",
+    "BON-14"
+   ]
+  },
+  {
+   "id": "PRIM-CALLOUT-BOX",
+   "name": "Inset callout / emphasis box",
+   "role": "narrative",
+   "size_px": {
+    "w": 560,
+    "h": 220
+   },
+   "variants": [
+    {
+     "label": "warning",
+     "note": "'! DANGER…' yellow-flagged emphasis"
+    },
+    {
+     "label": "illustrative",
+     "note": "italic 'Illustrative' tag"
+    },
+    {
+     "label": "disclaimer",
+     "note": "transaction-background / contact card"
+    }
+   ],
+   "anchor": "docked (inset within a panel or column)",
+   "exit_width": "inset block; sits between bullet groups",
+   "grid": "bordered/tinted inset box; bold italic small-caps caption (optional ! flag) + a short italic 9.5pt body",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--rule-separator",
+    "--radius-sm"
+   ],
+   "recipe": "An inset emphasis box for a warning, an 'Illustrative' note, or a transaction/disclaimer card. Sets short qualifying copy apart from the main bullets.",
+   "component": "TBD - GAP (candidate CalloutBox)",
+   "fromBlocks": [
+    "BLK-CONTACT-DISCLAIMER-CARD",
+    "BLK-UPLIFT-PAIR-PANEL"
+   ],
+   "seenOn": [
+    "TOR-75",
+    "LTP-039"
+   ]
   }
  ]
 }
