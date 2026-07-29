@@ -27,11 +27,11 @@ Information density is the point — add structure and detail, never whitespace.
 - **No emoji, no exclamation marks.** British/EU spelling, `€`.
 
 ## How to build a slide (the procedure)
-1. **Classify intent by meaning** → a `family` in `routing/taxonomy.json`.
-2. **Pick the template** in `routing/template-registry.json` (check useWhen/avoidWhen; it names required inputs, layout patterns, canonical source slide, fallback).
-3. **Choose a layout pattern** from `routing/layout-patterns.json` by the data shape you actually have (series→ColumnChart, share→Donut, hierarchy→tree, flow→ProcessFlow, comparison→ComparisonMatrix). Browse `atlas/layout-patterns.html` — 40 real archetypes — for how Kumulus packs the boxes.
-4. **Write copy** with the writing engine: pick a sentence family (`writing/sentence-patterns.json`), obey adjective classes (`adjective-lexicon.json`), rotate connectives (`repetition-rules.json`), keep fact→interpretation→language separation (`schemas/evidence.schema.json`).
-5. **Apply the house rules above**, then theme the deal.
+1. **Classify intent by meaning** → a `family` in `routing/taxonomy.json` (guided by `routing/selection-rules.md`).
+2. **Pick the template + skeleton.** Open **`routing/skeleton-index.md`** — one row per intent → `template-registry.json` template → the **`SlideStructure` skeleton** that builds it (in `components/structures/`) → the facts it needs. Confirm useWhen/avoidWhen in `routing/template-registry.json`.
+3. **Render the skeleton, filled.** A skeleton is a fixed grid of named, required slots — it is *correct by construction* (right margins, one text size, no empty voids). Render the named component **inside a `<SlideFrame>`** and fill every slot. Read the skeleton's **`.prompt.md`** (next to its `.jsx`) for exact props + a worked example. Pick leaf visuals by the data shape you actually have (series→`ColumnChart`, share→`Donut`, hierarchy→`Tree`, flow→`ProcessFlow`, comparison→`ComparisonMatrix`, bridge→`WaterfallChart`). Browse `atlas/layout-patterns.html` for how Kumulus packs the boxes. **Do not hand-lay-out a slide when a skeleton exists** — that is the v1 mistake.
+4. **Write copy** with the writing engine: pick a sentence family (`writing/sentence-patterns.json`), obey adjective classes (`writing/adjective-lexicon.json`), rotate connectives (`writing/repetition-rules.json`), keep fact→interpretation→language separation (`schemas/evidence.schema.json`). Never invent numbers — mark unknowns `[x]`.
+5. **Apply the house rules above**, then theme the deal. Validate with `node atlas/verify/guards.js`.
 
 ## Deal theming (industry-neutral)
 The visual system is constant; colour + terminology change per deal. Put a theme
@@ -43,7 +43,10 @@ back to the mandatory yellow placeholder); third-party logos → `ThirdPartyLogo
 
 ## Building artifacts
 - **HTML slide** = fixed 1280×720 root, `<link rel="stylesheet" href="…/styles.css">`, React+Babel pinned tags, `<script src="…/_ds_bundle.js">`, then `const { … } = window.KumulusPartnersDesignSystem_533273`. Scale-to-fit script for preview. See any file in `ui_kits/im-slides/` as a working example.
-- **Components** live under `components/**`; every one has a `.d.ts` (props) and most a `@dsCard` demo. Compose slides from them — do not re-implement primitives.
+- **Two layers, both on the bundle** (`window.KumulusPartnersDesignSystem_533273`):
+  - **`SlideStructure` skeletons** (`components/structures/*`, 28 of them) — whole-slide layouts with named required slots. **Start here** — pick one via `routing/skeleton-index.md`, render inside `SlideFrame`, fill the slots. This is what guarantees a dense, on-margin, single-text-size slide.
+  - **Primitives** (`components/{layout,content,charts,data,diagrams,feature,media}/*`, 54) — the bricks the skeletons compose (tables, charts, KPI grids, diagrams, panels). Use directly only to fill a slot or for a bespoke case.
+  - Every component has a `.d.ts` (props) + a `.prompt.md` (usage example). Compose from them — never re-implement a primitive, never hand-position outside a skeleton when one fits.
 - If working in production code, copy assets out and read the rules here to design as a Kumulus expert.
 
 ## The source atlas (ground truth)
