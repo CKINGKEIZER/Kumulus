@@ -1296,6 +1296,596 @@
     "TOR-75",
     "LTP-039"
    ]
+  },
+  {
+   "id": "PRIM-PROCESS-CHEVRON",
+   "name": "Interlocking chevron process (N steps)",
+   "role": "process",
+   "size_px": {
+    "w": 940,
+    "h": 120
+   },
+   "variants": [
+    {
+     "label": "3-6 step",
+     "note": "interlocking navy chevrons with caps labels"
+    },
+    {
+     "label": "icon",
+     "note": "icon per chevron"
+    },
+    {
+     "label": "progressbar",
+     "note": "chevron progress with detail grid beneath"
+    },
+    {
+     "label": "expanding-band",
+     "note": "land / lock-in / expand widening tinted stages"
+    },
+    {
+     "label": "value-chain",
+     "note": "stages carry product photos / supplier logos"
+    }
+   ],
+   "anchor": "docked (band across a column/region)",
+   "exit_width": "spans its width; a detail row/grid docks beneath each step",
+   "grid": "3-6 interlocking navy chevrons, each a caps step label; optional icon; optional detail card beneath each; deal-primary fills, white labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The house step sequence: interlocking chevrons for a process/phase flow. Order carries meaning. Variants add icons, a progress detail grid, an expanding land/expand band, or a value-chain (photo/logo stages).",
+   "component": "TBD - GAP (candidate ChevronProcess)",
+   "fromBlocks": [
+    "BLK-CHEVRON-PROCESS-6STEP",
+    "BLK-CHEVRON-GROWTH-DEVICE-MOCKS",
+    "BLK-3ICON-CHEVRON-BAND",
+    "BLK-4CHEVRON-PROGRESSBAR-GRID",
+    "BLK-LAND-LOCKIN-EXPAND"
+   ],
+   "seenOn": [
+    "TOR-33",
+    "LTP-039"
+   ]
+  },
+  {
+   "id": "PRIM-TIMELINE-AXIS",
+   "name": "Dated timeline with nodes + label cards",
+   "role": "timeline",
+   "size_px": {
+    "w": 900,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "horizontal-arrow",
+     "note": "date band + arrow + milestone cards"
+    },
+    {
+     "label": "icon-nodes",
+     "note": "nodes with icons along the axis"
+    },
+    {
+     "label": "milestone-checklist",
+     "note": "axis + status checklist"
+    },
+    {
+     "label": "swimlane",
+     "note": "multiple lanes across the timeline"
+    },
+    {
+     "label": "vertical",
+     "note": "vertical date rail + cards"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "spans its width; status/detail column may dock to the side",
+   "grid": "a dated axis (e.g. Dec-21 … Dec'24) with nodes; label cards (navy) each carrying 1-2 square bullets; optional numbered status column",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Acquisition / integration / roadmap timeline: a dated axis with nodes and label cards. Horizontal arrow, icon-node, milestone-checklist, swimlane, or vertical variants.",
+   "component": "TBD - GAP (candidate TimelineAxis)",
+   "fromBlocks": [
+    "BLK-INTEGRATION-TIMELINE-STATUS",
+    "BLK-ACQUISITION-TIMELINE-CARDS",
+    "BLK-STAGE-TIMELINE-ICONNODES",
+    "BLK-CHECKLIST-MILESTONE-AXIS",
+    "BLK-ROADMAP-SWIMLANE-CHEVRON"
+   ],
+   "seenOn": [
+    "LTP-125",
+    "BON-33"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-FUNNEL",
+   "name": "Tapered funnel with stage callouts",
+   "role": "diagram",
+   "size_px": {
+    "w": 900,
+    "h": 620
+   },
+   "anchor": "docked (left/centre region)",
+   "exit_width": "pairs with a right callout/table column",
+   "grid": "a 3-D tapered funnel (elliptical mouth, narrowing stages) with in-stage labels/values and leader callouts to the side",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Conversion/qualification funnel: tapering stages with values + side callouts. Market-sizing (TAM/SAM/SOM) or pipeline narrowing.",
+   "component": "TBD - GAP (candidate Funnel)",
+   "fromBlocks": [
+    "BLK-3D-FUNNEL-STAGE-CALLOUTS"
+   ],
+   "seenOn": [
+    "LTP-090"
+   ]
+  },
+  {
+   "id": "PRIM-FLOW-ADDITIVE-STACK",
+   "name": "Additive stack (cards joined by + badges)",
+   "role": "process",
+   "size_px": {
+    "w": 560,
+    "h": 560
+   },
+   "anchor": "docked (left/column)",
+   "exit_width": "fills its column; detail columns dock to the right of each card",
+   "grid": "tall navy label cards stacked vertically, each pair joined by a white circled-plus (+) badge; each card + a row of square-bullet detail",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The '+ + =' additive device: stacked navy cards joined by ⊕ badges to show components summing to a whole (offering build-up, value stack). Distinct from a sequence — order is not temporal.",
+   "component": "TBD - GAP (candidate AdditiveStack)",
+   "fromBlocks": [
+    "BLK-ADDITIVE-DRIVER-ROWS",
+    "BLK-PLUSSTACK-TABS-ROWS"
+   ],
+   "seenOn": [
+    "LTP-037",
+    "LTP-039"
+   ]
+  },
+  {
+   "id": "PRIM-MATRIX-2X2",
+   "name": "2x2 positioning matrix (axes + quadrants)",
+   "role": "matrix",
+   "size_px": {
+    "w": 620,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "axis-logo-plot"
+    },
+    {
+     "label": "card-grid-highlight"
+    },
+    {
+     "label": "multiply (A×B)"
+    }
+   ],
+   "anchor": "docked (left/centre region)",
+   "exit_width": "pairs with a right profile/legend column",
+   "grid": "two labelled axes (bottom + left, small-caps end labels); four quadrants; entities plotted as logo chips or cards; optional highlight quadrant",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Competitive-landscape / prioritisation 2x2: labelled axes, plotted logos or cards, a highlighted target quadrant. Also the '×' value-driver 2x2 (Volume × Price).",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-2X2-CARDGRID-HIGHLIGHT",
+    "BLK-REAL-2AXIS-LOGO-QUADRANT-MAP",
+    "BLK-VALUE-DRIVER-MULTIPLY",
+    "BLK-BU-MATRIX-4ROW"
+   ],
+   "seenOn": [
+    "BON-20",
+    "LTP-036"
+   ]
+  },
+  {
+   "id": "PRIM-CARD-GRID",
+   "name": "Uniform icon / picture card grid (NxM)",
+   "role": "matrix",
+   "size_px": {
+    "w": 900,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "2x4"
+    },
+    {
+     "label": "8-up"
+    },
+    {
+     "label": "icon"
+    },
+    {
+     "label": "picture"
+    }
+   ],
+   "anchor": "docked (fills region)",
+   "exit_width": "full region; grid of equal cells",
+   "grid": "an N×M grid of equal cards, each = a framed pic/icon chip + a caps label + a short 9.5pt line; hairline borders, even gaps",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The uniform capability / product / icon-card grid (2×4, 8-up). Equal cells, no axes. Distinct from the 2x2 (which encodes position).",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-ICON-CARD-GRID-8",
+    "BLK-2X2-CARDGRID-HIGHLIGHT",
+    "BLK-PICCARD-GRID-2X4"
+   ],
+   "seenOn": [
+    "LTP-061",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-TREE",
+   "name": "Hierarchy tree (org / ownership / service)",
+   "role": "diagram",
+   "size_px": {
+    "w": 740,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "ownership"
+    },
+    {
+     "label": "org-tiers"
+    },
+    {
+     "label": "service-tree"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "fills its region; a callout/legend column may dock beside",
+   "grid": "parent box(es) over child boxes joined by hairline elbow connectors; navy parent, grey-blue children; caps labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--rule-separator"
+   ],
+   "recipe": "Org chart, ownership/shareholder tree, or service-offering tree: boxes joined by elbow connectors. Levels carry hierarchy.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-OWNERSHIP-TREE-SCOPE",
+    "BLK-SERVICE-TREE-3NODE",
+    "BLK-ORGCHART-LEADERSHIP-TIERS",
+    "BLK-TSHAPE-HIERARCHY-CARDS"
+   ],
+   "seenOn": [
+    "LTP-125",
+    "BON-46"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-RING",
+   "name": "Ring / cycle / radial wheel",
+   "role": "diagram",
+   "size_px": {
+    "w": 620,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "segmented-callout"
+    },
+    {
+     "label": "cycle-arrows"
+    },
+    {
+     "label": "quadrant-wheel"
+    }
+   ],
+   "anchor": "docked (left/centre)",
+   "exit_width": "pairs with side callouts or a logo wall",
+   "grid": "a segmented navy ring (white radial gaps) around a centre pic/label; leader lines to callouts; or a cycle of arrows; or a quadrant wheel",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Segmented ring with radial callouts, a cyclical arrow loop, or a quadrant wheel. Centre often a framed picture or hero figure.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-RING-RADIAL-LABELS-4BARS",
+    "BLK-RING-RADIAL-CALLOUTS-LOGOWALL",
+    "BLK-ARROW-CYCLE-6LABEL",
+    "BLK-REAL-4QUADRANT-WHEEL-PANELS"
+   ],
+   "seenOn": [
+    "LTP-112",
+    "BON-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-PYRAMID",
+   "name": "Tiered pyramid / perspective tiers",
+   "role": "diagram",
+   "size_px": {
+    "w": 620,
+    "h": 520
+   },
+   "anchor": "docked",
+   "exit_width": "pairs with a right detail column",
+   "grid": "a pyramid split into horizontal tiers (widening downward), each tier a caps label + value; perspective or flat",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Layered pyramid for tiers/segments (market layers, capability levels). Order = top-down importance/size.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-PERSPECTIVE-PYRAMID-TIERS",
+    "BLK-SEGMENT-PYRAMID-SECTOR-CONC"
+   ],
+   "seenOn": [
+    "LTP-090"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-VENN",
+   "name": "Overlapping circles (Venn)",
+   "role": "diagram",
+   "size_px": {
+    "w": 600,
+    "h": 560
+   },
+   "anchor": "docked (in a panel)",
+   "exit_width": "sits in a panel; overlap region is the point",
+   "grid": "2-3 translucent overlapping circles, each a caps label; the intersection captioned (cross-sell / combined capability)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Overlapping circles to show intersection/cross-sell/combined capability. The overlap carries the message.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-VENN-3CIRCLE-PANEL",
+    "BLK-VENN-CROSSSELL-PROFILES"
+   ],
+   "seenOn": [
+    "LTP-100"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-HUB-SPOKE",
+   "name": "Central hub with spokes (diamond hub)",
+   "role": "diagram",
+   "size_px": {
+    "w": 740,
+    "h": 620
+   },
+   "variants": [
+    {
+     "label": "diamond-hub (Torino)"
+    },
+    {
+     "label": "converging"
+    },
+    {
+     "label": "3-pillar"
+    }
+   ],
+   "anchor": "docked (fills region)",
+   "exit_width": "full region; the canonical highlight hub",
+   "grid": "a central node (diamond / circle / card) with spokes to surrounding cards or badges; Torino uses a solid-yellow diamond hub",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Central hub radiating to surrounding points: investment-highlight hub (Torino diamond), converging-drivers hub, 3-pillar summary. Centre = the thesis.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-REAL-TOR-DIAMOND-HIGHLIGHT-HUB",
+    "BLK-CONVERGING-HUB-DIAGRAM",
+    "BLK-HUB-3PILLAR-SUMMARY",
+    "BLK-TRIANGLE-PLAY-DIAGRAM"
+   ],
+   "seenOn": [
+    "TOR-08"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-RISING-ARROW",
+   "name": "Growth ladder / rising trajectory",
+   "role": "diagram",
+   "size_px": {
+    "w": 560,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "rising-arrow"
+    },
+    {
+     "label": "staircase-ladder"
+    },
+    {
+     "label": "swoosh-journey"
+    }
+   ],
+   "anchor": "docked",
+   "exit_width": "spans its width; step labels along the rise",
+   "grid": "a tilted rising arrow (or staircase) left->right with italic small-caps stage labels; may carry value chips at each step",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Upward trajectory device: rising arrow / staircase / growth ladder with stage labels. Shows a today->future build-up.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-RISING-ARROW-STEPS",
+    "BLK-TODAY-FUTURE-GROWTH-LADDER",
+    "BLK-SWOOSH-NUMBERED-JOURNEY"
+   ],
+   "seenOn": [
+    "LTP-043"
+   ]
+  },
+  {
+   "id": "PRIM-DASHBOARD-MULTIGRAPH",
+   "name": "Grey dashboard panel hosting N chart cells",
+   "role": "diagram",
+   "size_px": {
+    "w": 756,
+    "h": 265
+   },
+   "variants": [
+    {
+     "label": "3-graph"
+    },
+    {
+     "label": "N-cell"
+    }
+   ],
+   "anchor": "bottom-right (or docked band)",
+   "exit_width": "leaves a ~454px docking slot to its left when bottom-right anchored",
+   "grid": "a grey (#f2f2f2) rounded panel split into N (usually 3) sub-cells by 0.25pt vertical rules; each cell a small-caps header + a mini chart (donut | bars | line)",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The 3-graph dashboard container: a grey panel hosting several PRIM-CHART-* cells side by side under small-caps heads. The house 'financial profile / KPI dashboard' block.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-DASHBOARD-3GRAPH",
+    "BLK-REAL-TOR-SERVICE-3PANEL-DASHBOARD",
+    "BLK-HR-3PANEL-DASHBOARD"
+   ],
+   "seenOn": [
+    "BON-05",
+    "TOR-25"
+   ]
+  },
+  {
+   "id": "PRIM-DIAGRAM-GEO-MAP",
+   "name": "Geo choropleth / priority flag map",
+   "role": "diagram",
+   "size_px": {
+    "w": 820,
+    "h": 560
+   },
+   "variants": [
+    {
+     "label": "choropleth"
+    },
+    {
+     "label": "priority-flaglist"
+    }
+   ],
+   "anchor": "docked (left/half)",
+   "exit_width": "pairs with a country table or icon-stat column",
+   "grid": "a country/region choropleth (density ramp) with a legend; or a priority-ranked list of country rows (flag + value + expand icon)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Geographic footprint: choropleth map with density legend, or a priority flag-list of countries with values. Coverage / geographic-presence slides.",
+   "component": "TBD - GAP",
+   "fromBlocks": [
+    "BLK-GEO-PRIORITY-FLAGLIST",
+    "BLK-GEO-HUB-TABLE-PICGRID",
+    "BLK-COVERAGE-MAP-ICONSTATS"
+   ],
+   "seenOn": [
+    "LTP-020"
+   ]
+  },
+  {
+   "id": "PRIM-MEDIA-PHOTO-PANEL",
+   "name": "Framed photo / image slot (house shadow)",
+   "role": "media",
+   "size_px": {
+    "w": 420,
+    "h": 300
+   },
+   "variants": [
+    {
+     "label": "framed",
+     "note": "bordered image with house shadow"
+    },
+    {
+     "label": "full-bleed",
+     "note": "edge-to-edge (dividers/covers)"
+    },
+    {
+     "label": "arc-masked",
+     "note": "convex arc mask on one edge (hero-arc photo)"
+    },
+    {
+     "label": "caption",
+     "note": "caps caption strip beneath"
+    }
+   ],
+   "anchor": "docked (fills its cell/half)",
+   "exit_width": "image slot; the rest of the region takes text/charts",
+   "grid": "a framed image placeholder; floating variant carries --shadow-house (60% transparency, 5pt blur, 0 offset); optional caps caption",
+   "tokens": [
+    "--shadow-house",
+    "--rule-separator",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The house imagery slot — product photos, site photos, screenshots. Floating images get the house shadow. Real transparent-PNG assets go here; the biggest 'AI tell' is a generic/empty image, so always request real assets.",
+   "component": "TBD - GAP (candidate PhotoPanel)",
+   "fromBlocks": [
+    "BLK-REAL-SITE-PHOTOPANEL-INVENTORY",
+    "BLK-HERO-ARC-PHOTO"
+   ],
+   "seenOn": [
+    "TOR-75",
+    "LTP-013"
+   ]
+  },
+  {
+   "id": "PRIM-MEDIA-FLOORPLAN",
+   "name": "Colour-coded architectural floorplan panel",
+   "role": "media",
+   "size_px": {
+    "w": 600,
+    "h": 400
+   },
+   "anchor": "docked (centre column of a facility gallery)",
+   "exit_width": "pairs with text panels left/right",
+   "grid": "an architectural floor plan with rooms tinted by function (yellow=offices, green=warehouse/shipping, blue=production/assembly) and labelled; grey small-caps panel header ('GROUND FLOOR')",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Facility floor plan with function-coloured rooms + labels, under a PanelHeader. Used on HQ / facility-tour slides paired with photo and text panels.",
+   "component": "TBD - GAP (candidate FloorplanPanel)",
+   "fromBlocks": [
+    "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY"
+   ],
+   "seenOn": [
+    "TOR-80"
+   ]
   }
  ]
 }
