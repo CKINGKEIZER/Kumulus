@@ -420,7 +420,7 @@
     "--fs-body"
    ],
    "recipe": "3 equal cells separated by grey hairlines; each a centred metric over a 9.5pt caption. The lightweight inline alternative to the filled tile grid.",
-   "component": "TBD - GAP (candidate KpiInlineTriplet)",
+   "component": "components/content/KpiInlineTriplet.jsx",
    "fromBlocks": [
     "BLK-KPI-INLINE-TRIPLET"
    ],
@@ -445,7 +445,7 @@
     "--fs-kpi"
    ],
    "recipe": "Pale-blue tint circle with a bold delta metric; caption to the side. Used as accent stat coins beneath checklists / beside imagery.",
-   "component": "TBD - GAP (candidate KpiBubble)",
+   "component": "components/content/KpiBubble.jsx",
    "fromBlocks": [
     "BLK-CHECKLIST-KPI-BUBBLES"
    ],
@@ -470,7 +470,7 @@
     "--fs-body"
    ],
    "recipe": "Grey rounded pill; 2 navy circled-check (✓) glyphs + labels evenly spaced. A feature/qualifier header strip.",
-   "component": "TBD - GAP (candidate CheckPillHeader)",
+   "component": "components/content/CheckPillHeader.jsx",
    "fromBlocks": [
     "BLK-CHECKPILL-HEADER"
    ],
@@ -518,7 +518,7 @@
     "--deal-primary"
    ],
    "recipe": "Decorative deal-primary triangle wedge (clip-path) with a white ellipse; a header accent, not a data element.",
-   "component": "TBD - GAP (decorative)",
+   "component": "components/content/HeroTriangle.jsx",
    "fromBlocks": [
     "BLK-HERO-TRIANGLE"
    ],
@@ -669,7 +669,7 @@
     "--fs-body"
    ],
    "recipe": "Two columns showing a before/after (e.g. 5.6% -> 8.1%) with a '+[x]pp' delta pill and arrow. The compact improvement chart.",
-   "component": "TBD - GAP (candidate DeltaTwoBar)",
+   "component": "components/charts/DeltaBars.jsx",
    "fromBlocks": [
     "BLK-DELTA-2BAR"
    ],
@@ -693,7 +693,7 @@
     "--fs-body"
    ],
    "recipe": "Two comparative lines (e.g. gross vs EBITDA margin) with boxed % points at each period. A dense two-metric trend.",
-   "component": "TBD - GAP (candidate DualLineBoxed)",
+   "component": "components/charts/DualLineChart.jsx",
    "fromBlocks": [
     "BLK-DUAL-LINE-BOXED"
    ],
@@ -879,7 +879,7 @@
     "--fs-kpi"
    ],
    "recipe": "Semicircle gauge for a bounded score (NPS, satisfaction, utilisation); arc fill to value + pill readout. The single big number may use --fs-kpi.",
-   "component": "TBD - GAP (candidate Gauge)",
+   "component": "components/charts/Gauge.jsx",
    "fromBlocks": [
     "BLK-NPS-GAUGE-PANEL",
     "BLK-DUAL-GAUGE-SPLITBAR"
@@ -1104,7 +1104,7 @@
     "--rule-separator"
    ],
    "recipe": "M&A buy-side target scan: flag + numbered badge + financials + description + rationale bullets + fit/coverage ✓/✗ columns. Paired (1/2)+(2/2).",
-   "component": "TBD - GAP (candidate AcqTargetScan)",
+   "component": "components/data/AcqTargetScan.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE"
    ],
@@ -1287,7 +1287,7 @@
     "--radius-sm"
    ],
    "recipe": "An inset emphasis box for a warning, an 'Illustrative' note, or a transaction/disclaimer card. Sets short qualifying copy apart from the main bullets.",
-   "component": "TBD - GAP (candidate CalloutBox)",
+   "component": "components/content/CalloutBox.jsx",
    "fromBlocks": [
     "BLK-CONTACT-DISCLAIMER-CARD",
     "BLK-UPLIFT-PAIR-PANEL"
@@ -1443,7 +1443,7 @@
     "--ls-caps"
    ],
    "recipe": "The '+ + =' additive device: stacked navy cards joined by ⊕ badges to show components summing to a whole (offering build-up, value stack). Distinct from a sequence — order is not temporal.",
-   "component": "TBD - GAP (candidate AdditiveStack)",
+   "component": "components/diagrams/AdditiveStack.jsx",
    "fromBlocks": [
     "BLK-ADDITIVE-DRIVER-ROWS",
     "BLK-PLUSSTACK-TABS-ROWS"
@@ -1524,7 +1524,7 @@
     "--ls-caps"
    ],
    "recipe": "The uniform capability / product / icon-card grid (2×4, 8-up). Equal cells, no axes. Distinct from the 2x2 (which encodes position).",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/CardGrid.jsx",
    "fromBlocks": [
     "BLK-ICON-CARD-GRID-8",
     "BLK-2X2-CARDGRID-HIGHLIGHT",
@@ -1659,7 +1659,7 @@
     "--ls-caps"
    ],
    "recipe": "Overlapping circles to show intersection/cross-sell/combined capability. The overlap carries the message.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/Venn.jsx",
    "fromBlocks": [
     "BLK-VENN-3CIRCLE-PANEL",
     "BLK-VENN-CROSSSELL-PROFILES"
@@ -1735,7 +1735,7 @@
     "--ls-caps"
    ],
    "recipe": "Upward trajectory device: rising arrow / staircase / growth ladder with stage labels. Shows a today->future build-up.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/RisingArrow.jsx",
    "fromBlocks": [
     "BLK-RISING-ARROW-STEPS",
     "BLK-TODAY-FUTURE-GROWTH-LADDER",
@@ -1806,7 +1806,7 @@
     "--ls-caps"
    ],
    "recipe": "Geographic footprint: choropleth map with density legend, or a priority flag-list of countries with values. Coverage / geographic-presence slides.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/GeoMap.jsx",
    "fromBlocks": [
     "BLK-GEO-PRIORITY-FLAGLIST",
     "BLK-GEO-HUB-TABLE-PICGRID",

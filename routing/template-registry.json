@@ -462,10 +462,9 @@
    "avoidWhen": "Organic strategy only.",
    "canonical": "BON-50",
    "fallback": "criteria list + target table",
-   "skeleton": "CriteriaBenchmark",
+   "skeleton": "AcqTargetScan",
    "skeletonId": "STR-CRITERIA-BENCHMARK",
-   "component": "components/structures/CriteriaBenchmark.jsx",
-   "skeletonNote": "interim: ComparisonMatrix; dedicated AcqTargetScan is a leaf primitive to build on demand"
+   "component": "components/data/AcqTargetScan.jsx"
   },
   {
    "id": "T-FINANCIAL-OVERVIEW",
