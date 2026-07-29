@@ -660,7 +660,14 @@
    "archetype": "market-sizing",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-MARKET-SIZING",
+    "STR-COMPETITION-MATRIX",
+    "STR-CRITERIA-BENCHMARK",
+    "STR-TREND-IMPACT"
+   ],
+   "structureCount": 4
   },
   {
    "id": "G2-04",
@@ -669,7 +676,15 @@
    "archetype": "business-model",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-VALUE-CHAIN",
+    "STR-PROCESS-CHEVRON-DETAIL",
+    "STR-BUSINESS-MODEL-SERVICE",
+    "STR-PLATFORM-ARCHITECTURE",
+    "STR-GROWTH-CYCLE"
+   ],
+   "structureCount": 5
   },
   {
    "id": "G2-05",
@@ -678,7 +693,15 @@
    "archetype": "people-timeline",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-CUSTOMER-DEEPDIVE",
+    "STR-CUSTOMER-CONCENTRATION",
+    "STR-MANAGEMENT-PROFILES",
+    "STR-ORG-STRUCTURE",
+    "STR-TIMELINE"
+   ],
+   "structureCount": 5
   },
   {
    "id": "G2-06",
@@ -687,7 +710,16 @@
    "archetype": "chrome",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-COVER",
+    "STR-SECTION-DIVIDER",
+    "STR-FULLBLEED-HIGHLIGHT",
+    "STR-APPENDIX-SEGMENT",
+    "STR-GLOSSARY",
+    "STR-FACILITY"
+   ],
+   "structureCount": 6
   },
   {
    "id": "G3-01",
