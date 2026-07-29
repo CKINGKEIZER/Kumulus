@@ -57,3 +57,23 @@ new primitives `WaterfallChart`, `LabeledNotes`. `ColumnChart` already did
 
 Same theme caveat as above (renders navy; real Torino is gold) — cosmetic,
 not structural. **G3-01 (financial cluster) complete: 4/4 skeletons verified.**
+
+---
+
+## G3-02 at-a-glance / highlights — vs BON-05 / TOR-08 / BON-08 / LTP-043
+
+**Built primitives:** `KpiTileGrid` (solid deal KPI band), `DashboardPanel`
+(grey N-graph panel), `HubSpoke` (radial diamond/circle hub).
+**Skeletons:** `CompanyAtAGlance`, `InvestmentHighlights` (wraps existing
+`NumberedHighlight`), `HighlightHub`, `KpiChartRail`.
+
+- **CompanyAtAGlance vs BON-05 — PASS (screenshot).** Faithful match: 6-tile KPI
+  grid, narrative bullets, stacked "Robust financial profile (€m)" chart with
+  totals, and a 3-donut dashboard (product types / specializations / geographies).
+  Rendered in theme-bemedico (purple) — correct for BeMedico.
+- **HighlightHub vs TOR-08 — PASS (screenshot).** Diamond hub + 6 radial numbered
+  spokes. (Spoke at 6-o'clock sits low into the footer band — minor layout tune.)
+- **InvestmentHighlights, KpiChartRail — SSR smoke test PASS** (compose the
+  already-verified NumberedHighlight / ColumnChart).
+
+G3-02 done (4/4 skeletons; 2 visually verified, 2 smoke-tested).

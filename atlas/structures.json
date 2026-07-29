@@ -186,7 +186,8 @@
     "BON-05",
     "TOR-06"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CompanyAtAGlance.jsx",
+   "verified": "vs BON-05 — PASS"
   },
   {
    "id": "STR-INVESTMENT-HIGHLIGHTS-ROWS",
@@ -235,7 +236,8 @@
     "LTP-012",
     "LTP-013"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/InvestmentHighlights.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-HIGHLIGHT-HUB",
@@ -277,7 +279,8 @@
     "TOR-08",
     "LTP-025"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/HighlightHub.jsx",
+   "verified": "vs TOR-08 — PASS"
   },
   {
    "id": "STR-KPI-CHART-RAIL",
@@ -310,7 +313,8 @@
     "LTP-043",
     "TOR-36"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/KpiChartRail.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-MARKET-SIZING",
