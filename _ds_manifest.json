@@ -1,1 +1,1833 @@
-{"namespace":"KumulusPartnersDesignSystem_533273","components":[{"name":"KumulusMark","sourcePath":"components/brand/KumulusMark.jsx"},{"name":"TargetCompanyLogoPlaceholder","sourcePath":"components/brand/TargetCompanyLogoPlaceholder.jsx"},{"name":"TargetLogo","sourcePath":"components/brand/TargetCompanyLogoPlaceholder.jsx"},{"name":"ThirdPartyLogoPlaceholder","sourcePath":"components/brand/TargetCompanyLogoPlaceholder.jsx"},{"name":"CagrPill","sourcePath":"components/charts/CagrPill.jsx"},{"name":"MarginCapsule","sourcePath":"components/charts/CagrPill.jsx"},{"name":"RefChip","sourcePath":"components/charts/CagrPill.jsx"},{"name":"ColumnChart","sourcePath":"components/charts/ColumnChart.jsx"},{"name":"Donut","sourcePath":"components/charts/Donut.jsx"},{"name":"BarRow","sourcePath":"components/content/BarRow.jsx"},{"name":"BulletList","sourcePath":"components/content/BulletList.jsx"},{"name":"ColumnHeading","sourcePath":"components/content/ColumnHeading.jsx"},{"name":"KeyMessageBand","sourcePath":"components/content/KeyMessageBand.jsx"},{"name":"KpiCell","sourcePath":"components/content/KpiCell.jsx"},{"name":"KpiTable","sourcePath":"components/content/KpiTable.jsx"},{"name":"PanelHeader","sourcePath":"components/content/PanelHeader.jsx"},{"name":"ValueCapsule","sourcePath":"components/content/ValueCapsule.jsx"},{"name":"HarveyBall","sourcePath":"components/data/ComparisonMatrix.jsx"},{"name":"ComparisonMatrix","sourcePath":"components/data/ComparisonMatrix.jsx"},{"name":"FinancialTable","sourcePath":"components/data/FinancialTable.jsx"},{"name":"ProcessFlow","sourcePath":"components/diagrams/ProcessFlow.jsx"},{"name":"Pyramid","sourcePath":"components/diagrams/Pyramid.jsx"},{"name":"Timeline","sourcePath":"components/diagrams/Timeline.jsx"},{"name":"ArrowConnector","sourcePath":"components/feature/ArrowConnector.jsx"},{"name":"NumberedHighlight","sourcePath":"components/feature/NumberedHighlight.jsx"},{"name":"ProcessSteps","sourcePath":"components/feature/ProcessSteps.jsx"},{"name":"PullQuote","sourcePath":"components/feature/PullQuote.jsx"},{"name":"FooterNav","sourcePath":"components/layout/FooterNav.jsx"},{"name":"SectionBar","sourcePath":"components/layout/SectionBar.jsx"},{"name":"SlideFrame","sourcePath":"components/layout/SlideFrame.jsx"},{"name":"VerticalTab","sourcePath":"components/layout/VerticalTab.jsx"}],"startingPoints":[],"cards":[{"path":"guidelines/formatting-rules.card.html","group":"Brand","viewport":"700x210","subtitle":"Intern-manual specs: house shadow, rule weights, bullet metrics","name":"House formatting rules"},{"path":"guidelines/colors-accent.card.html","group":"Colors","viewport":"700x150","subtitle":"Sky secondary, green positive/ESG, warm sand, coral mark dot","name":"Accent & semantic"},{"path":"guidelines/colors-brand.card.html","group":"Colors","viewport":"700x150","subtitle":"Primary cobalt does the brand work; navy anchors charts + wordmark","name":"Brand ramp — cobalt & navy"},{"path":"guidelines/colors-neutral.card.html","group":"Colors","viewport":"700x150","subtitle":"Cool grays: bands, hairlines, captions, charcoal ink","name":"Neutrals"},{"path":"components/brand/brand.card.html","group":"Components","viewport":"700x220","subtitle":"Kumulus advisor mark + target-logo placeholder","name":"Brand marks"},{"path":"components/charts/charts.card.html","group":"Components","viewport":"700x400","subtitle":"ColumnChart (stacked) + CAGR pill, margin capsule, ref chip","name":"Charts"},{"path":"components/content/content.card.html","group":"Components","viewport":"700x340","subtitle":"ColumnHeading, BulletList, KpiCell, ValueCapsule, BarRow, KpiTable","name":"Content — headings, bullets, KPIs, bars, table"},{"path":"components/data/data.card.html","group":"Components","viewport":"700x420","subtitle":"FinancialTable + ComparisonMatrix (harvey balls)","name":"Tables & matrix"},{"path":"components/diagrams/diagrams.card.html","group":"Components","viewport":"700x460","subtitle":"Timeline, ProcessFlow, Pyramid, Donut","name":"Diagrams"},{"path":"components/feature/feature.card.html","group":"Components","viewport":"700x300","subtitle":"PullQuote, ProcessSteps, ArrowConnector","name":"Feature — quote, process, connector"},{"path":"components/layout/layout.card.html","group":"Components","viewport":"700x300","subtitle":"SectionBar, VerticalTab, FooterNav","name":"Layout — bars, tabs, footer nav"},{"path":"ui_kits/im-slides/block-test-at-a-glance.html","group":"Slides","viewport":"1280x720","subtitle":"Blocks at real px sizes, anchored to corners, never stretched (block-sizing-law.md)","name":"BLOCK TEST v2 — fixed-size corner-anchored (LTP-005)"},{"path":"ui_kits/im-slides/chrome.html","group":"Slides","viewport":"1280x720","subtitle":"Deal-themed cover + frosted ToC divider; theme-cobalt","name":"Chrome — cover & divider (themed)"},{"path":"ui_kits/im-slides/customers.html","group":"Slides","viewport":"1280x720","subtitle":"T-CUSTOMERS: value-chain nav + grey panels, donut + concentration curve (theme-bemedico)","name":"Customer concentration"},{"path":"ui_kits/im-slides/index.html","group":"Slides","viewport":"1280x720","subtitle":"Planet / People / Product — SDG bars, climate donuts, testimonial & imagery","name":"ESG three-pillar slide"},{"path":"ui_kits/im-slides/investment-highlights.html","group":"Slides","viewport":"1280x720","subtitle":"Numbered highlight rows: deal panel + bullets + visual (theme-bemedico)","name":"Key investment highlights"},{"path":"ui_kits/pilot-im/index.html","group":"Slides","viewport":"1280x720","subtitle":"6-slide end-to-end IM in a fresh industry (food-service equipment) — cross-industry neutrality test","name":"Pilot mini-IM — Project Cedar (CulinaTech)"},{"path":"guidelines/spacing.card.html","group":"Spacing","viewport":"700x170","subtitle":"Measured house margins: 0.53cm sides, single body size, minimal colour","name":"Margins & spacing"},{"path":"guidelines/type-sans.card.html","group":"Type","viewport":"700x200","subtitle":"Source Sans Pro: one body size everywhere; small-caps is the signature device","name":"Sans — body, small-caps, labels"},{"path":"guidelines/type-serif.card.html","group":"Type","viewport":"700x180","subtitle":"Merriweather: slide title, subtitle, pull-quote (sentence case, never Title Case)","name":"Serif — titles & quotes"}],"templates":[{"name":"IM content slide","description":"Kumulus Information Memorandum content slide — SlideFrame chrome + grey panels, bullets, donut and KPI tiles, themed per deal. Copy this folder and edit the data in the logic class.","folder":"templates/im-deck","entryPath":"templates/im-deck/ImDeck.dc.html","thumbnail":{"path":"templates/im-deck/.thumbnail","kind":"captured"}}],"hasThumbnailHtml":true,"globalCssPaths":["tokens/fonts.css","tokens/deal-theme.css","tokens/colors.css","tokens/typography.css","tokens/spacing.css","tokens/canvas.css","styles.css"],"tokens":[{"name":"--deal-primary","value":"#17418a","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-primary-deep","value":"#0f2f66","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-secondary","value":"#6f9bd6","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-accent","value":"#78caf0","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-soft","value":"#becef0","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-positive","value":"#1f9433","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-chart-1","value":"var(--deal-primary-deep)","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-chart-2","value":"var(--deal-primary)","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-chart-3","value":"var(--deal-accent)","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-chart-4","value":"var(--deal-positive)","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-chart-5","value":"#6cc879","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-capsule-bg","value":"var(--deal-soft)","kind":"color","definedIn":"tokens/deal-theme.css"},{"name":"--deal-capsule-text","value":"var(--deal-primary-deep)","kind":"font","definedIn":"tokens/deal-theme.css"},{"name":"--deal-primary","value":"#5b2d8e","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-primary-deep","value":"#3f1d68","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-secondary","value":"#a98fd0","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-accent","value":"#16b6c4","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-soft","value":"#d9ccef","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-chart-1","value":"#3f1d68","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-chart-2","value":"#5b2d8e","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-chart-3","value":"#a98fd0","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-chart-4","value":"#16b6c4","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-chart-5","value":"#7fd6df","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-bemedico"},{"name":"--deal-primary","value":"#0049da","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-primary-deep","value":"#0a3d8f","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-secondary","value":"#5a8fef","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-accent","value":"#78caf0","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-soft","value":"#becef0","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-chart-1","value":"#0a3d8f","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-chart-2","value":"#0049da","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-chart-3","value":"#78caf0","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-chart-4","value":"#1f9433","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-chart-5","value":"#6cc879","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-cobalt"},{"name":"--deal-primary","value":"#14335f","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-primary-deep","value":"#0c2447","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-secondary","value":"#5b7fa6","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-accent","value":"#4aa3d6","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-soft","value":"#c3d3e6","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-chart-1","value":"#0c2447","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-chart-2","value":"#14335f","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-chart-3","value":"#4aa3d6","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-chart-4","value":"#1f9433","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--deal-chart-5","value":"#6cc879","kind":"color","definedIn":"tokens/deal-theme.css","scope":".theme-irmaco"},{"name":"--cobalt-700","value":"#0a3d8f","kind":"color","definedIn":"tokens/colors.css"},{"name":"--cobalt-600","value":"#0049da","kind":"color","definedIn":"tokens/colors.css"},{"name":"--cobalt-500","value":"#1f63e6","kind":"color","definedIn":"tokens/colors.css"},{"name":"--cobalt-400","value":"#5a8fef","kind":"color","definedIn":"tokens/colors.css"},{"name":"--navy-900","value":"#0c2447","kind":"color","definedIn":"tokens/colors.css"},{"name":"--navy-800","value":"#14335f","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sky-400","value":"#78caf0","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sky-300","value":"#9bd6f3","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sky-200","value":"#becef0","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sky-100","value":"#e3edfb","kind":"color","definedIn":"tokens/colors.css"},{"name":"--green-700","value":"#176b27","kind":"color","definedIn":"tokens/colors.css"},{"name":"--green-600","value":"#1f9433","kind":"color","definedIn":"tokens/colors.css"},{"name":"--green-500","value":"#2eae44","kind":"color","definedIn":"tokens/colors.css"},{"name":"--green-400","value":"#6cc879","kind":"color","definedIn":"tokens/colors.css"},{"name":"--teal-600","value":"#206080","kind":"color","definedIn":"tokens/colors.css"},{"name":"--white","value":"#ffffff","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-50","value":"#f6f6f6","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-100","value":"#f2f2f2","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-200","value":"#d9d9d9","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-300","value":"#bfbfbf","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-400","value":"#a6a6a6","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-500","value":"#808080","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-600","value":"#707070","kind":"color","definedIn":"tokens/colors.css"},{"name":"--gray-700","value":"#5b5f66","kind":"color","definedIn":"tokens/colors.css"},{"name":"--ink","value":"#23282d","kind":"color","definedIn":"tokens/colors.css"},{"name":"--black","value":"#000000","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sand-100","value":"#ede9e3","kind":"color","definedIn":"tokens/colors.css"},{"name":"--sand-200","value":"#dbd3c7","kind":"color","definedIn":"tokens/colors.css"},{"name":"--accent-coral","value":"#e0185a","kind":"color","definedIn":"tokens/colors.css"},{"name":"--placeholder-target-fill","value":"#ffcf00","kind":"color","definedIn":"tokens/colors.css"},{"name":"--placeholder-target-border","value":"#d0021b","kind":"color","definedIn":"tokens/colors.css"},{"name":"--placeholder-target-text","value":"#0c2447","kind":"font","definedIn":"tokens/colors.css"},{"name":"--placeholder-neutral-fill","value":"#eeeeee","kind":"color","definedIn":"tokens/colors.css"},{"name":"--placeholder-neutral-border","value":"#bdbdbd","kind":"color","definedIn":"tokens/colors.css"},{"name":"--placeholder-neutral-text","value":"#6d6d6d","kind":"font","definedIn":"tokens/colors.css"},{"name":"--brand-primary","value":"var(--deal-primary)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--brand-deep","value":"var(--deal-primary-deep)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--brand-navy","value":"var(--navy-800)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--brand-accent","value":"var(--deal-accent)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--brand-positive","value":"var(--deal-positive)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--text-heading","value":"var(--ink)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--text-label","value":"var(--deal-primary)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--text-body","value":"#2b2b2b","kind":"font","definedIn":"tokens/colors.css"},{"name":"--text-on-dark","value":"var(--white)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--text-muted","value":"var(--gray-600)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--text-footnote","value":"var(--gray-500)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--surface-page","value":"var(--white)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-band","value":"var(--gray-100)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-band-warm","value":"var(--sand-100)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-panel","value":"var(--white)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-tab","value":"var(--deal-primary)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-bar","value":"var(--deal-primary)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--surface-knob","value":"var(--white)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--rule","value":"var(--gray-200)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--rule-strong","value":"var(--ink)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--bullet","value":"var(--deal-primary)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--chart-1","value":"var(--deal-chart-1)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--chart-2","value":"var(--deal-chart-2)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--chart-3","value":"var(--deal-chart-3)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--chart-4","value":"var(--deal-chart-4)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--chart-5","value":"var(--deal-chart-5)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--capsule-bg","value":"var(--deal-capsule-bg)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--capsule-text","value":"var(--deal-capsule-text)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--tab-active-bg","value":"var(--cobalt-600)","kind":"color","definedIn":"tokens/colors.css"},{"name":"--tab-active-text","value":"var(--white)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--tab-idle-text","value":"var(--gray-500)","kind":"font","definedIn":"tokens/colors.css"},{"name":"--font-serif","value":"\"Merriweather\", Georgia, \"Times New Roman\", serif","kind":"font","definedIn":"tokens/typography.css"},{"name":"--font-sans","value":"\"Source Sans Pro\", \"Source Sans 3\", -apple-system,\n                \"Segoe UI\", system-ui, sans-serif","kind":"font","definedIn":"tokens/typography.css"},{"name":"--fw-regular","value":"400","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--fw-medium","value":"500","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--fw-semibold","value":"600","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--fw-bold","value":"700","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--fs-body","value":"12.7px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--fs-title","value":"18.7px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--fs-subtitle","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-section","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-colhead","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-label","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-body-sm","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-quote","value":"var(--fs-body)","kind":"color","definedIn":"tokens/typography.css"},{"name":"--fs-footnote","value":"9.3px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--fs-kpi","value":"24px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--fs-kpi-lg","value":"32px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--fs-page-title","value":"34px","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--lh-tight","value":"1.15","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--lh-snug","value":"1.3","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--lh-body","value":"1.45","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--lh-quote","value":"1.5","kind":"font","definedIn":"tokens/typography.css","annotation":"font"},{"name":"--ls-caps","value":"0.08em","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--ls-caps-wide","value":"0.14em","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--ls-title","value":"0.005em","kind":"spacing","definedIn":"tokens/typography.css"},{"name":"--type-title","value":"var(--fw-regular) var(--fs-title)/var(--lh-tight) var(--font-serif)","kind":"font","definedIn":"tokens/typography.css"},{"name":"--type-quote","value":"italic var(--fw-regular) var(--fs-quote)/var(--lh-quote) var(--font-serif)","kind":"font","definedIn":"tokens/typography.css"},{"name":"--type-body","value":"var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans)","kind":"font","definedIn":"tokens/typography.css"},{"name":"--space-1","value":"4px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-2","value":"8px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-3","value":"12px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-4","value":"16px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-5","value":"20px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-6","value":"24px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-8","value":"32px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-10","value":"40px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--space-12","value":"48px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--slide-w","value":"1280px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--slide-h","value":"720px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--slide-margin-x","value":"20px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--slide-margin-top","value":"24px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--slide-footer-h","value":"42px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--col-gap","value":"28px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--radius-0","value":"0px","kind":"radius","definedIn":"tokens/spacing.css"},{"name":"--radius-sm","value":"3px","kind":"radius","definedIn":"tokens/spacing.css"},{"name":"--radius-md","value":"5px","kind":"radius","definedIn":"tokens/spacing.css"},{"name":"--radius-pill","value":"999px","kind":"radius","definedIn":"tokens/spacing.css"},{"name":"--rule-title","value":"1px solid var(--ink)","kind":"color","definedIn":"tokens/spacing.css"},{"name":"--rule-separator","value":"0.5px solid var(--gray-300)","kind":"color","definedIn":"tokens/spacing.css"},{"name":"--border-hair","value":"1px solid var(--rule)","kind":"color","definedIn":"tokens/spacing.css"},{"name":"--border-rule-strong","value":"1.5px solid var(--rule-strong)","kind":"color","definedIn":"tokens/spacing.css"},{"name":"--tab-width","value":"22px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--box-pad-x","value":"12px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--box-pad-y","value":"6px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--box-pad-top-header","value":"39px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--bullet-gap","value":"10px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--bullet-indent-1","value":"24px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--bullet-indent-2","value":"49px","kind":"spacing","definedIn":"tokens/spacing.css"},{"name":"--shadow-house","value":"0 0 9px rgba(0, 0, 0, 0.40)","kind":"shadow","definedIn":"tokens/spacing.css"},{"name":"--shadow-card","value":"0 1px 3px rgba(12, 26, 58, 0.10)","kind":"shadow","definedIn":"tokens/spacing.css"},{"name":"--shadow-float","value":"0 4px 14px rgba(12, 26, 58, 0.16)","kind":"shadow","definedIn":"tokens/spacing.css"},{"name":"--ease-standard","value":"cubic-bezier(0.4, 0, 0.2, 1)","kind":"other","definedIn":"tokens/spacing.css","annotation":"other"},{"name":"--dur-fast","value":"120ms","kind":"other","definedIn":"tokens/spacing.css","annotation":"other"},{"name":"--dur-base","value":"220ms","kind":"other","definedIn":"tokens/spacing.css","annotation":"other"},{"name":"--canvas-w","value":"1280px","kind":"spacing","definedIn":"tokens/canvas.css"},{"name":"--canvas-h","value":"720px","kind":"spacing","definedIn":"tokens/canvas.css"},{"name":"--canvas-ar","value":"16 / 9","kind":"other","definedIn":"tokens/canvas.css","annotation":"other"},{"name":"--density-body","value":"12.5px","kind":"spacing","definedIn":"tokens/canvas.css"},{"name":"--density-title","value":"22px","kind":"spacing","definedIn":"tokens/canvas.css"},{"name":"--density-line","value":"1.45","kind":"other","definedIn":"tokens/canvas.css","annotation":"other"},{"name":"--canvas-w","value":"960px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".canvas-4x3"},{"name":"--canvas-h","value":"720px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".canvas-4x3"},{"name":"--canvas-ar","value":"4 / 3","kind":"other","definedIn":"tokens/canvas.css","scope":".canvas-4x3","annotation":"other"},{"name":"--density-body","value":"12px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".density-regular"},{"name":"--density-title","value":"28px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".density-regular"},{"name":"--density-line","value":"1.5","kind":"other","definedIn":"tokens/canvas.css","scope":".density-regular","annotation":"other"},{"name":"--fs-title","value":"28px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".density-regular"},{"name":"--fs-subtitle","value":"16px","kind":"spacing","definedIn":"tokens/canvas.css","scope":".density-regular"}],"themes":[{"selector":".theme-bemedico","label":"Bemedico"},{"selector":".theme-cobalt","label":"Cobalt"},{"selector":".theme-irmaco","label":"Irmaco"},{"selector":".canvas-4x3","label":"Canvas 4x3"},{"selector":".density-regular","label":"Density Regular"}],"fonts":[{"family":"Source Sans Pro","weight":"200","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-ExtraLight.otf"]},{"family":"Source Sans Pro","weight":"300","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-Light.otf"]},{"family":"Source Sans Pro","weight":"400","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-Regular.otf"]},{"family":"Source Sans Pro","weight":"600","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-Semibold.otf"]},{"family":"Source Sans Pro","weight":"700","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-Bold.otf"]},{"family":"Source Sans Pro","weight":"500","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-Light.otf"]},{"family":"Source Sans Pro","weight":"400","style":"italic","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-It.otf"]},{"family":"Source Sans Pro","weight":"300","style":"italic","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-LightIt.otf"]},{"family":"Source Sans Pro","weight":"700","style":"italic","cssPath":"tokens/fonts.css","files":["assets/fonts/SourceSansPro-BoldIt.otf"]},{"family":"Merriweather","weight":"300 900","style":"normal","cssPath":"tokens/fonts.css","files":["assets/fonts/merriweather-normal.woff2"]},{"family":"Merriweather","weight":"300 900","style":"italic","cssPath":"tokens/fonts.css","files":["assets/fonts/merriweather-italic.woff2"]}],"brandFonts":[{"family":"Source Sans Pro","status":"ok","tokens":["--font-sans"],"path":"tokens/fonts.css"},{"family":"Merriweather","status":"ok","tokens":["--font-serif"],"path":"tokens/fonts.css"}],"source":"spa"}
+{
+  "namespace": "KumulusPartnersDesignSystem_533273",
+  "components": [
+    {
+      "name": "KumulusMark",
+      "sourcePath": "components/brand/KumulusMark.jsx"
+    },
+    {
+      "name": "TargetCompanyLogoPlaceholder",
+      "sourcePath": "components/brand/TargetCompanyLogoPlaceholder.jsx"
+    },
+    {
+      "name": "TargetLogo",
+      "sourcePath": "components/brand/TargetCompanyLogoPlaceholder.jsx"
+    },
+    {
+      "name": "ThirdPartyLogoPlaceholder",
+      "sourcePath": "components/brand/TargetCompanyLogoPlaceholder.jsx"
+    },
+    {
+      "name": "CagrPill",
+      "sourcePath": "components/charts/CagrPill.jsx"
+    },
+    {
+      "name": "MarginCapsule",
+      "sourcePath": "components/charts/CagrPill.jsx"
+    },
+    {
+      "name": "RefChip",
+      "sourcePath": "components/charts/CagrPill.jsx"
+    },
+    {
+      "name": "ColumnChart",
+      "sourcePath": "components/charts/ColumnChart.jsx"
+    },
+    {
+      "name": "DashboardPanel",
+      "sourcePath": "components/charts/DashboardPanel.jsx"
+    },
+    {
+      "name": "DeltaBars",
+      "sourcePath": "components/charts/DeltaBars.jsx"
+    },
+    {
+      "name": "Donut",
+      "sourcePath": "components/charts/Donut.jsx"
+    },
+    {
+      "name": "DualLineChart",
+      "sourcePath": "components/charts/DualLineChart.jsx"
+    },
+    {
+      "name": "Gauge",
+      "sourcePath": "components/charts/Gauge.jsx"
+    },
+    {
+      "name": "ParetoCurve",
+      "sourcePath": "components/charts/ParetoCurve.jsx"
+    },
+    {
+      "name": "WaterfallChart",
+      "sourcePath": "components/charts/WaterfallChart.jsx"
+    },
+    {
+      "name": "BarRow",
+      "sourcePath": "components/content/BarRow.jsx"
+    },
+    {
+      "name": "BulletList",
+      "sourcePath": "components/content/BulletList.jsx"
+    },
+    {
+      "name": "CalloutBox",
+      "sourcePath": "components/content/CalloutBox.jsx"
+    },
+    {
+      "name": "CheckPillHeader",
+      "sourcePath": "components/content/CheckPillHeader.jsx"
+    },
+    {
+      "name": "ColumnHeading",
+      "sourcePath": "components/content/ColumnHeading.jsx"
+    },
+    {
+      "name": "HeroTriangle",
+      "sourcePath": "components/content/HeroTriangle.jsx"
+    },
+    {
+      "name": "KeyMessageBand",
+      "sourcePath": "components/content/KeyMessageBand.jsx"
+    },
+    {
+      "name": "KpiBubble",
+      "sourcePath": "components/content/KpiBubble.jsx"
+    },
+    {
+      "name": "KpiCell",
+      "sourcePath": "components/content/KpiCell.jsx"
+    },
+    {
+      "name": "KpiInlineTriplet",
+      "sourcePath": "components/content/KpiInlineTriplet.jsx"
+    },
+    {
+      "name": "KpiTable",
+      "sourcePath": "components/content/KpiTable.jsx"
+    },
+    {
+      "name": "KpiTileGrid",
+      "sourcePath": "components/content/KpiTileGrid.jsx"
+    },
+    {
+      "name": "LabeledNotes",
+      "sourcePath": "components/content/LabeledNotes.jsx"
+    },
+    {
+      "name": "PanelHeader",
+      "sourcePath": "components/content/PanelHeader.jsx"
+    },
+    {
+      "name": "ValueCapsule",
+      "sourcePath": "components/content/ValueCapsule.jsx"
+    },
+    {
+      "name": "AcqTargetScan",
+      "sourcePath": "components/data/AcqTargetScan.jsx"
+    },
+    {
+      "name": "HarveyBall",
+      "sourcePath": "components/data/ComparisonMatrix.jsx"
+    },
+    {
+      "name": "ComparisonMatrix",
+      "sourcePath": "components/data/ComparisonMatrix.jsx"
+    },
+    {
+      "name": "FinancialTable",
+      "sourcePath": "components/data/FinancialTable.jsx"
+    },
+    {
+      "name": "GlossaryGrid",
+      "sourcePath": "components/data/GlossaryGrid.jsx"
+    },
+    {
+      "name": "NumberedCommentary",
+      "sourcePath": "components/data/NumberedCommentary.jsx"
+    },
+    {
+      "name": "AdditiveStack",
+      "sourcePath": "components/diagrams/AdditiveStack.jsx"
+    },
+    {
+      "name": "CardGrid",
+      "sourcePath": "components/diagrams/CardGrid.jsx"
+    },
+    {
+      "name": "CycleRing",
+      "sourcePath": "components/diagrams/CycleRing.jsx"
+    },
+    {
+      "name": "Funnel",
+      "sourcePath": "components/diagrams/Funnel.jsx"
+    },
+    {
+      "name": "GeoMap",
+      "sourcePath": "components/diagrams/GeoMap.jsx"
+    },
+    {
+      "name": "HubSpoke",
+      "sourcePath": "components/diagrams/HubSpoke.jsx"
+    },
+    {
+      "name": "Matrix2x2",
+      "sourcePath": "components/diagrams/Matrix2x2.jsx"
+    },
+    {
+      "name": "ProcessFlow",
+      "sourcePath": "components/diagrams/ProcessFlow.jsx"
+    },
+    {
+      "name": "Pyramid",
+      "sourcePath": "components/diagrams/Pyramid.jsx"
+    },
+    {
+      "name": "RisingArrow",
+      "sourcePath": "components/diagrams/RisingArrow.jsx"
+    },
+    {
+      "name": "Timeline",
+      "sourcePath": "components/diagrams/Timeline.jsx"
+    },
+    {
+      "name": "Tree",
+      "sourcePath": "components/diagrams/Tree.jsx"
+    },
+    {
+      "name": "Venn",
+      "sourcePath": "components/diagrams/Venn.jsx"
+    },
+    {
+      "name": "ArrowConnector",
+      "sourcePath": "components/feature/ArrowConnector.jsx"
+    },
+    {
+      "name": "NumberedHighlight",
+      "sourcePath": "components/feature/NumberedHighlight.jsx"
+    },
+    {
+      "name": "ProcessSteps",
+      "sourcePath": "components/feature/ProcessSteps.jsx"
+    },
+    {
+      "name": "ProfileCard",
+      "sourcePath": "components/feature/ProfileCard.jsx"
+    },
+    {
+      "name": "PullQuote",
+      "sourcePath": "components/feature/PullQuote.jsx"
+    },
+    {
+      "name": "BrandNav",
+      "sourcePath": "components/layout/BrandNav.jsx"
+    },
+    {
+      "name": "FooterNav",
+      "sourcePath": "components/layout/FooterNav.jsx"
+    },
+    {
+      "name": "SectionBar",
+      "sourcePath": "components/layout/SectionBar.jsx"
+    },
+    {
+      "name": "SlideFrame",
+      "sourcePath": "components/layout/SlideFrame.jsx"
+    },
+    {
+      "name": "Floorplan",
+      "sourcePath": "components/media/Floorplan.jsx"
+    },
+    {
+      "name": "PhotoPanel",
+      "sourcePath": "components/media/PhotoPanel.jsx"
+    },
+    {
+      "name": "AppendixSegment",
+      "sourcePath": "components/structures/AppendixSegment.jsx"
+    },
+    {
+      "name": "BridgeCommentary",
+      "sourcePath": "components/structures/BridgeCommentary.jsx"
+    },
+    {
+      "name": "BusinessModelService",
+      "sourcePath": "components/structures/BusinessModelService.jsx"
+    },
+    {
+      "name": "CashflowDashboard",
+      "sourcePath": "components/structures/CashflowDashboard.jsx"
+    },
+    {
+      "name": "CompanyAtAGlance",
+      "sourcePath": "components/structures/CompanyAtAGlance.jsx"
+    },
+    {
+      "name": "CompanyTimeline",
+      "sourcePath": "components/structures/CompanyTimeline.jsx"
+    },
+    {
+      "name": "CompetitionMatrix",
+      "sourcePath": "components/structures/CompetitionMatrix.jsx"
+    },
+    {
+      "name": "CriteriaBenchmark",
+      "sourcePath": "components/structures/CriteriaBenchmark.jsx"
+    },
+    {
+      "name": "CustomerConcentration",
+      "sourcePath": "components/structures/CustomerConcentration.jsx"
+    },
+    {
+      "name": "CustomerDeepDive",
+      "sourcePath": "components/structures/CustomerDeepDive.jsx"
+    },
+    {
+      "name": "Facility",
+      "sourcePath": "components/structures/Facility.jsx"
+    },
+    {
+      "name": "FcfTablesNotes",
+      "sourcePath": "components/structures/FcfTablesNotes.jsx"
+    },
+    {
+      "name": "FinancialStatement",
+      "sourcePath": "components/structures/FinancialStatement.jsx"
+    },
+    {
+      "name": "FullbleedHighlight",
+      "sourcePath": "components/structures/FullbleedHighlight.jsx"
+    },
+    {
+      "name": "Glossary",
+      "sourcePath": "components/structures/Glossary.jsx"
+    },
+    {
+      "name": "GrowthCycle",
+      "sourcePath": "components/structures/GrowthCycle.jsx"
+    },
+    {
+      "name": "HighlightHub",
+      "sourcePath": "components/structures/HighlightHub.jsx"
+    },
+    {
+      "name": "InvestmentHighlights",
+      "sourcePath": "components/structures/InvestmentHighlights.jsx"
+    },
+    {
+      "name": "KpiChartRail",
+      "sourcePath": "components/structures/KpiChartRail.jsx"
+    },
+    {
+      "name": "ManagementProfiles",
+      "sourcePath": "components/structures/ManagementProfiles.jsx"
+    },
+    {
+      "name": "MarketSizing",
+      "sourcePath": "components/structures/MarketSizing.jsx"
+    },
+    {
+      "name": "OrgStructure",
+      "sourcePath": "components/structures/OrgStructure.jsx"
+    },
+    {
+      "name": "PlatformArchitecture",
+      "sourcePath": "components/structures/PlatformArchitecture.jsx"
+    },
+    {
+      "name": "ProcessChevronDetail",
+      "sourcePath": "components/structures/ProcessChevronDetail.jsx"
+    },
+    {
+      "name": "TrendImpact",
+      "sourcePath": "components/structures/TrendImpact.jsx"
+    },
+    {
+      "name": "ValueChain",
+      "sourcePath": "components/structures/ValueChain.jsx"
+    }
+  ],
+  "startingPoints": [],
+  "cards": [
+    {
+      "path": "guidelines/formatting-rules.card.html",
+      "group": "Brand",
+      "viewport": "700x210",
+      "subtitle": "Intern-manual specs: house shadow, rule weights, bullet metrics",
+      "name": "House formatting rules"
+    },
+    {
+      "path": "guidelines/colors-accent.card.html",
+      "group": "Colors",
+      "viewport": "700x150",
+      "subtitle": "Sky secondary, green positive/ESG, warm sand, coral mark dot",
+      "name": "Accent & semantic"
+    },
+    {
+      "path": "guidelines/colors-brand.card.html",
+      "group": "Colors",
+      "viewport": "700x150",
+      "subtitle": "Primary cobalt does the brand work; navy anchors charts + wordmark",
+      "name": "Brand ramp — cobalt & navy"
+    },
+    {
+      "path": "guidelines/colors-neutral.card.html",
+      "group": "Colors",
+      "viewport": "700x150",
+      "subtitle": "Cool grays: bands, hairlines, captions, charcoal ink",
+      "name": "Neutrals"
+    },
+    {
+      "path": "components/brand/brand.card.html",
+      "group": "Components",
+      "viewport": "700x220",
+      "subtitle": "Kumulus advisor mark + target-logo placeholder",
+      "name": "Brand marks"
+    },
+    {
+      "path": "components/charts/charts.card.html",
+      "group": "Components",
+      "viewport": "700x400",
+      "subtitle": "ColumnChart (stacked) + CAGR pill, margin capsule, ref chip",
+      "name": "Charts"
+    },
+    {
+      "path": "components/content/content.card.html",
+      "group": "Components",
+      "viewport": "700x340",
+      "subtitle": "ColumnHeading, BulletList, KpiCell, ValueCapsule, BarRow, KpiTable",
+      "name": "Content — headings, bullets, KPIs, bars, table"
+    },
+    {
+      "path": "components/data/data.card.html",
+      "group": "Components",
+      "viewport": "700x420",
+      "subtitle": "FinancialTable + ComparisonMatrix (harvey balls)",
+      "name": "Tables & matrix"
+    },
+    {
+      "path": "components/diagrams/diagrams.card.html",
+      "group": "Components",
+      "viewport": "700x460",
+      "subtitle": "Timeline, ProcessFlow, Pyramid, Donut",
+      "name": "Diagrams"
+    },
+    {
+      "path": "components/feature/feature.card.html",
+      "group": "Components",
+      "viewport": "700x300",
+      "subtitle": "PullQuote, ProcessSteps, ArrowConnector",
+      "name": "Feature — quote, process, connector"
+    },
+    {
+      "path": "components/layout/layout.card.html",
+      "group": "Components",
+      "viewport": "700x300",
+      "subtitle": "SectionBar, VerticalTab, FooterNav",
+      "name": "Layout — bars, tabs, footer nav"
+    },
+    {
+      "path": "ui_kits/im-slides/block-test-at-a-glance.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "Blocks at real px sizes, anchored to corners, never stretched (block-sizing-law.md)",
+      "name": "BLOCK TEST v2 — fixed-size corner-anchored (LTP-005)"
+    },
+    {
+      "path": "ui_kits/im-slides/chrome.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "Deal-themed cover + frosted ToC divider; theme-cobalt",
+      "name": "Chrome — cover & divider (themed)"
+    },
+    {
+      "path": "ui_kits/im-slides/customers.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "T-CUSTOMERS: value-chain nav + grey panels, donut + concentration curve (theme-bemedico)",
+      "name": "Customer concentration"
+    },
+    {
+      "path": "ui_kits/im-slides/index.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "Planet / People / Product — SDG bars, climate donuts, testimonial & imagery",
+      "name": "ESG three-pillar slide"
+    },
+    {
+      "path": "ui_kits/im-slides/investment-highlights.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "Numbered highlight rows: deal panel + bullets + visual (theme-bemedico)",
+      "name": "Key investment highlights"
+    },
+    {
+      "path": "ui_kits/pilot-im/index.html",
+      "group": "Slides",
+      "viewport": "1280x720",
+      "subtitle": "6-slide end-to-end IM in a fresh industry (food-service equipment) — cross-industry neutrality test",
+      "name": "Pilot mini-IM — Project Cedar (CulinaTech)"
+    },
+    {
+      "path": "guidelines/spacing.card.html",
+      "group": "Spacing",
+      "viewport": "700x170",
+      "subtitle": "Measured house margins: 0.53cm sides, single body size, minimal colour",
+      "name": "Margins & spacing"
+    },
+    {
+      "path": "guidelines/type-sans.card.html",
+      "group": "Type",
+      "viewport": "700x200",
+      "subtitle": "Source Sans Pro: one body size everywhere; small-caps is the signature device",
+      "name": "Sans — body, small-caps, labels"
+    },
+    {
+      "path": "guidelines/type-serif.card.html",
+      "group": "Type",
+      "viewport": "700x180",
+      "subtitle": "Merriweather: slide title, subtitle, pull-quote (sentence case, never Title Case)",
+      "name": "Serif — titles & quotes"
+    }
+  ],
+  "templates": [
+    {
+      "name": "IM content slide",
+      "description": "Kumulus Information Memorandum content slide — SlideFrame chrome + grey panels, bullets, donut and KPI tiles, themed per deal. Copy this folder and edit the data in the logic class.",
+      "folder": "templates/im-deck",
+      "entryPath": "templates/im-deck/ImDeck.dc.html",
+      "thumbnail": {
+        "path": "templates/im-deck/.thumbnail",
+        "kind": "captured"
+      }
+    }
+  ],
+  "hasThumbnailHtml": true,
+  "globalCssPaths": [
+    "tokens/fonts.css",
+    "tokens/deal-theme.css",
+    "tokens/colors.css",
+    "tokens/typography.css",
+    "tokens/spacing.css",
+    "tokens/canvas.css",
+    "styles.css"
+  ],
+  "tokens": [
+    {
+      "name": "--deal-primary",
+      "value": "#17418a",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-primary-deep",
+      "value": "#0f2f66",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-secondary",
+      "value": "#6f9bd6",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-accent",
+      "value": "#78caf0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-soft",
+      "value": "#becef0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-positive",
+      "value": "#1f9433",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-chart-1",
+      "value": "var(--deal-primary-deep)",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-chart-2",
+      "value": "var(--deal-primary)",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-chart-3",
+      "value": "var(--deal-accent)",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-chart-4",
+      "value": "var(--deal-positive)",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-chart-5",
+      "value": "#6cc879",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-capsule-bg",
+      "value": "var(--deal-soft)",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-capsule-text",
+      "value": "var(--deal-primary-deep)",
+      "kind": "font",
+      "definedIn": "tokens/deal-theme.css"
+    },
+    {
+      "name": "--deal-primary",
+      "value": "#5b2d8e",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-primary-deep",
+      "value": "#3f1d68",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-secondary",
+      "value": "#a98fd0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-accent",
+      "value": "#16b6c4",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-soft",
+      "value": "#d9ccef",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-chart-1",
+      "value": "#3f1d68",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-chart-2",
+      "value": "#5b2d8e",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-chart-3",
+      "value": "#a98fd0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-chart-4",
+      "value": "#16b6c4",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-chart-5",
+      "value": "#7fd6df",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-bemedico"
+    },
+    {
+      "name": "--deal-primary",
+      "value": "#0049da",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-primary-deep",
+      "value": "#0a3d8f",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-secondary",
+      "value": "#5a8fef",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-accent",
+      "value": "#78caf0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-soft",
+      "value": "#becef0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-chart-1",
+      "value": "#0a3d8f",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-chart-2",
+      "value": "#0049da",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-chart-3",
+      "value": "#78caf0",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-chart-4",
+      "value": "#1f9433",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-chart-5",
+      "value": "#6cc879",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-cobalt"
+    },
+    {
+      "name": "--deal-primary",
+      "value": "#14335f",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-primary-deep",
+      "value": "#0c2447",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-secondary",
+      "value": "#5b7fa6",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-accent",
+      "value": "#4aa3d6",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-soft",
+      "value": "#c3d3e6",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-chart-1",
+      "value": "#0c2447",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-chart-2",
+      "value": "#14335f",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-chart-3",
+      "value": "#4aa3d6",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-chart-4",
+      "value": "#1f9433",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--deal-chart-5",
+      "value": "#6cc879",
+      "kind": "color",
+      "definedIn": "tokens/deal-theme.css",
+      "scope": ".theme-irmaco"
+    },
+    {
+      "name": "--cobalt-700",
+      "value": "#0a3d8f",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--cobalt-600",
+      "value": "#0049da",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--cobalt-500",
+      "value": "#1f63e6",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--cobalt-400",
+      "value": "#5a8fef",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--navy-900",
+      "value": "#0c2447",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--navy-800",
+      "value": "#14335f",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sky-400",
+      "value": "#78caf0",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sky-300",
+      "value": "#9bd6f3",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sky-200",
+      "value": "#becef0",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sky-100",
+      "value": "#e3edfb",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--green-700",
+      "value": "#176b27",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--green-600",
+      "value": "#1f9433",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--green-500",
+      "value": "#2eae44",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--green-400",
+      "value": "#6cc879",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--teal-600",
+      "value": "#206080",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--white",
+      "value": "#ffffff",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-50",
+      "value": "#f6f6f6",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-100",
+      "value": "#f2f2f2",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-200",
+      "value": "#d9d9d9",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-300",
+      "value": "#bfbfbf",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-400",
+      "value": "#a6a6a6",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-500",
+      "value": "#808080",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-600",
+      "value": "#707070",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--gray-700",
+      "value": "#5b5f66",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--ink",
+      "value": "#23282d",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--black",
+      "value": "#000000",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sand-100",
+      "value": "#ede9e3",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--sand-200",
+      "value": "#dbd3c7",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--accent-coral",
+      "value": "#e0185a",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-target-fill",
+      "value": "#ffcf00",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-target-border",
+      "value": "#d0021b",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-target-text",
+      "value": "#0c2447",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-neutral-fill",
+      "value": "#eeeeee",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-neutral-border",
+      "value": "#bdbdbd",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--placeholder-neutral-text",
+      "value": "#6d6d6d",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--brand-primary",
+      "value": "var(--deal-primary)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--brand-deep",
+      "value": "var(--deal-primary-deep)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--brand-navy",
+      "value": "var(--navy-800)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--brand-accent",
+      "value": "var(--deal-accent)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--brand-positive",
+      "value": "var(--deal-positive)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-heading",
+      "value": "var(--ink)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-label",
+      "value": "var(--deal-primary)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-body",
+      "value": "#2b2b2b",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-on-dark",
+      "value": "var(--white)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-muted",
+      "value": "var(--gray-600)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--text-footnote",
+      "value": "var(--gray-500)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-page",
+      "value": "var(--white)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-band",
+      "value": "var(--gray-100)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-band-warm",
+      "value": "var(--sand-100)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-panel",
+      "value": "var(--white)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-tab",
+      "value": "var(--deal-primary)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-bar",
+      "value": "var(--deal-primary)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--surface-knob",
+      "value": "var(--white)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--rule",
+      "value": "var(--gray-200)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--rule-strong",
+      "value": "var(--ink)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--bullet",
+      "value": "var(--deal-primary)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--chart-1",
+      "value": "var(--deal-chart-1)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--chart-2",
+      "value": "var(--deal-chart-2)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--chart-3",
+      "value": "var(--deal-chart-3)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--chart-4",
+      "value": "var(--deal-chart-4)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--chart-5",
+      "value": "var(--deal-chart-5)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--capsule-bg",
+      "value": "var(--deal-capsule-bg)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--capsule-text",
+      "value": "var(--deal-capsule-text)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--tab-active-bg",
+      "value": "var(--cobalt-600)",
+      "kind": "color",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--tab-active-text",
+      "value": "var(--white)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--tab-idle-text",
+      "value": "var(--gray-500)",
+      "kind": "font",
+      "definedIn": "tokens/colors.css"
+    },
+    {
+      "name": "--font-serif",
+      "value": "\"Merriweather\", Georgia, \"Times New Roman\", serif",
+      "kind": "font",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--font-sans",
+      "value": "\"Source Sans Pro\", \"Source Sans 3\", -apple-system,\n                \"Segoe UI\", system-ui, sans-serif",
+      "kind": "font",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fw-regular",
+      "value": "400",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--fw-medium",
+      "value": "500",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--fw-semibold",
+      "value": "600",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--fw-bold",
+      "value": "700",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--fs-body",
+      "value": "12.7px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-title",
+      "value": "18.7px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-subtitle",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-section",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-colhead",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-label",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-body-sm",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-quote",
+      "value": "var(--fs-body)",
+      "kind": "color",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-footnote",
+      "value": "9.3px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-kpi",
+      "value": "24px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-kpi-lg",
+      "value": "32px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--fs-page-title",
+      "value": "34px",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--lh-tight",
+      "value": "1.15",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--lh-snug",
+      "value": "1.3",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--lh-body",
+      "value": "1.45",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--lh-quote",
+      "value": "1.5",
+      "kind": "font",
+      "definedIn": "tokens/typography.css",
+      "annotation": "font"
+    },
+    {
+      "name": "--ls-caps",
+      "value": "0.08em",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--ls-caps-wide",
+      "value": "0.14em",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--ls-title",
+      "value": "0.005em",
+      "kind": "spacing",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--type-title",
+      "value": "var(--fw-regular) var(--fs-title)/var(--lh-tight) var(--font-serif)",
+      "kind": "font",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--type-quote",
+      "value": "italic var(--fw-regular) var(--fs-quote)/var(--lh-quote) var(--font-serif)",
+      "kind": "font",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--type-body",
+      "value": "var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans)",
+      "kind": "font",
+      "definedIn": "tokens/typography.css"
+    },
+    {
+      "name": "--space-1",
+      "value": "4px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-2",
+      "value": "8px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-3",
+      "value": "12px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-4",
+      "value": "16px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-5",
+      "value": "20px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-6",
+      "value": "24px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-8",
+      "value": "32px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-10",
+      "value": "40px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--space-12",
+      "value": "48px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--slide-w",
+      "value": "1280px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--slide-h",
+      "value": "720px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--slide-margin-x",
+      "value": "20px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--slide-margin-top",
+      "value": "24px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--slide-footer-h",
+      "value": "42px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--col-gap",
+      "value": "28px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--radius-0",
+      "value": "0px",
+      "kind": "radius",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--radius-sm",
+      "value": "3px",
+      "kind": "radius",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--radius-md",
+      "value": "5px",
+      "kind": "radius",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--radius-pill",
+      "value": "999px",
+      "kind": "radius",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--rule-title",
+      "value": "1px solid var(--ink)",
+      "kind": "color",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--rule-separator",
+      "value": "0.5px solid var(--gray-300)",
+      "kind": "color",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--border-hair",
+      "value": "1px solid var(--rule)",
+      "kind": "color",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--border-rule-strong",
+      "value": "1.5px solid var(--rule-strong)",
+      "kind": "color",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--tab-width",
+      "value": "22px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--box-pad-x",
+      "value": "12px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--box-pad-y",
+      "value": "6px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--box-pad-top-header",
+      "value": "39px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--bullet-gap",
+      "value": "10px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--bullet-indent-1",
+      "value": "24px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--bullet-indent-2",
+      "value": "49px",
+      "kind": "spacing",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--shadow-house",
+      "value": "0 0 9px rgba(0, 0, 0, 0.40)",
+      "kind": "shadow",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--shadow-card",
+      "value": "0 1px 3px rgba(12, 26, 58, 0.10)",
+      "kind": "shadow",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--shadow-float",
+      "value": "0 4px 14px rgba(12, 26, 58, 0.16)",
+      "kind": "shadow",
+      "definedIn": "tokens/spacing.css"
+    },
+    {
+      "name": "--ease-standard",
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "kind": "other",
+      "definedIn": "tokens/spacing.css",
+      "annotation": "other"
+    },
+    {
+      "name": "--dur-fast",
+      "value": "120ms",
+      "kind": "other",
+      "definedIn": "tokens/spacing.css",
+      "annotation": "other"
+    },
+    {
+      "name": "--dur-base",
+      "value": "220ms",
+      "kind": "other",
+      "definedIn": "tokens/spacing.css",
+      "annotation": "other"
+    },
+    {
+      "name": "--canvas-w",
+      "value": "1280px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css"
+    },
+    {
+      "name": "--canvas-h",
+      "value": "720px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css"
+    },
+    {
+      "name": "--canvas-ar",
+      "value": "16 / 9",
+      "kind": "other",
+      "definedIn": "tokens/canvas.css",
+      "annotation": "other"
+    },
+    {
+      "name": "--density-body",
+      "value": "12.5px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css"
+    },
+    {
+      "name": "--density-title",
+      "value": "22px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css"
+    },
+    {
+      "name": "--density-line",
+      "value": "1.45",
+      "kind": "other",
+      "definedIn": "tokens/canvas.css",
+      "annotation": "other"
+    },
+    {
+      "name": "--canvas-w",
+      "value": "960px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".canvas-4x3"
+    },
+    {
+      "name": "--canvas-h",
+      "value": "720px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".canvas-4x3"
+    },
+    {
+      "name": "--canvas-ar",
+      "value": "4 / 3",
+      "kind": "other",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".canvas-4x3",
+      "annotation": "other"
+    },
+    {
+      "name": "--density-body",
+      "value": "12px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".density-regular"
+    },
+    {
+      "name": "--density-title",
+      "value": "28px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".density-regular"
+    },
+    {
+      "name": "--density-line",
+      "value": "1.5",
+      "kind": "other",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".density-regular",
+      "annotation": "other"
+    },
+    {
+      "name": "--fs-title",
+      "value": "28px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".density-regular"
+    },
+    {
+      "name": "--fs-subtitle",
+      "value": "16px",
+      "kind": "spacing",
+      "definedIn": "tokens/canvas.css",
+      "scope": ".density-regular"
+    }
+  ],
+  "themes": [
+    {
+      "selector": ".theme-bemedico",
+      "label": "Bemedico"
+    },
+    {
+      "selector": ".theme-cobalt",
+      "label": "Cobalt"
+    },
+    {
+      "selector": ".theme-irmaco",
+      "label": "Irmaco"
+    },
+    {
+      "selector": ".canvas-4x3",
+      "label": "Canvas 4x3"
+    },
+    {
+      "selector": ".density-regular",
+      "label": "Density Regular"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Source Sans Pro",
+      "weight": "200",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-ExtraLight.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "300",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-Light.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "400",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-Regular.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "600",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-Semibold.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "700",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-Bold.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "500",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-Light.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "400",
+      "style": "italic",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-It.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "300",
+      "style": "italic",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-LightIt.otf"
+      ]
+    },
+    {
+      "family": "Source Sans Pro",
+      "weight": "700",
+      "style": "italic",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/SourceSansPro-BoldIt.otf"
+      ]
+    },
+    {
+      "family": "Merriweather",
+      "weight": "300 900",
+      "style": "normal",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/merriweather-normal.woff2"
+      ]
+    },
+    {
+      "family": "Merriweather",
+      "weight": "300 900",
+      "style": "italic",
+      "cssPath": "tokens/fonts.css",
+      "files": [
+        "assets/fonts/merriweather-italic.woff2"
+      ]
+    }
+  ],
+  "brandFonts": [
+    {
+      "family": "Source Sans Pro",
+      "status": "ok",
+      "tokens": [
+        "--font-sans"
+      ],
+      "path": "tokens/fonts.css"
+    },
+    {
+      "family": "Merriweather",
+      "status": "ok",
+      "tokens": [
+        "--font-serif"
+      ],
+      "path": "tokens/fonts.css"
+    }
+  ],
+  "source": "spa"
+}
