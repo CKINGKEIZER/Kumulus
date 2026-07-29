@@ -4686,9 +4686,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 29,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE"
+   ],
+   "grid": "grey-header acquisition-target scan table — flag · numbered badge · financials · description · rationale bullets · 3 coverage ✓/✗ columns",
    "notes": ""
   },
   {
@@ -4700,9 +4702,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 29,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY"
+   ],
+   "grid": "full-bleed photo section divider with translucent agenda overlay (III Transaction financials highlighted yellow)",
    "notes": ""
   },
   {
@@ -4714,9 +4718,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 29,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-TWO-STACK-LABELED-PANELS"
+   ],
+   "grid": "two stacked grey-header note panels (historical financials / business plan) with ▷ bullets",
    "notes": ""
   },
   {
@@ -4728,9 +4734,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 29,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "reported P&L — yellow-header FY19–21A + CAGR table + 10-point numbered commentary sidebar",
    "notes": ""
   },
   {
@@ -4742,9 +4750,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 29,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "EBITDA adjustments bridge — yellow-header table + 8-point numbered commentary sidebar",
    "notes": ""
   },
   {
@@ -4756,9 +4766,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "reported balance sheet — yellow-header table + 13-point numbered commentary sidebar",
    "notes": ""
   },
   {
@@ -4770,9 +4782,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-CASHFLOW-3TABLE-CHART-NOTES"
+   ],
+   "grid": "cash flow — 3 stacked yellow-header mini-tables + quarterly stacked-bar chart + labeled notes panel",
    "notes": ""
   },
   {
@@ -4784,9 +4798,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "net financial cash/(debt) bridge — yellow-header DEC'21 table + 4-point numbered commentary",
    "notes": ""
   },
   {
@@ -4798,9 +4814,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "business plan P&L (1/4) — FY21A + FY22B–FY26E + CAGR yellow-header table + numbered commentary (notes 1–2)",
    "notes": ""
   },
   {
@@ -4812,9 +4830,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "business plan P&L (2/4) — same multi-year table + numbered commentary (notes 3–4)",
    "notes": ""
   },
   {

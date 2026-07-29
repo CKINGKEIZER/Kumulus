@@ -2709,6 +2709,61 @@
       "content": "SOLID yellow fill, 1px RED border, 'COMPANY LOGO' navy 9.5pt caps. Mandatory placeholder, never collapses.",
       "exit": "small fixed chip",
       "seenOn": ["LTP-005", "LTP-011", "LTP-012"]
+    },
+    {
+      "id": "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
+      "name": "Financial table + numbered commentary sidebar (Torino financials archetype)",
+      "category": "table",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "The Torino financial-statement archetype. LEFT (~700px): a yellow-header financial table — italic '€k' corner cell; year columns in solid yellow header cells (FY19A/FY20A/FY21A[/CAGR], or a grey FY21A 'actual' col + yellow FY22B–FY26E + a tan CAGR col for business-plan pages); row labels left-aligned 9.5pt with indented italic sub-rows; subtotal/total rows bold above a 0.5pt rule; values right-aligned, negatives in (parentheses); selected rows carry a small solid-yellow numbered chip (1..n). Optional italic 'KPIs — as % of revenue' block beneath. RIGHT (~500px): a numbered commentary column — each note led by a matching yellow number chip + a 9.5pt paragraph, sometimes with nested gold ▷ sub-bullets, often inside a hairline-bordered box. All text 9.5pt except the 14pt title; footnote row (7pt grey) at the bottom.",
+      "exit": "fills the full content region; table docks top-left, commentary docks top-right — no leftover slot",
+      "seenOn": ["TOR-64", "TOR-65", "TOR-66", "TOR-68", "TOR-69", "TOR-70"]
+    },
+    {
+      "id": "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE",
+      "name": "Acquisition-target scan table (flag · badge · financials · rationale · coverage ✓/✗)",
+      "category": "table",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Wide acquisition-target scan table filling the region. Grey small-caps header band. Columns: HQ (country-flag icon) · Company (numbered circle badge — solid yellow for priority targets, grey for non-priority) · Revenue (€m) · EBITDA (€m) · FTE · Description (wrapped 9.5pt) · Rationale (gold ▷ triangle bullet list) · then three narrow coverage columns (Consulting / Explosion protection / Trading) each holding a green ✓ or red ✗. ~5 target rows separated by 0.25pt grey rules. Footnote '(1) randomly ordered — does not indicate priority. Source: …' beneath. Paired with the (1/2) page of the same table.",
+      "exit": "fills the full content region — no leftover slot",
+      "seenOn": ["TOR-61"]
+    },
+    {
+      "id": "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY",
+      "name": "Full-bleed photo section divider with translucent agenda overlay",
+      "category": "chrome",
+      "size_px": { "w": 1280, "h": 720 },
+      "size_cm": "33.9 × 19.1",
+      "anchor": "full-bleed",
+      "content": "Section-divider slide. A full-bleed product photograph fills the whole sheet edge-to-edge (no margins, no title rule, no footer chrome). A translucent white panel overlays the left ~55%, listing the agenda: each row is a small square number/letter chip (I, II, III, A) + the section title in serif small-caps. The CURRENT section (e.g. 'III Transaction financials') is highlighted with a solid yellow bar behind its row; the other rows sit on faint grey chips.",
+      "exit": "none — divider occupies the entire sheet",
+      "seenOn": ["TOR-62"]
+    },
+    {
+      "id": "BLK-REAL-TOR-TWO-STACK-LABELED-PANELS",
+      "name": "Two stacked grey-header note panels with ▷ bullets",
+      "category": "panel",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Two large panels stacked vertically, filling the region ~50/50 with a ~16px gap. Each panel = a grey small-caps centred header band (e.g. 'HISTORICAL FINANCIALS: FY19A–FY21A', 'BUSINESS PLAN: FY22B–FY26E') above a white body carrying gold ▷ triangle bullets at 9.5pt with generous leading. Hairline (0.25pt grey) panel borders. Used for scope / basis-of-preparation style text slides.",
+      "exit": "fills the full content region; the two panels split it vertically",
+      "seenOn": ["TOR-63"]
+    },
+    {
+      "id": "BLK-REAL-TOR-CASHFLOW-3TABLE-CHART-NOTES",
+      "name": "Cash-flow composite — 3 stacked mini-tables + quarterly stacked-bar chart + notes panel",
+      "category": "chart",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Cash-flow composite. LEFT column (~430px): three stacked yellow-header mini-tables — reported NWC (FY19A–FY21A), total capex (FY19A–FY21A), operational FCF before taxes (FY20A–FY21A) — each with its own yellow year-header row and a bold total above a 0.5pt rule. RIGHT column (~780px): TOP a hairline-bordered quarterly stacked-bar chart (FY21A, Mar/Jun/Sep/Dec) with a left legend (Other working capital / Trade payables / Trade receivables / Inventory in grey→yellow tints) and an overlaid gold 'Normalized NWC' line; BOTTOM a hairline-bordered notes panel with grey small-caps sub-headers (NET WORKING CAPITAL / CAPEX / OPERATIONAL FREE CASH FLOW) each over gold ▷ bullets. Footnote row beneath. All text 9.5pt.",
+      "exit": "fills the full content region — left tables column + right chart-over-notes column",
+      "seenOn": ["TOR-67"]
     }
   ]
 }
