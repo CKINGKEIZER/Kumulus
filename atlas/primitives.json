@@ -44,7 +44,7 @@
     "--fs-footnote"
    ],
    "recipe": "SlideFrame variant='content': serif 14pt title (sentence case) + optional italic body subtitle + optional key-message band; black 0.5pt title rule; body = content region where a Phase-B skeleton renders; footer = grey 0.25pt rule then 42px band: left KumulusMark + 'Project X | Month Year' + confidential line; centre 7pt grey footnote; right FooterNav tabs + target logo + page number.",
-   "component": "components/layout/SlideFrame.jsx (variant='content')",
+   "component": "components/layout/SlideFrame.jsx (variant=content)",
    "fromBlocks": [],
    "seenOn": [
     "TOR-64",
@@ -69,7 +69,7 @@
     "--shadow-house"
    ],
    "recipe": "SlideFrame variant='cover': coverImageSrc (falls back to deal gradient), centred serif coverTitle e.g. 'Project X - Information Memorandum', coverDate.",
-   "component": "components/layout/SlideFrame.jsx (variant='cover')",
+   "component": "components/layout/SlideFrame.jsx (variant=cover)",
    "fromBlocks": [],
    "seenOn": [
     "LTP-001"
@@ -102,7 +102,7 @@
      "note": "full-bleed product photo + translucent left agenda panel, current section on yellow bar (BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY)"
     }
    ],
-   "component": "components/layout/SlideFrame.jsx (variant='divider')",
+   "component": "components/layout/SlideFrame.jsx (variant=divider)",
    "fromBlocks": [
     "BLK-SECTION-DIVIDER-GHOST",
     "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY"
@@ -298,7 +298,7 @@
     "--fs-body"
    ],
    "recipe": "TargetCompanyLogoPlaceholder / TargetLogo: the swappable per-deal target asset; mandatory yellow placeholder when no real logo. Border is SOLID red (not dashed).",
-   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx",
+   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx (TargetLogo/TargetCompanyLogoPlaceholder)",
    "fromBlocks": [
     "BLK-COMPANY-LOGO-YELLOW"
    ],
@@ -324,7 +324,7 @@
     "--fs-body"
    ],
    "recipe": "ThirdPartyLogoPlaceholder: grey placeholder for client/supplier/partner logos (e.g. adix, HOERBIGER, Fagus GreCon on Torino; KAA Gent, PostNL on Bones). Never yellow.",
-   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx (ThirdPartyLogoPlaceholder export)",
+   "component": "components/brand/TargetCompanyLogoPlaceholder.jsx (ThirdPartyLogoPlaceholder)",
    "fromBlocks": [
     "BLK-CUSTOMER-LOGO-GRID"
    ],
@@ -368,7 +368,7 @@
     "--fs-kpi"
    ],
    "recipe": "Grid of solid --deal-primary tiles, white text: bold value (e.g. €[x]m / [x]% / c.[x] / >[x]) over a 9.5pt small-caps label (REVENUE, RECURRING REV., EBITDA MARGIN, FTEs, CUSTOMERS, YEARS OF EXPERIENCE). Re-themed per deal (navy on LTP, purple on Bones). NB: tile value measured ~15px is the hero-KPI exception — calibrate to --fs-kpi rather than introduce a new size. Box never grows: text fits the tile.",
-   "component": "TBD - GAP (candidate KpiTileGrid)",
+   "component": "components/content/KpiTable.jsx (+ KpiCell)",
    "fromBlocks": [
     "BLK-KPI-6TILE",
     "BLK-KPI-TILE-GRID",
@@ -396,7 +396,7 @@
     "--fs-body"
    ],
    "recipe": "Navy --deal-primary rounded pills (radius-pill), bold white metric (e.g. '> 60,000', '99.84%', '85%'); label sits to the right in 9.5pt. 2-4 rows.",
-   "component": "TBD - GAP (candidate KpiPillStack)",
+   "component": "components/content/ValueCapsule.jsx",
    "fromBlocks": [
     "BLK-KPI-PILL-STACK"
    ],
@@ -496,7 +496,7 @@
     "--ls-caps"
    ],
    "recipe": "The canonical home for --fs-kpi — the ONLY text larger than the title. A single big metric + small-caps caption (e.g. donut centre '€[x]m REVENUE', standalone hero stat). Nothing else on a slide may use this size.",
-   "component": "TBD - GAP (candidate HeroKpi)",
+   "component": "components/content/ValueCapsule.jsx (or KpiCell) — verify hero size",
    "fromBlocks": [],
    "seenOn": [
     "LTP-005",
@@ -560,7 +560,7 @@
     "--ls-caps"
    ],
    "recipe": "Solid deal-primary bars, 9.5pt value label above each; a grey CAGR bracket over the span. (house device: the FINAL bar/segment is hatched = forecast/budget). The canonical Kumulus single-series column chart.",
-   "component": "TBD - GAP (candidate ColumnChartCagr)",
+   "component": "components/charts/ColumnChart.jsx (+ CagrPill)",
    "fromBlocks": [
     "BLK-CHART-COLUMN-CAGR",
     "BLK-CAGR-COLUMN-MINI",
@@ -642,7 +642,7 @@
     "--ls-caps"
    ],
    "recipe": "Bars for the €m series, a line for the ratio (EBITDA-margin %, churn average). 9.5pt point labels; legend. (house device: the FINAL bar/segment is hatched = forecast/budget).",
-   "component": "TBD - GAP (candidate ComboBarLineChart)",
+   "component": "components/charts/ColumnChart.jsx (+ MarginCapsule — verify line overlay)",
    "fromBlocks": [
     "BLK-CHART-COMBO-BARLINE",
     "BLK-CHURN-BARS-AVGLINE"
@@ -752,7 +752,7 @@
     "--fs-body"
    ],
    "recipe": "A 100% horizontal share bar in deal-ramp tints with in-bar % labels. The lightweight alternative to a donut for a single share.",
-   "component": "TBD - GAP (candidate SegmentShareBar)",
+   "component": "components/content/BarRow.jsx",
    "fromBlocks": [
     "BLK-SEGMENT-BAR-3PART",
     "BLK-PALEBLUE-HEADER-3COL"
@@ -797,7 +797,7 @@
     "--ls-caps"
    ],
    "recipe": "The house donut: deal-ramp segments, white in-ring % at 9.5pt, a centre label (often a --fs-kpi hero figure), and either a side legend or four corner leader callouts. Preferred over a pie; used for revenue/product/geography splits.",
-   "component": "components/charts (verify Donut) or TBD",
+   "component": "components/charts/Donut.jsx",
    "fromBlocks": [
     "BLK-DONUT-LABELLED",
     "BLK-DONUT-4CALLOUT",
@@ -920,7 +920,7 @@
     "--rule-separator"
    ],
    "recipe": "The house financial statement table (P&L, balance sheet, cash flow, NFD bridge). Deal-coloured header cells, bold subtotals over 0.5pt rules, parenthesised negatives. Pairs with the numbered-commentary column.",
-   "component": "TBD - GAP (candidate FinYearTable)",
+   "component": "components/data/FinancialTable.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY",
     "BLK-PNL-BUSINESSPLAN-TABLE",
@@ -1039,7 +1039,7 @@
     "--rule-separator"
    ],
    "recipe": "Competitor/solution coverage matrix: entities down the left (logo or flag), criteria across the top, cells a ✓/✗ or a harvey-ball. The 'who does what' comparison.",
-   "component": "TBD - GAP (candidate ComparisonMatrix)",
+   "component": "components/data/ComparisonMatrix.jsx",
    "fromBlocks": [
     "BLK-COMPETITOR-FLAGROW-TABLE",
     "BLK-REAL-TOR-COMPONENT-SOLUTION-TABLE"
@@ -1147,7 +1147,7 @@
     "--space-4"
    ],
    "recipe": "The house container: grey caps header band + white body (never a filled card). Wraps bullets or any nested primitive (chart, table, diagram). The building block behind every '3 grey-header columns' / 'labelled panel' layout.",
-   "component": "components/content/PanelHeader.jsx (header) + body TBD",
+   "component": "components/content/PanelHeader.jsx (+ body)",
    "fromBlocks": [
     "BLK-DESCRIPTION-PANEL",
     "BLK-REAL-CHECKLIST-STATUS-PANEL",
@@ -1196,7 +1196,7 @@
     "--deal-primary"
    ],
    "recipe": "Terse bullet copy, square navy bullets by default (▷ triangle for softer lists, ✓ circled-tick for quality checklists). Sentences often drop the article for brevity. The single most common content block.",
-   "component": "TBD - GAP (candidate BulletList)",
+   "component": "components/content/BulletList.jsx",
    "fromBlocks": [
     "BLK-ICONROW-STACKLIST",
     "BLK-VERTICAL-TAB-BULLETROW"
@@ -1242,7 +1242,7 @@
     "--radius-pill"
    ],
    "recipe": "The atomic unit of numbered investment highlights, market-driver rows, and ranked lists. A leading marker keys the row; the marker style carries the meaning (sequence = numbered coin, magnitude = %-badge). Row count 4-7. Feeds the NumberedHighlights / HeroArc skeletons.",
-   "component": "TBD - GAP (candidate BadgeRows)",
+   "component": "components/feature/NumberedHighlight.jsx",
    "fromBlocks": [
     "BLK-NUMBERED-PILL-ROWS",
     "BLK-CIRCLEBADGE-BULLET-RAIL",
@@ -1336,7 +1336,7 @@
     "--ls-caps"
    ],
    "recipe": "The house step sequence: interlocking chevrons for a process/phase flow. Order carries meaning. Variants add icons, a progress detail grid, an expanding land/expand band, or a value-chain (photo/logo stages).",
-   "component": "TBD - GAP (candidate ChevronProcess)",
+   "component": "components/diagrams/ProcessFlow.jsx (+ feature/ProcessSteps)",
    "fromBlocks": [
     "BLK-CHEVRON-PROCESS-6STEP",
     "BLK-CHEVRON-GROWTH-DEVICE-MOCKS",
@@ -1388,7 +1388,7 @@
     "--ls-caps"
    ],
    "recipe": "Acquisition / integration / roadmap timeline: a dated axis with nodes and label cards. Horizontal arrow, icon-node, milestone-checklist, swimlane, or vertical variants.",
-   "component": "TBD - GAP (candidate TimelineAxis)",
+   "component": "components/diagrams/Timeline.jsx",
    "fromBlocks": [
     "BLK-INTEGRATION-TIMELINE-STATUS",
     "BLK-ACQUISITION-TIMELINE-CARDS",
@@ -1633,7 +1633,7 @@
     "--ls-caps"
    ],
    "recipe": "Layered pyramid for tiers/segments (market layers, capability levels). Order = top-down importance/size.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/Pyramid.jsx",
    "fromBlocks": [
     "BLK-PERSPECTIVE-PYRAMID-TIERS",
     "BLK-SEGMENT-PYRAMID-SECTOR-CONC"
