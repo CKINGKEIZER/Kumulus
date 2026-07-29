@@ -75,3 +75,29 @@ House rules — all must pass:
 - **v0.2** — S1–3: 307-slide atlas, taxonomy + clustering, 40-pattern layout
   library, writing corpus.
 - **v0.1** — Foundations: tokens, fonts, base components, chrome, readme.
+
+---
+
+## Enforcement (Phase F / G4)
+
+Run `node atlas/verify/guards.js` on every change to the design system.
+
+- **Type guard** — no px font-size literals outside the 4-size scale
+  (title 18.7 / body 12.7 / footnote 9.3 / hero-KPI 24,32 / page-title 34) plus
+  the footer-chrome and cover/divider display allowlists. All 28 skeletons and
+  the new primitives PASS. Pre-existing chrome debts are logged advisory:
+  ProcessSteps 11px, PullQuote 9.5px, SlideFrame ToC 13/15px — swap to `--fs-*`.
+- **Margin guard** — only `SlideFrame` sets `--slide-margin-*`. The one flagged
+  case (`AppendixSegment`) is a deliberate full-bleed self-contained slide.
+- **Density guard** — skeletons with a required multi-slot contract warn on
+  empty slots (`FinancialStatement`, `InvestmentHighlights`). Advisory for the
+  rest.
+
+### Deferred: `.theme-irmaco` gold identity (colour deprioritised by owner)
+The real Torino/Irmaco identity is gold+navy, but `tokens/deal-theme.css`
+`.theme-irmaco` is navy/blue. The correct fix is **not** to set `--deal-primary`
+to gold (the header components hard-code white text → unreadable on yellow), but
+to add a themeable pair `--deal-header-fill` / `--deal-header-text` (default
+`--deal-primary` / `#fff`; Irmaco → gold / navy) and point `FinancialTable`,
+`KpiTable`, `KpiTileGrid` header fills at them. Deferred per owner direction
+(colour treated as non-blocking for the template). BeMedico (purple) is correct.

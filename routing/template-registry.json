@@ -1,146 +1,599 @@
 {
-  "note": "Template registry — the routing brain (Plan §22-23). Maps a user request to the right slide construction. Each template: the family/subfamily it serves, the layout pattern(s) to use, required + optional inputs, when to use / when to avoid, canonical source slide, and a fallback. The designer reads this to decide HOW Kumulus normally makes a given slide. Pair with selection-rules.md.",
-  "version": "S7",
-  "templates": [
-    {
-      "id": "T-COVER", "family": "document-chrome", "subfamily": "cover",
-      "layout": ["LP-COVER"], "component": "SlideFrame variant=cover",
-      "requiredInputs": ["projectName", "date"], "optionalInputs": ["coverImageSrc", "targetLogoSrc"],
-      "useWhen": "First page of any IM/pitch.", "avoidWhen": "Interior content.",
-      "canonical": "BON-01", "fallback": "deal-gradient cover if no image"
-    },
-    {
-      "id": "T-DIVIDER", "family": "document-chrome", "subfamily": "section-divider",
-      "layout": ["LP-DIVIDER"], "component": "SlideFrame variant=divider",
-      "requiredInputs": ["sectionNumber|sections", "sectionTitle"], "optionalInputs": ["backgroundSrc", "activeSection"],
-      "useWhen": "Opening a section; frosted ToC panel style for major parts.", "avoidWhen": "Between slides in the same section.",
-      "canonical": "TOR-05", "fallback": "oversized-number style if no ToC list"
-    },
-    {
-      "id": "T-AT-A-GLANCE", "family": "company-at-a-glance", "subfamily": "kpi-overview",
-      "layout": ["LP-KPI-COMBO"], "components": ["SlideFrame", "KpiCell", "ColumnChart", "Donut", "BulletList"],
-      "requiredInputs": ["kpis[5-6]", "revenueSeries", "businessMix"], "optionalInputs": ["shortDescription", "geoSplit"],
-      "useWhen": "Second slide / company snapshot: 'company overview', 'at a glance', 'snapshot'.", "avoidWhen": "Deep-dive on one metric (use a chart template).",
-      "canonical": "BON-05", "fallback": "KPI strip + single chart if limited data"
-    },
-    {
-      "id": "T-TIMELINE", "family": "company-history", "subfamily": "linear-timeline",
-      "layout": ["LP-TIMELINE-H"], "components": ["SlideFrame", "Timeline"],
-      "requiredInputs": ["events[]"], "optionalInputs": ["phases[]"],
-      "useWhen": "'history', 'timeline', 'key milestones', 'company journey'.", "avoidWhen": "Forward roadmap (use T-ROADMAP).",
-      "canonical": "BON-06", "fallback": "single-lane node line if no phases"
-    },
-    {
-      "id": "T-INVEST-HIGHLIGHTS", "family": "investment-highlights", "subfamily": "numbered-highlights",
-      "layout": ["LP-HERO-ARC", "LP-COL-HEADERBAR"], "components": ["SlideFrame", "NumberedHighlight", "ColumnChart", "Donut"],
-      "requiredInputs": ["highlights[4-7]{title,bullets,visual}"], "optionalInputs": ["keyMessage"],
-      "useWhen": "'investment highlights', 'why invest', 'key strengths', 'equity story'. Often 2 pages (1/2, 2/2).", "avoidWhen": "Operational detail.",
-      "canonical": "BON-08", "fallback": "numbered rows without visuals if no chart data"
-    },
-    {
-      "id": "T-MARKET-SIZE", "family": "market-sizing", "subfamily": "market-size",
-      "layout": ["LP-CHART-COMMENTARY", "LP-PYRAMID"], "components": ["SlideFrame", "ColumnChart", "Pyramid", "BulletList", "KeyMessageBand"],
-      "requiredInputs": ["marketSeries|tiers", "commentary[]"], "optionalInputs": ["cagr", "sources"],
-      "useWhen": "'market size', 'TAM/SAM', 'market growth', 'addressable market'.", "avoidWhen": "Competitive dynamics (use T-COMPETITION).",
-      "canonical": "BON-14", "fallback": "single bar + commentary"
-    },
-    {
-      "id": "T-MARKET-DRIVERS", "family": "market-drivers", "subfamily": "trends",
-      "layout": ["LP-CARD-GRID", "LP-COL-PLAIN"], "components": ["SlideFrame", "ColumnHeading", "BulletList", "KpiCell"],
-      "requiredInputs": ["drivers[3-6]{heading,evidence}"], "optionalInputs": ["quantification"],
-      "useWhen": "'market trends', 'growth drivers', 'demand drivers', 'regulation', 'demographics'.", "avoidWhen": "Company-specific strategy.",
-      "canonical": "BON-13", "fallback": "bulleted list of drivers"
-    },
-    {
-      "id": "T-COMPETITION", "family": "competitive-positioning", "subfamily": "matrix-2x2",
-      "layout": ["LP-MATRIX-2X2", "LP-MATRIX-CHECK"], "components": ["SlideFrame", "ComparisonMatrix", "ColumnHeading"],
-      "requiredInputs": ["players[]", "dimensions[]"], "optionalInputs": ["axes{x,y}", "positioningTakeaway"],
-      "useWhen": "'competitors', 'competitive landscape', 'positioning', 'barriers to entry'.", "avoidWhen": "Market sizing.",
-      "canonical": "BON-20", "fallback": "harvey-ball capability matrix if no 2-axis fit"
-    },
-    {
-      "id": "T-OFFERING", "family": "product-offering", "subfamily": "product-categories",
-      "layout": ["LP-CARD-GRID", "LP-COL-HEADERBAR"], "components": ["SlideFrame", "SectionBar", "ColumnHeading", "BulletList", "Donut"],
-      "requiredInputs": ["categories[]{name,detail}"], "optionalInputs": ["revenueSplit", "images"],
-      "useWhen": "'products', 'services', 'offering', 'portfolio', 'what they sell'.", "avoidWhen": "Business model economics (use T-BUSINESS-MODEL).",
-      "canonical": "BON-07", "fallback": "category columns without imagery"
-    },
-    {
-      "id": "T-BUSINESS-MODEL", "family": "business-model", "subfamily": "revenue-model",
-      "layout": ["LP-PROCESS-CHEVRON", "LP-FLYWHEEL", "LP-COL-HEADERBAR"], "components": ["SlideFrame", "ProcessFlow", "BulletList", "Donut", "KpiCell"],
-      "requiredInputs": ["modelSteps|revenueStreams", "commentary[]"], "optionalInputs": ["recurringShare", "unitEconomics"],
-      "useWhen": "'business model', 'how they make money', 'revenue model', 'recurring revenue'.", "avoidWhen": "Financial statements.",
-      "canonical": "BON-26", "fallback": "revenue-stream donut + bullets"
-    },
-    {
-      "id": "T-VALUE-CHAIN", "family": "operations", "subfamily": "process-flow",
-      "layout": ["LP-PROCESS-MAP", "LP-PROCESS-CHEVRON"], "components": ["SlideFrame", "ProcessFlow", "BulletList"],
-      "requiredInputs": ["stages[]"], "optionalInputs": ["stageDetail", "photos"],
-      "useWhen": "'operations', 'value chain', 'process', 'logistics', 'how it works end to end'.", "avoidWhen": "Org structure.",
-      "canonical": "BON-31", "fallback": "linear chevron of stages"
-    },
-    {
-      "id": "T-CUSTOMERS", "family": "customers", "subfamily": "concentration",
-      "layout": ["LP-COL-HEADERBAR", "LP-CHART-COMMENTARY"], "components": ["SlideFrame", "PanelHeader", "Donut", "ColumnChart", "BulletList"],
-      "requiredInputs": ["customerMix", "concentrationCurve|topCustomers"], "optionalInputs": ["retention", "quote"],
-      "useWhen": "'customers', 'customer base', 'concentration', 'client diversification', 'top customers'.", "avoidWhen": "Sales pipeline (use T-PIPELINE).",
-      "canonical": "BON-33", "fallback": "customer-mix donut + concentration bullets"
-    },
-    {
-      "id": "T-ORG", "family": "organization", "subfamily": "management",
-      "layout": ["LP-ORG-TREE", "LP-CARD-GRID"], "components": ["SlideFrame", "PullQuote", "ColumnHeading", "BulletList"],
-      "requiredInputs": ["people[]|orgNodes[]"], "optionalInputs": ["tenureChart", "photos"],
-      "useWhen": "'management', 'team', 'org chart', 'organization', 'leadership'.", "avoidWhen": "Culture-only (subset).",
-      "canonical": "BON-37", "fallback": "management cards without photos (placeholder)"
-    },
-    {
-      "id": "T-STRATEGY", "family": "strategy", "subfamily": "strategic-pillars",
-      "layout": ["LP-CARD-GRID", "LP-TRIANGLE"], "components": ["SlideFrame", "ColumnHeading", "BulletList", "KpiCell"],
-      "requiredInputs": ["pillars[3-5]{name,initiatives}"], "optionalInputs": ["quantifiedUpside"],
-      "useWhen": "'strategy', 'growth strategy', 'strategic pillars', 'value creation plan'.", "avoidWhen": "Financial projections (use T-FINANCIAL-OVERVIEW).",
-      "canonical": "BON-42", "fallback": "pillar columns"
-    },
-    {
-      "id": "T-ROADMAP", "family": "strategy", "subfamily": "roadmap",
-      "layout": ["LP-GANTT", "LP-STAIRCASE"], "components": ["SlideFrame", "ProcessFlow", "BulletList"],
-      "requiredInputs": ["phases[]", "milestones[]"], "optionalInputs": ["timeAxis"],
-      "useWhen": "'roadmap', 'implementation plan', 'phasing', 'next steps timeline'.", "avoidWhen": "Historical timeline (use T-TIMELINE).",
-      "canonical": "TOR-58", "fallback": "phased chevron"
-    },
-    {
-      "id": "T-MA", "family": "m-and-a", "subfamily": "target-universe",
-      "layout": ["LP-FUNNEL", "LP-MATRIX-CHECK"], "components": ["SlideFrame", "ComparisonMatrix", "BulletList"],
-      "requiredInputs": ["targets[]|criteria[]"], "optionalInputs": ["funnelStages", "logos"],
-      "useWhen": "'M&A', 'buy-and-build', 'acquisition strategy', 'target list', 'consolidation'.", "avoidWhen": "Organic strategy only.",
-      "canonical": "BON-50", "fallback": "criteria list + target table"
-    },
-    {
-      "id": "T-FINANCIAL-OVERVIEW", "family": "financial-overview", "subfamily": "revenue",
-      "layout": ["LP-COLUMN-TREND", "LP-CHART-COMMENTARY", "LP-WATERFALL"], "components": ["SlideFrame", "ColumnChart", "CagrPill", "MarginCapsule", "BulletList"],
-      "requiredInputs": ["series[]", "commentary[]"], "optionalInputs": ["bridge", "margins", "refPage"],
-      "useWhen": "'revenue', 'EBITDA', 'financial overview', 'growth', 'margins', 'financial highlights'.", "avoidWhen": "Full statements (use T-FINANCIAL-STATEMENT).",
-      "canonical": "BON-45", "fallback": "single trend column chart + CAGR"
-    },
-    {
-      "id": "T-FINANCIAL-STATEMENT", "family": "financial-statements", "subfamily": "pnl",
-      "layout": ["LP-DATA-TABLE"], "components": ["SlideFrame", "FinancialTable", "BulletList"],
-      "requiredInputs": ["columns[]", "rows[]"], "optionalInputs": ["kpis", "commentaryMarkers", "note"],
-      "useWhen": "'P&L', 'income statement', 'balance sheet', 'cash flow', 'QoE', 'adjustments', 'business plan financials'.", "avoidWhen": "High-level trend (use T-FINANCIAL-OVERVIEW).",
-      "canonical": "BON-55", "fallback": "table without commentary markers"
-    },
-    {
-      "id": "T-CASE-STUDY", "family": "operations", "subfamily": "service-delivery",
-      "layout": ["LP-CONTEXT-APPROACH-RESULT"], "components": ["SlideFrame", "SectionBar variant=chevron", "BulletList", "PullQuote", "KpiCell"],
-      "requiredInputs": ["context", "approach", "result"], "optionalInputs": ["clientQuote", "kpis", "logo"],
-      "useWhen": "'case study', 'reference', 'client story', 'proof point'.", "avoidWhen": "General offering overview.",
-      "canonical": "LTP-127", "fallback": "3-column context/approach/result without quote"
-    },
-    {
-      "id": "T-APPENDIX-TABLE", "family": "appendix", "subfamily": "detailed-products",
-      "layout": ["LP-DATA-TABLE", "LP-MATRIX-CHECK"], "components": ["SlideFrame", "FinancialTable", "ComparisonMatrix"],
-      "requiredInputs": ["tableData"], "optionalInputs": ["note"],
-      "useWhen": "'appendix', 'detailed', 'backup', 'supporting data'.", "avoidWhen": "Front-of-book narrative.",
-      "canonical": "BON-66", "fallback": "dense table, smaller allowed"
-    }
-  ]
+ "note": "Template registry — the routing brain (Plan §22-23). Maps a user request to the right slide construction. Each template: the family/subfamily it serves, the layout pattern(s) to use, required + optional inputs, when to use / when to avoid, canonical source slide, and a fallback. The designer reads this to decide HOW Kumulus normally makes a given slide. Pair with selection-rules.md. | G4: each template now points to a built Phase-B skeleton (components/structures/*); requiredInputs are the facts the skeleton's slots need.",
+ "version": "S7+g4-skeletons",
+ "templates": [
+  {
+   "id": "T-COVER",
+   "family": "document-chrome",
+   "subfamily": "cover",
+   "layout": [
+    "LP-COVER"
+   ],
+   "component": "components/layout/SlideFrame.jsx (variant=cover)",
+   "requiredInputs": [
+    "projectName",
+    "date"
+   ],
+   "optionalInputs": [
+    "coverImageSrc",
+    "targetLogoSrc"
+   ],
+   "useWhen": "First page of any IM/pitch.",
+   "avoidWhen": "Interior content.",
+   "canonical": "BON-01",
+   "fallback": "deal-gradient cover if no image",
+   "skeleton": "SlideFrame",
+   "skeletonId": "STR-COVER"
+  },
+  {
+   "id": "T-DIVIDER",
+   "family": "document-chrome",
+   "subfamily": "section-divider",
+   "layout": [
+    "LP-DIVIDER"
+   ],
+   "component": "components/layout/SlideFrame.jsx (variant=divider)",
+   "requiredInputs": [
+    "sectionNumber|sections",
+    "sectionTitle"
+   ],
+   "optionalInputs": [
+    "backgroundSrc",
+    "activeSection"
+   ],
+   "useWhen": "Opening a section; frosted ToC panel style for major parts.",
+   "avoidWhen": "Between slides in the same section.",
+   "canonical": "TOR-05",
+   "fallback": "oversized-number style if no ToC list",
+   "skeleton": "SlideFrame",
+   "skeletonId": "STR-SECTION-DIVIDER"
+  },
+  {
+   "id": "T-AT-A-GLANCE",
+   "family": "company-at-a-glance",
+   "subfamily": "kpi-overview",
+   "layout": [
+    "LP-KPI-COMBO"
+   ],
+   "components": [
+    "SlideFrame",
+    "KpiCell",
+    "ColumnChart",
+    "Donut",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "kpis[5-6]",
+    "revenueSeries",
+    "businessMix"
+   ],
+   "optionalInputs": [
+    "shortDescription",
+    "geoSplit"
+   ],
+   "useWhen": "Second slide / company snapshot: 'company overview', 'at a glance', 'snapshot'.",
+   "avoidWhen": "Deep-dive on one metric (use a chart template).",
+   "canonical": "BON-05",
+   "fallback": "KPI strip + single chart if limited data",
+   "skeleton": "CompanyAtAGlance",
+   "skeletonId": "STR-COMPANY-AT-A-GLANCE",
+   "component": "components/structures/CompanyAtAGlance.jsx"
+  },
+  {
+   "id": "T-TIMELINE",
+   "family": "company-history",
+   "subfamily": "linear-timeline",
+   "layout": [
+    "LP-TIMELINE-H"
+   ],
+   "components": [
+    "SlideFrame",
+    "Timeline"
+   ],
+   "requiredInputs": [
+    "events[]"
+   ],
+   "optionalInputs": [
+    "phases[]"
+   ],
+   "useWhen": "'history', 'timeline', 'key milestones', 'company journey'.",
+   "avoidWhen": "Forward roadmap (use T-ROADMAP).",
+   "canonical": "BON-06",
+   "fallback": "single-lane node line if no phases",
+   "skeleton": "CompanyTimeline",
+   "skeletonId": "STR-TIMELINE",
+   "component": "components/structures/CompanyTimeline.jsx"
+  },
+  {
+   "id": "T-INVEST-HIGHLIGHTS",
+   "family": "investment-highlights",
+   "subfamily": "numbered-highlights",
+   "layout": [
+    "LP-HERO-ARC",
+    "LP-COL-HEADERBAR"
+   ],
+   "components": [
+    "SlideFrame",
+    "NumberedHighlight",
+    "ColumnChart",
+    "Donut"
+   ],
+   "requiredInputs": [
+    "highlights[4-7]{title,bullets,visual}"
+   ],
+   "optionalInputs": [
+    "keyMessage"
+   ],
+   "useWhen": "'investment highlights', 'why invest', 'key strengths', 'equity story'. Often 2 pages (1/2, 2/2).",
+   "avoidWhen": "Operational detail.",
+   "canonical": "BON-08",
+   "fallback": "numbered rows without visuals if no chart data",
+   "skeleton": "InvestmentHighlights",
+   "skeletonId": "STR-INVESTMENT-HIGHLIGHTS-ROWS",
+   "component": "components/structures/InvestmentHighlights.jsx"
+  },
+  {
+   "id": "T-MARKET-SIZE",
+   "family": "market-sizing",
+   "subfamily": "market-size",
+   "layout": [
+    "LP-CHART-COMMENTARY",
+    "LP-PYRAMID"
+   ],
+   "components": [
+    "SlideFrame",
+    "ColumnChart",
+    "Pyramid",
+    "BulletList",
+    "KeyMessageBand"
+   ],
+   "requiredInputs": [
+    "marketSeries|tiers",
+    "commentary[]"
+   ],
+   "optionalInputs": [
+    "cagr",
+    "sources"
+   ],
+   "useWhen": "'market size', 'TAM/SAM', 'market growth', 'addressable market'.",
+   "avoidWhen": "Competitive dynamics (use T-COMPETITION).",
+   "canonical": "BON-14",
+   "fallback": "single bar + commentary",
+   "skeleton": "MarketSizing",
+   "skeletonId": "STR-MARKET-SIZING",
+   "component": "components/structures/MarketSizing.jsx"
+  },
+  {
+   "id": "T-MARKET-DRIVERS",
+   "family": "market-drivers",
+   "subfamily": "trends",
+   "layout": [
+    "LP-CARD-GRID",
+    "LP-COL-PLAIN"
+   ],
+   "components": [
+    "SlideFrame",
+    "ColumnHeading",
+    "BulletList",
+    "KpiCell"
+   ],
+   "requiredInputs": [
+    "drivers[3-6]{heading,evidence}"
+   ],
+   "optionalInputs": [
+    "quantification"
+   ],
+   "useWhen": "'market trends', 'growth drivers', 'demand drivers', 'regulation', 'demographics'.",
+   "avoidWhen": "Company-specific strategy.",
+   "canonical": "BON-13",
+   "fallback": "bulleted list of drivers",
+   "skeleton": "TrendImpact",
+   "skeletonId": "STR-TREND-IMPACT",
+   "component": "components/structures/TrendImpact.jsx"
+  },
+  {
+   "id": "T-COMPETITION",
+   "family": "competitive-positioning",
+   "subfamily": "matrix-2x2",
+   "layout": [
+    "LP-MATRIX-2X2",
+    "LP-MATRIX-CHECK"
+   ],
+   "components": [
+    "SlideFrame",
+    "ComparisonMatrix",
+    "ColumnHeading"
+   ],
+   "requiredInputs": [
+    "players[]",
+    "dimensions[]"
+   ],
+   "optionalInputs": [
+    "axes{x,y}",
+    "positioningTakeaway"
+   ],
+   "useWhen": "'competitors', 'competitive landscape', 'positioning', 'barriers to entry'.",
+   "avoidWhen": "Market sizing.",
+   "canonical": "BON-20",
+   "fallback": "harvey-ball capability matrix if no 2-axis fit",
+   "skeleton": "CompetitionMatrix",
+   "skeletonId": "STR-COMPETITION-MATRIX",
+   "component": "components/structures/CompetitionMatrix.jsx"
+  },
+  {
+   "id": "T-OFFERING",
+   "family": "product-offering",
+   "subfamily": "product-categories",
+   "layout": [
+    "LP-CARD-GRID",
+    "LP-COL-HEADERBAR"
+   ],
+   "components": [
+    "SlideFrame",
+    "SectionBar",
+    "ColumnHeading",
+    "BulletList",
+    "Donut"
+   ],
+   "requiredInputs": [
+    "categories[]{name,detail}"
+   ],
+   "optionalInputs": [
+    "revenueSplit",
+    "images"
+   ],
+   "useWhen": "'products', 'services', 'offering', 'portfolio', 'what they sell'.",
+   "avoidWhen": "Business model economics (use T-BUSINESS-MODEL).",
+   "canonical": "BON-07",
+   "fallback": "category columns without imagery",
+   "skeleton": "BusinessModelService",
+   "skeletonId": "STR-BUSINESS-MODEL-SERVICE",
+   "component": "components/structures/BusinessModelService.jsx",
+   "alternateSkeletons": [
+    "PlatformArchitecture"
+   ]
+  },
+  {
+   "id": "T-BUSINESS-MODEL",
+   "family": "business-model",
+   "subfamily": "revenue-model",
+   "layout": [
+    "LP-PROCESS-CHEVRON",
+    "LP-FLYWHEEL",
+    "LP-COL-HEADERBAR"
+   ],
+   "components": [
+    "SlideFrame",
+    "ProcessFlow",
+    "BulletList",
+    "Donut",
+    "KpiCell"
+   ],
+   "requiredInputs": [
+    "modelSteps|revenueStreams",
+    "commentary[]"
+   ],
+   "optionalInputs": [
+    "recurringShare",
+    "unitEconomics"
+   ],
+   "useWhen": "'business model', 'how they make money', 'revenue model', 'recurring revenue'.",
+   "avoidWhen": "Financial statements.",
+   "canonical": "BON-26",
+   "fallback": "revenue-stream donut + bullets",
+   "skeleton": "BusinessModelService",
+   "skeletonId": "STR-BUSINESS-MODEL-SERVICE",
+   "component": "components/structures/BusinessModelService.jsx"
+  },
+  {
+   "id": "T-VALUE-CHAIN",
+   "family": "operations",
+   "subfamily": "process-flow",
+   "layout": [
+    "LP-PROCESS-MAP",
+    "LP-PROCESS-CHEVRON"
+   ],
+   "components": [
+    "SlideFrame",
+    "ProcessFlow",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "stages[]"
+   ],
+   "optionalInputs": [
+    "stageDetail",
+    "photos"
+   ],
+   "useWhen": "'operations', 'value chain', 'process', 'logistics', 'how it works end to end'.",
+   "avoidWhen": "Org structure.",
+   "canonical": "BON-31",
+   "fallback": "linear chevron of stages",
+   "skeleton": "ValueChain",
+   "skeletonId": "STR-VALUE-CHAIN",
+   "component": "components/structures/ValueChain.jsx"
+  },
+  {
+   "id": "T-CUSTOMERS",
+   "family": "customers",
+   "subfamily": "concentration",
+   "layout": [
+    "LP-COL-HEADERBAR",
+    "LP-CHART-COMMENTARY"
+   ],
+   "components": [
+    "SlideFrame",
+    "PanelHeader",
+    "Donut",
+    "ColumnChart",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "customerMix",
+    "concentrationCurve|topCustomers"
+   ],
+   "optionalInputs": [
+    "retention",
+    "quote"
+   ],
+   "useWhen": "'customers', 'customer base', 'concentration', 'client diversification', 'top customers'.",
+   "avoidWhen": "Sales pipeline (use T-PIPELINE).",
+   "canonical": "BON-33",
+   "fallback": "customer-mix donut + concentration bullets",
+   "skeleton": "CustomerConcentration",
+   "skeletonId": "STR-CUSTOMER-CONCENTRATION",
+   "component": "components/structures/CustomerConcentration.jsx",
+   "alternateSkeletons": [
+    "CustomerDeepDive"
+   ]
+  },
+  {
+   "id": "T-ORG",
+   "family": "organization",
+   "subfamily": "management",
+   "layout": [
+    "LP-ORG-TREE",
+    "LP-CARD-GRID"
+   ],
+   "components": [
+    "SlideFrame",
+    "PullQuote",
+    "ColumnHeading",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "people[]|orgNodes[]"
+   ],
+   "optionalInputs": [
+    "tenureChart",
+    "photos"
+   ],
+   "useWhen": "'management', 'team', 'org chart', 'organization', 'leadership'.",
+   "avoidWhen": "Culture-only (subset).",
+   "canonical": "BON-37",
+   "fallback": "management cards without photos (placeholder)",
+   "skeleton": "ManagementProfiles",
+   "skeletonId": "STR-MANAGEMENT-PROFILES",
+   "component": "components/structures/ManagementProfiles.jsx",
+   "alternateSkeletons": [
+    "OrgStructure"
+   ]
+  },
+  {
+   "id": "T-STRATEGY",
+   "family": "strategy",
+   "subfamily": "strategic-pillars",
+   "layout": [
+    "LP-CARD-GRID",
+    "LP-TRIANGLE"
+   ],
+   "components": [
+    "SlideFrame",
+    "ColumnHeading",
+    "BulletList",
+    "KpiCell"
+   ],
+   "requiredInputs": [
+    "pillars[3-5]{name,initiatives}"
+   ],
+   "optionalInputs": [
+    "quantifiedUpside"
+   ],
+   "useWhen": "'strategy', 'growth strategy', 'strategic pillars', 'value creation plan'.",
+   "avoidWhen": "Financial projections (use T-FINANCIAL-OVERVIEW).",
+   "canonical": "BON-42",
+   "fallback": "pillar columns",
+   "skeleton": "HighlightHub",
+   "skeletonId": "STR-HIGHLIGHT-HUB",
+   "component": "components/structures/HighlightHub.jsx",
+   "alternateSkeletons": [
+    "GrowthCycle"
+   ]
+  },
+  {
+   "id": "T-ROADMAP",
+   "family": "strategy",
+   "subfamily": "roadmap",
+   "layout": [
+    "LP-GANTT",
+    "LP-STAIRCASE"
+   ],
+   "components": [
+    "SlideFrame",
+    "ProcessFlow",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "phases[]",
+    "milestones[]"
+   ],
+   "optionalInputs": [
+    "timeAxis"
+   ],
+   "useWhen": "'roadmap', 'implementation plan', 'phasing', 'next steps timeline'.",
+   "avoidWhen": "Historical timeline (use T-TIMELINE).",
+   "canonical": "TOR-58",
+   "fallback": "phased chevron",
+   "skeleton": "ProcessChevronDetail",
+   "skeletonId": "STR-PROCESS-CHEVRON-DETAIL",
+   "component": "components/structures/ProcessChevronDetail.jsx"
+  },
+  {
+   "id": "T-MA",
+   "family": "m-and-a",
+   "subfamily": "target-universe",
+   "layout": [
+    "LP-FUNNEL",
+    "LP-MATRIX-CHECK"
+   ],
+   "components": [
+    "SlideFrame",
+    "ComparisonMatrix",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "targets[]|criteria[]"
+   ],
+   "optionalInputs": [
+    "funnelStages",
+    "logos"
+   ],
+   "useWhen": "'M&A', 'buy-and-build', 'acquisition strategy', 'target list', 'consolidation'.",
+   "avoidWhen": "Organic strategy only.",
+   "canonical": "BON-50",
+   "fallback": "criteria list + target table",
+   "skeleton": "AcqTargetScan",
+   "skeletonId": "STR-CRITERIA-BENCHMARK",
+   "component": "components/data/AcqTargetScan.jsx"
+  },
+  {
+   "id": "T-FINANCIAL-OVERVIEW",
+   "family": "financial-overview",
+   "subfamily": "revenue",
+   "layout": [
+    "LP-COLUMN-TREND",
+    "LP-CHART-COMMENTARY",
+    "LP-WATERFALL"
+   ],
+   "components": [
+    "SlideFrame",
+    "ColumnChart",
+    "CagrPill",
+    "MarginCapsule",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "series[]",
+    "commentary[]"
+   ],
+   "optionalInputs": [
+    "bridge",
+    "margins",
+    "refPage"
+   ],
+   "useWhen": "'revenue', 'EBITDA', 'financial overview', 'growth', 'margins', 'financial highlights'.",
+   "avoidWhen": "Full statements (use T-FINANCIAL-STATEMENT).",
+   "canonical": "BON-45",
+   "fallback": "single trend column chart + CAGR",
+   "skeleton": "KpiChartRail",
+   "skeletonId": "STR-KPI-CHART-RAIL",
+   "component": "components/structures/KpiChartRail.jsx",
+   "alternateSkeletons": [
+    "CashflowDashboard",
+    "FcfTablesNotes",
+    "BridgeCommentary"
+   ]
+  },
+  {
+   "id": "T-FINANCIAL-STATEMENT",
+   "family": "financial-statements",
+   "subfamily": "pnl",
+   "layout": [
+    "LP-DATA-TABLE"
+   ],
+   "components": [
+    "SlideFrame",
+    "FinancialTable",
+    "BulletList"
+   ],
+   "requiredInputs": [
+    "columns[]",
+    "rows[]"
+   ],
+   "optionalInputs": [
+    "kpis",
+    "commentaryMarkers",
+    "note"
+   ],
+   "useWhen": "'P&L', 'income statement', 'balance sheet', 'cash flow', 'QoE', 'adjustments', 'business plan financials'.",
+   "avoidWhen": "High-level trend (use T-FINANCIAL-OVERVIEW).",
+   "canonical": "BON-55",
+   "fallback": "table without commentary markers",
+   "skeleton": "FinancialStatement",
+   "skeletonId": "STR-FIN-STATEMENT-COMMENTARY",
+   "component": "components/structures/FinancialStatement.jsx"
+  },
+  {
+   "id": "T-CASE-STUDY",
+   "family": "operations",
+   "subfamily": "service-delivery",
+   "layout": [
+    "LP-CONTEXT-APPROACH-RESULT"
+   ],
+   "components": [
+    "SlideFrame",
+    "SectionBar variant=chevron",
+    "BulletList",
+    "PullQuote",
+    "KpiCell"
+   ],
+   "requiredInputs": [
+    "context",
+    "approach",
+    "result"
+   ],
+   "optionalInputs": [
+    "clientQuote",
+    "kpis",
+    "logo"
+   ],
+   "useWhen": "'case study', 'reference', 'client story', 'proof point'.",
+   "avoidWhen": "General offering overview.",
+   "canonical": "LTP-127",
+   "fallback": "3-column context/approach/result without quote",
+   "skeleton": "ProcessChevronDetail",
+   "skeletonId": "STR-PROCESS-CHEVRON-DETAIL",
+   "component": "components/structures/ProcessChevronDetail.jsx"
+  },
+  {
+   "id": "T-APPENDIX-TABLE",
+   "family": "appendix",
+   "subfamily": "detailed-products",
+   "layout": [
+    "LP-DATA-TABLE",
+    "LP-MATRIX-CHECK"
+   ],
+   "components": [
+    "SlideFrame",
+    "FinancialTable",
+    "ComparisonMatrix"
+   ],
+   "requiredInputs": [
+    "tableData"
+   ],
+   "optionalInputs": [
+    "note"
+   ],
+   "useWhen": "'appendix', 'detailed', 'backup', 'supporting data'.",
+   "avoidWhen": "Front-of-book narrative.",
+   "canonical": "BON-66",
+   "fallback": "dense table, smaller allowed",
+   "skeleton": "CriteriaBenchmark",
+   "skeletonId": "STR-CRITERIA-BENCHMARK",
+   "component": "components/structures/CriteriaBenchmark.jsx",
+   "alternateSkeletons": [
+    "Glossary"
+   ]
+  }
+ ]
 }
