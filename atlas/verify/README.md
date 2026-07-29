@@ -16,3 +16,19 @@ CHROME=$(ls /opt/pw-browsers/chromium-*/chrome-linux/chrome | head -1)
 `node_modules/`, `slide.html`, `shot.png` are build artifacts — do not commit.
 Add a demo by extending the `demos` map in `render.js`. Log each verification in
 `atlas/recreation-log.md`.
+
+## Rebuilding the runtime bundle
+
+After adding/editing components, regenerate `_ds_bundle.js` + `_ds_manifest.json`
+so the browser runtime (`window.KumulusPartnersDesignSystem_533273`) and
+`ui_kits/` pick them up:
+
+```bash
+NODE_PATH=./node_modules node ../verify/build-bundle.js   # from a dir with @babel/core
+```
+
+`build-bundle.js` transpiles every `components/*/*.jsx` (two-pass Babel: JSX →
+`React.createElement`, then strip `import React`, rewrite sibling imports to
+`__ds_scope.<name>`, strip `export`), emitting the same `format:4` bundle.
+Verified by loading the bundle with React UMD in headless Chromium and rendering
+a slide (existing SlideFrame + new FinancialStatement) — DOM content confirmed.
