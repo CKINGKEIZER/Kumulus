@@ -34,6 +34,13 @@
 
   --deal-capsule-bg:   var(--deal-soft);
   --deal-capsule-text: var(--deal-primary-deep);
+
+  /* Filled "header" surfaces (financial-table headers, KPI tiles, numbered
+     chips, term chips). Decoupled from --deal-primary so a deal can carry a
+     gold header identity while keeping navy charts/section bars. Text colour
+     is themeable so dark-on-light fills stay readable. */
+  --deal-header-fill:  var(--deal-primary);
+  --deal-header-text:  #fff;
 }
 
 /* ---- Example deal themes (apply as a class on the slide root) ---- */
@@ -58,12 +65,15 @@
   --deal-chart-1: #0a3d8f; --deal-chart-2: #0049da; --deal-chart-3: #78caf0; --deal-chart-4: #1f9433; --deal-chart-5: #6cc879;
 }
 
-/* Irmaco (Project Torino) — corporate navy + steel blue */
+/* Irmaco (Project Torino) — navy + GOLD identity (gold header fills w/ navy
+   text; navy charts with a gold forecast accent). */
 .theme-irmaco {
   --deal-primary:      #14335f;
   --deal-primary-deep: #0c2447;
   --deal-secondary:    #5b7fa6;
-  --deal-accent:       #4aa3d6;
-  --deal-soft:         #c3d3e6;
-  --deal-chart-1: #0c2447; --deal-chart-2: #14335f; --deal-chart-3: #4aa3d6; --deal-chart-4: #1f9433; --deal-chart-5: #6cc879;
+  --deal-accent:       #e9b824;   /* gold: chips, badges, markers */
+  --deal-soft:         #f5e4a6;   /* pale gold */
+  --deal-header-fill:  #e9b824;   /* gold financial-table headers / KPI tiles / term chips */
+  --deal-header-text:  #14335f;   /* navy text on the gold fill (readable) */
+  --deal-chart-1: #14335f; --deal-chart-2: #0c2447; --deal-chart-3: #e9b824; --deal-chart-4: #5b7fa6; --deal-chart-5: #b98f1e;
 }

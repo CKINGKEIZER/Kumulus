@@ -172,3 +172,13 @@ Made the skill actually route to the new layer:
   NPS gauge panel) both build correct, dense slides from their `.prompt.md`.
 
 Now: 28/28 skeletons visually verified; SKILL.md teaches the skeleton layer.
+
+---
+
+## Theme identity implemented (all three deals correct)
+
+Added `--deal-header-fill` / `--deal-header-text` tokens (default `--deal-primary`
+/ `#fff`), wired FinancialTable (headers + markers), KpiTileGrid, NumberedCommentary,
+GlossaryGrid. `.theme-irmaco` now renders its real gold-on-navy identity — verified:
+Torino P&L shows gold headers + gold numbered chips with readable navy text, charts
+stay navy. BeMedico inherits the purple default (unchanged). Bundle regenerated.

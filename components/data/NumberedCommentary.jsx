@@ -10,14 +10,14 @@ import React from "react";
  */
 export function NumberedCommentary({
   items = [],
-  markerColor = "var(--deal-accent)",
+  markerColor = "var(--deal-header-fill)",
   boxed = false,
   columns = 1,
   className = "",
   style = {},
 }) {
   const Chip = ({ n }) => (
-    <span style={{ flex: "0 0 auto", display: "inline-flex", alignItems: "center", justifyContent: "center", width: 15, height: 15, borderRadius: "999px", background: markerColor, color: "#fff", fontSize: 9, fontWeight: "var(--fw-bold)", marginTop: 1 }}>{n}</span>
+    <span style={{ flex: "0 0 auto", display: "inline-flex", alignItems: "center", justifyContent: "center", width: 15, height: 15, borderRadius: "999px", background: markerColor, color: "var(--deal-header-text)", fontSize: 9, fontWeight: "var(--fw-bold)", marginTop: 1 }}>{n}</span>
   );
   const wrap = {
     fontFamily: "var(--font-sans)",

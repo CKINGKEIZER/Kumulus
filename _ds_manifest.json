@@ -367,7 +367,7 @@
       "group": "Colors",
       "viewport": "700x150",
       "subtitle": "Primary cobalt does the brand work; navy anchors charts + wordmark",
-      "name": "Brand ramp — cobalt & navy"
+      "name": "Brand ramp \u2014 cobalt & navy"
     },
     {
       "path": "guidelines/colors-neutral.card.html",
@@ -395,7 +395,7 @@
       "group": "Components",
       "viewport": "700x340",
       "subtitle": "ColumnHeading, BulletList, KpiCell, ValueCapsule, BarRow, KpiTable",
-      "name": "Content — headings, bullets, KPIs, bars, table"
+      "name": "Content \u2014 headings, bullets, KPIs, bars, table"
     },
     {
       "path": "components/data/data.card.html",
@@ -416,28 +416,28 @@
       "group": "Components",
       "viewport": "700x300",
       "subtitle": "PullQuote, ProcessSteps, ArrowConnector",
-      "name": "Feature — quote, process, connector"
+      "name": "Feature \u2014 quote, process, connector"
     },
     {
       "path": "components/layout/layout.card.html",
       "group": "Components",
       "viewport": "700x300",
       "subtitle": "SectionBar, VerticalTab, FooterNav",
-      "name": "Layout — bars, tabs, footer nav"
+      "name": "Layout \u2014 bars, tabs, footer nav"
     },
     {
       "path": "ui_kits/im-slides/block-test-at-a-glance.html",
       "group": "Slides",
       "viewport": "1280x720",
       "subtitle": "Blocks at real px sizes, anchored to corners, never stretched (block-sizing-law.md)",
-      "name": "BLOCK TEST v2 — fixed-size corner-anchored (LTP-005)"
+      "name": "BLOCK TEST v2 \u2014 fixed-size corner-anchored (LTP-005)"
     },
     {
       "path": "ui_kits/im-slides/chrome.html",
       "group": "Slides",
       "viewport": "1280x720",
       "subtitle": "Deal-themed cover + frosted ToC divider; theme-cobalt",
-      "name": "Chrome — cover & divider (themed)"
+      "name": "Chrome \u2014 cover & divider (themed)"
     },
     {
       "path": "ui_kits/im-slides/customers.html",
@@ -450,7 +450,7 @@
       "path": "ui_kits/im-slides/index.html",
       "group": "Slides",
       "viewport": "1280x720",
-      "subtitle": "Planet / People / Product — SDG bars, climate donuts, testimonial & imagery",
+      "subtitle": "Planet / People / Product \u2014 SDG bars, climate donuts, testimonial & imagery",
       "name": "ESG three-pillar slide"
     },
     {
@@ -464,8 +464,8 @@
       "path": "ui_kits/pilot-im/index.html",
       "group": "Slides",
       "viewport": "1280x720",
-      "subtitle": "6-slide end-to-end IM in a fresh industry (food-service equipment) — cross-industry neutrality test",
-      "name": "Pilot mini-IM — Project Cedar (CulinaTech)"
+      "subtitle": "6-slide end-to-end IM in a fresh industry (food-service equipment) \u2014 cross-industry neutrality test",
+      "name": "Pilot mini-IM \u2014 Project Cedar (CulinaTech)"
     },
     {
       "path": "guidelines/spacing.card.html",
@@ -479,20 +479,27 @@
       "group": "Type",
       "viewport": "700x200",
       "subtitle": "Source Sans Pro: one body size everywhere; small-caps is the signature device",
-      "name": "Sans — body, small-caps, labels"
+      "name": "Sans \u2014 body, small-caps, labels"
     },
     {
       "path": "guidelines/type-serif.card.html",
       "group": "Type",
       "viewport": "700x180",
       "subtitle": "Merriweather: slide title, subtitle, pull-quote (sentence case, never Title Case)",
-      "name": "Serif — titles & quotes"
+      "name": "Serif \u2014 titles & quotes"
+    },
+    {
+      "path": "components/structures/structures.card.html",
+      "group": "Components",
+      "viewport": "760x460",
+      "subtitle": "Whole-slide SlideStructure skeletons with named slots (28) \u2014 routed via skeleton-index.md",
+      "name": "Structures \u2014 skeletons"
     }
   ],
   "templates": [
     {
       "name": "IM content slide",
-      "description": "Kumulus Information Memorandum content slide — SlideFrame chrome + grey panels, bullets, donut and KPI tiles, themed per deal. Copy this folder and edit the data in the logic class.",
+      "description": "Kumulus Information Memorandum content slide \u2014 SlideFrame chrome + grey panels, bullets, donut and KPI tiles, themed per deal. Copy this folder and edit the data in the logic class.",
       "folder": "templates/im-deck",
       "entryPath": "templates/im-deck/ImDeck.dc.html",
       "thumbnail": {

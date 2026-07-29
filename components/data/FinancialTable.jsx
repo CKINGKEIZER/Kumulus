@@ -15,13 +15,13 @@ export function FinancialTable({
   kpis = null,
   rowLabelHead = "€m",
   note = null,
-  markerColor = "var(--deal-accent)",
+  markerColor = "var(--deal-header-fill)",
   className = "",
   style = {},
 }) {
   const cell = { padding: "5px 10px", textAlign: "right", fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" };
   const Marker = ({ n }) => (
-    <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 15, height: 15, borderRadius: "999px", background: markerColor, color: "#fff", fontSize: 9, fontWeight: "var(--fw-bold)", marginLeft: 6, verticalAlign: "middle" }}>{n}</span>
+    <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 15, height: 15, borderRadius: "999px", background: markerColor, color: "var(--deal-header-text)", fontSize: 9, fontWeight: "var(--fw-bold)", marginLeft: 6, verticalAlign: "middle" }}>{n}</span>
   );
   return (
     <div className={className} style={{ fontFamily: "var(--font-sans)", fontSize: "var(--fs-body-sm)", color: "var(--text-body)", ...style }}>
@@ -30,7 +30,7 @@ export function FinancialTable({
           <tr>
             <th style={{ ...cell, textAlign: "left", fontWeight: "var(--fw-regular)", color: "var(--text-muted)" }}>{rowLabelHead}</th>
             {columns.map((c, i) => (
-              <th key={i} style={{ ...cell, background: "var(--deal-primary)", color: "#fff", fontWeight: "var(--fw-bold)", borderLeft: "2px solid #fff" }}>{c.label}</th>
+              <th key={i} style={{ ...cell, background: "var(--deal-header-fill)", color: "var(--deal-header-text)", fontWeight: "var(--fw-bold)", borderLeft: "2px solid #fff" }}>{c.label}</th>
             ))}
           </tr>
         </thead>

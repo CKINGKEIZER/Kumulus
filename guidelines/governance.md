@@ -93,11 +93,9 @@ Run `node atlas/verify/guards.js` on every change to the design system.
   empty slots (`FinancialStatement`, `InvestmentHighlights`). Advisory for the
   rest.
 
-### Deferred: `.theme-irmaco` gold identity (colour deprioritised by owner)
-The real Torino/Irmaco identity is gold+navy, but `tokens/deal-theme.css`
-`.theme-irmaco` is navy/blue. The correct fix is **not** to set `--deal-primary`
-to gold (the header components hard-code white text → unreadable on yellow), but
-to add a themeable pair `--deal-header-fill` / `--deal-header-text` (default
-`--deal-primary` / `#fff`; Irmaco → gold / navy) and point `FinancialTable`,
-`KpiTable`, `KpiTileGrid` header fills at them. Deferred per owner direction
-(colour treated as non-blocking for the template). BeMedico (purple) is correct.
+### Theme identity (implemented)
+Deals carry their own fill identity via `--deal-header-fill` / `--deal-header-text`
+(default `--deal-primary` / `#fff`). `.theme-irmaco` sets gold headers + navy text
+(financial-table headers, KPI tiles, numbered chips, glossary chips) while keeping
+navy charts; BeMedico inherits the purple default. Add a new deal by overriding
+those tokens in `tokens/deal-theme.css`.
