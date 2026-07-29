@@ -137,6 +137,176 @@
     "TOR-57"
    ],
    "component": "TBD - G3"
+  },
+  {
+   "id": "STR-COMPANY-AT-A-GLANCE",
+   "name": "Company at-a-glance (KPI + narrative + financial dashboard)",
+   "archetype": "at-a-glance",
+   "grid": "2-col: left ~430px (KPI grid over narrative panel) | right ~790px (financial chart over a multi-graph dashboard row)",
+   "slots": [
+    {
+     "slot": "kpis",
+     "primitive": "PRIM-KPI-TILE-GRID",
+     "anchor": "top-left",
+     "w": 430,
+     "required": true
+    },
+    {
+     "slot": "narrative",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "bottom-left",
+     "w": 430,
+     "required": true
+    },
+    {
+     "slot": "financial",
+     "primitive": "PRIM-CHART-STACKED-COLUMN",
+     "anchor": "top-right",
+     "w": 790,
+     "required": true
+    },
+    {
+     "slot": "dashboard",
+     "primitive": "PRIM-DASHBOARD-MULTIGRAPH",
+     "anchor": "bottom-right",
+     "w": 790,
+     "required": true
+    }
+   ],
+   "density": "4 slots all required — the canonical company snapshot; never a KPI grid + void",
+   "fromComposites": [
+    "BLK-REAL-ATAGLANCE-KPI-FINANCIAL",
+    "BLK-REAL-TOR-ATAGLANCE-OFFERING-MATRIX"
+   ],
+   "exemplars": [
+    "BON-05",
+    "TOR-06"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-INVESTMENT-HIGHLIGHTS-ROWS",
+   "name": "Investment highlights (numbered rows)",
+   "archetype": "at-a-glance",
+   "grid": "full-width stack of 4-6 numbered rows; or an arc/photo on the left with rows fanning right",
+   "variants": [
+    {
+     "label": "rows",
+     "note": "solid numbered panels + claim + mini-viz per row"
+    },
+    {
+     "label": "hero-arc",
+     "note": "dashed arc from a logo hub, pill rows fan off it"
+    },
+    {
+     "label": "hero-arc-photo",
+     "note": "left photo panel arc-masked, numbered pill rows right"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "highlights",
+     "primitive": "PRIM-NARRATIVE-BADGE-ROWS",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true,
+     "repeat": "4-6"
+    },
+    {
+     "slot": "photo",
+     "primitive": "PRIM-MEDIA-PHOTO-PANEL",
+     "anchor": "top-left",
+     "w": 700,
+     "required": false
+    }
+   ],
+   "density": "4-6 numbered highlights, each with a claim + supporting visual; demands grounded highlights, not a sparse list",
+   "fromComposites": [
+    "BLK-REAL-INVEST-HIGHLIGHT-ROWS",
+    "BLK-HERO-ARC-HIGHLIGHTS",
+    "BLK-HERO-ARC-PHOTO"
+   ],
+   "exemplars": [
+    "BON-08",
+    "LTP-012",
+    "LTP-013"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-HIGHLIGHT-HUB",
+   "name": "Central highlight hub (diamond / 3-pillar)",
+   "archetype": "at-a-glance",
+   "grid": "central hub with radiating pillars/highlights filling the region",
+   "variants": [
+    {
+     "label": "diamond-hub",
+     "note": "Torino: solid-yellow diamond centre, grey diamond ring, spoke labels"
+    },
+    {
+     "label": "3-pillar",
+     "note": "ellipse hub fanning to 3 numbered pillar columns"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "hub",
+     "primitive": "PRIM-DIAGRAM-HUB-SPOKE",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    },
+    {
+     "slot": "spokes",
+     "primitive": "PRIM-NARRATIVE-BADGE-ROWS",
+     "anchor": "docked",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "1 hub + N spoke highlights/pillars; the thesis sits at the centre",
+   "fromComposites": [
+    "BLK-REAL-TOR-DIAMOND-HIGHLIGHT-HUB",
+    "BLK-HUB-3PILLAR-SUMMARY"
+   ],
+   "exemplars": [
+    "TOR-08",
+    "LTP-025"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-KPI-CHART-RAIL",
+   "name": "KPI / chart rail over a full-width panel",
+   "archetype": "at-a-glance",
+   "grid": "top band ~420px = 4 chart columns in a rail; beneath = a full-width panel (KPI/NPS/testimonial or arch+certs)",
+   "slots": [
+    {
+     "slot": "rail",
+     "primitive": "PRIM-CHART-COLUMN-CAGR",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true,
+     "repeat": 4
+    },
+    {
+     "slot": "panel",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "bottom-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "4 chart columns (each with its own legend) + a full-width supporting panel",
+   "fromComposites": [
+    "BLK-4CHART-KPI-RAIL",
+    "BLK-REAL-TOR-OPEX-ARCH-KPI-CERT"
+   ],
+   "exemplars": [
+    "LTP-043",
+    "TOR-36"
+   ],
+   "component": "TBD - G3"
   }
  ]
 }

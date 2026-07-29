@@ -644,7 +644,14 @@
    "archetype": "at-a-glance",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-COMPANY-AT-A-GLANCE",
+    "STR-INVESTMENT-HIGHLIGHTS-ROWS",
+    "STR-HIGHLIGHT-HUB",
+    "STR-KPI-CHART-RAIL"
+   ],
+   "structureCount": 4
   },
   {
    "id": "G2-03",
