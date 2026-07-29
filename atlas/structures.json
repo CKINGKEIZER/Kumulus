@@ -808,7 +808,8 @@
     "LTP-041",
     "BON-34"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CustomerDeepDive.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-CUSTOMER-CONCENTRATION",
@@ -838,7 +839,8 @@
    "exemplars": [
     "TOR-42"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CustomerConcentration.jsx",
+   "verified": "vs TOR-42 — PASS"
   },
   {
    "id": "STR-MANAGEMENT-PROFILES",
@@ -879,7 +881,8 @@
     "TOR-46",
     "LTP-130"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/ManagementProfiles.jsx",
+   "verified": "vs TOR-46 — PASS"
   },
   {
    "id": "STR-ORG-STRUCTURE",
@@ -925,7 +928,8 @@
     "BON-37",
     "LTP-133"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/OrgStructure.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-TIMELINE",
@@ -968,7 +972,8 @@
     "LTP-095",
     "BON-06"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CompanyTimeline.jsx",
+   "verified": "vs BON-06 — PASS"
   },
   {
    "id": "STR-COVER",

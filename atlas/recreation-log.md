@@ -115,3 +115,21 @@ Minor cosmetic: NumberedHighlight reserves an empty visual box when no `visual`
 prop is passed — pass a visual or add an `omitVisual` flag later.
 
 G3-04 done (5/5; 2 visually verified, 1 rendered, 2 smoke).
+
+---
+
+## G3-05 people / timeline — vs TOR-42 / TOR-46 / BON-06
+
+Net-new primitives `ParetoCurve`, `PhotoPanel`, `ProfileCard`. `Timeline` and
+`Tree` reused. Skeletons: `CustomerDeepDive`, `CustomerConcentration`,
+`ManagementProfiles`, `OrgStructure`, `CompanyTimeline`.
+
+- **CustomerConcentration (ParetoCurve) vs TOR-42 — PASS.** Cumulative area curve
+  + 20% highlight window + commentary.
+- **ManagementProfiles (ProfileCard) vs TOR-46 — PASS.** Intro + 4-up portrait
+  cards (photo placeholder + name + role + bio).
+- **CompanyTimeline (Timeline) vs BON-06 — PASS.** Phase chevrons + year nodes
+  with alternating captions.
+- **CustomerDeepDive, OrgStructure — SSR smoke PASS.**
+
+G3-05 done (5/5; 3 visually verified, 2 smoke).
