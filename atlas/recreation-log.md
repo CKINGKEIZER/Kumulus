@@ -150,3 +150,25 @@ component). Skeletons: `FullbleedHighlight`, `AppendixSegment`, `Glossary`, `Fac
 - **FullbleedHighlight vs TOR-13 — PASS.** Full-bleed bg + diamond badge + claim bar.
 
 **G3 COMPLETE — all 28 skeletons built and verified.**
+
+---
+
+## Skill wiring + cold end-to-end test
+
+Made the skill actually route to the new layer:
+- `routing/skeleton-index.md` — intent → template → **skeleton** → required facts
+  → slots → exemplar (20 rows, generated from the registry + structures).
+- `SKILL.md` "how to build a slide" now: classify → **skeleton-index** → render
+  the named `components/structures/*` skeleton inside `SlideFrame`, filling slots
+  (read its `.prompt.md`); "do not hand-lay-out when a skeleton exists".
+
+**Cold test** — followed the routing from scratch for natural-language requests:
+- Routing PASS: "how we make money"→BusinessModelService, "revenue growth
+  overview"→KpiChartRail, "competitors"→CompetitionMatrix, "management
+  team"→ManagementProfiles, "customer concentration"→CustomerConcentration,
+  "P&L"→FinancialStatement — every request resolves to the right skeleton.
+- Render PASS (also closes 2 prior smoke-only gaps): BusinessModelService
+  (Tree offering + harvey-ball revenue matrix) and KpiChartRail (3-chart rail +
+  NPS gauge panel) both build correct, dense slides from their `.prompt.md`.
+
+Now: 28/28 skeletons visually verified; SKILL.md teaches the skeleton layer.
