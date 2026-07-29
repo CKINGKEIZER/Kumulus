@@ -26,6 +26,17 @@ Information density is the point — add structure and detail, never whitespace.
 - **Never invent numbers.** Mark unknowns `[x]` / `[-]`. Footnote sources `(1) … (2) …` in 7 pt grey.
 - **No emoji, no exclamation marks.** British/EU spelling, `€`.
 
+## Step 0 — Normalize the request into a brief (do this FIRST)
+Raw requests are vague, partial, or mixed (a sentence + a pasted table + a
+screenshot). **Before building, rewrite the request into an explicit internal
+brief** per **`guidelines/intake.md`**: read every input (prose, data, **and any
+image/sketch**); if a picture is given, *translate its structure* to the nearest
+skeleton (it tells you the layout + intent, not the styling); state one intent
+sentence per slide; bind each fact to a skeleton slot; mark every unknown `[x]`
+(never invent a number); capture deal context once as a `DealProfile`
+(`schemas/deal-profile.schema.json`). Ask 1–3 sharp questions only for real
+blockers. Then run the procedure below on the *brief*, not the raw prompt.
+
 ## How to build a slide (the procedure)
 1. **Classify intent by meaning** → a `family` in `routing/taxonomy.json` (guided by `routing/selection-rules.md`).
 2. **Pick the template + skeleton.** Open **`routing/skeleton-index.md`** — one row per intent → `template-registry.json` template → the **`SlideStructure` skeleton** that builds it (in `components/structures/`) → the facts it needs. Confirm useWhen/avoidWhen in `routing/template-registry.json`.
@@ -57,10 +68,12 @@ page-render thumbnail. Open `atlas/index.html` to find "how do we normally do an
 X slide" and match the canonical exemplar. **When unsure how a slide should look,
 find the real one in the atlas — do not guess.**
 
-## If invoked with no brief
-Ask what they want to build, ask a few sharp questions (deal name, target
-industry, which section/slides, real data + assets available), then act as an
-expert Kumulus designer outputting HTML artifacts (or production code). The
-biggest quality lever is real assets — always ask for the house icon set and
-real transparent-PNG logos; substituting generic icons is the main "AI-generated"
-tell.
+## If the brief is thin (Step 0 found blockers)
+This is the same muscle as Step 0. Ask a few sharp questions (deal name, target
+industry, which section/slides, real data + assets), fill what you can, mark the
+rest `[x]`, then act as an expert Kumulus designer outputting HTML artifacts (or
+production code). The two biggest quality levers: (1) **normalize the request
+into a brief first** (`guidelines/intake.md`) — most bad output is a
+misunderstood ask, not a weak component; (2) **real assets** — always ask for
+the house icon set and real transparent-PNG logos; substituting generic icons is
+the main "AI-generated" tell.
