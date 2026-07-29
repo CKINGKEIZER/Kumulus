@@ -37,3 +37,23 @@ right with no void. All text one body size + the serif title.
 **Verdict:** skeleton verified structurally; carry findings 1–2 into G4
 (enforcement/theming). The FinancialStatement skeleton is usable now; it will
 theme correctly for Torino once `.theme-irmaco` carries the gold accent.
+
+---
+
+## STR-FIN-CASHFLOW-DASHBOARD — vs TOR-67 · STR-FIN-FCF-TABLES-NOTES — vs TOR-73 · STR-FIN-BRIDGE-COMMENTARY — vs TOR-57
+
+**Built:** `CashflowDashboard`, `FcfTablesNotes`, `BridgeCommentary` +
+new primitives `WaterfallChart`, `LabeledNotes`. `ColumnChart` already did
+`mode:"stacked"`, so no new stacked-column component was needed.
+
+**Server-rendered all three (harness demos cashflow / bridge / fcf) — PASS.**
+- Cashflow dashboard reproduces TOR-67: 3 stacked mini-tables left; a stacked
+  quarterly bar chart (Mar/Jun/Sep/Dec, in-bar values + totals) top-right; a
+  labelled notes panel (NET WORKING CAPITAL / CAPEX / OPERATIONAL FCF) bottom-right.
+- Bridge reproduces TOR-57: anchor columns (FY21A 10.1 → FY26E 15.5) with driver
+  bars stepping from the running total; values above, labels beneath; numbered
+  2-col commentary beneath. Running-total geometry correct.
+- FCF-tables-notes: stacked multi-year tables + labelled notes, no chart.
+
+Same theme caveat as above (renders navy; real Torino is gold) — cosmetic,
+not structural. **G3-01 (financial cluster) complete: 4/4 skeletons verified.**

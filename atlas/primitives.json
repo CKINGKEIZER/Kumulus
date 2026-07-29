@@ -603,7 +603,7 @@
     "--ls-caps"
    ],
    "recipe": "Multi-series stacked columns using the deal colour ramp; value labels inside segments; growth brackets between periods. Used for revenue-by-type and market-evolution. (house device: the FINAL bar/segment is hatched = forecast/budget).",
-   "component": "TBD - GAP (candidate StackedColumnChart)",
+   "component": "components/charts/ColumnChart.jsx (mode=stacked)",
    "fromBlocks": [
     "BLK-STACKED-COLUMN-CAGR2",
     "BLK-MARKET-EVOLUTION-CAGRGRID",
@@ -840,7 +840,7 @@
     "--radius-pill"
    ],
    "recipe": "Anchor columns at each end with floating driver bars between (revenue/EBITDA bridge). CAGR pills over the span; a tint band can group related drivers. The atomic chart behind the WaterfallWithCommentary skeleton.",
-   "component": "TBD - GAP (candidate WaterfallChart)",
+   "component": "components/charts/WaterfallChart.jsx",
    "fromBlocks": [
     "BLK-EBITDA-BRIDGE-WATERFALL",
     "BLK-REAL-TOR-REVENUE-BRIDGE-GROUPTINT",

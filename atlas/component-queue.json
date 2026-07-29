@@ -729,16 +729,21 @@
    "dependsOn": "G2-01",
    "scope": "implement components/structures/* (JSX + .d.ts + .prompt.md); VERIFY each side-by-side vs its exemplar render before marking done",
    "produces": "components/structures/*",
-   "status": "in-progress",
+   "status": "done",
    "built": [
-    "components/data/NumberedCommentary.jsx",
-    "components/structures/FinancialStatement.jsx (STR-FIN-STATEMENT-COMMENTARY, verified vs TOR-64)"
+    "NumberedCommentary",
+    "WaterfallChart",
+    "LabeledNotes",
+    "FinancialStatement",
+    "FcfTablesNotes",
+    "CashflowDashboard",
+    "BridgeCommentary"
    ],
-   "remaining": "STR-FIN-CASHFLOW-DASHBOARD / STR-FIN-FCF-TABLES-NOTES / STR-FIN-BRIDGE-COMMENTARY need PRIM-CHART-STACKED-COLUMN + PRIM-CHART-WATERFALL built first",
    "findings": [
     "theme-irmaco is navy not the real Torino gold — fix in G4",
     "SlideFrame footer renders empty in SSR — verify"
-   ]
+   ],
+   "verified": "4/4 financial skeletons rendered + diffed vs TOR-64/67/73/57"
   },
   {
    "id": "G3-02",

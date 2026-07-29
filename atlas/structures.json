@@ -73,7 +73,8 @@
    "exemplars": [
     "TOR-67"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CashflowDashboard.jsx",
+   "verified": "vs TOR-67 — PASS"
   },
   {
    "id": "STR-FIN-FCF-TABLES-NOTES",
@@ -104,7 +105,8 @@
    "exemplars": [
     "TOR-73"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/FcfTablesNotes.jsx",
+   "verified": "vs TOR-73 — PASS"
   },
   {
    "id": "STR-FIN-BRIDGE-COMMENTARY",
@@ -137,7 +139,8 @@
     "TOR-53",
     "TOR-57"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/BridgeCommentary.jsx",
+   "verified": "vs TOR-57 — PASS"
   },
   {
    "id": "STR-COMPANY-AT-A-GLANCE",
