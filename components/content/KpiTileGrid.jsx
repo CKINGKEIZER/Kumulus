@@ -9,7 +9,7 @@ export function KpiTileGrid({ tiles = [], columns = 3, className = "", style = {
   return (
     <div className={className} style={{ display: "grid", gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 6, ...style }}>
       {tiles.map((t, i) => (
-        <div key={i} style={{ background: "var(--deal-primary)", color: "#fff", padding: "8px 10px", borderRadius: 2, textAlign: "center" }}>
+        <div key={i} style={{ background: "var(--deal-header-fill)", color: "var(--deal-header-text)", padding: "8px 10px", borderRadius: 2, textAlign: "center" }}>
           <div style={{ fontWeight: "var(--fw-bold)", fontSize: "var(--fs-kpi)", lineHeight: 1.1 }}>{t.value}</div>
           <div style={{ fontSize: "var(--fs-label)", letterSpacing: "var(--ls-caps)", textTransform: "uppercase", fontWeight: "var(--fw-bold)", opacity: 0.92, marginTop: 2 }}>
             {t.label}
