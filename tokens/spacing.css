@@ -1,0 +1,66 @@
+/* ============================================================
+   Kumulus Partners — Spacing, layout, radius, elevation
+   The IM is a fixed 16:9 canvas (1280x720) with a generous
+   outer margin, a title zone, a flexible body, and a fixed
+   footer chrome. Spacing is a compact 4px-based scale suited
+   to dense, document-style slides.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ---- Slide canvas ---- */
+  --slide-w: 1280px;
+  --slide-h: 720px;
+  --slide-margin-x: 20px;   /* left / right page margin — 0.53cm, measured from real IMs (intern-manual house margin) */
+  --slide-margin-top: 24px; /* above title — 0.63cm measured */
+  --slide-footer-h: 42px;   /* footer chrome height — 1.1cm measured */
+  --col-gap: 28px;          /* gap between body columns */
+
+  /* ---- Radius ---- */
+  --radius-0:  0px;
+  --radius-sm: 3px;     /* capsules, small chips, panels */
+  --radius-md: 5px;     /* cards, section bars */
+  --radius-pill: 999px; /* value pills, gauge */
+
+  /* ---- Borders / rules (house spec, intern manual) ----
+     Title underline: BLACK 0.5pt line (≈1px). Separators
+     elsewhere: 0.25pt GREY hairlines. */
+  --rule-title: 1px solid var(--ink);       /* under titles/headings */
+  --rule-separator: 0.5px solid var(--gray-300); /* all other dividers */
+  --border-hair: 1px solid var(--rule);
+  --border-rule-strong: 1.5px solid var(--rule-strong);
+  --tab-width: 22px;    /* vertical section-tab thickness */
+
+  /* ---- Text-in-shape padding (manual: L/R 0.25cm, T/B 0.13cm) ---- */
+  --box-pad-x: 12px;
+  --box-pad-y: 6px;
+  --box-pad-top-header: 39px; /* top margin 0.80cm when header used */
+
+  /* ---- Bullet metrics (manual: 3pt before/after; indent 0.48cm / 1cm) ---- */
+  --bullet-gap: 10px;      /* vertical space between bullets */
+  --bullet-indent-1: 24px; /* first-level indent */
+  --bullet-indent-2: 49px; /* second-level indent */
+
+  /* ---- Elevation ----
+     HOUSE SHADOW (intern manual, exact PPT spec): transparency 60%,
+     size 100%, blur 5pt, angle 0°, distance 0pt → a centered soft
+     glow, no offset. Use on floating cards/images over content. */
+  --shadow-house: 0 0 9px rgba(0, 0, 0, 0.40);
+  --shadow-card: 0 1px 3px rgba(12, 26, 58, 0.10);  /* subtle variant */
+  --shadow-float: 0 4px 14px rgba(12, 26, 58, 0.16);
+
+  /* ---- Motion (minimal; print-first document) ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 220ms; /* @kind other */
+}

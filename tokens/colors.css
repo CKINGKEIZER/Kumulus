@@ -1,0 +1,111 @@
+/* ============================================================
+   Kumulus Partners — Color tokens
+   Calibrated to the current IM house style (Project Boreas /
+   Pollet Pool Group, 2026): a vivid COBALT blue does the brand
+   work (section bars, vertical tabs, square bullets, labels),
+   a deep navy anchors charts and the Kumulus wordmark, and a
+   fresh GREEN serves positive / ESG data. Titles are charcoal
+   serif; quotes and captions are mid-gray. A light sky-blue
+   remains as a soft secondary accent.
+   ============================================================ */
+
+:root {
+  /* ---- Cobalt (primary brand ramp) ---- */
+  --cobalt-700: #0a3d8f;   /* deep — chart navy, pressed states */
+  --cobalt-600: #0049da;   /* PRIMARY — section bars, bullets, tabs */
+  --cobalt-500: #1f63e6;   /* hover / lighter fill */
+  --cobalt-400: #5a8fef;
+
+  /* ---- Navy (deep anchor) ---- */
+  --navy-900: #0c2447;
+  --navy-800: #14335f;     /* Kumulus wordmark, deep text accents */
+
+  /* ---- Sky (soft secondary accent) ---- */
+  --sky-400: #78caf0;
+  --sky-300: #9bd6f3;
+  --sky-200: #becef0;      /* value capsules, soft chart series */
+  --sky-100: #e3edfb;
+
+  /* ---- Green (positive / ESG data) ---- */
+  --green-700: #176b27;
+  --green-600: #1f9433;
+  --green-500: #2eae44;
+  --green-400: #6cc879;
+
+  /* ---- Accent teal-blue (client-mark range) ---- */
+  --teal-600: #206080;
+
+  /* ---- Neutrals ---- */
+  --white:    #ffffff;
+  --gray-50:  #f6f6f6;
+  --gray-100: #f2f2f2;     /* bands, panel fills */
+  --gray-200: #d9d9d9;     /* rules, hairlines */
+  --gray-300: #bfbfbf;
+  --gray-400: #a6a6a6;
+  --gray-500: #808080;     /* quotes, captions */
+  --gray-600: #707070;
+  --gray-700: #5b5f66;
+  --ink:      #23282d;     /* titles & body (near-black charcoal) */
+  --black:    #000000;
+
+  /* ---- Warm sand (case-study bands) ---- */
+  --sand-100: #ede9e3;
+  --sand-200: #dbd3c7;
+
+  /* ---- Kumulus mark accent dot ---- */
+  --accent-coral: #e0185a;
+
+  /* ---- Placeholder logos (Plan §8) ----
+     Yellow = target company (mandatory, never collapses); grey = neutral
+     third-party (suppliers / customers). Never confuse with Kumulus chrome. */
+  --placeholder-target-fill:   #ffcf00;
+  --placeholder-target-border: #d0021b;
+  --placeholder-target-text:   #0c2447;
+  --placeholder-neutral-fill:   #eeeeee;
+  --placeholder-neutral-border: #bdbdbd;
+  --placeholder-neutral-text:   #6d6d6d;
+
+  /* ============ Semantic aliases ============
+     Content accents now flow from the DEAL THEME layer
+     (tokens/deal-theme.css) so they re-skin per deal. */
+  --brand-primary:   var(--deal-primary);
+  --brand-deep:      var(--deal-primary-deep);
+  --brand-navy:      var(--navy-800);
+  --brand-accent:    var(--deal-accent);
+  --brand-positive:  var(--deal-positive);
+
+  --text-heading:  var(--ink);          /* serif slide titles (charcoal) */
+  --text-label:    var(--deal-primary);   /* small-caps labels */
+  --text-body:     #2b2b2b;
+  --text-on-dark:  var(--white);
+  --text-muted:    var(--gray-600);
+  --text-footnote: var(--gray-500);
+
+  --surface-page:       var(--white);
+  --surface-band:       var(--gray-100);
+  --surface-band-warm:  var(--sand-100);
+  --surface-panel:      var(--white);
+  --surface-tab:        var(--deal-primary);   /* vertical section tabs */
+  --surface-bar:        var(--deal-primary);   /* section header bars */
+  --surface-knob:       var(--white);        /* section-bar end knobs */
+
+  --rule:        var(--gray-200);
+  --rule-strong: var(--ink);
+
+  --bullet:      var(--deal-primary);
+
+  /* Data viz (from deal theme) */
+  --chart-1: var(--deal-chart-1);
+  --chart-2: var(--deal-chart-2);
+  --chart-3: var(--deal-chart-3);
+  --chart-4: var(--deal-chart-4);
+  --chart-5: var(--deal-chart-5);
+
+  --capsule-bg:   var(--deal-capsule-bg);
+  --capsule-text: var(--deal-capsule-text);
+
+  /* Footer page-tab navigator */
+  --tab-active-bg:   var(--cobalt-600);
+  --tab-active-text: var(--white);
+  --tab-idle-text:   var(--gray-500);
+}

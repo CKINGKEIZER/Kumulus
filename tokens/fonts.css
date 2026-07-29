@@ -1,0 +1,24 @@
+/* ============================================================
+   Kumulus Partners — Webfonts
+   Source Sans Pro → primary sans (body, labels, data, UI).
+     The REAL Adobe family used in Kumulus IMs, supplied by the
+     client as OTF (§Session 4). Replaces the earlier Source
+     Sans 3 substitution.
+   Merriweather → serif (slide titles, pull-quotes), self-hosted
+     woff2 (still the documented IM serif — confirm if desired).
+   ============================================================ */
+
+/* ---- Source Sans Pro (Adobe OTF, per weight) ---- */
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-ExtraLight.otf") format("opentype"); font-weight:200; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-Light.otf") format("opentype"); font-weight:300; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-Regular.otf") format("opentype"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-Semibold.otf") format("opentype"); font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-Bold.otf") format("opentype"); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-Light.otf") format("opentype"); font-weight:500; font-style:normal; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-It.otf") format("opentype"); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-LightIt.otf") format("opentype"); font-weight:300; font-style:italic; font-display:swap; }
+@font-face { font-family:"Source Sans Pro"; src:url("../assets/fonts/SourceSansPro-BoldIt.otf") format("opentype"); font-weight:700; font-style:italic; font-display:swap; }
+
+/* ---- Merriweather (serif) ---- */
+@font-face { font-family:"Merriweather"; src:url("../assets/fonts/merriweather-normal.woff2") format("woff2"); font-weight:300 900; font-style:normal; font-display:swap; }
+@font-face { font-family:"Merriweather"; src:url("../assets/fonts/merriweather-italic.woff2") format("woff2"); font-weight:300 900; font-style:italic; font-display:swap; }

@@ -1,0 +1,30 @@
+{
+  "note": "Slide-title grammar (Plan §13). Observed distribution across 116 real content-slide titles: ~52 topic, ~43 descriptive, ~21 takeaway. CORRECTION to earlier guidance: most IM titles are topic or descriptive LABELS, not full-sentence takeaways. Reserve takeaway titles for market/positioning/strategy arguments where the page proves a claim. Title font is Merriweather serif, sentence case (never Title Case).",
+  "modes": {
+    "topic": {
+      "share": "~45%",
+      "when": "Standard content, product, operations, financial-statement pages where the title just names the subject.",
+      "examples": ["Timeline of key events", "MedTech market", "Logistics and warehousing", "IT infrastructure", "Revenue growth", "Acquisition strategy", "Corporate strategy", "Company history"]
+    },
+    "descriptive": {
+      "share": "~37%",
+      "when": "Add one qualifying adjective the page then supports.",
+      "examples": ["Diversified product portfolio", "Experienced management team", "Lean organizational structure", "Successful portfolio of proprietary technologies", "Attractive cash flow profile", "High barriers-to-entry"]
+    },
+    "takeaway": {
+      "share": "~18%",
+      "when": "Market, positioning, customer and strategy slides that argue a full claim the body proves.",
+      "examples": ["Healthcare demand in the Benelux is structurally growing", "BeMedico is perfectly positioned in the right core end-markets", "European legislation is driven by the Medical Device Regulation (MDR)", "Highly diversified customer base with limited customer dependency", "Recurring revenue is the key driver for growth over the historical period", "Fragmented market with Irmaco as a unique one-stop-shop"]
+    },
+    "financial": {
+      "when": "Financial-statement / QoE pages — a formal statement label, often with a prefix.",
+      "examples": ["Adjusted income statement", "Quality of Earnings (QoE)", "Historical \u2013 Reported profit & loss statement", "Business plan \u2013 Free cash flow", "Forecasted income statement (1/2)"]
+    }
+  },
+  "conventions": {
+    "case": "Sentence case, serif (Merriweather). Never Title Case.",
+    "multipart": "Split a long section across pages with (1/2)/(2/2) suffixes, or run one sentence across slides with leading/trailing '...' (Torino: 'Strong focus on operational excellence ...' -> '... driven by best-in-class service and maintenance ...').",
+    "prefixes": "Financial pages prefix with 'Historical \u2013' / 'Business plan \u2013' / 'Forecasted'.",
+    "subtitle": "An optional teal/muted serif subtitle under the title carries the one-line descriptor (e.g. 'Independent distributor of innovative products for medical professionals')."
+  }
+}

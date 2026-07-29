@@ -1,0 +1,83 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Customer concentration" subtitle="T-CUSTOMERS: value-chain nav + grey panels, donut + concentration curve (theme-bemedico)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html,body{margin:0;height:100%;background:#54585d}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #slide-root{width:1280px;height:720px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+  <div id="stage"><div id="slide-root"><div id="app" class="theme-bemedico"></div></div></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const NS = window.KumulusPartnersDesignSystem_533273;
+    const { SlideFrame, PanelHeader, Donut, ColumnChart, BulletList } = NS;
+    // value-chain nav (grey chevrons, active black) — house style, not deal colour
+    const nav = ["Suppliers","Logistics & warehousing","Sales & marketing","Customers","Services"];
+    const ValueChainNav = ({active}) => (
+      <div style={{display:"flex",gap:5,marginBottom:14}}>
+        {nav.map((s,i)=>(
+          <div key={i} style={{flex:1,background:s===active?"var(--ink)":"var(--gray-200)",color:s===active?"#fff":"var(--text-muted)",height:28,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"var(--fs-colhead)",fontWeight:"var(--fw-bold)",letterSpacing:"var(--ls-caps)",textTransform:"uppercase",clipPath:i===nav.length-1?"none":"polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%)",borderRadius:i===nav.length-1?"0 3px 3px 0":0}}>{s}</div>
+        ))}
+      </div>
+    );
+    function Slide(){
+      return (
+        <SlideFrame
+          title="Highly diversified customer base with limited customer dependency"
+          subtitle="[Target] boasts a broad client portfolio, anchored by strong hospital presence"
+          projectName="Project [x] | [Month] [Year]"
+          targetLogoSrc={null}
+          sectionTabs={[{n:"3",label:"Business overview"},{n:"A",label:"Appendix"}]}
+          activeTab="3" activeLabel="Business overview" pageNumber={33}
+          note="Note: (1) Top 200 customers represent c.93% of FY24A revenue">
+          <div style={{display:"flex",flexDirection:"column",height:"100%"}}>
+            <ValueChainNav active="Customers" />
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1.6fr",gap:16,flex:1,minHeight:0}}>
+              {/* LEFT panel */}
+              <div style={{background:"var(--surface-band)",borderRadius:4,padding:"12px 14px",display:"flex",flexDirection:"column"}}>
+                <PanelHeader tone="plain">Diversified customer base</PanelHeader>
+                <div style={{display:"flex",justifyContent:"center",margin:"6px 0 12px"}}>
+                  <Donut size={150} legend centerLabel="Top 200" centerSub="customers"
+                    segments={[{value:60,label:"Hospitals 60%"},{value:23,label:"Orthopedic technicians 23%"},{value:10,label:"Private practices 10%"},{value:7,label:"Other 7%"}]} />
+                </div>
+                <BulletList size="md" items={[
+                  "Client base is around 60% composed of hospitals, complemented by loyal orthopedic technicians (23%) and private practices (10%)",
+                  "Majority of revenue comes from hospitals, where investment purchases often go through tender procedures",
+                  "Good track record of winning competitive tenders on the strength of local market knowledge",
+                ]} />
+              </div>
+              {/* RIGHT panel */}
+              <div style={{display:"flex",flexDirection:"column",gap:10}}>
+                <PanelHeader trailing="(FY24A)">Customer concentration based on revenue</PanelHeader>
+                <div style={{fontFamily:"var(--font-serif)",fontStyle:"italic",fontSize:"var(--fs-body)",color:"var(--text-body)",background:"var(--surface-band)",borderRadius:3,padding:"6px 12px"}}>
+                  Customer concentration remained stable over the historical period, with the top 10 customers representing roughly one-quarter of total revenue
+                </div>
+                <div style={{flex:1,display:"flex",flexDirection:"column",justifyContent:"center"}}>
+                  <div style={{fontSize:"var(--fs-colhead)",fontWeight:"var(--fw-bold)",letterSpacing:"var(--ls-caps)",textTransform:"uppercase",color:"var(--text-heading)",marginBottom:8}}>Top 10 customers (€m)</div>
+                  <ColumnChart height={150} showTotals gap={12} barWidth={60}
+                    formatTotal={(n)=>n.toFixed(1)}
+                    data={[1.0,0.6,0.4,0.4,0.3].map((v,i)=>({label:"#"+(i+1),value:v}))} />
+                  <div style={{fontFamily:"var(--font-serif)",fontStyle:"italic",fontSize:"var(--fs-body-sm)",color:"var(--text-muted)",marginTop:8}}>
+                    Over the years the top 10 customers have remained loyal while expanding revenue share from €3.2m to €4.4m (16.1% CAGR)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SlideFrame>
+      );
+    }
+    function fit(){const r=document.getElementById('slide-root');const s=Math.min(innerWidth/1280,innerHeight/720);r.style.transform=`scale(${s})`;r.style.transformOrigin='center center';}
+    addEventListener('resize',fit);fit();
+    ReactDOM.createRoot(document.getElementById('app')).render(<Slide />);
+  </script>
+</body>
+</html>

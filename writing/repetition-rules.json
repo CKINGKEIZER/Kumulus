@@ -1,0 +1,29 @@
+{
+  "note": "Repetition control for Kumulus sell-side writing (Plan §14). These words are NOT banned — they are the house vocabulary — but they must not repeat mechanically across adjacent slides/bullets. Counts are observed in the 753 real Bones+Torino bullets; the highest counts are the biggest repetition risks. When a flagged word appears, prefer a listed alternative or restructure the sentence.",
+  "flaggedConnectives": {
+    "offering": {"count": 19, "alternatives": ["provides", "delivers", "supplies", "brings", "gives access to"]},
+    "driven by": {"count": 17, "alternatives": ["reflects", "results from", "stems from", "underpinned by", "a function of"]},
+    "provides": {"count": 9, "alternatives": ["offers", "delivers", "gives", "supports", "creates"]},
+    "enables": {"count": 9, "alternatives": ["allows", "supports", "makes possible", "underpins"]},
+    "supported by": {"count": 6, "alternatives": ["backed by", "underpinned by", "reinforced by", "helped by"]},
+    "underpinned by": {"count": 1, "alternatives": ["supported by", "built on", "grounded in"]},
+    "benefits from": {"count": 1, "alternatives": ["draws on", "gains from", "capitalises on"]}
+  },
+  "flaggedAdjectives": {
+    "strong": {"count": 31, "alternatives": ["robust", "solid", "established", "resilient", "deep", "well-developed"]},
+    "recurring": {"count": 28, "note": "core term — keep, but vary the surrounding structure; alternate with 'repeat', 'predictable', 'contracted', 'installed-base-driven'"},
+    "significant": {"count": 12, "alternatives": ["substantial", "material", "considerable", "meaningful"]},
+    "attractive": {"count": 8, "alternatives": ["compelling", "favourable", "appealing"]},
+    "leading": {"count": 7, "alternatives": ["prominent", "established", "front-rank", "a top-N"]}
+  },
+  "rules": [
+    "Do not open two consecutive bullets with the same verb or the same '<X> is driven by <Y>' shape.",
+    "No more than one Class-B superlative per bullet; no unsupported Class-C superlatives.",
+    "Vary sentence length across a bullet block (mix compact label-style with two-part sentences).",
+    "Across adjacent slides, rotate the connective verb (driven by / reflects / supported by / results from)."
+  ],
+  "example": {
+    "avoid": ["Revenue growth is driven by increased sales.", "Margin expansion is driven by improved product mix.", "Recurring revenue is driven by the installed base."],
+    "prefer": ["Revenue growth reflects continued penetration of existing accounts and expansion into adjacent markets.", "A favourable shift toward proprietary products supports further margin expansion.", "The growing installed base generates recurring maintenance, upgrade and replacement revenue."]
+  }
+}

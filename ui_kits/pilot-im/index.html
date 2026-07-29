@@ -1,0 +1,192 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Pilot mini-IM — Project Cedar (CulinaTech)" subtitle="6-slide end-to-end IM in a fresh industry (food-service equipment) — cross-industry neutrality test" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Project Cedar — Information Memorandum (pilot)</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html,body{margin:0;height:100%;background:#3f4247;overflow:hidden}
+  /* Fresh deal theme — forest/teal, NOT any prior deal's colour */
+  .theme-culina{
+    --deal-primary:#1f6d5a; --deal-primary-deep:#134a3d; --deal-secondary:#6aa899;
+    --deal-accent:#e0a63c; --deal-soft:#cfe6df;
+    --deal-chart-1:#134a3d; --deal-chart-2:#1f6d5a; --deal-chart-3:#6aa899; --deal-chart-4:#e0a63c; --deal-chart-5:#efc887;
+    --deal-capsule-bg:#cfe6df; --deal-capsule-text:#134a3d;
+  }
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #root{width:1280px;height:720px;box-shadow:0 12px 48px rgba(0,0,0,.45);background:#fff;position:relative}
+  .counter{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);font-family:var(--font-sans);font-size:12px;color:#fff;background:rgba(0,0,0,.45);padding:5px 12px;border-radius:999px;z-index:50}
+  .counter b{font-weight:700}
+</style>
+</head>
+<body>
+  <div id="stage"><div id="root" class="theme-culina"><div id="app"></div></div></div>
+  <div class="counter" id="counter"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const NS = window.KumulusPartnersDesignSystem_533273;
+    const { SlideFrame, PanelHeader, BulletList, KpiCell, ColumnChart, Donut, CagrPill, MarginCapsule,
+            NumberedHighlight, FinancialTable, ColumnHeading } = NS;
+
+    const tabs = [{n:"1",label:"Executive summary"},{n:"2",label:"Market"},{n:"A",label:"Appendix"}];
+    const proj = "Project Cedar | [Month] [Year]";
+
+    // ---- Slide 1: Cover ----
+    const S1 = () => (
+      <SlideFrame variant="cover" coverTitle="Project Cedar – Information Memorandum"
+        coverDate="[Month] [Year]" confidential="Strictly private and confidential" targetLogoSrc={null} />
+    );
+
+    // ---- Slide 2: Section divider ----
+    const S2 = () => (
+      <SlideFrame variant="divider"
+        sections={[{num:"1",label:"Executive summary"},{num:"2",label:"Market"},{num:"3",label:"Business overview"},{num:"A",label:"Appendix"}]}
+        activeSection="1" projectName={proj} sectionTabs={tabs} activeTab="1" activeLabel="Executive summary" pageNumber={3} />
+    );
+
+    // ---- Slide 3: Company at a glance ----
+    const S3 = () => (
+      <SlideFrame title="CulinaTech at a glance"
+        subtitle="Independent distributor and service partner for professional kitchen equipment"
+        projectName={proj} sectionTabs={tabs} activeTab="1" activeLabel="Executive summary" pageNumber={4}
+        note="Note: (1) FY24A; recurring revenue = service contracts, spare parts and consumables">
+        <div style={{display:"flex",flexDirection:"column",height:"100%",gap:12}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:12}}>
+            <KpiCell value="€38.4m" label="Revenue" period="FY24A" />
+            <KpiCell value="16.2%" label="EBITDA margin" period="FY24A" />
+            <KpiCell value="1,900+" label="Active venues served" period="FY24A" />
+            <KpiCell value="71%" label="Recurring revenue" period="FY24A" />
+          </div>
+          <div style={{display:"grid",gridTemplateColumns:"1.5fr 1fr",gap:18,flex:1,minHeight:0}}>
+            <div style={{display:"flex",flexDirection:"column",gap:8}}>
+              <PanelHeader>Business description</PanelHeader>
+              <BulletList items={[
+                "CulinaTech supplies, installs and services professional cooking, refrigeration and warewashing equipment for restaurants, hotels and institutional kitchens across the Nordics",
+                "A large installed base generates recurring maintenance, spare-parts and consumables revenue, complementing project-led equipment sales",
+                "Long-standing, often exclusive agreements with premium equipment manufacturers support access to leading technology and effective local commercialisation",
+                "Certified field engineers and rapid response times underpin high customer retention in a service-critical category",
+              ]} />
+            </div>
+            <div style={{display:"flex",flexDirection:"column",gap:8}}>
+              <PanelHeader trailing="(FY24A)">Revenue by stream</PanelHeader>
+              <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <Donut size={150} legend centerLabel="€38m"
+                  segments={[{value:44,label:"Equipment 44%"},{value:31,label:"Service 31%"},{value:16,label:"Spare parts 16%"},{value:9,label:"Consumables 9%"}]} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </SlideFrame>
+    );
+
+    // ---- Slide 4: Key investment highlights ----
+    const S4 = () => (
+      <SlideFrame title="Key investment highlights"
+        subtitle="CulinaTech represents an attractive, resilient platform in a fragmented market"
+        projectName={proj} sectionTabs={tabs} activeTab="1" activeLabel="Executive summary" pageNumber={5}>
+        <div style={{display:"grid",gridTemplateRows:"repeat(3,1fr)",gap:10,height:"100%"}}>
+          <NumberedHighlight number={1} title="Resilient, service-led installed base"
+            bullets={["A growing base of maintained equipment generates predictable recurring revenue across the economic cycle","Service contracts and spare parts carry structurally higher margins than equipment sales"]}
+            visual={<Donut size={96} centerLabel="71%" centerSub="recurring" segments={[{value:71},{value:29}]} />} />
+          <NumberedHighlight number={2} title="Premium supplier relationships"
+            bullets={["Long-standing, often exclusive distribution agreements with leading equipment manufacturers","Independent position makes CulinaTech a preferred route to market for suppliers entering the Nordics"]}
+            visual={<div style={{textAlign:"center",fontSize:11,color:"var(--text-muted)",lineHeight:1.6}}>Exclusive agreements with<br/><b style={{color:"var(--deal-primary)"}}>8 premium brands</b></div>} />
+          <NumberedHighlight number={3} title="Consolidation opportunity in a fragmented market"
+            bullets={["The Nordic market is served by many sub-scale local players, creating a clear buy-and-build runway","A proven integration playbook supports margin expansion through procurement and route density"]}
+            visual={<ColumnChart height={104} showTotals={false} barWidth={26} gap={12} data={[{label:"'22",value:31},{label:"'24",value:38},{label:"'27E",value:52}]} />} />
+        </div>
+      </SlideFrame>
+    );
+
+    // ---- Slide 5: Revenue development (chart + commentary) ----
+    const S5 = () => (
+      <SlideFrame title="Revenue grew at a 11.2% CAGR, led by recurring service"
+        projectName={proj} sectionTabs={tabs} activeTab="2" activeLabel="Market" pageNumber={6}
+        note="Note: (1) FY22A–FY24A actuals; FY25E per management business plan">
+        <div style={{display:"grid",gridTemplateColumns:"1.6fr 1fr",gap:20,height:"100%"}}>
+          <div style={{display:"flex",flexDirection:"column"}}>
+            <PanelHeader>Revenue by stream (€m)</PanelHeader>
+            <div style={{flex:1,display:"flex",alignItems:"center",gap:12}}>
+              <ColumnChart height={300} showTotals mode="stacked"
+                seriesLabels={["Equipment","Service","Parts & consumables"]}
+                formatTotal={(n)=>n.toFixed(0)}
+                data={[
+                  {label:"FY22A",segments:[{value:15},{value:9},{value:7}]},
+                  {label:"FY23A",segments:[{value:16},{value:11},{value:8}]},
+                  {label:"FY24A",segments:[{value:17},{value:12},{value:9}]},
+                ]} />
+              <CagrPill value="11.2%" />
+            </div>
+          </div>
+          <div style={{display:"flex",flexDirection:"column",gap:8}}>
+            <PanelHeader>Commentary</PanelHeader>
+            <BulletList items={[
+              "Growth reflects a deepening installed base and rising service attach rates rather than one-off project wins",
+              "The shift toward recurring service and parts has supported a steady improvement in gross margin",
+              "Equipment sales remain the entry point that seeds future high-margin recurring revenue",
+            ]} />
+            <div style={{marginTop:"auto",display:"flex",gap:8,alignItems:"center"}}>
+              <MarginCapsule value="38.5%" /><span style={{fontSize:"var(--fs-body-sm)",color:"var(--text-muted)"}}>gross margin, FY24A</span>
+            </div>
+          </div>
+        </div>
+      </SlideFrame>
+    );
+
+    // ---- Slide 6: Financial statement ----
+    const S6 = () => (
+      <SlideFrame title="Historical – Adjusted income statement"
+        projectName={proj} sectionTabs={tabs} activeTab="A" activeLabel="Appendix" pageNumber={7}
+        note="Note: (1) Adjusted for owner remuneration normalisation and one-off relocation costs">
+        <div style={{display:"grid",gridTemplateColumns:"1.4fr 1fr",gap:22,height:"100%"}}>
+          <FinancialTable
+            columns={[{label:"FY22A"},{label:"FY23A"},{label:"FY24A"},{label:"CAGR"}]}
+            rows={[
+              {label:"Revenue",values:["31.0","35.0","38.4","11.2 %"],subtotal:true,marker:1},
+              {label:"Cost of goods sold",values:["(19.2)","(21.4)","(23.6)","10.9 %"]},
+              {label:"Gross profit",values:["11.8","13.6","14.8","12.0 %"],subtotal:true},
+              {label:"Personnel",values:["(6.1)","(6.8)","(7.2)","8.7 %"],indent:true},
+              {label:"Other opex",values:["(2.9)","(3.1)","(3.4)","8.3 %"],indent:true},
+              {label:"Adjusted EBITDA",values:["2.8","3.7","6.2","48.9 %"],subtotal:true,marker:1},
+            ]}
+            kpis={[{label:"Adjusted EBITDA margin",values:["9.0 %","10.6 %","16.2 %",""]}]}
+            note="Note: (1) See adjustments bridge overleaf" />
+          <div style={{display:"flex",flexDirection:"column",gap:8}}>
+            <ColumnHeading rule="title">Key observations</ColumnHeading>
+            <BulletList items={[
+              "Margin expansion is driven by the growing weight of recurring service and disciplined procurement",
+              "Personnel costs grew more slowly than revenue, reflecting improving engineer utilisation",
+              "FY24A adjusted EBITDA benefits from the full-year effect of the [2023] service reorganisation",
+            ]} />
+          </div>
+        </div>
+      </SlideFrame>
+    );
+
+    const slides = [S1,S2,S3,S4,S5,S6];
+
+    function Deck(){
+      const [i,setI] = React.useState(0);
+      React.useEffect(()=>{
+        const onKey=(e)=>{
+          if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" ") setI(v=>Math.min(v+1,slides.length-1));
+          else if(e.key==="ArrowLeft"||e.key==="PageUp") setI(v=>Math.max(v-1,0));
+          else if(e.key==="Home") setI(0); else if(e.key==="End") setI(slides.length-1);
+        };
+        window.addEventListener("keydown",onKey); return ()=>window.removeEventListener("keydown",onKey);
+      },[]);
+      React.useEffect(()=>{ document.getElementById("counter").innerHTML = `<b>${i+1}</b> / ${slides.length} &nbsp;·&nbsp; ← → to navigate`; },[i]);
+      const Cur = slides[i];
+      return <Cur/>;
+    }
+    function fit(){const r=document.getElementById('root');const s=Math.min(innerWidth/1280,innerHeight/720);r.style.transform=`scale(${s})`;r.style.transformOrigin='center center';}
+    addEventListener('resize',fit);fit();
+    ReactDOM.createRoot(document.getElementById('app')).render(<Deck/>);
+  </script>
+</body>
+</html>

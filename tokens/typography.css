@@ -1,0 +1,66 @@
+/* ============================================================
+   Kumulus Partners — Typography tokens
+   Two families: Merriweather (serif) for slide titles and
+   pull-quotes; Source Sans Pro (sans) for everything else.
+   Hallmark device: SMALL-CAPS, letter-spaced labels in navy
+   for every heading inside the body (column heads, KPI labels,
+   section-bar text, vertical tabs).
+   Scale is tuned for 1280x720 (16:9) IM slides.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --font-sans:  "Source Sans Pro", "Source Sans 3", -apple-system,
+                "Segoe UI", system-ui, sans-serif;
+
+  /* ---- Weights ---- */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ---- Type scale — THE LAW: only FOUR sizes exist (measured, 1pt=1.333px) ----
+     title 14pt=18.7px · body 9.5pt=12.7px (EVERYTHING non-title) ·
+     note 7pt=9.3px · hero-KPI figure (the single large exception).
+     Every content token below deliberately RESOLVES TO --fs-body so no
+     component can introduce an in-between size. Do not add new sizes. */
+  --fs-body:       12.7px; /* 9.5pt — bullets, labels, tables, headers, chart text: ALL body */
+  --fs-title:      18.7px; /* 14pt slide title (serif) */
+  --fs-subtitle:   var(--fs-body);   /* title-zone lead-in, italic, still body size */
+  --fs-section:    var(--fs-body);   /* section-bar label (small-caps, body size) */
+  --fs-colhead:    var(--fs-body);   /* column / panel heading (small-caps, body size) */
+  --fs-label:      var(--fs-body);   /* KPI / axis / tab labels (body size) */
+  --fs-body-sm:    var(--fs-body);   /* NO dense secondary size — one body size only */
+  --fs-quote:      var(--fs-body);   /* pull-quote (serif italic, body size) */
+  --fs-footnote:   9.3px;  /* 7pt — notes, sources, confidential line (the only sub-body size) */
+  --fs-kpi:        24px;   /* hero KPI figure — the defined large exception */
+  --fs-kpi-lg:     32px;   /* hero KPI figure (large) */
+  --fs-page-title: 34px;   /* section-divider title (serif, a title) */
+
+  /* ---- Line heights ---- */
+  --lh-tight:   1.15; /* @kind font */
+  --lh-snug:    1.3;  /* @kind font */
+  --lh-body:    1.45; /* @kind font */
+  --lh-quote:   1.5;  /* @kind font */
+
+  /* ---- Letter spacing (small-caps device) ---- */
+  --ls-caps:    0.08em;   /* standard small-caps labels */
+  --ls-caps-wide: 0.14em; /* footer tab section name, dividers */
+  --ls-title:   0.005em;
+
+  /* ---- Convenience composites ---- */
+  --type-title:    var(--fw-regular) var(--fs-title)/var(--lh-tight) var(--font-serif);
+  --type-quote:    italic var(--fw-regular) var(--fs-quote)/var(--lh-quote) var(--font-serif);
+  --type-body:     var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans);
+}
+
+/* Reusable small-caps label utility (used by specimen cards) */
+.k-caps {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-colhead);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--text-heading);
+}

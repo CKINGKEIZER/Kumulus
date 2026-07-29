@@ -1,0 +1,69 @@
+/* ============================================================
+   Kumulus Partners — DEAL THEME layer (Plan §2.1, WP11)
+   The per-transaction colour skin. Kumulus chrome (logo,
+   footer, coral dot) is PERMANENT and lives in brand.css; the
+   CONTENT accent colours below are SWAPPED per deal.
+
+   Real deals use different schemes — BeMedico is purple+teal,
+   Project Boreas is cobalt — because the target company's
+   palette drives content colour. Never bake one deal's colour
+   into the system.
+
+   HOW TO THEME A DEAL: add a theme class to the slide root
+   (e.g. <div class="theme-bemedico">) or redefine these six
+   --deal-* vars under :root in a deal stylesheet. Everything
+   else (section bars, bullets, tabs, charts, capsules) cascades.
+   ============================================================ */
+
+:root {
+  /* Default deal skin — a restrained Kumulus-neutral blue, used
+     until a real deal theme is applied. */
+  --deal-primary:       #17418a;  /* section bars, bullets, tabs, primary series */
+  --deal-primary-deep:  #0f2f66;  /* pressed / deepest chart series */
+  --deal-secondary:     #6f9bd6;  /* secondary fills / chart series */
+  --deal-accent:        #78caf0;  /* highlights, arrows, connectors */
+  --deal-soft:          #becef0;  /* value capsules, soft chart fill */
+  --deal-positive:      #1f9433;  /* positive / ESG data (usually stable) */
+
+  /* Deal chart ramp (navy -> blue -> sky -> green) */
+  --deal-chart-1: var(--deal-primary-deep);
+  --deal-chart-2: var(--deal-primary);
+  --deal-chart-3: var(--deal-accent);
+  --deal-chart-4: var(--deal-positive);
+  --deal-chart-5: #6cc879;
+
+  --deal-capsule-bg:   var(--deal-soft);
+  --deal-capsule-text: var(--deal-primary-deep);
+}
+
+/* ---- Example deal themes (apply as a class on the slide root) ---- */
+
+/* BeMedico (Project Bones) — deep purple + teal */
+.theme-bemedico {
+  --deal-primary:      #5b2d8e;
+  --deal-primary-deep: #3f1d68;
+  --deal-secondary:    #a98fd0;
+  --deal-accent:       #16b6c4;
+  --deal-soft:         #d9ccef;
+  --deal-chart-1: #3f1d68; --deal-chart-2: #5b2d8e; --deal-chart-3: #a98fd0; --deal-chart-4: #16b6c4; --deal-chart-5: #7fd6df;
+}
+
+/* Project Boreas — bright cobalt */
+.theme-cobalt {
+  --deal-primary:      #0049da;
+  --deal-primary-deep: #0a3d8f;
+  --deal-secondary:    #5a8fef;
+  --deal-accent:       #78caf0;
+  --deal-soft:         #becef0;
+  --deal-chart-1: #0a3d8f; --deal-chart-2: #0049da; --deal-chart-3: #78caf0; --deal-chart-4: #1f9433; --deal-chart-5: #6cc879;
+}
+
+/* Irmaco (Project Torino) — corporate navy + steel blue */
+.theme-irmaco {
+  --deal-primary:      #14335f;
+  --deal-primary-deep: #0c2447;
+  --deal-secondary:    #5b7fa6;
+  --deal-accent:       #4aa3d6;
+  --deal-soft:         #c3d3e6;
+  --deal-chart-1: #0c2447; --deal-chart-2: #14335f; --deal-chart-3: #4aa3d6; --deal-chart-4: #1f9433; --deal-chart-5: #6cc879;
+}

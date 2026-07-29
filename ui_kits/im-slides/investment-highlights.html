@@ -1,0 +1,73 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Key investment highlights" subtitle="Numbered highlight rows: deal panel + bullets + visual (theme-bemedico)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html,body{margin:0;height:100%;background:#54585d}
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #slide-root{width:1280px;height:720px;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+  .lgcell{display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:12px;color:var(--deal-primary);border:1px solid var(--gray-200);border-radius:3px;height:26px}
+</style>
+</head>
+<body>
+  <div id="stage"><div id="slide-root"><div id="app" class="theme-bemedico"></div></div></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const NS = window.KumulusPartnersDesignSystem_533273;
+    const { SlideFrame, NumberedHighlight, ColumnChart, Donut, CagrPill } = NS;
+    // Lucide icon -> inline svg string
+    const Icon = ({ name, size=26 }) => {
+      const n = lucide[name.split('-').map((s,i)=>i?s[0].toUpperCase()+s.slice(1):s).join('')] || lucide[name];
+      const [svg,setSvg]=React.useState("");
+      React.useEffect(()=>{ if(n){ const el=n(); el.setAttribute('width',size); el.setAttribute('height',size); el.setAttribute('stroke','#fff'); el.setAttribute('stroke-width','1.6'); setSvg(el.outerHTML);} },[]);
+      return <span dangerouslySetInnerHTML={{__html:svg}} />;
+    };
+    const Logos = ({items}) => (
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6,width:"100%"}}>
+        {items.map((t,i)=><div key={i} className="lgcell">{t}</div>)}
+      </div>
+    );
+    function Slide(){
+      const rows = [
+        { number:1, icon:"users", title:"Strong market position in a structurally growing sector",
+          bullets:["Operates in a resilient healthcare sector supported by ageing demographics and rising health expenditure","High barriers to entry from complex regulation and entrenched hospital relationships"],
+          visual:(<div style={{width:"100%"}}><div style={{fontSize:9,fontWeight:700,letterSpacing:".06em",textTransform:"uppercase",color:"var(--text-muted)",textAlign:"center",marginBottom:6}}>Benelux medical devices (€bn)</div><div style={{display:"flex",alignItems:"flex-end",justifyContent:"center",gap:6}}><CagrPill value="4.5%" style={{alignSelf:"center"}} /><ColumnChart height={92} showTotals barWidth={30} gap={14} formatTotal={(n)=>n.toFixed(1)} data={[{label:"'18",value:6.2},{label:"'24",value:8.0},{label:"'29",value:10.0}]} /></div></div>) },
+        { number:2, icon:"gem", title:"High-quality products in specialized markets",
+          bullets:["Active in specialized segments with structurally high margins","Value-added distribution: certified maintenance, repairs and on-site training"],
+          visual:(<Donut size={96} legend centerLabel="FY24A" segments={[{value:41,label:"Orthopedics"},{value:27,label:"Urology"},{value:9,label:"Oncology"},{value:23,label:"Other"}]} />) },
+        { number:3, icon:"handshake", title:"Established OEM network with exclusive relationships",
+          bullets:["Long-term, trust-based exclusive partnerships with internationally recognized OEMs","Independent position makes it a preferred distributor for Benelux market access"],
+          visual:(<Logos items={["acumed","APTIS","Dornier","BREG","DEKA","Fotona"]} />) },
+        { number:4, icon:"award", title:"Experienced management and a loyal team",
+          bullets:["Senior leadership combined with a new generation of talent","Average tenure of ~9 years reflects strong loyalty and low turnover"],
+          visual:(<Donut size={96} centerLabel="9y" centerSub="avg" segments={[{value:33,label:"2-4y"},{value:29,label:"5-10y"},{value:24,label:">10y"},{value:14,label:"<1y"}]} />) },
+      ];
+      return (
+        <SlideFrame
+          title="Key investment highlights (1/2)"
+          subtitle="[Target] represents a highly attractive acquisition opportunity"
+          projectName="Project [x] | [Month] [Year]"
+          targetLogoSrc={null}
+          sectionTabs={[{n:"1",label:"Executive summary"},{n:"A",label:"Appendix"}]}
+          activeTab="1" activeLabel="Executive summary" pageNumber={8}>
+          <div style={{display:"grid",gridTemplateRows:"repeat(4,1fr)",gap:9,height:"100%"}}>
+            {rows.map(r=>(
+              <NumberedHighlight key={r.number} number={r.number} title={r.title}
+                icon={<Icon name={r.icon} />} bullets={r.bullets} visual={r.visual} />
+            ))}
+          </div>
+        </SlideFrame>
+      );
+    }
+    function fit(){const r=document.getElementById('slide-root');const s=Math.min(innerWidth/1280,innerHeight/720);r.style.transform=`scale(${s})`;r.style.transformOrigin='center center';}
+    addEventListener('resize',fit);fit();
+    ReactDOM.createRoot(document.getElementById('app')).render(<Slide />);
+  </script>
+</body>
+</html>

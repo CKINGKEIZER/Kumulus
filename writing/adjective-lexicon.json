@@ -1,0 +1,26 @@
+{
+  "note": "Adjective governance for Kumulus sell-side writing (Plan §15), with usage counts observed in the 753 real Bones+Torino bullets. Class A = safe with basic factual support; Class B = requires stronger evidence; Class C = use rarely, needs clear justification. Counts show what the house actually leans on — 'strong' (31) and 'recurring' (28) are overused; vary them.",
+  "classA_safe": {
+    "rule": "Usable with basic factual support in the deal.",
+    "terms": {"recurring": 28, "local": 14, "specialized": 11, "international": 11, "broad": 9, "extensive": 9, "dedicated": 8, "independent": 5, "flexible": 5, "long-standing": 4, "experienced": 3, "diversified": 3, "trusted": 3, "loyal": 2, "proven": 2, "established": 1, "integrated": 1, "scalable": 0, "value-add": 0}
+  },
+  "classB_needs_evidence": {
+    "rule": "Only with specific supporting evidence (ranking, margin data, retention, tenure, etc). See claim->evidence table in the guide.",
+    "terms": {"strong": 31, "significant": 12, "attractive": 8, "leading": 7, "excellent": 6, "resilient": 3, "best-in-class": 3, "high-quality": 2, "robust": 2, "high-end": 2, "premium": 1, "high-margin": 1, "well-positioned": 1, "differentiated": 0, "compelling": 0}
+  },
+  "classC_rare": {
+    "rule": "Avoid unless externally substantiated; the house barely uses these (good discipline — keep it).",
+    "terms": {"superior": 2, "exceptional": 1, "unique": 1, "unrivalled": 0, "unparalleled": 0, "dominant": 0, "world-class": 0}
+  },
+  "claimEvidence": {
+    "leading": "ranking, market share, scale, recognized position",
+    "experienced": "tenure, years in sector, track record",
+    "loyal": "retention, tenure, repeat sales, low churn",
+    "diversified": "revenue split by customer / product / geography / sector",
+    "high-margin": "reported margin data or relative product economics",
+    "recurring": "contract structure, consumables usage, installed base, repeat purchase",
+    "resilient": "historical stability, defensive end-markets, recurring demand",
+    "scalable": "capacity, systems, operating leverage, expansion model",
+    "attractive": "several substantiated investment characteristics"
+  }
+}

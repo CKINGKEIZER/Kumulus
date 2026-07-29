@@ -1,0 +1,155 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="ESG three-pillar slide" subtitle="Planet / People / Product — SDG bars, climate donuts, testimonial & imagery" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kumulus IM — ESG three-pillar slide</title>
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: #54585d; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #slide-root { width: 1280px; height: 720px; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+  <div id="stage"><div id="slide-root"><div id="app"></div></div></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script type="text/babel">
+    const NS = window.KumulusPartnersDesignSystem_533273;
+    const { SlideFrame, SectionBar, BulletList, ColumnHeading, PullQuote } = NS;
+
+    const SDG = ({ src, alt }) => (
+      <img src={src} alt={alt} style={{ height: 24, display: "block" }} />
+    );
+
+    // Donut: `segments` = [{value,color}], rendered clockwise from 12 o'clock.
+    function Donut({ segments, size = 92, thickness = 15 }) {
+      const r = 42, C = 2 * Math.PI * r;
+      const total = segments.reduce((s, x) => s + x.value, 0);
+      let acc = 0;
+      return (
+        <svg width={size} height={size} viewBox="0 0 100 100">
+          {segments.map((s, i) => {
+            const len = (s.value / total) * C;
+            const el = (
+              <circle key={i} cx="50" cy="50" r={r} fill="none" stroke={s.color}
+                strokeWidth={thickness} strokeDasharray={`${len} ${C - len}`}
+                strokeDashoffset={-acc} transform="rotate(-90 50 50)" />
+            );
+            acc += len;
+            return el;
+          })}
+        </svg>
+      );
+    }
+
+    const RoadmapCaption = ({ year, children }) => (
+      <div style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "10.5px",
+        lineHeight: 1.35, color: "var(--text-body)", maxWidth: 150, marginTop: 8 }}>
+        <div style={{ fontWeight: "var(--fw-bold)" }}>{year}</div>
+        {children}
+      </div>
+    );
+
+    const planet = [
+      "Scope 1 and 2, plus part of Scope 3, mapped across EU companies under ESRS",
+      "Science-based CO₂ reduction targets and a group-wide roadmap planned for 2030",
+      "Inverter heat pumps, variable-speed pumps, covers and smart controls reduce pool energy use",
+      "Refurbishment upgrades replace ageing equipment with more efficient pool technologies",
+      "Seven facilities provide 355 m³ of rainwater storage, reusing over 16,500 m³ annually",
+    ];
+    const people = [
+      "PPG Academy delivered 10+ sessions to 70+ participants, including 50+ partners and customers",
+      "Training covers pool maintenance, water treatment, pumps and product-specific applications",
+      "Group-wide safety framework includes workplace risk assessments and common KPIs",
+      "External, in-company and on-the-job training support development and internal mobility",
+      "Group academies share technical know-how with employees, customers and partners",
+    ];
+    const product = [
+      "ESG criteria guide product development, with focus on energy and water efficiency",
+      "Heat pumps, variable-speed pumps, covers and smart controls reduce pool energy use",
+      "Product labelling helps customers identify more responsible solutions",
+      "Supplier relationships follow a group-wide code of conduct aligned with ESRS",
+      "European manufacturing supports quality, traceability and supply-chain resilience",
+    ];
+
+    const Col = ({ label, bullets, sdg, sdgAlt }) => (
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <SectionBar label={label} height={34} trailing={<SDG src={sdg} alt={sdgAlt} />} />
+        <BulletList items={bullets} size="sm" style={{ gap: "12px" }} />
+      </div>
+    );
+
+    function Slide() {
+      return (
+        <SlideFrame
+          title="Pollet Pool Group integrates ESG into product innovation, builder support and responsible operations"
+          projectName="Project Boreas | [x] 2026"
+          confidential="Strictly private & confidential"
+          targetLogoSrc="assets/ppg-logo.png"
+          targetLogoAlt="Pollet Pool Group"
+          pageNumber={13}
+        >
+          <div style={{ height: "100%", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "auto 1fr", columnGap: 40, rowGap: 22 }}>
+            {/* ---- Row 1: pillars ---- */}
+            <Col label="Planet"  bullets={planet}  sdg="../../assets/sdg/planet.png"  sdgAlt="SDG 12, SDG 6" />
+            <Col label="People"  bullets={people}  sdg="../../assets/sdg/people.png"  sdgAlt="SDG 3, SDG 4, SDG 8" />
+            <Col label="Product" bullets={product} sdg="../../assets/sdg/product.png" sdgAlt="SDG 9, SDG 12, SDG 17" />
+
+            {/* ---- Row 2, col 1: climate roadmap donuts ---- */}
+            <div style={{ alignSelf: "end" }}>
+              <ColumnHeading align="center" rule>Group-wide climate roadmap</ColumnHeading>
+              <div style={{ display: "flex", gap: 26, justifyContent: "center", marginTop: 18 }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                  <Donut segments={[{ value: 17, color: "var(--green-600)" }, { value: 83, color: "var(--chart-1)" }]} />
+                  <RoadmapCaption year="2022">CO₂ emissions are monitored for 17% of EU turnover</RoadmapCaption>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                  <Donut segments={[{ value: 100, color: "var(--green-600)" }]} />
+                  <RoadmapCaption year="2030">Reducing our CO₂ emissions to scientifically based targets</RoadmapCaption>
+                </div>
+              </div>
+            </div>
+
+            {/* ---- Row 2, col 2: training photo + testimonial ---- */}
+            <div style={{ alignSelf: "end", display: "grid", gridTemplateColumns: "1.08fr 1fr", gap: 18, alignItems: "center" }}>
+              <img src="assets/ppg-team.png" alt="PPG Academy training session" style={{ width: "100%", height: 176, objectFit: "cover", borderRadius: 6 }} />
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 6 }}>
+                <div style={{ width: 78, height: 92, background: "#e7efe4", borderRadius: "39px 39px 8px 8px", overflow: "hidden", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
+                  <img src="assets/ppg-headshot.png" alt="Stefanie Van Troys" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+                <div style={{ fontFamily: "var(--font-sans)", fontStyle: "italic", lineHeight: 1.25 }}>
+                  <div style={{ fontSize: "10px", color: "var(--text-body)" }}>Stefanie Van Troys</div>
+                  <div style={{ fontSize: "9px", color: "var(--text-muted)" }}>PPG Academy</div>
+                </div>
+                <blockquote style={{ margin: 0, fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: "12px", lineHeight: 1.4, color: "var(--text-muted)", maxWidth: 190 }}>
+                  &ldquo;Training customers builds product knowledge, strengthens trust and creates lasting partnerships.&rdquo;
+                </blockquote>
+              </div>
+            </div>
+
+            {/* ---- Row 2, col 3: smart pool imagery ---- */}
+            <div style={{ alignSelf: "end" }}>
+              <img src="assets/ppg-pool.png" alt="Smart pool installation with heat pumps, automated cover and smart controls" style={{ width: "100%", height: 214, objectFit: "cover", borderRadius: 6 }} />
+            </div>
+          </div>
+        </SlideFrame>
+      );
+    }
+
+    function fit() {
+      const root = document.getElementById('slide-root');
+      const s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
+      root.style.transform = `scale(${s})`;
+      root.style.transformOrigin = 'center center';
+    }
+    window.addEventListener('resize', fit); fit();
+    ReactDOM.createRoot(document.getElementById('app')).render(<Slide />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* ============================================================
+   Kumulus Partners — Canvas & density (Plan §2.2, WP11)
+   Slide geometry independent of semantic content. 16:9 is the
+   primary canvas (long template + modern IMs); 4:3 hooks are
+   provided for the older Bones/Torino format without rewriting
+   the semantic layer. Density switches the type/spacing feel
+   between long-format IMs and regular-format pitches.
+   ============================================================ */
+
+:root {
+  /* ---- 16:9 canvas (primary) ---- */
+  --canvas-w: 1280px;
+  --canvas-h: 720px;
+  --canvas-ar: 16 / 9; /* @kind other */
+
+  /* ---- Density: long-format IM (default) ----
+     Body 9.5pt-equivalent; dense, document-style. */
+  --density-body: 12.5px;
+  --density-title: 22px;
+  --density-line: 1.45; /* @kind other */
+}
+
+/* 4:3 canvas hook (older IM format — Bones/Torino source) */
+.canvas-4x3 {
+  --canvas-w: 960px;
+  --canvas-h: 720px;
+  --canvas-ar: 4 / 3; /* @kind other */
+}
+
+/* Regular-format pitch density (larger titles, slightly looser) */
+.density-regular {
+  --density-body: 12px;
+  --density-title: 28px;
+  --density-line: 1.5; /* @kind other */
+  --fs-title: 28px;
+  --fs-subtitle: 16px;
+}

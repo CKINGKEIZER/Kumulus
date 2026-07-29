@@ -1,0 +1,109 @@
+{
+  "note": "Sell-side sentence families (Plan §11.2) with REAL examples lifted from the Bones (BeMedico) and Torino (Irmaco) IMs. Use these as structural moulds — vary the wording and the connective (see repetition-rules.json). The objective is evidence-based persuasive writing, not neutral corporate prose. Each family: when to use, the shape, and 2 real examples.",
+  "families": {
+    "direct-declarative": {
+      "when": "Company/offering definition; opening a description.",
+      "shape": "[Company] is/operates [what it is] [where].",
+      "examples": [
+        "BeMedico is an independent full-service distributor of medical devices in the Benelux, partnering with top global manufacturers and healthcare professionals.",
+        "Extensive portfolio of high-end single-use products such as implants, braces and injection materials, used across multiple specialties in daily care."
+      ]
+    },
+    "attribute-plus-evidence": {
+      "when": "Assert a quality and immediately substantiate it.",
+      "shape": "[Attribute claim], [reflected in / evidenced by] [metric/fact].",
+      "examples": [
+        "An average employee tenure of around 9 years reflects strong loyalty, low turnover and a cohesive internal culture.",
+        "High recurring level of sales as a result of the single-use nature of products."
+      ]
+    },
+    "evidence-plus-implication": {
+      "when": "Lead with a fact, draw the investment implication.",
+      "shape": "[Fact/metric], [creating/entailing] [implication].",
+      "examples": [
+        "Customer loyalty is improved through loan and consignment stock models that embed BeMedico into hospital workflows and entail high switching costs for healthcare professionals.",
+        "Consumables account for the largest share of revenue, creating a recurring and predictable sales base."
+      ]
+    },
+    "cause-and-effect": {
+      "when": "Market condition -> opportunity.",
+      "shape": "[Condition] [creates/increases/favours] [effect].",
+      "examples": [
+        "Market fragmentation and rising compliance costs create opportunities for roll-up strategies.",
+        "Growing regulatory complexity increases demand for specialized product knowledge and local compliance support."
+      ]
+    },
+    "capability-plus-outcome": {
+      "when": "Operating capability -> commercial result.",
+      "shape": "[Capability] [guarantees/reinforces/drives] [outcome].",
+      "examples": [
+        "Manufacturer-trained service engineers guarantee optimal performance and long-term reliability, reinforcing customer trust.",
+        "Fully ISO-certified after-sales team offering expert maintenance and technical support for installed equipment."
+      ]
+    },
+    "positioning": {
+      "when": "State the differentiated market position.",
+      "shape": "[Company]'s [attributes] make it [position] for [audience].",
+      "examples": [
+        "Its independent position and strong local expertise make it a preferred distributor for manufacturers seeking Benelux market access.",
+        "Fragmented market with Irmaco as a unique one-stop-shop across the full spectrum of dust-explosion and process-fire solutions."
+      ]
+    },
+    "comparative": {
+      "when": "Contrast with generalist/competing models.",
+      "shape": "Unlike [others], [Company] [does X requiring Y].",
+      "examples": [
+        "Unlike generalist distributors, the company focuses on high-margin niches requiring specialized commercial and technical expertise.",
+        "Active in specialized medical segments with structurally high margins."
+      ]
+    },
+    "historic-development": {
+      "when": "Show the platform built over time.",
+      "shape": "[Successive/already] [Company] has [transformed/professionalised] [into].",
+      "examples": [
+        "Management has already driven substantial professionalization across core operations and organizational structure.",
+        "Successive expansion into adjacent specializations has transformed the business into a diversified platform."
+      ]
+    },
+    "future-opportunity": {
+      "when": "Point to headroom / the buyer's upside.",
+      "shape": "[Opportunities remain / further] [action] offers [route to value].",
+      "examples": [
+        "Opportunities remain to further optimize warehousing and ERP systems to enhance efficiency and further scalability.",
+        "Further geographic expansion offers a clear route to replicate the established model in adjacent markets."
+      ]
+    },
+    "market-trend-plus-relevance": {
+      "when": "Structural trend -> why it helps the company.",
+      "shape": "[Trend] favours [companies with the company's attributes].",
+      "examples": [
+        "Operates in a resilient healthcare sector supported by ageing demographics, rising chronic disease burden and increasing public & private health expenditures across the Benelux.",
+        "Tighter product regulation favours distributors with established quality systems and local regulatory expertise."
+      ]
+    },
+    "metric-led": {
+      "when": "Open with the number that matters.",
+      "shape": "[Number/share] [provides/represents] [base for a claim].",
+      "examples": [
+        "High share of recurring revenue, primarily from consumables and service-linked investment goods.",
+        "More than 450 recurring customers provide a broad base for continued cross-selling."
+      ]
+    },
+    "two-part-sell-side": {
+      "when": "Rich highlight bullets; pair a strength with its commercial effect.",
+      "shape": "[Strength clause], while [company advantage] [supports the payoff].",
+      "examples": [
+        "BeMedico has built long-term, trust-based exclusive partnerships with internationally recognized OEMs across a range of specialized medical fields.",
+        "Long-standing and often exclusive supplier partnerships provide access to premium technologies, while local market knowledge supports effective commercialisation."
+      ]
+    },
+    "compact-label": {
+      "when": "Scannable KPI captions / highlight chips.",
+      "shape": "[Adjective] [noun phrase] — no verb.",
+      "examples": [
+        "High recurring consumables exposure",
+        "Diversified specialist product portfolio"
+      ]
+    }
+  }
+}
