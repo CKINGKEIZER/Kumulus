@@ -333,6 +333,198 @@
     "TOR-76",
     "TOR-79"
    ]
+  },
+  {
+   "id": "PRIM-KPI-TILE-GRID",
+   "name": "Solid deal-primary KPI tile band (3xN)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 102
+   },
+   "variants": [
+    {
+     "label": "3x2 (6 tiles)",
+     "w": 420,
+     "h": 102
+    },
+    {
+     "label": "3x1 (3 tiles)",
+     "w": 420,
+     "h": 48
+    },
+    {
+     "label": "in-panel",
+     "note": "same grid nested in a pale-grey at-a-glance panel (BON-05)"
+    }
+   ],
+   "anchor": "top-left",
+   "exit_width": "leaves ~468px left column beneath (docks a narrative/bullets block) and the whole chart region to its right",
+   "grid": "3 cols x 2 rows, each tile 136x48px, ~6-8px gap; per tile a bold value line over a small-caps 9.5pt label",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--fs-kpi"
+   ],
+   "recipe": "Grid of solid --deal-primary tiles, white text: bold value (e.g. €[x]m / [x]% / c.[x] / >[x]) over a 9.5pt small-caps label (REVENUE, RECURRING REV., EBITDA MARGIN, FTEs, CUSTOMERS, YEARS OF EXPERIENCE). Re-themed per deal (navy on LTP, purple on Bones). NB: tile value measured ~15px is the hero-KPI exception — calibrate to --fs-kpi rather than introduce a new size. Box never grows: text fits the tile.",
+   "component": "TBD - GAP (candidate KpiTileGrid)",
+   "fromBlocks": [
+    "BLK-KPI-6TILE",
+    "BLK-KPI-TILE-GRID",
+    "BLK-REAL-ATAGLANCE-KPI-FINANCIAL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-PILL-STACK",
+   "name": "Vertical KPI pill stack (navy rounded pills)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 300
+   },
+   "anchor": "left column, lower half",
+   "exit_width": "left column; stacks under a bullet/narrative block",
+   "grid": "3 stacked rows, each = a navy rounded pill holding a bold white metric, with a 9.5pt label to its right; ~hairline above interrupted by a grey down-triangle",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Navy --deal-primary rounded pills (radius-pill), bold white metric (e.g. '> 60,000', '99.84%', '85%'); label sits to the right in 9.5pt. 2-4 rows.",
+   "component": "TBD - GAP (candidate KpiPillStack)",
+   "fromBlocks": [
+    "BLK-KPI-PILL-STACK"
+   ],
+   "seenOn": [
+    "LTP-081"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-INLINE-TRIPLET",
+   "name": "Inline KPI triplet (3 cells, hairline dividers)",
+   "role": "kpi",
+   "size_px": {
+    "w": 420,
+    "h": 48
+   },
+   "anchor": "docked (inline row)",
+   "exit_width": "spans its host width; sits above/below a related block",
+   "grid": "flex row of 3 cells, 0.25pt grey border-left between cells, centred text, 9.5pt (metric + caption per cell)",
+   "tokens": [
+    "--rule-separator",
+    "--fs-body"
+   ],
+   "recipe": "3 equal cells separated by grey hairlines; each a centred metric over a 9.5pt caption. The lightweight inline alternative to the filled tile grid.",
+   "component": "TBD - GAP (candidate KpiInlineTriplet)",
+   "fromBlocks": [
+    "BLK-KPI-INLINE-TRIPLET"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-BUBBLE",
+   "name": "Circular KPI bubble (pale-blue coin)",
+   "role": "kpi",
+   "size_px": {
+    "w": 92,
+    "h": 92
+   },
+   "anchor": "docked (tiles in pairs, flanking media)",
+   "exit_width": "small fixed coin; pairs left/right of a photo or panel foot",
+   "grid": "pale-blue filled circle, bold metric inside (e.g. '+[x]%', '+[x]k') + a 9.5pt caption alongside",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--fs-kpi"
+   ],
+   "recipe": "Pale-blue tint circle with a bold delta metric; caption to the side. Used as accent stat coins beneath checklists / beside imagery.",
+   "component": "TBD - GAP (candidate KpiBubble)",
+   "fromBlocks": [
+    "BLK-CHECKLIST-KPI-BUBBLES"
+   ],
+   "seenOn": [
+    "LTP-073"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-CHECKPILL-HEADER",
+   "name": "Check-pill header (grey pill with tick labels)",
+   "role": "kpi",
+   "size_px": {
+    "w": 600,
+    "h": 60
+   },
+   "anchor": "top of a half-column (under the block head)",
+   "exit_width": "repeats per half-column; tops the block beneath it",
+   "grid": "pale-grey rounded pill spanning the column; two navy circled-check glyphs each followed by a 9.5pt label, evenly spaced",
+   "tokens": [
+    "--rule-separator",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Grey rounded pill; 2 navy circled-check (✓) glyphs + labels evenly spaced. A feature/qualifier header strip.",
+   "component": "TBD - GAP (candidate CheckPillHeader)",
+   "fromBlocks": [
+    "BLK-CHECKPILL-HEADER"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-KPI-HERO-FIGURE",
+   "name": "Single hero KPI figure (the one large-number exception)",
+   "role": "kpi",
+   "size_px": {
+    "w": 180,
+    "h": 72
+   },
+   "anchor": "docked (standalone stat or chart/donut centre)",
+   "exit_width": "sits where a single big number is called for",
+   "grid": "one large metric (--fs-kpi 24px / --fs-kpi-lg 32px) over a 9.5pt small-caps caption",
+   "tokens": [
+    "--fs-kpi",
+    "--fs-kpi-lg",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "The canonical home for --fs-kpi — the ONLY text larger than the title. A single big metric + small-caps caption (e.g. donut centre '€[x]m REVENUE', standalone hero stat). Nothing else on a slide may use this size.",
+   "component": "TBD - GAP (candidate HeroKpi)",
+   "fromBlocks": [],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-HERO-TRIANGLE",
+   "name": "Decorative hero triangle (deal-primary wedge)",
+   "role": "kpi",
+   "size_px": {
+    "w": 160,
+    "h": 120
+   },
+   "anchor": "docked (header decoration)",
+   "exit_width": "decorative; sits behind/beside a heading",
+   "grid": "clip-path polygon triangle in --deal-primary with an absolutely-positioned white ellipse centre",
+   "tokens": [
+    "--deal-primary"
+   ],
+   "recipe": "Decorative deal-primary triangle wedge (clip-path) with a white ellipse; a header accent, not a data element.",
+   "component": "TBD - GAP (decorative)",
+   "fromBlocks": [
+    "BLK-HERO-TRIANGLE"
+   ],
+   "seenOn": [
+    "LTP-005"
+   ]
   }
  ]
 }

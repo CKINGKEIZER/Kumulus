@@ -59,7 +59,27 @@
     "BLK-REAL-TOR-OPEX-ARCH-KPI-CERT"
    ],
    "produces": "primitives.json entries",
-   "status": "pending"
+   "status": "done",
+   "primitivesProduced": [
+    "PRIM-KPI-TILE-GRID",
+    "PRIM-KPI-PILL-STACK",
+    "PRIM-KPI-INLINE-TRIPLET",
+    "PRIM-KPI-BUBBLE",
+    "PRIM-KPI-CHECKPILL-HEADER",
+    "PRIM-KPI-HERO-FIGURE",
+    "PRIM-HERO-TRIANGLE"
+   ],
+   "primitiveCount": 7,
+   "deferredToStructures": [
+    "BLK-REAL-ATAGLANCE-KPI-FINANCIAL",
+    "BLK-HERO-ARC-HIGHLIGHTS",
+    "BLK-HERO-ARC-PHOTO",
+    "BLK-4CHART-KPI-RAIL",
+    "BLK-ORGTREE-NUMBERED-ARROWS-KPI",
+    "BLK-REAL-TOR-OPEX-ARCH-KPI-CERT",
+    "BLK-DASHED-HERO-TO-3CARDS",
+    "BLK-CHECKLIST-KPI-BUBBLES"
+   ]
   },
   {
    "id": "G1-03",
