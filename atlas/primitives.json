@@ -525,6 +525,368 @@
    "seenOn": [
     "LTP-005"
    ]
+  },
+  {
+   "id": "PRIM-CHART-COLUMN-CAGR",
+   "name": "Column chart with CAGR bracket (hatched final = forecast)",
+   "role": "chart",
+   "size_px": {
+    "w": 360,
+    "h": 290
+   },
+   "variants": [
+    {
+     "label": "standard",
+     "w": 360,
+     "h": 290
+    },
+    {
+     "label": "mini",
+     "w": 360,
+     "h": 240
+    },
+    {
+     "label": "tall",
+     "w": 420,
+     "h": 400
+    }
+   ],
+   "anchor": "docked (chart region, right of a KPI/narrative block)",
+   "exit_width": "~360px wide plot; tiles beside sibling charts or a KPI band",
+   "grid": "caps title; ~230px plot; solid --deal-primary columns with 9.5pt value labels above each; grey '[x]% CAGR' bracket line spanning first->last",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Solid deal-primary bars, 9.5pt value label above each; a grey CAGR bracket over the span. (house device: the FINAL bar/segment is hatched = forecast/budget). The canonical Kumulus single-series column chart.",
+   "component": "TBD - GAP (candidate ColumnChartCagr)",
+   "fromBlocks": [
+    "BLK-CHART-COLUMN-CAGR",
+    "BLK-CAGR-COLUMN-MINI",
+    "BLK-CAGR-TWOBAR-PANEL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "TOR-75"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-STACKED-COLUMN",
+   "name": "Stacked multi-series column (with growth brackets)",
+   "role": "chart",
+   "size_px": {
+    "w": 420,
+    "h": 400
+   },
+   "variants": [
+    {
+     "label": "value (€m)",
+     "w": 420,
+     "h": 400
+    },
+    {
+     "label": "100%-share",
+     "note": "segments normalised to 100%"
+    },
+    {
+     "label": "period-grid",
+     "note": "3 columns 2020/2025/2030F"
+    }
+   ],
+   "anchor": "docked (chart region / at-a-glance panel)",
+   "exit_width": "~420px; pairs with a margin line or a narrative column",
+   "grid": "stacked segments per column (deal ramp series), in-segment 9.5pt values; optional '+[x]%' growth brackets between columns + right-side CAGR",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Multi-series stacked columns using the deal colour ramp; value labels inside segments; growth brackets between periods. Used for revenue-by-type and market-evolution. (house device: the FINAL bar/segment is hatched = forecast/budget).",
+   "component": "TBD - GAP (candidate StackedColumnChart)",
+   "fromBlocks": [
+    "BLK-STACKED-COLUMN-CAGR2",
+    "BLK-MARKET-EVOLUTION-CAGRGRID",
+    "BLK-STACKED-PCT-BRACKET-CHART",
+    "BLK-MIXSHIFT-VOLUME-CHARTS"
+   ],
+   "seenOn": [
+    "BON-05",
+    "LTP-005"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-COMBO-BARLINE",
+   "name": "Combo bar + overlaid line (value + %)",
+   "role": "chart",
+   "size_px": {
+    "w": 360,
+    "h": 290
+   },
+   "variants": [
+    {
+     "label": "margin-line",
+     "note": "% margin line over €m bars"
+    },
+    {
+     "label": "average-line",
+     "note": "dashed average line + pill readout"
+    }
+   ],
+   "anchor": "docked (chart region)",
+   "exit_width": "~360px; pairs with a sibling column chart",
+   "grid": "deal-primary bars (€m, last hatched) + an overlaid line with 9.5pt %-labels above; legend row (fill = series, line = ratio)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps"
+   ],
+   "recipe": "Bars for the €m series, a line for the ratio (EBITDA-margin %, churn average). 9.5pt point labels; legend. (house device: the FINAL bar/segment is hatched = forecast/budget).",
+   "component": "TBD - GAP (candidate ComboBarLineChart)",
+   "fromBlocks": [
+    "BLK-CHART-COMBO-BARLINE",
+    "BLK-CHURN-BARS-AVGLINE"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DELTA-2BAR",
+   "name": "Delta two-bar (start vs end + change pill)",
+   "role": "chart",
+   "size_px": {
+    "w": 300,
+    "h": 190
+   },
+   "anchor": "docked (compact stat)",
+   "exit_width": "small; sits inline in a panel or beside bullets",
+   "grid": "two --deal-primary columns (start, end) with value labels above; a grey rounded '+[x]pp' pill with an arrow between them",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body"
+   ],
+   "recipe": "Two columns showing a before/after (e.g. 5.6% -> 8.1%) with a '+[x]pp' delta pill and arrow. The compact improvement chart.",
+   "component": "TBD - GAP (candidate DeltaTwoBar)",
+   "fromBlocks": [
+    "BLK-DELTA-2BAR"
+   ],
+   "seenOn": [
+    "LTP-030"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DUAL-LINE",
+   "name": "Dual line with boxed data points",
+   "role": "chart",
+   "size_px": {
+    "w": 400,
+    "h": 240
+   },
+   "anchor": "docked (chart region)",
+   "exit_width": "~400px; sits above/below a related table or bullets",
+   "grid": "two lines (navy + grey) across the period axis; each data point a filled box holding its % value; two 9.5pt series labels",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "Two comparative lines (e.g. gross vs EBITDA margin) with boxed % points at each period. A dense two-metric trend.",
+   "component": "TBD - GAP (candidate DualLineBoxed)",
+   "fromBlocks": [
+    "BLK-DUAL-LINE-BOXED"
+   ],
+   "seenOn": [
+    "LTP-064"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-PARETO-CURVE",
+   "name": "Pareto / concentration curve (cumulative, area-filled)",
+   "role": "chart",
+   "size_px": {
+    "w": 400,
+    "h": 400
+   },
+   "anchor": "docked (chart region)",
+   "exit_width": "~400px; pairs with a concentration commentary",
+   "grid": "cumulative revenue curve rising left->right, area-filled pale-blue; x-axis 0..100 (customer %), a highlighted window band + callout",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "Cumulative curve for customer/revenue concentration; area fill; a highlight window (e.g. 'top 20% = [x]%'). The customer-concentration chart.",
+   "component": "TBD - GAP (candidate ParetoCurve)",
+   "fromBlocks": [
+    "BLK-PARETO-CURVE"
+   ],
+   "seenOn": [
+    "LTP-114"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-SEGMENT-BAR",
+   "name": "Horizontal segment share bar (100% split)",
+   "role": "chart",
+   "size_px": {
+    "w": 250,
+    "h": 30
+   },
+   "variants": [
+    {
+     "label": "3-part",
+     "w": 250,
+     "h": 30
+    },
+    {
+     "label": "2-part split",
+     "note": "66/34 style split bar"
+    }
+   ],
+   "anchor": "docked (inline share indicator)",
+   "exit_width": "spans its host width; stacks above square-bullet rows",
+   "grid": "single horizontal bar split into 2-3 deal-ramp segments with white 9.5pt % labels (e.g. 70% / 27% / 3%)",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body"
+   ],
+   "recipe": "A 100% horizontal share bar in deal-ramp tints with in-bar % labels. The lightweight alternative to a donut for a single share.",
+   "component": "TBD - GAP (candidate SegmentShareBar)",
+   "fromBlocks": [
+    "BLK-SEGMENT-BAR-3PART",
+    "BLK-PALEBLUE-HEADER-3COL"
+   ],
+   "seenOn": [
+    "LTP-037"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-DONUT",
+   "name": "Donut chart (labelled, deal-ramp)",
+   "role": "chart",
+   "size_px": {
+    "w": 240,
+    "h": 150
+   },
+   "variants": [
+    {
+     "label": "labelled-legend",
+     "w": 240,
+     "h": 150,
+     "note": "centre name + €[x]m, in-ring %, side legend"
+    },
+    {
+     "label": "4-callout",
+     "w": 320,
+     "h": 240,
+     "note": "4 corner leader callouts"
+    },
+    {
+     "label": "centre-figure",
+     "note": "hero KPI figure in the hole (€[x]m REVENUE)"
+    }
+   ],
+   "anchor": "docked (chart region / in a panel)",
+   "exit_width": "~240-320px; tiles in donut rows or a 2x2 panel grid",
+   "grid": "deal-chart colour ramp segments; white in-ring 9.5pt % labels; centre label (name + value); side legend or corner callouts",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--fs-kpi",
+    "--ls-caps"
+   ],
+   "recipe": "The house donut: deal-ramp segments, white in-ring % at 9.5pt, a centre label (often a --fs-kpi hero figure), and either a side legend or four corner leader callouts. Preferred over a pie; used for revenue/product/geography splits.",
+   "component": "components/charts (verify Donut) or TBD",
+   "fromBlocks": [
+    "BLK-DONUT-LABELLED",
+    "BLK-DONUT-4CALLOUT",
+    "BLK-DONUT-SEGMENT-PANEL"
+   ],
+   "seenOn": [
+    "LTP-005",
+    "BON-05"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-WATERFALL",
+   "name": "Waterfall / bridge (anchors + float groups)",
+   "role": "chart",
+   "size_px": {
+    "w": 1000,
+    "h": 460
+   },
+   "variants": [
+    {
+     "label": "revenue-bridge",
+     "note": "tall anchor columns + float groups between"
+    },
+    {
+     "label": "ebitda-bridge",
+     "note": "reported -> adjustments -> adjusted"
+    },
+    {
+     "label": "group-tint",
+     "note": "pale tint band grouping related drivers (Torino)"
+    }
+   ],
+   "anchor": "docked (chart band, usually full content width)",
+   "exit_width": "wide plot; a commentary panel docks beneath (-> WaterfallWithCommentary skeleton)",
+   "grid": "tall --deal-primary anchor columns (start/end periods, bold value + period label) separated by float groups; each float = a bar with value above + driver name beneath; grey rounded CAGR pills with arrow glyphs; optional pale tint band captioned to group drivers",
+   "tokens": [
+    "--deal-primary",
+    "--fs-body",
+    "--ls-caps",
+    "--radius-pill"
+   ],
+   "recipe": "Anchor columns at each end with floating driver bars between (revenue/EBITDA bridge). CAGR pills over the span; a tint band can group related drivers. The atomic chart behind the WaterfallWithCommentary skeleton.",
+   "component": "TBD - GAP (candidate WaterfallChart)",
+   "fromBlocks": [
+    "BLK-EBITDA-BRIDGE-WATERFALL",
+    "BLK-REAL-TOR-REVENUE-BRIDGE-GROUPTINT",
+    "BLK-REAL-EBITDA-BRIDGE-BOXED-DRIVERS"
+   ],
+   "seenOn": [
+    "TOR-57"
+   ]
+  },
+  {
+   "id": "PRIM-CHART-GAUGE",
+   "name": "Semicircle gauge (NPS / ratio) with pill readout",
+   "role": "chart",
+   "size_px": {
+    "w": 300,
+    "h": 220
+   },
+   "variants": [
+    {
+     "label": "single",
+     "w": 300,
+     "h": 220
+    },
+    {
+     "label": "dual",
+     "note": "two gauges + split bar"
+    }
+   ],
+   "anchor": "docked (in a panel)",
+   "exit_width": "~300px; sits in an NPS/satisfaction panel",
+   "grid": "semicircular gauge, deal-ramp arc + needle/fill to the value; a rounded pill readout of the figure (e.g. 'NPS: 31'); caption beneath",
+   "tokens": [
+    "--deal-primary",
+    "--radius-pill",
+    "--fs-body",
+    "--fs-kpi"
+   ],
+   "recipe": "Semicircle gauge for a bounded score (NPS, satisfaction, utilisation); arc fill to value + pill readout. The single big number may use --fs-kpi.",
+   "component": "TBD - GAP (candidate Gauge)",
+   "fromBlocks": [
+    "BLK-NPS-GAUGE-PANEL",
+    "BLK-DUAL-GAUGE-SPLITBAR"
+   ],
+   "seenOn": [
+    "BON-08"
+   ]
   }
  ]
 }
