@@ -628,7 +628,14 @@
    "archetype": "financial-statements",
    "scope": "cluster the full-region composites in this archetype into SlideStructure skeletons; write precise geometry to structures.json",
    "produces": "structures.json entries",
-   "status": "pending"
+   "status": "done",
+   "structuresProduced": [
+    "STR-FIN-STATEMENT-COMMENTARY",
+    "STR-FIN-CASHFLOW-DASHBOARD",
+    "STR-FIN-FCF-TABLES-NOTES",
+    "STR-FIN-BRIDGE-COMMENTARY"
+   ],
+   "structureCount": 4
   },
   {
    "id": "G2-02",
