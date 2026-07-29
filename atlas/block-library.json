@@ -2609,7 +2609,7 @@
       "anchor": "TOP-RIGHT of the title zone, flush to the right margin, above the title rule",
       "content": "a row of three brand chips (ISMA / STUVEX / IEXT) each with its own small mark; the ACTIVE brand chip is SOLID YELLOW with black text while the others are pale-grey. Beneath it a full-width pale-grey strip with a small-caps 'MAIN GEOGRAPHIES' label and, at its right, either an EU flag chip or a small globe pictogram. Paired with a yellow circular badge overlapping the LEFT of the slide title — either a magnifier glyph (deep-dive pages, whose title is prefixed '#') or a roman numeral (numbered service pages).",
       "exit": "sits in the title zone; combine with any content construction below",
-      "seenOn": ["TOR-22", "TOR-25"]
+      "seenOn": ["TOR-22", "TOR-25", "TOR-75", "TOR-76", "TOR-77", "TOR-78", "TOR-79"]
     },
     {
       "id": "BLK-REAL-TOR-COMPONENT-SOLUTION-TABLE",
@@ -2719,7 +2719,7 @@
       "anchor": "top-left",
       "content": "The Torino financial-statement archetype. LEFT (~700px): a yellow-header financial table — italic '€k' corner cell; year columns in solid yellow header cells (FY19A/FY20A/FY21A[/CAGR], or a grey FY21A 'actual' col + yellow FY22B–FY26E + a tan CAGR col for business-plan pages); row labels left-aligned 9.5pt with indented italic sub-rows; subtotal/total rows bold above a 0.5pt rule; values right-aligned, negatives in (parentheses); selected rows carry a small solid-yellow numbered chip (1..n). Optional italic 'KPIs — as % of revenue' block beneath. RIGHT (~500px): a numbered commentary column — each note led by a matching yellow number chip + a 9.5pt paragraph, sometimes with nested gold ▷ sub-bullets, often inside a hairline-bordered box. All text 9.5pt except the 14pt title; footnote row (7pt grey) at the bottom.",
       "exit": "fills the full content region; table docks top-left, commentary docks top-right — no leftover slot",
-      "seenOn": ["TOR-64", "TOR-65", "TOR-66", "TOR-68", "TOR-69", "TOR-70"]
+      "seenOn": ["TOR-64", "TOR-65", "TOR-66", "TOR-68", "TOR-69", "TOR-70", "TOR-71", "TOR-72"]
     },
     {
       "id": "BLK-REAL-TOR-ACQTARGET-SCAN-TABLE",
@@ -2741,7 +2741,7 @@
       "anchor": "full-bleed",
       "content": "Section-divider slide. A full-bleed product photograph fills the whole sheet edge-to-edge (no margins, no title rule, no footer chrome). A translucent white panel overlays the left ~55%, listing the agenda: each row is a small square number/letter chip (I, II, III, A) + the section title in serif small-caps. The CURRENT section (e.g. 'III Transaction financials') is highlighted with a solid yellow bar behind its row; the other rows sit on faint grey chips.",
       "exit": "none — divider occupies the entire sheet",
-      "seenOn": ["TOR-62"]
+      "seenOn": ["TOR-62", "TOR-74"]
     },
     {
       "id": "BLK-REAL-TOR-TWO-STACK-LABELED-PANELS",
@@ -2764,6 +2764,50 @@
       "content": "Cash-flow composite. LEFT column (~430px): three stacked yellow-header mini-tables — reported NWC (FY19A–FY21A), total capex (FY19A–FY21A), operational FCF before taxes (FY20A–FY21A) — each with its own yellow year-header row and a bold total above a 0.5pt rule. RIGHT column (~780px): TOP a hairline-bordered quarterly stacked-bar chart (FY21A, Mar/Jun/Sep/Dec) with a left legend (Other working capital / Trade payables / Trade receivables / Inventory in grey→yellow tints) and an overlaid gold 'Normalized NWC' line; BOTTOM a hairline-bordered notes panel with grey small-caps sub-headers (NET WORKING CAPITAL / CAPEX / OPERATIONAL FREE CASH FLOW) each over gold ▷ bullets. Footnote row beneath. All text 9.5pt.",
       "exit": "fills the full content region — left tables column + right chart-over-notes column",
       "seenOn": ["TOR-67"]
+    },
+    {
+      "id": "BLK-REAL-TOR-BP-FCF-3TABLE-NOTES",
+      "name": "Business-plan free-cash-flow — 3 stacked multi-year tables + labeled notes",
+      "category": "table",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Business-plan free-cash-flow layout. LEFT column (~720px): three stacked yellow-header multi-year tables sharing the FY21A(grey) + FY22B–FY26E(yellow) header — (1) reported NWC (inventory/receivables/payables/other → bold Reported NWC), (2) capex build (Flash/Pagg/Safeground/min-4%-rev → Intangible capex; Building/Other → Tangible capex → bold Total capex), (3) FCF bridge (Adjusted EBITDA − Δ NWC − Capex → bold Operational FCF before taxes). RIGHT column (~490px): a hairline-bordered labeled-notes panel with grey small-caps sub-headers (NET WORKING CAPITAL / CAPEX / OPERATIONAL FREE CASH FLOW) each over gold ▷ bullets. Footnote row beneath. All text 9.5pt. Differs from the historical cash-flow block by carrying no quarterly bar chart.",
+      "exit": "fills the full content region — left 3-table column + right notes column",
+      "seenOn": ["TOR-73"]
+    },
+    {
+      "id": "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+      "name": "Appendix segment deep-dive template (badge + narrative + product panels + strategic-vision chart)",
+      "category": "matrix",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Appendix segment deep-dive template (one per product segment A–E). TOP-LEFT: a circled solid-yellow letter badge (A/B/C/D/E) + serif segment name (e.g. 'Earthing', 'Venting', 'Isolation') + a grey serif one-line subtitle claim; TOP-RIGHT carries BLK-REAL-TOR-BRANDNAV-HEADER (ISMA/STUVEX/IExT tabs with the active brand in yellow + a 'MAIN GEOGRAPHIES' row of country-flag chips). BODY: a grid of hairline-bordered panels, each under a grey small-caps centred header — a left NARRATIVE panel (grey-tinted, gold ▷ bullets, sometimes ✓ ticks and an inset '! DANGER…' callout), one or two PRODUCT/CONCEPT panels (product photos, third-party supplier logos, '+' glue glyphs, or a numbered 1-2-3 how-it-works sub-flow), and a 'STRATEGIC VISION' panel holding a REVENUE (€m) bar chart (solid past years + hatched forecast bars, FY19A–FY26E) beside gold ▷ outlook bullets. All text 9.5pt.",
+      "exit": "fills the content region beneath the title; the panel grid tessellates the 1240×588 area",
+      "seenOn": ["TOR-75", "TOR-76", "TOR-77", "TOR-78", "TOR-79"]
+    },
+    {
+      "id": "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY",
+      "name": "Facility tour — 3-column panel gallery with architectural floorplans + photos",
+      "category": "diagram",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Facility-tour layout (plain black serif title + rule, no brand-nav header). A three-column grid of hairline-bordered panels: LEFT column — 'DEMO EQUIPMENT/ROOM' text panel (gold ▷ bullets) over an entrance photo over an 'OFFICES' text panel; CENTRE column — two colour-coded architectural floor-plan panels ('GROUND FLOOR', 'FIRST FLOOR') with rooms tinted (yellow=offices, green=warehouse/shipping, blue=production/assembly) and labelled; RIGHT column — 'ASSEMBLY' text panel over a warehouse photo over a 'WAREHOUSE' text panel. Each text panel has a grey small-caps centred header. Footnote row beneath. All text 9.5pt.",
+      "exit": "fills the content region as a 3-column panel gallery",
+      "seenOn": ["TOR-80"]
+    },
+    {
+      "id": "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID",
+      "name": "Abbreviations glossary — 2-column yellow term-chip + grey definition-bar grid",
+      "category": "table",
+      "size_px": { "w": 1240, "h": 588 },
+      "size_cm": "32.8 × 15.6",
+      "anchor": "top-left",
+      "content": "Two-column glossary grid. Each entry = a solid-yellow term chip (bold navy 9.5pt, subtle drop shadow) docked to a light-grey definition bar holding the expansion in 9.5pt. ~13 rows per column, 2 columns, even vertical rhythm. Plain black serif title with a '(1/2)' / '(2/2)' continuation tag. No footer commentary. Multi-line definitions wrap inside the grey bar; text stays 9.5pt.",
+      "exit": "fills the content region as a 2-column term/definition grid",
+      "seenOn": ["TOR-81", "TOR-82"]
     }
   ]
 }

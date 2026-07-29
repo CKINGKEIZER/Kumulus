@@ -4846,9 +4846,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "business plan P&L (3/4) — same multi-year table + numbered commentary (notes 5a–7)",
    "notes": ""
   },
   {
@@ -4860,9 +4862,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FINTABLE-NUMBERED-COMMENTARY"
+   ],
+   "grid": "business plan P&L (4/4) — same multi-year table + numbered commentary (notes 8–11)",
    "notes": ""
   },
   {
@@ -4874,9 +4878,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-BP-FCF-3TABLE-NOTES"
+   ],
+   "grid": "business plan free cash flow — 3 stacked yellow-header multi-year tables + labeled notes panel",
    "notes": ""
   },
   {
@@ -4888,9 +4894,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY"
+   ],
+   "grid": "full-bleed photo section divider with translucent agenda overlay (A Appendix highlighted yellow)",
    "notes": ""
   },
   {
@@ -4902,9 +4910,12 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 30,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "grid": "appendix segment deep-dive 'Earthing' — brand-nav header + badge/title + narrative + components panel + strategic-vision revenue chart",
    "notes": ""
   },
   {
@@ -4916,9 +4927,12 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "grid": "appendix segment deep-dive 'Venting' — value-chain narrative + product panels + strategic-vision revenue chart",
    "notes": ""
   },
   {
@@ -4930,9 +4944,12 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "grid": "appendix segment deep-dive 'Isolation' — passive/active valve panels + strategic-vision revenue chart",
    "notes": ""
   },
   {
@@ -4944,9 +4961,12 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "grid": "appendix segment deep-dive 'Suppression' — advantages + numbered how-it-works + strategic-vision revenue chart",
    "notes": ""
   },
   {
@@ -4958,9 +4978,12 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE",
+    "BLK-REAL-TOR-BRANDNAV-HEADER"
+   ],
+   "grid": "appendix segment deep-dive 'Process fire extinguishing' — water/CO2 narrative + partner panel + strategic-vision revenue chart",
    "notes": ""
   },
   {
@@ -4972,9 +4995,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY"
+   ],
+   "grid": "headquarters (Kontich) — 3-column panel gallery with ground/first floorplans + demo/offices/assembly/warehouse panels + photos",
    "notes": ""
   },
   {
@@ -4986,9 +5011,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID"
+   ],
+   "grid": "abbreviations (1/2) — 2-column yellow term-chip + grey definition-bar glossary grid",
    "notes": ""
   },
   {
@@ -5000,9 +5027,11 @@
    "layoutPattern": "",
    "layoutPatternName": "",
    "batch": 31,
-   "status": "pending",
-   "blocks": [],
-   "grid": "",
+   "status": "indexed",
+   "blocks": [
+    "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID"
+   ],
+   "grid": "abbreviations (2/2) — same 2-column glossary grid",
    "notes": ""
   }
  ]
