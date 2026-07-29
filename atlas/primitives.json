@@ -368,7 +368,7 @@
     "--fs-kpi"
    ],
    "recipe": "Grid of solid --deal-primary tiles, white text: bold value (e.g. €[x]m / [x]% / c.[x] / >[x]) over a 9.5pt small-caps label (REVENUE, RECURRING REV., EBITDA MARGIN, FTEs, CUSTOMERS, YEARS OF EXPERIENCE). Re-themed per deal (navy on LTP, purple on Bones). NB: tile value measured ~15px is the hero-KPI exception — calibrate to --fs-kpi rather than introduce a new size. Box never grows: text fits the tile.",
-   "component": "components/content/KpiTable.jsx (+ KpiCell)",
+   "component": "components/content/KpiTileGrid.jsx",
    "fromBlocks": [
     "BLK-KPI-6TILE",
     "BLK-KPI-TILE-GRID",
@@ -1696,7 +1696,7 @@
     "--ls-caps"
    ],
    "recipe": "Central hub radiating to surrounding points: investment-highlight hub (Torino diamond), converging-drivers hub, 3-pillar summary. Centre = the thesis.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/HubSpoke.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-DIAMOND-HIGHLIGHT-HUB",
     "BLK-CONVERGING-HUB-DIAGRAM",
@@ -1770,7 +1770,7 @@
     "--ls-caps"
    ],
    "recipe": "The 3-graph dashboard container: a grey panel hosting several PRIM-CHART-* cells side by side under small-caps heads. The house 'financial profile / KPI dashboard' block.",
-   "component": "TBD - GAP",
+   "component": "components/charts/DashboardPanel.jsx",
    "fromBlocks": [
     "BLK-DASHBOARD-3GRAPH",
     "BLK-REAL-TOR-SERVICE-3PANEL-DASHBOARD",
