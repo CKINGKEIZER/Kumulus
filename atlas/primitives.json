@@ -996,7 +996,7 @@
     "--rule-separator"
    ],
    "recipe": "The workhorse reference table: N small-caps column heads + text rows. Covers feature/benefit, market-trend/impact, use-case/effort, initiative/importance, revenue-stream/driver, description/importance. Add a rating column for impact/importance.",
-   "component": "TBD - GAP (candidate ColumnDescTable)",
+   "component": "components/data/ComparisonMatrix.jsx (text+harvey-ball cells)",
    "fromBlocks": [
     "BLK-FEATURE-BENEFIT-TABLE",
     "BLK-TREND-IMPACT-ROWTABLE",
@@ -1418,7 +1418,7 @@
     "--ls-caps"
    ],
    "recipe": "Conversion/qualification funnel: tapering stages with values + side callouts. Market-sizing (TAM/SAM/SOM) or pipeline narrowing.",
-   "component": "TBD - GAP (candidate Funnel)",
+   "component": "components/diagrams/Funnel.jsx",
    "fromBlocks": [
     "BLK-3D-FUNNEL-STAGE-CALLOUTS"
    ],
@@ -1481,7 +1481,7 @@
     "--ls-caps"
    ],
    "recipe": "Competitive-landscape / prioritisation 2x2: labelled axes, plotted logos or cards, a highlighted target quadrant. Also the '×' value-driver 2x2 (Volume × Price).",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/Matrix2x2.jsx",
    "fromBlocks": [
     "BLK-2X2-CARDGRID-HIGHLIGHT",
     "BLK-REAL-2AXIS-LOGO-QUADRANT-MAP",
