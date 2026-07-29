@@ -852,7 +852,13 @@
    "title": "Wire routing to skeletons + enforcement guards",
    "scope": "point routing/template-registry.json at Phase-B skeletons (Phase E); add type/margin/density guards (Phase F); reconcile canvas.css --density-title with the 18.7px law",
    "produces": "routing/* + guards",
-   "status": "pending"
+   "status": "done",
+   "done": [
+    "wired all 20 templates in routing/template-registry.json to Phase-B skeletons",
+    "added atlas/verify/guards.js (type/margin/density) — new work PASSES",
+    "documented enforcement + deferred theme fix in guidelines/governance.md"
+   ],
+   "deferred": ".theme-irmaco gold identity (owner deprioritised colour); footer band is an SSR-harness nuance, not a runtime defect"
   }
  ]
 }
