@@ -95,3 +95,23 @@ text) already covers criteria-benchmark, trend-impact and coverage tables — no
 - **CriteriaBenchmark, TrendImpact — SSR smoke PASS** (compose ComparisonMatrix).
 
 G3-03 done (4/4; 2 visually verified, 2 smoke).
+
+---
+
+## G3-04 business-model — vs TOR-33 / BON-40 / LTP-017
+
+Net-new primitives `Tree` (layered hierarchy) + `CycleRing` (flywheel).
+`ProcessFlow` (chevron/value-chain) reused. Skeletons: `ValueChain`,
+`ProcessChevronDetail`, `BusinessModelService`, `PlatformArchitecture`, `GrowthCycle`.
+
+- **PlatformArchitecture (Tree) — PASS (screenshot).** Layered stack SOLUTIONS →
+  CORE PLATFORM → FOUNDATION with stems.
+- **GrowthCycle (CycleRing) — PASS (screenshot).** 4 stages clockwise on a dashed
+  ring + centre label + numbered detail rows.
+- **ValueChain — rendered (ProcessFlow, existing).**
+- **BusinessModelService, ProcessChevronDetail — SSR smoke PASS.**
+
+Minor cosmetic: NumberedHighlight reserves an empty visual box when no `visual`
+prop is passed — pass a visual or add an `omitVisual` flag later.
+
+G3-04 done (5/5; 2 visually verified, 1 rendered, 2 smoke).

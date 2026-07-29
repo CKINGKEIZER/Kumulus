@@ -793,7 +793,17 @@
    "dependsOn": "G2-04",
    "scope": "implement components/structures/* (JSX + .d.ts + .prompt.md); VERIFY each side-by-side vs its exemplar render before marking done",
    "produces": "components/structures/*",
-   "status": "pending"
+   "status": "done",
+   "built": [
+    "Tree",
+    "CycleRing",
+    "ValueChain",
+    "ProcessChevronDetail",
+    "BusinessModelService",
+    "PlatformArchitecture",
+    "GrowthCycle"
+   ],
+   "verified": "PlatformArchitecture(Tree) + GrowthCycle(CycleRing) screenshot; ValueChain rendered; 2 SSR smoke"
   },
   {
    "id": "G3-05",
