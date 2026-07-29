@@ -34,7 +34,8 @@
     "TOR-69",
     "TOR-72"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/FinancialStatement.jsx",
+   "verified": "vs TOR-64 — structure PASS (see recreation-log.md); theme finding logged"
   },
   {
    "id": "STR-FIN-CASHFLOW-DASHBOARD",
@@ -72,7 +73,8 @@
    "exemplars": [
     "TOR-67"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CashflowDashboard.jsx",
+   "verified": "vs TOR-67 — PASS"
   },
   {
    "id": "STR-FIN-FCF-TABLES-NOTES",
@@ -103,7 +105,8 @@
    "exemplars": [
     "TOR-73"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/FcfTablesNotes.jsx",
+   "verified": "vs TOR-73 — PASS"
   },
   {
    "id": "STR-FIN-BRIDGE-COMMENTARY",
@@ -135,6 +138,1014 @@
    "exemplars": [
     "TOR-53",
     "TOR-57"
+   ],
+   "component": "components/structures/BridgeCommentary.jsx",
+   "verified": "vs TOR-57 — PASS"
+  },
+  {
+   "id": "STR-COMPANY-AT-A-GLANCE",
+   "name": "Company at-a-glance (KPI + narrative + financial dashboard)",
+   "archetype": "at-a-glance",
+   "grid": "2-col: left ~430px (KPI grid over narrative panel) | right ~790px (financial chart over a multi-graph dashboard row)",
+   "slots": [
+    {
+     "slot": "kpis",
+     "primitive": "PRIM-KPI-TILE-GRID",
+     "anchor": "top-left",
+     "w": 430,
+     "required": true
+    },
+    {
+     "slot": "narrative",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "bottom-left",
+     "w": 430,
+     "required": true
+    },
+    {
+     "slot": "financial",
+     "primitive": "PRIM-CHART-STACKED-COLUMN",
+     "anchor": "top-right",
+     "w": 790,
+     "required": true
+    },
+    {
+     "slot": "dashboard",
+     "primitive": "PRIM-DASHBOARD-MULTIGRAPH",
+     "anchor": "bottom-right",
+     "w": 790,
+     "required": true
+    }
+   ],
+   "density": "4 slots all required — the canonical company snapshot; never a KPI grid + void",
+   "fromComposites": [
+    "BLK-REAL-ATAGLANCE-KPI-FINANCIAL",
+    "BLK-REAL-TOR-ATAGLANCE-OFFERING-MATRIX"
+   ],
+   "exemplars": [
+    "BON-05",
+    "TOR-06"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-INVESTMENT-HIGHLIGHTS-ROWS",
+   "name": "Investment highlights (numbered rows)",
+   "archetype": "at-a-glance",
+   "grid": "full-width stack of 4-6 numbered rows; or an arc/photo on the left with rows fanning right",
+   "variants": [
+    {
+     "label": "rows",
+     "note": "solid numbered panels + claim + mini-viz per row"
+    },
+    {
+     "label": "hero-arc",
+     "note": "dashed arc from a logo hub, pill rows fan off it"
+    },
+    {
+     "label": "hero-arc-photo",
+     "note": "left photo panel arc-masked, numbered pill rows right"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "highlights",
+     "primitive": "PRIM-NARRATIVE-BADGE-ROWS",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true,
+     "repeat": "4-6"
+    },
+    {
+     "slot": "photo",
+     "primitive": "PRIM-MEDIA-PHOTO-PANEL",
+     "anchor": "top-left",
+     "w": 700,
+     "required": false
+    }
+   ],
+   "density": "4-6 numbered highlights, each with a claim + supporting visual; demands grounded highlights, not a sparse list",
+   "fromComposites": [
+    "BLK-REAL-INVEST-HIGHLIGHT-ROWS",
+    "BLK-HERO-ARC-HIGHLIGHTS",
+    "BLK-HERO-ARC-PHOTO"
+   ],
+   "exemplars": [
+    "BON-08",
+    "LTP-012",
+    "LTP-013"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-HIGHLIGHT-HUB",
+   "name": "Central highlight hub (diamond / 3-pillar)",
+   "archetype": "at-a-glance",
+   "grid": "central hub with radiating pillars/highlights filling the region",
+   "variants": [
+    {
+     "label": "diamond-hub",
+     "note": "Torino: solid-yellow diamond centre, grey diamond ring, spoke labels"
+    },
+    {
+     "label": "3-pillar",
+     "note": "ellipse hub fanning to 3 numbered pillar columns"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "hub",
+     "primitive": "PRIM-DIAGRAM-HUB-SPOKE",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    },
+    {
+     "slot": "spokes",
+     "primitive": "PRIM-NARRATIVE-BADGE-ROWS",
+     "anchor": "docked",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "1 hub + N spoke highlights/pillars; the thesis sits at the centre",
+   "fromComposites": [
+    "BLK-REAL-TOR-DIAMOND-HIGHLIGHT-HUB",
+    "BLK-HUB-3PILLAR-SUMMARY"
+   ],
+   "exemplars": [
+    "TOR-08",
+    "LTP-025"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-KPI-CHART-RAIL",
+   "name": "KPI / chart rail over a full-width panel",
+   "archetype": "at-a-glance",
+   "grid": "top band ~420px = 4 chart columns in a rail; beneath = a full-width panel (KPI/NPS/testimonial or arch+certs)",
+   "slots": [
+    {
+     "slot": "rail",
+     "primitive": "PRIM-CHART-COLUMN-CAGR",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true,
+     "repeat": 4
+    },
+    {
+     "slot": "panel",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "bottom-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "4 chart columns (each with its own legend) + a full-width supporting panel",
+   "fromComposites": [
+    "BLK-4CHART-KPI-RAIL",
+    "BLK-REAL-TOR-OPEX-ARCH-KPI-CERT"
+   ],
+   "exemplars": [
+    "LTP-043",
+    "TOR-36"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-MARKET-SIZING",
+   "name": "Market sizing / evolution",
+   "archetype": "market-sizing",
+   "grid": "left sizing device (funnel / concentric / pyramid / evolution columns) + right commentary, or 3-column BU rail",
+   "variants": [
+    {
+     "label": "funnel",
+     "note": "TAM/SAM/SOM 3-D funnel + callouts"
+    },
+    {
+     "label": "concentric",
+     "note": "nested €m circles"
+    },
+    {
+     "label": "evolution-columns",
+     "note": "stacked columns 2020/2025/2030F + CAGR"
+    },
+    {
+     "label": "pyramid",
+     "note": "tiered sector pyramid"
+    },
+    {
+     "label": "bu-3col",
+     "note": "MARKET SIZE / DESCRIPTION / DYNAMICS rail per BU"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "sizing",
+     "primitive": "PRIM-DIAGRAM-FUNNEL",
+     "anchor": "top-left",
+     "w": 620,
+     "required": true
+    },
+    {
+     "slot": "commentary",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "top-right",
+     "w": 600,
+     "required": true
+    }
+   ],
+   "density": "a sizing device (funnel/pyramid/evolution) + grounded commentary; figures are real or [x]",
+   "fromComposites": [
+    "BLK-3D-FUNNEL-STAGE-CALLOUTS",
+    "BLK-CONCENTRIC-MARKET-FUNNEL",
+    "BLK-MARKET-EVOLUTION-4COL",
+    "BLK-SEGMENT-PYRAMID-SECTOR-CONC",
+    "BLK-BU-MARKETSIZE-3COL",
+    "BLK-3ROW-MARKET-GROWTH"
+   ],
+   "exemplars": [
+    "LTP-153",
+    "LTP-055",
+    "LTP-121"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-COMPETITION-MATRIX",
+   "name": "Competitive landscape / comparison",
+   "archetype": "market-sizing",
+   "grid": "a 2x2 positioning map + profile column, OR a competitor coverage table, OR a competitor profile grid",
+   "variants": [
+    {
+     "label": "2x2-map",
+     "note": "axis-plotted logo quadrant + our position highlighted"
+    },
+    {
+     "label": "profile-grid",
+     "note": "competitor columns (logo head + attribute rail)"
+    },
+    {
+     "label": "coverage-table",
+     "note": "logo rows x criteria with ✓/✗"
+    },
+    {
+     "label": "quadrant-wheel",
+     "note": "4-quadrant wheel + panels"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "landscape",
+     "primitive": "PRIM-MATRIX-2X2",
+     "anchor": "top-left",
+     "w": 760,
+     "required": true
+    },
+    {
+     "slot": "profile",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "top-right",
+     "w": 460,
+     "required": false
+    }
+   ],
+   "density": "a positioning/comparison device with our company explicitly placed/benchmarked",
+   "fromComposites": [
+    "BLK-REAL-2AXIS-LOGO-QUADRANT-MAP",
+    "BLK-COMPETITOR-PROFILE-GRID",
+    "BLK-COMPETITOR-FLAGROW-TABLE",
+    "BLK-PRODUCT-COMPARISON-MATRIX",
+    "BLK-REAL-4QUADRANT-WHEEL-PANELS"
+   ],
+   "exemplars": [
+    "BON-20",
+    "LTP-060",
+    "LTP-070"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-CRITERIA-BENCHMARK",
+   "name": "Criteria / benchmark / capability matrix",
+   "archetype": "market-sizing",
+   "grid": "small-caps column-desc table (CRITERIA / DESCRIPTION / BENCHMARK …) with a trailing positioning/rating panel",
+   "variants": [
+    {
+     "label": "criteria-benchmark",
+     "note": "+ 'POSITIONING COMPANY X' panel"
+    },
+    {
+     "label": "pillar-differentiator",
+     "note": "BUSINESS PILLAR / DIFFERENTIATOR / IMPACT / KEY FIGURES"
+    },
+    {
+     "label": "feature-matrix",
+     "note": "vertical feature matrix in a dashed frame"
+    },
+    {
+     "label": "spectrum",
+     "note": "spectrum slider rows"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "table",
+     "primitive": "PRIM-TABLE-COLUMN-DESC",
+     "anchor": "top-left",
+     "w": 900,
+     "required": true
+    },
+    {
+     "slot": "positioning",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "top-right",
+     "w": 340,
+     "required": false
+    }
+   ],
+   "density": "criteria rows with a benchmark/rating column; our positioning called out",
+   "fromComposites": [
+    "BLK-CRITERIA-BENCHMARK-SPINE",
+    "BLK-PILLAR-DIFFERENTIATOR-TABLE",
+    "BLK-VERTICAL-FEATURE-MATRIX",
+    "BLK-SPECTRUM-SLIDER-ROW"
+   ],
+   "exemplars": [
+    "LTP-068",
+    "LTP-069",
+    "LTP-062"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-TREND-IMPACT",
+   "name": "Market trends & impact",
+   "archetype": "market-sizing",
+   "grid": "trend/description/impact table (with impact rating), OR grouped trend panels (macro / tech / customer)",
+   "variants": [
+    {
+     "label": "rowtable",
+     "note": "MARKET TREND / DESCRIPTION / IMPACT + rating"
+    },
+    {
+     "label": "grouped-panels",
+     "note": "3 grey panels by trend category"
+    },
+    {
+     "label": "positioning-rail",
+     "note": "solid cards rail + positioning"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "trends",
+     "primitive": "PRIM-TABLE-COLUMN-DESC",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "trends each with a description + an explicit impact rating; no floating adjectives",
+   "fromComposites": [
+    "BLK-TREND-IMPACT-ROWTABLE",
+    "BLK-TREND-IMPACT-MATRIX",
+    "BLK-REAL-TOR-TREND-IMPACT-RELEVANCE-TABLE",
+    "BLK-REAL-TREND-POSITIONING-ROWRAIL"
+   ],
+   "exemplars": [
+    "LTP-065",
+    "TOR-16",
+    "LTP-052"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-VALUE-CHAIN",
+   "name": "Value chain (staged chevron band + insight)",
+   "archetype": "business-model",
+   "grid": "top insight band + a horizontal value-chain chevron band (stages carry photos/logos) + supporting bullets/panels",
+   "variants": [
+    {
+     "label": "photo-stages"
+    },
+    {
+     "label": "logowall"
+    },
+    {
+     "label": "supplier-nav"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "stages",
+     "primitive": "PRIM-PROCESS-CHEVRON",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    },
+    {
+     "slot": "insight",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "docked",
+     "w": 1240,
+     "required": false
+    }
+   ],
+   "density": "a 3-6 stage value chain with our focus/position marked + insight commentary",
+   "fromComposites": [
+    "BLK-REAL-TOR-VALUECHAIN-6STAGE-PHOTOROW",
+    "BLK-REAL-VALUECHAIN-3STAGE-LOGOWALL",
+    "BLK-DUAL-STACK-CAGR-VALUECHAIN",
+    "BLK-REAL-SUPPLIER-TABLE-VALUECHAIN-NAV"
+   ],
+   "exemplars": [
+    "TOR-33",
+    "BON-15"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-PROCESS-CHEVRON-DETAIL",
+   "name": "Process / phases (chevron + detail columns)",
+   "archetype": "business-model",
+   "grid": "N navy chevron headers across the top, each over a detail column of bullets/cards",
+   "variants": [
+    {
+     "label": "process"
+    },
+    {
+     "label": "phases"
+    },
+    {
+     "label": "case-study"
+    },
+    {
+     "label": "roadmap-swimlane"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "steps",
+     "primitive": "PRIM-PROCESS-CHEVRON",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    },
+    {
+     "slot": "detail",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "docked",
+     "w": 1240,
+     "required": true,
+     "repeat": "per step"
+    }
+   ],
+   "density": "3-6 steps, each with a filled detail column (no header-only chevrons)",
+   "fromComposites": [
+    "BLK-CHEVRON-PROCESS-6STEP",
+    "BLK-5CHEVRON-DETAIL-PAIR",
+    "BLK-PHASE-CHEVRON-3PANEL",
+    "BLK-CASESTUDY-3CHEVRON-SOLUTIONS",
+    "BLK-ROADMAP-SWIMLANE-CHEVRON"
+   ],
+   "exemplars": [
+    "LTP-026",
+    "LTP-080"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-BUSINESS-MODEL-SERVICE",
+   "name": "Service / revenue model",
+   "archetype": "business-model",
+   "grid": "service offering (tree or columns) + a revenue-stream driver table or a KPI dashboard",
+   "variants": [
+    {
+     "label": "service-dashboard"
+    },
+    {
+     "label": "revenue-streams"
+    },
+    {
+     "label": "offering-matrix"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "offering",
+     "primitive": "PRIM-DIAGRAM-TREE",
+     "anchor": "top-left",
+     "w": 560,
+     "required": true
+    },
+    {
+     "slot": "streams",
+     "primitive": "PRIM-TABLE-COLUMN-DESC",
+     "anchor": "top-right",
+     "w": 660,
+     "required": true
+    }
+   ],
+   "density": "the offering + how it makes money (revenue streams, drivers, % of revenue)",
+   "fromComposites": [
+    "BLK-REAL-TOR-SERVICE-3PANEL-DASHBOARD",
+    "BLK-SERVICE-REVENUE-3COL",
+    "BLK-REVENUE-STREAM-DRIVER-TABLE",
+    "BLK-SERVICES-SPLIT-2PANEL",
+    "BLK-REAL-TOR-ATAGLANCE-OFFERING-MATRIX"
+   ],
+   "exemplars": [
+    "TOR-25",
+    "LTP-078"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-PLATFORM-ARCHITECTURE",
+   "name": "Product architecture / platform / module coverage",
+   "archetype": "business-model",
+   "grid": "a stack/architecture diagram or IT-stack table or a module-coverage card grid",
+   "variants": [
+    {
+     "label": "architecture-stack"
+    },
+    {
+     "label": "it-stack-table"
+    },
+    {
+     "label": "module-coverage"
+    },
+    {
+     "label": "platform-steps"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "stack",
+     "primitive": "PRIM-DIAGRAM-TREE",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "the technical stack / module coverage laid out completely, not a single box",
+   "fromComposites": [
+    "BLK-ARCHITECTURE-STACK-DIAGRAM",
+    "BLK-REAL-IT-STACK-TABLE",
+    "BLK-MODULE-COVERAGE-GRID",
+    "BLK-ISO-PLATFORM-STEPS",
+    "BLK-SYSTEM-MIGRATION-STACKCHART",
+    "BLK-REAL-PRODUCT-CATEGORY-TABLE"
+   ],
+   "exemplars": [
+    "BON-40",
+    "LTP-061"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-GROWTH-CYCLE",
+   "name": "Growth flywheel / land-expand cycle",
+   "archetype": "business-model",
+   "grid": "a cyclical ring/flywheel or a land->lock-in->expand chevron band + numbered detail rows",
+   "variants": [
+    {
+     "label": "cycle-ring"
+    },
+    {
+     "label": "flywheel"
+    },
+    {
+     "label": "land-expand"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "cycle",
+     "primitive": "PRIM-DIAGRAM-RING",
+     "anchor": "top-left",
+     "w": 620,
+     "required": true
+    },
+    {
+     "slot": "detail",
+     "primitive": "PRIM-NARRATIVE-BADGE-ROWS",
+     "anchor": "top-right",
+     "w": 620,
+     "required": false
+    }
+   ],
+   "density": "a repeating growth motion with each stage substantiated",
+   "fromComposites": [
+    "BLK-ARROW-CYCLE-6LABEL",
+    "BLK-CYCLE-RING-NUMBERED-ROWS",
+    "BLK-LAND-LOCKIN-EXPAND-BAND",
+    "BLK-CHEVRON-STAGE-MATRIX"
+   ],
+   "exemplars": [
+    "LTP-088",
+    "LTP-017"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-CUSTOMER-DEEPDIVE",
+   "name": "Customer analysis (cohorts / churn / clients)",
+   "archetype": "people-timeline",
+   "grid": "2-3 navy-headed panels, each a customer chart (cohort stack, churn bridge, ARR bridge) + a client table/commentary",
+   "variants": [
+    {
+     "label": "cohort-panels"
+    },
+    {
+     "label": "churn-bridge"
+    },
+    {
+     "label": "arr-bridge"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "charts",
+     "primitive": "PRIM-CHART-STACKED-COLUMN",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true,
+     "repeat": "2-3 panels"
+    },
+    {
+     "slot": "clients",
+     "primitive": "PRIM-TABLE-COLUMN-DESC",
+     "anchor": "docked",
+     "w": 1240,
+     "required": false
+    }
+   ],
+   "density": "several coordinated customer views (retention, upsell, ARR) — not one chart + void",
+   "fromComposites": [
+    "BLK-3PANEL-CUSTOMER-DEEPDIVE",
+    "BLK-COHORT-STACK-UPSELL-CLUSTERS",
+    "BLK-QUAD-CUSTOMER-CHART-PANELS",
+    "BLK-REAL-DUAL-CHURN-BRIDGE-MOATBAND",
+    "BLK-CLIENT-SELECTION-TABLE",
+    "BLK-TWOBAND-COLUMNS-CLIENTPANEL"
+   ],
+   "exemplars": [
+    "LTP-041",
+    "BON-34"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-CUSTOMER-CONCENTRATION",
+   "name": "Customer concentration (pareto + cohort)",
+   "archetype": "people-timeline",
+   "grid": "left concentration curve (pareto) + right cohort table/commentary",
+   "slots": [
+    {
+     "slot": "curve",
+     "primitive": "PRIM-CHART-PARETO-CURVE",
+     "anchor": "top-left",
+     "w": 560,
+     "required": true
+    },
+    {
+     "slot": "cohort",
+     "primitive": "PRIM-TABLE-NUMBERED-COMMENTARY",
+     "anchor": "top-right",
+     "w": 640,
+     "required": true
+    }
+   ],
+   "density": "concentration curve + the supporting cohort detail; a key diligence slide",
+   "fromComposites": [
+    "BLK-REAL-TOR-CONCENTRATION-CURVE-COHORT"
+   ],
+   "exemplars": [
+    "TOR-42"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-MANAGEMENT-PROFILES",
+   "name": "Management / leadership profiles",
+   "archetype": "people-timeline",
+   "grid": "intro panel + a grid/row of portrait profile cards (photo + name/role + bio)",
+   "variants": [
+    {
+     "label": "portrait-cards"
+    },
+    {
+     "label": "circle-portraits"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "intro",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "top-left",
+     "w": 430,
+     "required": false
+    },
+    {
+     "slot": "profiles",
+     "primitive": "PRIM-CARD-GRID",
+     "anchor": "top-right",
+     "w": 790,
+     "required": true
+    }
+   ],
+   "density": "each leader a portrait + role + a short bio; a full team, not one card",
+   "fromComposites": [
+    "BLK-MANAGEMENT-PROFILE-CARDS",
+    "BLK-REAL-TOR-MGMT-CIRCLE-PORTRAIT-CARDS",
+    "BLK-VERTTAB-PROFILE-GRID-2COL"
+   ],
+   "exemplars": [
+    "TOR-46",
+    "LTP-130"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-ORG-STRUCTURE",
+   "name": "Org structure / headcount",
+   "archetype": "people-timeline",
+   "grid": "org tree (left/centre) + headcount chart/donut + FTE commentary panels",
+   "variants": [
+    {
+     "label": "org-tree"
+    },
+    {
+     "label": "hc-org-donut"
+    },
+    {
+     "label": "recruit-retain-develop"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "org",
+     "primitive": "PRIM-DIAGRAM-TREE",
+     "anchor": "top-left",
+     "w": 620,
+     "required": true
+    },
+    {
+     "slot": "headcount",
+     "primitive": "PRIM-CHART-STACKED-COLUMN",
+     "anchor": "top-right",
+     "w": 620,
+     "required": false
+    }
+   ],
+   "density": "the org tree + how headcount splits/grows",
+   "fromComposites": [
+    "BLK-ORGCHART-LEADERSHIP-TIERS",
+    "BLK-REAL-ORGCHART-CALLOUT-PANELS",
+    "BLK-HC-ORGTREE-DONUT-PANELS",
+    "BLK-FTE-COHORT-4PANEL",
+    "BLK-RECRUIT-RETAIN-DEVELOP-BAND"
+   ],
+   "exemplars": [
+    "BON-37",
+    "LTP-133"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-TIMELINE",
+   "name": "Company / acquisition timeline",
+   "archetype": "people-timeline",
+   "grid": "a dated axis (arrow / dashed 2-row / s-curve) with milestone nodes + cards",
+   "variants": [
+    {
+     "label": "arrow-cards"
+    },
+    {
+     "label": "photo-nodes"
+    },
+    {
+     "label": "s-curve"
+    },
+    {
+     "label": "milestone-checklist"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "timeline",
+     "primitive": "PRIM-TIMELINE-AXIS",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "a full dated history with milestone cards; order carries the story",
+   "fromComposites": [
+    "BLK-ACQUISITION-TIMELINE-CARDS",
+    "BLK-DASHED-TIMELINE-2ROW",
+    "BLK-TIMELINE-CIRCLE-ARROW",
+    "BLK-STAGE-TIMELINE-ICONNODES",
+    "BLK-REAL-SCURVE-TIMELINE-BRANDRAILS",
+    "BLK-CHECKLIST-MILESTONE-AXIS"
+   ],
+   "exemplars": [
+    "LTP-095",
+    "BON-06"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-COVER",
+   "name": "Deck cover",
+   "archetype": "chrome",
+   "grid": "full-bleed cover frame",
+   "slots": [
+    {
+     "slot": "cover",
+     "primitive": "PRIM-FRAME-COVER",
+     "anchor": "full-bleed",
+     "w": 1280,
+     "required": true
+    }
+   ],
+   "density": "cover image/gradient + serif title + date",
+   "fromComposites": [
+    "(SlideFrame variant=cover)"
+   ],
+   "exemplars": [
+    "LTP-001"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-SECTION-DIVIDER",
+   "name": "Section divider",
+   "archetype": "chrome",
+   "grid": "full-bleed divider frame (ghost numeral or photo + agenda)",
+   "variants": [
+    {
+     "label": "ghost-numeral"
+    },
+    {
+     "label": "photo-agenda"
+    }
+   ],
+   "slots": [
+    {
+     "slot": "divider",
+     "primitive": "PRIM-FRAME-DIVIDER",
+     "anchor": "full-bleed",
+     "w": 1280,
+     "required": true
+    }
+   ],
+   "density": "big section number/letter + ToC agenda with the active section highlighted",
+   "fromComposites": [
+    "BLK-SECTION-DIVIDER-GHOST",
+    "BLK-REAL-TOR-SECTION-DIVIDER-AGENDA-OVERLAY"
+   ],
+   "exemplars": [
+    "LTP-050",
+    "TOR-62",
+    "TOR-74"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-FULLBLEED-HIGHLIGHT",
+   "name": "Full-bleed photo highlight opener",
+   "archetype": "chrome",
+   "grid": "full-bleed photo + diamond-badge claim bar",
+   "slots": [
+    {
+     "slot": "opener",
+     "primitive": "PRIM-CHR-FULLBLEED-PHOTO-CLAIMBAR",
+     "anchor": "full-bleed",
+     "w": 1280,
+     "required": true
+    }
+   ],
+   "density": "one edge-to-edge photo + a numbered diamond badge + a claim (per investment highlight)",
+   "fromComposites": [
+    "BLK-REAL-TOR-FULLBLEED-PHOTO-CLAIMBAR"
+   ],
+   "exemplars": [
+    "TOR-13"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-APPENDIX-SEGMENT",
+   "name": "Appendix product-segment deep-dive",
+   "archetype": "chrome",
+   "grid": "brand-nav header + badge/title, then a panel grid: narrative + product panel(s) + strategic-vision chart",
+   "slots": [
+    {
+     "slot": "brandnav",
+     "primitive": "PRIM-CHR-BRANDNAV-HEADER",
+     "anchor": "top-right",
+     "w": 690,
+     "required": true
+    },
+    {
+     "slot": "narrative",
+     "primitive": "PRIM-NARRATIVE-BULLETS",
+     "anchor": "top-left",
+     "w": 620,
+     "required": true
+    },
+    {
+     "slot": "product",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "top-right",
+     "w": 620,
+     "required": true
+    },
+    {
+     "slot": "vision",
+     "primitive": "PRIM-CHART-COLUMN-CAGR",
+     "anchor": "bottom-right",
+     "w": 620,
+     "required": true
+    }
+   ],
+   "density": "a segment explained (narrative + product/concept panel + a revenue outlook chart); the template behind all 5 Torino appendix segments",
+   "fromComposites": [
+    "BLK-REAL-TOR-SEGMENT-DEEPDIVE"
+   ],
+   "exemplars": [
+    "TOR-75",
+    "TOR-77",
+    "TOR-78"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-GLOSSARY",
+   "name": "Abbreviations / glossary",
+   "archetype": "chrome",
+   "grid": "plain title + a 2-3 column term/definition grid",
+   "slots": [
+    {
+     "slot": "glossary",
+     "primitive": "PRIM-TABLE-GLOSSARY",
+     "anchor": "top-left",
+     "w": 1240,
+     "required": true
+    }
+   ],
+   "density": "a full 2-3 column glossary; reference page",
+   "fromComposites": [
+    "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID",
+    "BLK-REAL-GLOSSARY-3COL-TERM-TABLE"
+   ],
+   "exemplars": [
+    "TOR-81",
+    "TOR-82"
+   ],
+   "component": "TBD - G3"
+  },
+  {
+   "id": "STR-FACILITY",
+   "name": "Facility / HQ tour",
+   "archetype": "chrome",
+   "grid": "plain title + a 3-column gallery: text panels, colour-coded floorplans, photos",
+   "slots": [
+    {
+     "slot": "floorplans",
+     "primitive": "PRIM-MEDIA-FLOORPLAN",
+     "anchor": "top-left",
+     "w": 600,
+     "required": true,
+     "repeat": 2
+    },
+    {
+     "slot": "photos",
+     "primitive": "PRIM-MEDIA-PHOTO-PANEL",
+     "anchor": "docked",
+     "w": 320,
+     "required": true,
+     "repeat": "2+"
+    },
+    {
+     "slot": "panels",
+     "primitive": "PRIM-PANEL-GREY-HEADER",
+     "anchor": "docked",
+     "w": 320,
+     "required": true,
+     "repeat": "4+"
+    }
+   ],
+   "density": "floorplans + photos + labelled panels tiling a facility tour",
+   "fromComposites": [
+    "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY",
+    "BLK-REAL-SITE-PHOTOPANEL-INVENTORY"
+   ],
+   "exemplars": [
+    "TOR-80"
    ],
    "component": "TBD - G3"
   }
