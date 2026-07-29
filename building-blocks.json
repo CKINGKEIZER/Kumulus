@@ -1,0 +1,155 @@
+{
+  "note": "THE LEGO CATALOG. Every reusable building block found while indexing the source slides. Each block: where it lives in the content region (canvas-frame.md), exact geometry, and a COPY RECIPE you follow verbatim — never re-invent. All text inside blocks is 9.5pt (12.7px) Source Sans Pro unless noted; only slide titles are 14pt. Colours via --deal-* / neutral tokens. Blocks are dropped into the 12-col content grid (x20→1260, y84→672) until it is filled edge-to-edge.",
+  "conventions": {
+    "bodyText": "9.5pt = 12.7px, Source Sans Pro, --text-body",
+    "labelCaps": "9.5pt, bold, letter-spacing .08em, text-transform uppercase (small-caps device). NOT a smaller size.",
+    "grid": "content region = 12 cols × 1240px, 16px gutter, 16px row gap",
+    "fills": "navy/deal-primary fills only on: KPI tiles, category header bars, chart series, section bars. Panels = grey band header + white body. Placeholders = dashed grey box; company/target logo = yellow box, red 1px border, 'COMPANY LOGO' 9.5pt caps."
+  },
+  "blocks": {
+    "BLK-KPI-TILE-GRID": {
+      "name": "KPI tile grid",
+      "seenOn": ["LTP-005"],
+      "FIXED_SIZE_px": "420 × 102 (tiles 136×48 each, 3 cols × 2 rows, 6px gap)",
+      "anchor": "TOP-LEFT of content region",
+      "exitWidth": "leaves a ~468px-wide left column beneath it (docks BLK-DESCRIPTION); right of it is the chart region",
+      "region": "top-left; DO NOT resize to fill — text fits the box, box never grows",
+      "recipe": "grid 3col×2row, gap 8px. Each tile: background var(--deal-primary); color #fff; padding 8px; center; value line 700 ~15px on top; label below in labelCaps (9.5pt bold caps, opacity .9). Values like '€[x]m','[x]%'; labels 'REVENUE FY25B','RE(OC)CURRING REV.','EBITDA MARGIN','c.[x] FTEs','>[x] CUSTOMERS','[x] YEARS OF EXPERIENCE'. Optional square bullet line beneath the grid."
+    },
+    "BLK-BARCHART-CAGR": {
+      "name": "Column chart with CAGR bracket + forecast bar",
+      "seenOn": ["LTP-005","LTP-006","LTP-009"],
+      "region": "any chart slot, 4–6/12 cols",
+      "geometry": "solid deal-primary bars for actuals; final bar HATCHED (budget/forecast) via repeating-linear-gradient; value label 9.5pt bold above each bar; category labels below (FY22A…FY25B); grey CAGR bracket (horizontal line + right arrow) spanning first→last with '[x]% CAGR' 9.5pt centered; optional rotated axis label left ('LFL (€m)' / 'REVENUE (€m)').",
+      "recipe": "Use component ColumnChart (mode=simple/stacked). Mark forecast bar with hatch fill. Overlay a CagrPill or a CSS bracket. All labels 9.5pt."
+    },
+    "BLK-COMBO-BAR-LINE": {
+      "name": "Combo bars + margin % line",
+      "seenOn": ["LTP-005"],
+      "region": "chart slot 4–6/12",
+      "geometry": "deal-primary bars (EBITDA €m) + last bar hatched; a thin line with %-labels above (EBITDA-margin %); legend row beneath: ■ EBITDA (€m) / — EBITDA-margin (%). All 9.5pt.",
+      "recipe": "ColumnChart for bars + an absolutely-positioned polyline (SVG) for the margin line with % text nodes (9.5pt). Legend = flex row, 9.5pt."
+    },
+    "BLK-DASHBOARD-PANEL": {
+      "name": "Grey dashboard panel (multi sub-chart)",
+      "seenOn": ["LTP-005"],
+      "FIXED_SIZE_px": "~756 × 265 (≈20cm × 7cm)",
+      "anchor": "BOTTOM-RIGHT of content region, flush to figure edge",
+      "exitWidth": "occupies right 756px → leaves a ~468px docking slot on the LEFT (matches BLK-DESCRIPTION / left column width). 3 sub-cells ~240px each, separated by 0.25pt vertical rules",
+      "region": "bottom-right; DO NOT stretch to full width — this is the v1 mistake",
+      "recipe": "flex row of sub-cells, each: PanelHeader-style caps title (9.5pt) + chart. Vertical divider = border-left 0.25pt grey between cells."
+    },
+    "BLK-DONUT-LABELLED": {
+      "name": "Donut with centre label + outer callouts",
+      "seenOn": ["LTP-005","LTP-007"],
+      "region": "sub-cell ~1/4 width",
+      "geometry": "Donut component; centre label = name + '€[x]m' (9.5pt); segment % in-ring white 9.5pt; outer [x] leader callouts optional. Colours deal-chart ramp.",
+      "recipe": "Use Donut with centerLabel + centerSub; segments labelled. 9.5pt everywhere."
+    },
+    "BLK-STACKED-AREA-SHARE": {
+      "name": "Stacked area — recurring vs reoccurring",
+      "seenOn": ["LTP-005"],
+      "region": "sub-cell",
+      "geometry": "two stacked area bands across FY22A→LTM with % labels inside each band (9.5pt white); legend ■ RECURRING / ■ REOCCURRING above. deal ramp fills.",
+      "recipe": "SVG stacked area (2 series) + % text nodes (9.5pt) + flex legend."
+    },
+    "BLK-MATRIX-ROW-LAYOUT": {
+      "name": "Row-label × N-column comparison matrix",
+      "seenOn": ["LTP-006"],
+      "region": "full content region",
+      "geometry": "left row-label column (~1/12, small-caps 9.5pt: DESCRIPTION, REVENUE (€m), KPIs, TECHNOLOGIES) + 3 content columns each headed by a grey band (BUSINESS UNIT 1/2/3). Rows: bullets / BLK-BARCHART-CAGR / BLK-KPI-INLINE-TRIPLET / BLK-LOGO-PLACEHOLDER. Bottom full-width grey band.",
+      "recipe": "CSS grid: col template '1fr repeat(3, 1fr)', rows auto. Column headers = grey band (--gray-200) caps 9.5pt. Cells aligned to row labels. Fill every cell."
+    },
+    "BLK-HERO-TRIANGLE": {
+      "name": "Hero triangle/pyramid divider shape",
+      "seenOn": ["LTP-006"],
+      "region": "top band above columns, full width, ~90px tall",
+      "geometry": "wide flat deal-primary triangle (clip-path) with a white ellipse cut-out centred (for a label/logo).",
+      "recipe": "div with clip-path polygon triangle, --deal-primary; absolutely-positioned white ellipse centre. Decorative header."
+    },
+    "BLK-KPI-INLINE-TRIPLET": {
+      "name": "Inline KPI triplet (rule-separated)",
+      "seenOn": ["LTP-006"],
+      "region": "row cell",
+      "geometry": "3 KPIs in a row separated by thin vertical 0.25pt rules; each = value (9.5pt bold) over small-caps label (9.5pt). e.g. '[x]% RE(OC)CURRING REVENUE | [x]% CONTR. MARGIN | [x] FTEs'.",
+      "recipe": "flex row, 3 cells, border-left 0.25pt grey between; center text; 9.5pt."
+    },
+    "BLK-LOGO-PLACEHOLDER": {
+      "name": "Dashed logo/tech placeholder box",
+      "seenOn": ["LTP-006"],
+      "region": "row cell",
+      "geometry": "dashed 1px grey border, radius 4px, empty; holds partner/tech logos (real transparent PNGs when supplied).",
+      "recipe": "Use ThirdPartyLogoPlaceholder (grey) for suppliers/tech; yellow TargetCompanyLogoPlaceholder only for the deal target."
+    },
+    "BLK-BRIDGE-DONUT-PROGRESSION": {
+      "name": "Donut bridge (A + B = C) with deltas",
+      "seenOn": ["LTP-007"],
+      "region": "top grey panel, full width",
+      "geometry": "3 groups, each 2 donuts with a → between and a '+€[x]m' dashed delta box beneath; groups joined by ⊕ and = coin badges. Below: 3 category header bars (navy/blue/grey) each over harvey-ball rating rows.",
+      "recipe": "flex row: group(donut→donut + delta) [+badge] group [=badge] group. Donuts = Donut component. Delta = dashed box 9.5pt."
+    },
+    "BLK-HARVEYBALL-RATING-ROW": {
+      "name": "5-box fill rating row",
+      "seenOn": ["LTP-007"],
+      "region": "under a category header bar",
+      "geometry": "row of 5 small squares filled 0–5 (solid / hatched / empty) + label beneath in italic 9.5pt ('[x]% recurring','[x]% reoccurring','[x]% perpetual','[x]% other'). Solid=deal-primary, hatched=pattern, empty=outline.",
+      "recipe": "flex row of 5 14px squares; fill n solid, m hatched, rest outline; caption 9.5pt italic centered."
+    },
+    "BLK-CATEGORY-HEADER-BAR": {
+      "name": "Full-width category header bar",
+      "seenOn": ["LTP-007"],
+      "region": "column/section header",
+      "geometry": "solid colour bar (navy / blue / grey) full width of its column, white caps label 9.5pt centred, radius 2px.",
+      "recipe": "div background deal ramp colour; color #fff; caps 9.5pt; height ~30px."
+    },
+    "BLK-MA-REVENUE-EVOLUTION": {
+      "name": "Buy-and-build revenue column chart with acquisition bubbles + tracker rows",
+      "seenOn": ["LTP-009"],
+      "region": "full content region",
+      "geometry": "column chart across years 2017–2025 (last bar hatched forecast), value labels 9.5pt above. Acquisition logo-bubbles (circular, coloured by BU) float above/on bars with dashed callout boxes. Rotated axis label left 'REVENUE EVOLUTION (€M)'. Legend top-left (BU1/2/3 coloured circle + label). Beneath: 3 tracker rows with left small-caps labels — FTEs (pale boxes per year), EBITDA (grey arrow band with €[x]m segments), M&A (coloured dashed period bars 2021/2023/2024).",
+      "recipe": "Stack: (1) ColumnChart w/ forecast hatch + absolute logo-bubbles; (2) row 'FTEs' of pale value boxes aligned to columns; (3) 'EBITDA' grey chevron-arrow band; (4) 'M&A' coloured dashed period bars. Left rotated axis label. All 9.5pt."
+    },
+    "BLK-CENTRAL-ARROW-TIMELINE": {
+      "name": "Central horizontal arrow timeline (dual-sided)",
+      "seenOn": ["LTP-010"],
+      "region": "full content region",
+      "geometry": "thick deal-primary arrow spanning full width with year nodes (filled blue = key, grey = minor circles). Events on vertical stems above AND below the arrow: year in italic 9.5pt + [x] text; some milestones carry a yellow COMPANY LOGO box. Year labels bold 9.5pt at the arrow.",
+      "recipe": "Arrow = div w/ right-pointing clip-path, --deal-primary. Nodes = circles on the line. Stems = 1px grey vertical lines to callouts (italic year 9.5pt + text). Logo milestones = TargetCompanyLogoPlaceholder."
+    },
+    "BLK-VERTICAL-PHOTO-TIMELINE": {
+      "name": "Vertical photo timeline",
+      "seenOn": ["LTP-008"],
+      "region": "right half, ~4/12",
+      "geometry": "vertical line with milestone dots; each milestone = small photo thumb + [x] label (9.5pt); a COMPANY LOGO panel top-right; rotated [x] group labels.",
+      "recipe": "vertical flex; each row: dot + photo (image-slot) + 9.5pt label. Line = 1px grey."
+    },
+    "BLK-PHOTO-CARD-ROW": {
+      "name": "Photo card + content panel row",
+      "seenOn": ["LTP-008"],
+      "region": "left half rows",
+      "geometry": "photo card (rounded grey) on left + content panel(s) right (bullet list / 2-step chevron / KPI grid). Dotted connector from a far-left vertical [x] tab to a node.",
+      "recipe": "flex row: photo card (image-slot, radius 6px) + panel. Connector = dashed line + dot. 9.5pt."
+    },
+    "BLK-CHEVRON-PROCESS": {
+      "name": "Numbered chevron process",
+      "seenOn": ["LTP-008"],
+      "region": "panel",
+      "geometry": "grey chevron steps with ① ② numbered coins + caps label; bullets beneath each. 9.5pt.",
+      "recipe": "Use ProcessFlow; numbered coin + caps label 9.5pt; bullets below."
+    },
+    "BLK-PAGE-TAB-NAV": {
+      "name": "Footer page-tab navigator",
+      "seenOn": ["LTP-005","LTP-006","LTP-007","LTP-009"],
+      "region": "footer right",
+      "geometry": "row of section tabs; active = deal-primary fill with white caps section name expanded (e.g. '1 EXECUTIVE SUMMARY'), others = grey number boxes 2–7,A; then COMPANY LOGO yellow box; then page number.",
+      "recipe": "Use FooterNav; active tab expanded deal-primary; 9.5pt caps."
+    },
+    "BLK-COMPANY-LOGO-YELLOW": {
+      "name": "Company/target logo placeholder (yellow)",
+      "seenOn": ["LTP-005","LTP-006","LTP-008","LTP-010"],
+      "region": "footer right + on-slide milestones",
+      "geometry": "SOLID yellow/gold fill (#ffd… ), RED 1px border, 'COMPANY LOGO' in navy 9.5pt caps centred. This is the confirmed house placeholder — mandatory, never collapses.",
+      "recipe": "Update TargetCompanyLogoPlaceholder to SOLID yellow fill + red (1px solid) border + navy caps text (current dashed border is WRONG — real is solid red border)."
+    }
+  }
+}
