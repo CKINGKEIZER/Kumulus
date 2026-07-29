@@ -373,7 +373,8 @@
     "LTP-055",
     "LTP-121"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/MarketSizing.jsx",
+   "verified": "Funnel — PASS"
   },
   {
    "id": "STR-COMPETITION-MATRIX",
@@ -427,7 +428,8 @@
     "LTP-060",
     "LTP-070"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CompetitionMatrix.jsx",
+   "verified": "vs BON-20 — PASS"
   },
   {
    "id": "STR-CRITERIA-BENCHMARK",
@@ -480,7 +482,8 @@
     "LTP-069",
     "LTP-062"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/CriteriaBenchmark.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-TREND-IMPACT",
@@ -522,7 +525,8 @@
     "TOR-16",
     "LTP-052"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/TrendImpact.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-VALUE-CHAIN",

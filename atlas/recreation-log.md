@@ -77,3 +77,21 @@ not structural. **G3-01 (financial cluster) complete: 4/4 skeletons verified.**
   already-verified NumberedHighlight / ColumnChart).
 
 G3-02 done (4/4 skeletons; 2 visually verified, 2 smoke-tested).
+
+---
+
+## G3-03 market / competition — vs BON-20 / LTP-051
+
+**Reuse win:** `ComparisonMatrix` (number→harvey-ball, boolean→check/dash, else
+text) already covers criteria-benchmark, trend-impact and coverage tables — no
+`ColumnDescTable` needed. Net-new: `Funnel`, `Matrix2x2`.
+**Skeletons:** `MarketSizing`, `CompetitionMatrix`, `CriteriaBenchmark`, `TrendImpact`.
+
+- **CompetitionMatrix vs BON-20 — PASS (screenshot).** 2×2 with labelled axes,
+  Company X highlighted top-right, competitors plotted as chips, + "our position"
+  panel.
+- **MarketSizing (Funnel) — PASS (screenshot).** 3-stage TAM/SAM/SOM funnel +
+  commentary.
+- **CriteriaBenchmark, TrendImpact — SSR smoke PASS** (compose ComparisonMatrix).
+
+G3-03 done (4/4; 2 visually verified, 2 smoke).

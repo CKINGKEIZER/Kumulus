@@ -773,7 +773,17 @@
    "dependsOn": "G2-03",
    "scope": "implement components/structures/* (JSX + .d.ts + .prompt.md); VERIFY each side-by-side vs its exemplar render before marking done",
    "produces": "components/structures/*",
-   "status": "pending"
+   "status": "done",
+   "built": [
+    "Funnel",
+    "Matrix2x2",
+    "MarketSizing",
+    "CompetitionMatrix",
+    "CriteriaBenchmark",
+    "TrendImpact"
+   ],
+   "reuse": "ComparisonMatrix covers criteria/trend/coverage tables",
+   "verified": "CompetitionMatrix vs BON-20 + MarketSizing funnel (screenshot); 2 SSR smoke"
   },
   {
    "id": "G3-04",
