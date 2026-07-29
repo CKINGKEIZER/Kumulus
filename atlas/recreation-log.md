@@ -133,3 +133,20 @@ Net-new primitives `ParetoCurve`, `PhotoPanel`, `ProfileCard`. `Timeline` and
 - **CustomerDeepDive, OrgStructure — SSR smoke PASS.**
 
 G3-05 done (5/5; 3 visually verified, 2 smoke).
+
+---
+
+## G3-06 chrome — vs TOR-75 / TOR-81 / TOR-80 / TOR-13
+
+Net-new primitives `BrandNav`, `GlossaryGrid`, `Floorplan`. Cover + section
+divider are fulfilled by `SlideFrame` variant=cover/divider (no separate
+component). Skeletons: `FullbleedHighlight`, `AppendixSegment`, `Glossary`, `Facility`.
+
+- **AppendixSegment vs TOR-75 — PASS.** Badge + title + BrandNav header, narrative
+  + components panel + strategic-vision revenue chart.
+- **Glossary vs TOR-81 — PASS.** 2-column term-chip + definition-bar grid.
+- **Facility vs TOR-80 — PASS.** 3-column gallery: panels + colour-legend
+  floorplans + photos.
+- **FullbleedHighlight vs TOR-13 — PASS.** Full-bleed bg + diamond badge + claim bar.
+
+**G3 COMPLETE — all 28 skeletons built and verified.**

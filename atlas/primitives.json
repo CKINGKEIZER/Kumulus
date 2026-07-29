@@ -244,7 +244,7 @@
     "--ls-caps"
    ],
    "recipe": "Render the active brand chip solid yellow, others grey; geographies strip with flag chips. Torino appendix/segment chrome.",
-   "component": "TBD - GAP (Torino-specific, not yet a component)",
+   "component": "components/layout/BrandNav.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-BRANDNAV-HEADER"
    ],
@@ -275,7 +275,7 @@
     "--shadow-house"
    ],
    "recipe": "Torino per-highlight photo opener (one per numbered investment highlight). Divider-family; distinct from the ToC divider.",
-   "component": "TBD - GAP (Torino highlight opener)",
+   "component": "components/structures/FullbleedHighlight.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-FULLBLEED-PHOTO-CLAIMBAR"
    ],
@@ -1076,7 +1076,7 @@
     "--rule-separator"
    ],
    "recipe": "Abbreviations/definitions grid; term chip + grey definition bar. Appendix reference pages, plain serif title with (1/2)/(2/2).",
-   "component": "TBD - GAP (candidate GlossaryGrid)",
+   "component": "components/data/GlossaryGrid.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-ABBREV-GLOSSARY-GRID",
     "BLK-REAL-GLOSSARY-3COL-TERM-TABLE"
@@ -1879,7 +1879,7 @@
     "--ls-caps"
    ],
    "recipe": "Facility floor plan with function-coloured rooms + labels, under a PanelHeader. Used on HQ / facility-tour slides paired with photo and text panels.",
-   "component": "TBD - GAP (candidate FloorplanPanel)",
+   "component": "components/media/Floorplan.jsx",
    "fromBlocks": [
     "BLK-REAL-TOR-FACILITY-FLOORPLAN-GALLERY"
    ],
