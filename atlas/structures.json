@@ -571,7 +571,8 @@
     "TOR-33",
     "BON-15"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/ValueChain.jsx",
+   "verified": "ProcessFlow — rendered"
   },
   {
    "id": "STR-PROCESS-CHEVRON-DETAIL",
@@ -621,7 +622,8 @@
     "LTP-026",
     "LTP-080"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/ProcessChevronDetail.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-BUSINESS-MODEL-SERVICE",
@@ -667,7 +669,8 @@
     "TOR-25",
     "LTP-078"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/BusinessModelService.jsx",
+   "verified": "SSR smoke PASS"
   },
   {
    "id": "STR-PLATFORM-ARCHITECTURE",
@@ -710,7 +713,8 @@
     "BON-40",
     "LTP-061"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/PlatformArchitecture.jsx",
+   "verified": "vs BON-40 — PASS"
   },
   {
    "id": "STR-GROWTH-CYCLE",
@@ -755,7 +759,8 @@
     "LTP-088",
     "LTP-017"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/GrowthCycle.jsx",
+   "verified": "vs LTP-017 — PASS"
   },
   {
    "id": "STR-CUSTOMER-DEEPDIVE",

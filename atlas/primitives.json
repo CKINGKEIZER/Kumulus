@@ -1564,7 +1564,7 @@
     "--rule-separator"
    ],
    "recipe": "Org chart, ownership/shareholder tree, or service-offering tree: boxes joined by elbow connectors. Levels carry hierarchy.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/Tree.jsx",
    "fromBlocks": [
     "BLK-OWNERSHIP-TREE-SCOPE",
     "BLK-SERVICE-TREE-3NODE",
@@ -1604,7 +1604,7 @@
     "--ls-caps"
    ],
    "recipe": "Segmented ring with radial callouts, a cyclical arrow loop, or a quadrant wheel. Centre often a framed picture or hero figure.",
-   "component": "TBD - GAP",
+   "component": "components/diagrams/CycleRing.jsx",
    "fromBlocks": [
     "BLK-RING-RADIAL-LABELS-4BARS",
     "BLK-RING-RADIAL-CALLOUTS-LOGOWALL",
