@@ -996,7 +996,8 @@
    "exemplars": [
     "LTP-001"
    ],
-   "component": "TBD - G3"
+   "component": "components/layout/SlideFrame.jsx (variant=cover)",
+   "verified": "SlideFrame variant"
   },
   {
    "id": "STR-SECTION-DIVIDER",
@@ -1030,7 +1031,8 @@
     "TOR-62",
     "TOR-74"
    ],
-   "component": "TBD - G3"
+   "component": "components/layout/SlideFrame.jsx (variant=divider)",
+   "verified": "SlideFrame variant"
   },
   {
    "id": "STR-FULLBLEED-HIGHLIGHT",
@@ -1053,7 +1055,8 @@
    "exemplars": [
     "TOR-13"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/FullbleedHighlight.jsx",
+   "verified": "vs TOR-13 — PASS"
   },
   {
    "id": "STR-APPENDIX-SEGMENT",
@@ -1099,7 +1102,8 @@
     "TOR-77",
     "TOR-78"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/AppendixSegment.jsx",
+   "verified": "vs TOR-75 — PASS"
   },
   {
    "id": "STR-GLOSSARY",
@@ -1124,7 +1128,8 @@
     "TOR-81",
     "TOR-82"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/Glossary.jsx",
+   "verified": "vs TOR-81 — PASS"
   },
   {
    "id": "STR-FACILITY",
@@ -1165,7 +1170,8 @@
    "exemplars": [
     "TOR-80"
    ],
-   "component": "TBD - G3"
+   "component": "components/structures/Facility.jsx",
+   "verified": "vs TOR-80 — PASS"
   }
  ]
 }
